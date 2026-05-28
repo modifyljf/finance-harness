@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --c-bg: #0d1117;
+    --c-surface: #161b22;
+    --c-border: #30363d;
+    --c-accent: #58a6ff;
+    --c-green: #22c55e;
+    --c-red: #ef4444;
+    --c-gold: #f59e0b;
+    --c-text: #e6edf3;
+    --c-muted: #8b949e;
+  }
+
+  .reveal { background: var(--c-bg); font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif; }
+  .reveal .slides section { text-align: left; }
+
+  /* ── Common layout ── */
+  .slide-inner { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 40px 60px; box-sizing: border-box; }
+  .tag { display: inline-block; font-size: 0.55em; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 16px; background: rgba(88,166,255,0.15); color: var(--c-accent); border: 1px solid rgba(88,166,255,0.3); }
+  .slide-headline { font-size: 1.6em; font-weight: 800; color: var(--c-text); line-height: 1.25; margin: 0 0 12px; }
+  .slide-subtitle { font-size: 0.85em; color: var(--c-muted); margin: 0 0 24px; }
+
+  /* ── Cover ── */
+  .cover-wrap { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; height: 100%; padding: 60px; box-sizing: border-box; }
+  .cover-ticker { font-size: 1em; font-weight: 700; letter-spacing: 0.2em; color: var(--c-accent); margin-bottom: 8px; }
+  .cover-headline { font-size: 2.2em; font-weight: 900; color: var(--c-text); line-height: 1.2; margin: 0 0 16px; }
+  .cover-subtitle { font-size: 0.9em; color: var(--c-muted); }
+  .cover-divider { width: 60px; height: 4px; background: var(--c-accent); border-radius: 2px; margin: 20px 0; }
+
+  /* ── Market overview ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .stat-card { background: var(--c-surface); border: 1px solid var(--c-border); border-radius: 10px; padding: 16px; }
+  .stat-label { font-size: 0.55em; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .stat-value { font-size: 1.2em; font-weight: 700; color: var(--c-text); }
+  .stat-value.up { color: var(--c-green); }
+  .stat-value.down { color: var(--c-red); }
+
+  /* ── Price action ── */
+  .chart-wrap { width: 100%; height: 280px; position: relative; margin-top: 16px; }
+
+  /* ── Bullets ── */
+  .bullets { list-style: none; margin: 0; padding: 0; }
+  .bullets li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--c-border); font-size: 0.85em; color: var(--c-text); line-height: 1.5; }
+  .bullets li:last-child { border-bottom: none; }
+  .bullet-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-accent); margin-top: 6px; flex-shrink: 0; }
+  .bullet-dot.risk { background: var(--c-red); }
+  .bullet-dot.good { background: var(--c-green); }
+  .bullet-dot.gold { background: var(--c-gold); }
+
+  /* ── Summary ── */
+  .summary-box { background: var(--c-surface); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); border-radius: 10px; padding: 24px 28px; margin-top: 20px; }
+  .summary-text { font-size: 1.1em; font-weight: 600; color: var(--c-text); line-height: 1.6; }
+  .disclaimer { font-size: 0.5em; color: var(--c-muted); margin-top: 20px; line-height: 1.5; }
+
+  /* ── Outlook ── */
+  .outlook-badge { display: inline-block; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 0.8em; margin-bottom: 20px; }
+  .bullish { background: rgba(34,197,94,0.15); border: 1px solid var(--c-green); color: var(--c-green); }
+  .bearish { background: rgba(239,68,68,0.15); border: 1px solid var(--c-red); color: var(--c-red); }
+  .neutral { background: rgba(245,158,11,0.15); border: 1px solid var(--c-gold); color: var(--c-gold); }
+
+  .reveal .progress { color: var(--c-accent); }
+  .reveal .controls button { color: var(--c-accent); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+{% for slide in slides %}
+
+{% if slide.type == 'cover' %}
+<section data-autoslide="5000">
+  <div class="cover-wrap">
+    <div class="cover-ticker">{{ ticker }} · 股票点评</div>
+    <div class="cover-headline">{{ slide.headline }}</div>
+    <div class="cover-divider"></div>
+    <div class="cover-subtitle">{{ slide.subtitle if slide.subtitle else company_name }}</div>
+  </div>
+</section>
+
+{% elif slide.type == 'market_overview' %}
+<section data-autoslide="8000">
+  <div class="slide-inner">
+    <div class="tag">市场概览</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">当前价格</div>
+        <div class="stat-value">${{ current_price }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">涨跌幅</div>
+        <div class="stat-value {% if price_change_pct >= 0 %}up{% else %}down{% endif %}">{{ price_sign }}{{ price_change_pct }}%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">市值</div>
+        <div class="stat-value">{{ market_cap_str }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">市盈率 (PE)</div>
+        <div class="stat-value">{{ pe_ratio if pe_ratio else 'N/A' }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">52周高点</div>
+        <div class="stat-value">${{ high_52w if high_52w else 'N/A' }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">52周低点</div>
+        <div class="stat-value">${{ low_52w if low_52w else 'N/A' }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% elif slide.type == 'price_action' %}
+<section data-autoslide="12000">
+  <div class="slide-inner">
+    <div class="tag">价格走势</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    <div class="chart-wrap">
+      <canvas id="priceChart"></canvas>
+    </div>
+    {% if slide.bullets %}
+    <ul class="bullets" style="margin-top:12px">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot gold"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'key_points' %}
+<section data-autoslide="15000">
+  <div class="slide-inner">
+    <div class="tag">核心要点</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot good"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'financials' %}
+<section data-autoslide="12000">
+  <div class="slide-inner">
+    <div class="tag">财务分析</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'risk' %}
+<section data-autoslide="12000">
+  <div class="slide-inner">
+    <div class="tag" style="background:rgba(239,68,68,0.12);color:var(--c-red);border-color:rgba(239,68,68,0.3)">风险提示</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot risk"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'catalyst' %}
+<section data-autoslide="10000">
+  <div class="slide-inner">
+    <div class="tag" style="background:rgba(245,158,11,0.12);color:var(--c-gold);border-color:rgba(245,158,11,0.3)">催化剂</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot gold"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'outlook' %}
+<section data-autoslide="12000">
+  <div class="slide-inner">
+    <div class="tag">未来展望</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.subtitle %}
+    <div class="outlook-badge neutral">{{ slide.subtitle }}</div>
+    {% endif %}
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot gold"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% elif slide.type == 'summary' %}
+<section data-autoslide="8000">
+  <div class="slide-inner">
+    <div class="tag">总结</div>
+    <div class="slide-headline">本期结论</div>
+    <div class="summary-box">
+      <div class="summary-text">{{ slide.headline }}</div>
+    </div>
+    <div class="disclaimer">
+      ⚠ 本内容仅供参考，不构成投资建议。股市有风险，投资需谨慎。{{ slide.subtitle if slide.subtitle else '' }}
+    </div>
+  </div>
+</section>
+
+{% else %}
+<section data-autoslide="10000">
+  <div class="slide-inner">
+    <div class="tag">{{ slide.type }}</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.subtitle %}<div class="slide-subtitle">{{ slide.subtitle }}</div>{% endif %}
+    {% if slide.bullets %}
+    <ul class="bullets">
+      {% for b in slide.bullets %}
+      <li><span class="bullet-dot"></span><span>{{ b }}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% endfor %}
+
+</div><!-- .slides -->
+</div><!-- .reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  progress: true,
+  controls: true,
+  center: false,
+  transition: 'fade',
+  transitionSpeed: 'slow',
+  autoSlide: 0,
+  loop: false,
+  width: 1280,
+  height: 720,
+});
+
+(function() {
+  var labels = {{ price_labels }};
+  var values = {{ price_values }};
+  if (!labels || labels.length === 0) return;
+
+  var canvas = document.getElementById('priceChart');
+  if (!canvas) return;
+
+  var firstVal = values[0];
+  var lastVal = values[values.length - 1];
+  var lineColor = lastVal >= firstVal ? '#22c55e' : '#ef4444';
+
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: '收盘价',
+        data: values,
+        borderColor: lineColor,
+        backgroundColor: lineColor + '18',
+        borderWidth: 2,
+        pointRadius: 0,
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return '$' + ctx.parsed.y.toFixed(2); }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#8b949e', maxTicksLimit: 8, font: { size: 11 } },
+          grid: { color: '#21262d' },
+        },
+        y: {
+          ticks: { color: '#8b949e', font: { size: 11 }, callback: function(v) { return '$' + v; } },
+          grid: { color: '#21262d' },
+        }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

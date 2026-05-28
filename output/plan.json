@@ -1,0 +1,298 @@
+{
+  "generated_at": "2026-05-28T03:48:32.682421+00:00",
+  "current_date": "2026-05-27",
+  "input": {
+    "ticker": "NVDA",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
+  "market_data": {
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "short_description": "NVIDIA Corporation operates as a data center scale AI infrastructure company. The company operates through two segments, Compute & Networking, and Graphics segments. The Compute & Networking segment provides data center accelerated computing and networking platforms and artificial intelligence solutions and software, and automotive platforms and autonomous and electric vehicle solutions, including",
+    "current_price": 212.6,
+    "prev_close": 214.86,
+    "price_change": -2.26,
+    "price_change_pct": -1.05,
+    "market_cap": 5149384769536,
+    "market_cap_str": "$5.15T",
+    "volume": 161326568,
+    "avg_volume": 164714113,
+    "beta": 2.244,
+    "52w_high": 236.54,
+    "52w_low": 132.92,
+    "52w_range_position_pct": 76.9,
+    "technical": {
+      "rsi_14": 51.0,
+      "rsi_signal": "neutral",
+      "ma20": 214.63,
+      "ma50": 198.09,
+      "bollinger": {
+        "upper": 235.18,
+        "middle": 214.63,
+        "lower": 194.08
+      },
+      "volume_trend": "stable",
+      "ma_signal": "mixed",
+      "price_vs_ma20_pct": -0.9,
+      "price_vs_ma50_pct": 7.3
+    },
+    "analyst": {
+      "recommendation": "Strong Buy",
+      "target_mean": 295.68967,
+      "target_high": 500.0,
+      "target_low": 180.0,
+      "analyst_count": 58,
+      "upside_pct": 39.1
+    },
+    "short_interest": 1.2,
+    "institutional_ownership_pct": 70.8,
+    "valuation": {
+      "pe_trailing": 32.56,
+      "pe_forward": 16.81,
+      "peg": 0.66,
+      "ps_ratio": 20.31,
+      "pb_ratio": 32.85,
+      "ev_ebitda": 30.84
+    },
+    "financials": {
+      "revenue": 253491003392,
+      "revenue_growth_yoy": 85.2,
+      "earnings_growth_yoy": 214.5,
+      "gross_margin": 74.1,
+      "operating_margin": 65.6,
+      "profit_margin": 63.0,
+      "free_cashflow": 46335873024,
+      "roe": 114.3,
+      "eps_trailing": 6.53,
+      "eps_forward": 12.64573
+    },
+    "price_history": [
+      {
+        "date": "2026-04-15",
+        "close": 198.87
+      },
+      {
+        "date": "2026-04-16",
+        "close": 198.35
+      },
+      {
+        "date": "2026-04-17",
+        "close": 201.68
+      },
+      {
+        "date": "2026-04-20",
+        "close": 202.06
+      },
+      {
+        "date": "2026-04-21",
+        "close": 199.88
+      },
+      {
+        "date": "2026-04-22",
+        "close": 202.5
+      },
+      {
+        "date": "2026-04-23",
+        "close": 199.64
+      },
+      {
+        "date": "2026-04-24",
+        "close": 208.27
+      },
+      {
+        "date": "2026-04-27",
+        "close": 216.61
+      },
+      {
+        "date": "2026-04-28",
+        "close": 213.17
+      },
+      {
+        "date": "2026-04-29",
+        "close": 209.25
+      },
+      {
+        "date": "2026-04-30",
+        "close": 199.57
+      },
+      {
+        "date": "2026-05-01",
+        "close": 198.45
+      },
+      {
+        "date": "2026-05-04",
+        "close": 198.48
+      },
+      {
+        "date": "2026-05-05",
+        "close": 196.5
+      },
+      {
+        "date": "2026-05-06",
+        "close": 207.83
+      },
+      {
+        "date": "2026-05-07",
+        "close": 211.5
+      },
+      {
+        "date": "2026-05-08",
+        "close": 215.2
+      },
+      {
+        "date": "2026-05-11",
+        "close": 219.44
+      },
+      {
+        "date": "2026-05-12",
+        "close": 220.78
+      },
+      {
+        "date": "2026-05-13",
+        "close": 225.83
+      },
+      {
+        "date": "2026-05-14",
+        "close": 235.74
+      },
+      {
+        "date": "2026-05-15",
+        "close": 225.32
+      },
+      {
+        "date": "2026-05-18",
+        "close": 222.32
+      },
+      {
+        "date": "2026-05-19",
+        "close": 220.61
+      },
+      {
+        "date": "2026-05-20",
+        "close": 223.47
+      },
+      {
+        "date": "2026-05-21",
+        "close": 219.51
+      },
+      {
+        "date": "2026-05-22",
+        "close": 215.33
+      },
+      {
+        "date": "2026-05-26",
+        "close": 214.86
+      },
+      {
+        "date": "2026-05-27",
+        "close": 212.6
+      }
+    ],
+    "weekly_news": [
+      {
+        "title": "SK Hynix and Micron lead AI boom, join trillion-dollar club",
+        "publisher": "Yahoo Finance Video",
+        "published_at": "2026-05-27 20:34"
+      },
+      {
+        "title": "The Micron stock price bubble explained in 2 numbers",
+        "publisher": "Yahoo Finance",
+        "published_at": "2026-05-27 13:47"
+      },
+      {
+        "title": "How does Micron stack up to Nvidia after reaching $1T market cap?",
+        "publisher": "Yahoo Finance Video",
+        "published_at": "2026-05-27 13:28"
+      },
+      {
+        "title": "Assessing Coherent (COHR) Valuation After AI Datacenter Momentum And Earnings Beat",
+        "publisher": "Simply Wall St.",
+        "published_at": "2026-05-28 03:16"
+      },
+      {
+        "title": "Why IREN Stock Popped Today",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-28 03:13"
+      },
+      {
+        "title": "Shell vs. BP: Better Oil Stock for the Iran War?",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-28 02:35"
+      },
+      {
+        "title": "The Next Threat To Nvidia Isn't A Chipmaker — It's An IPO",
+        "publisher": "Benzinga",
+        "published_at": "2026-05-28 02:31"
+      },
+      {
+        "title": "Jensen Huang Joins Elite Tsinghua University Advisory Board That Includes Tim Cook And Elon Musk: Report",
+        "publisher": "Benzinga",
+        "published_at": "2026-05-28 01:38"
+      },
+      {
+        "title": "If You'd Invested $100 in Micron Technology Stock 1 Year Ago, Here's How Much You'd Have Today",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-28 01:27"
+      },
+      {
+        "title": "The Quiet AI Winner That Doesn't Show Up on Any Hot Stock List",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-28 01:01"
+      }
+    ]
+  },
+  "narrative_signals": {
+    "analysis_date": "2026-05-27",
+    "sentiment_score": 75.0,
+    "sentiment_label": "偏多",
+    "analyst_sentiment": "看多",
+    "key_themes": [
+      "AI与算力需求驱动",
+      "分析师平均目标价存在39.1%上行空间"
+    ],
+    "risk_level": "中等风险"
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 15
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 45
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 60
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 60
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 60
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 45
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 45
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 45
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 30
+    }
+  ]
+}

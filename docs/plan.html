@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>AI Stock Review Video Harness MVP</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.7;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        h1, h2, h3 {
+            color: #0f172a;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 16px;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        code {
+            background: #e5e7eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .section {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>AI Stock Review Video Harness — MVP Design</h1>
+
+<div class="section">
+    <h2>1. Goal</h2>
+
+    <p>
+        Build a minimal AI-powered harness that generates:
+    </p>
+
+    <ul>
+        <li>HTML animated PPT website</li>
+        <li>Stock review narration script</li>
+        <li>Structured slide JSON</li>
+    </ul>
+
+    <p>
+        from a single stock ticker input.
+    </p>
+
+    <p>
+        Final output should be directly usable for:
+    </p>
+
+    <ul>
+        <li>YouTube recording</li>
+        <li>OBS screen capture</li>
+        <li>TTS narration</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>2. MVP Scope</h2>
+
+    <table>
+        <tr>
+            <th>Included</th>
+            <th>Not Included Yet</th>
+        </tr>
+
+        <tr>
+            <td>Stock analysis generation</td>
+            <td>Automatic video rendering</td>
+        </tr>
+
+        <tr>
+            <td>HTML slide generation</td>
+            <td>YouTube upload</td>
+        </tr>
+
+        <tr>
+            <td>Narration generation</td>
+            <td>Multi-agent orchestration</td>
+        </tr>
+
+        <tr>
+            <td>CLI execution</td>
+            <td>Cloud deployment</td>
+        </tr>
+
+        <tr>
+            <td>Local browser preview</td>
+            <td>Realtime streaming</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>3. System Architecture</h2>
+
+    <pre>
+User Input
+    ↓
+CLI Harness
+    ↓
+AI Analysis
+    ↓
+slides.json
+    ↓
+HTML Template Renderer
+    ↓
+deck.html
+    ↓
+Browser Playback / OBS Recording
+</pre>
+</div>
+
+<div class="section">
+    <h2>4. Minimal Input</h2>
+
+    <pre>{
+  "ticker": "NVDA",
+  "market": "US",
+  "language": "zh-CN",
+  "duration_minutes": 6,
+  "style": "professional"
+}</pre>
+</div>
+
+<div class="section">
+    <h2>5. Output Files</h2>
+
+    <pre>
+output/
+├── deck.html
+├── slides.json
+├── narration.txt
+└── metadata.json
+</pre>
+</div>
+
+<div class="section">
+    <h2>6. Folder Structure</h2>
+
+    <pre>
+stock-video-harness/
+├── input.json
+├── run.py
+├── prompts/
+│   ├── analysis.txt
+│   └── slides.txt
+├── templates/
+│   └── deck.html
+├── output/
+└── assets/
+</pre>
+</div>
+
+<div class="section">
+    <h2>7. Core Pipeline</h2>
+
+    <pre>
+ticker
+↓
+AI generates stock analysis
+↓
+AI generates narration
+↓
+AI generates slides.json
+↓
+Template engine renders HTML PPT
+↓
+Browser opens deck.html
+</pre>
+</div>
+
+<div class="section">
+    <h2>8. slides.json Schema</h2>
+
+    <pre>{
+  "title": "NVDA Weekly Review",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "Can NVDA Continue Rising?",
+      "subtitle": "AI Leader Analysis"
+    },
+    {
+      "type": "key_points",
+      "headline": "Key Takeaways",
+      "bullets": [
+        "Momentum remains strong",
+        "Valuation risk exists",
+        "Earnings are critical"
+      ]
+    },
+    {
+      "type": "risk",
+      "headline": "Risks",
+      "bullets": [
+        "Market correction",
+        "AI hype cooling",
+        "Weak guidance"
+      ]
+    }
+  ]
+}</pre>
+</div>
+
+<div class="section">
+    <h2>9. HTML Rendering Strategy</h2>
+
+    <p>
+        AI should NOT directly generate HTML.
+    </p>
+
+    <p>
+        Correct approach:
+    </p>
+
+    <pre>
+AI → slides.json
+Program → render HTML template
+</pre>
+
+    <p>
+        Benefits:
+    </p>
+
+    <ul>
+        <li>Stable output</li>
+        <li>Reusable templates</li>
+        <li>Easy styling</li>
+        <li>Easy animation upgrades</li>
+        <li>Deterministic rendering</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>10. CLI Design</h2>
+
+    <pre>
+python run.py \
+  --ticker NVDA \
+  --duration 6 \
+  --language zh-CN
+</pre>
+
+    <p>
+        Expected output:
+    </p>
+
+    <pre>
+Generated:
+- output/deck.html
+- output/slides.json
+- output/narration.txt
+</pre>
+</div>
+
+<div class="section">
+    <h2>11. Recommended Tech Stack</h2>
+
+    <table>
+        <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+        </tr>
+
+        <tr>
+            <td>Programming</td>
+            <td>Python</td>
+        </tr>
+
+        <tr>
+            <td>LLM</td>
+            <td>OpenAI / Anthropic</td>
+        </tr>
+
+        <tr>
+            <td>Template Engine</td>
+            <td>Jinja2</td>
+        </tr>
+
+        <tr>
+            <td>Charts</td>
+            <td>Chart.js</td>
+        </tr>
+
+        <tr>
+            <td>Slide Animation</td>
+            <td>Reveal.js</td>
+        </tr>
+
+        <tr>
+            <td>Recording</td>
+            <td>OBS / Playwright</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>12. Future Versions</h2>
+
+    <pre>
+V1:
+CLI Harness
+
+V2:
+HTTP API
+
+V3:
+MCP Tool
+
+V4:
+Auto Video Rendering
+
+V5:
+Autonomous Agent Workflow
+</pre>
+</div>
+
+<div class="section">
+    <h2>13. Skill Integration</h2>
+
+    <p>
+        Skill should:
+    </p>
+
+    <ul>
+        <li>Teach AI how to use the harness</li>
+        <li>Define output schema</li>
+        <li>Define stock review workflow</li>
+        <li>Define prompting conventions</li>
+        <li>Define compliance rules</li>
+    </ul>
+
+    <p>
+        Harness should:
+    </p>
+
+    <ul>
+        <li>Actually execute generation</li>
+        <li>Render HTML</li>
+        <li>Manage files</li>
+        <li>Handle deterministic outputs</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>14. First Milestone</h2>
+
+    <p>
+        Success Criteria:
+    </p>
+
+    <pre>
+Input:
+NVDA
+
+Output:
+deck.html opens in browser
+with animated slides
+and usable narration script
+</pre>
+</div>
+
+<div class="section">
+    <h2>15. Core Philosophy</h2>
+
+    <pre>
+Minimal human input
+Maximum AI generation
+Structured intermediate data
+Deterministic rendering
+AI-callable workflow
+</pre>
+</div>
+
+</body>
+</html>

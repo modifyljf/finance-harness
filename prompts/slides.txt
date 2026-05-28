@@ -1,0 +1,54 @@
+今天是{current_date}。根据以下股票分析内容，生成结构化的幻灯片数据（JSON格式）。禁止在幻灯片文案中引用任何未经数据验证的具体历史日期。
+
+## 股票信息
+- 代码：{ticker}
+- 公司：{company_name}
+- 语言：{language}
+
+## 幻灯片结构要求
+{slide_outline}
+
+## 分析内容
+{analysis}
+
+## 输出要求
+
+严格按照以下JSON Schema生成数据。每个幻灯片的内容要求：
+
+### cover（封面）
+- headline：吸引眼球的大标题问句（15字以内）
+- subtitle：副标题，注明是【本周深度分析】，可加上日期（{current_date}）
+
+### market_overview（市场概览）
+- headline：3-5个关键数字要点
+- bullets 中放：价格、涨跌幅、市值、PE等核心数据点
+
+### price_action（价格走势）
+- headline：一句话技术面判断
+- bullets：支撑位、阻力位、趋势方向（各1-2条）
+
+### key_points（核心要点）
+- headline：本期最重要的3字主题
+- bullets：3-5条核心亮点，每条20字以内
+
+### financials（财务分析，如有）
+- headline：财务健康度一句话总结
+- bullets：关键财务指标
+
+### risk（风险提示）
+- headline：风险等级描述
+- bullets：3-4条具体风险
+
+### catalyst（催化剂，如有）
+- headline：近期催化剂概述
+- bullets：具体事件列表
+
+### outlook（未来展望）
+- headline：方向判断（看多/中性/看空 + 时间维度）
+- bullets：目标价区间、关键节点
+
+### summary（总结）
+- headline：一句话核心结论
+- subtitle：风险提示声明
+
+所有文字使用 {language} 语言，保持专业简洁。
