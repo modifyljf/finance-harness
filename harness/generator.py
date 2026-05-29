@@ -510,6 +510,47 @@ def generate_slides(client: OpenAI, plan: dict, synthesis: str) -> dict:
     return slides_data
 
 
+# ── Targeted Re-generation (called by run.py retry loop) ─────────────────────
+
+def _make_client() -> OpenAI:
+    api_key = os.environ.get("DEEPSEEK_API_KEY")
+    if not api_key:
+        raise EnvironmentError("DEEPSEEK_API_KEY environment variable not set.")
+    return OpenAI(api_key=api_key, base_url=DEEPSEEK_BASE_URL)
+
+
+def regenerate_synthesis(plan: dict, gen_result: dict) -> str:
+    """Re-run only the Synthesis agent using existing per-dimension analyses."""
+    print("[Retry] Regenerating synthesis...")
+    client = _make_client()
+    result = _agent_synthesis(
+        client, plan,
+        gen_result["fundamental_analysis"],
+        gen_result["technical_analysis"],
+        gen_result["narrative_analysis"],
+    )
+    print("[Retry] Synthesis done.")
+    return result
+
+
+def regenerate_narration(plan: dict, gen_result: dict) -> str:
+    """Re-run only the narration generator using the current synthesis."""
+    print("[Retry] Regenerating narration...")
+    client = _make_client()
+    result = generate_narration(client, plan, gen_result["analysis"])
+    print("[Retry] Narration done.")
+    return result
+
+
+def regenerate_slides(plan: dict, gen_result: dict) -> dict:
+    """Re-run only the slides generator using the current synthesis."""
+    print("[Retry] Regenerating slides...")
+    client = _make_client()
+    result = generate_slides(client, plan, gen_result["analysis"])
+    print("[Retry] Slides done.")
+    return result
+
+
 # ── Main Entry ────────────────────────────────────────────────────────────────
 
 def run(plan: dict) -> dict:

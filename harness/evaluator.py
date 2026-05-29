@@ -91,7 +91,12 @@ def llm_judge(client: OpenAI, plan: dict, analysis: str, narration: str, slides_
 - issues: 字符串数组，列出主要问题（维度6的错误须单独列出）
 - strengths: 字符串数组，列出主要优点
 - business_model_check: 字符串，说明判断到的公司商业模式类型及利率逻辑是否正确
-- summary: 字符串，一句话总结"""
+- summary: 字符串，一句话总结
+- retry_targets: 字符串数组，仅在 passed=false 时填写，列出需要重新生成的组件：
+    "synthesis" — 综合分析逻辑有误、深度不足、商业模式判断错误
+    "narration"  — 解说词质量差、语言生硬、前后矛盾、内容与分析不符
+    "slides"     — 幻灯片字段缺失、内容与分析脱节、关键数据未体现
+  注意：只列真正需要重跑的组件，不要全部列出。passed=true 时返回空数组 []。"""
 
     response = client.chat.completions.create(
         model=MODEL_FAST,

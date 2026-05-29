@@ -74,18 +74,47 @@ def main() -> None:
     save_text(gen_result["narration"], OUTPUT_DIR / "narration.txt")
     save_text(make_tts_narration(gen_result["narration"]), OUTPUT_DIR / "narration_tts.txt")
 
-    # Stage 3: Evaluate
-    if not args.skip_eval:
-        eval_report = evaluator.run(plan, gen_result)
-        save_json(eval_report, OUTPUT_DIR / "eval_report.json")
+    # Stage 3: Evaluate — with targeted retry (max 2 attempts)
+    MAX_RETRIES = 2
+    eval_report = {"score": -1, "passed": True, "skipped": True}
 
-        if not eval_report["passed"]:
-            print(f"\n[WARN] Quality check failed (score: {eval_report['score']}/100)")
+    if not args.skip_eval:
+        for attempt in range(MAX_RETRIES + 1):
+            eval_report = evaluator.run(plan, gen_result)
+            save_json(eval_report, OUTPUT_DIR / "eval_report.json")
+
+            if eval_report["passed"]:
+                break
+
+            targets = eval_report.get("retry_targets", [])
+            score   = eval_report["score"]
+
+            print(f"\n[Eval] Score {score}/100 — FAILED")
             for issue in eval_report.get("issues", []):
                 print(f"  - {issue}")
-            print("Continuing to render anyway...\n")
-    else:
-        eval_report = {"score": -1, "passed": True, "skipped": True}
+
+            if attempt == MAX_RETRIES:
+                print(f"[Eval] Max retries reached. Rendering with current output.\n")
+                break
+
+            if not targets:
+                print("[Eval] No retry targets identified — skipping retry.\n")
+                break
+
+            print(f"[Retry {attempt + 1}/{MAX_RETRIES}] Targets: {targets}\n")
+
+            if "synthesis" in targets:
+                gen_result["analysis"] = generator.regenerate_synthesis(plan, gen_result)
+                save_text(gen_result["analysis"], OUTPUT_DIR / "analysis_synthesis.txt")
+
+            if "narration" in targets:
+                gen_result["narration"] = generator.regenerate_narration(plan, gen_result)
+                save_text(gen_result["narration"], OUTPUT_DIR / "narration.txt")
+                save_text(make_tts_narration(gen_result["narration"]), OUTPUT_DIR / "narration_tts.txt")
+
+            if "slides" in targets:
+                gen_result["slides"] = generator.regenerate_slides(plan, gen_result)
+                # slides.json saved after renderer patches it
 
     # Stage 4: Render — renderer patches slides in-place (e.g. market_overview headline)
     deck_path = OUTPUT_DIR / "deck.html"
