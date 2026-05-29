@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8"/>
-    <title>AI Stock Review Video Harness MVP</title>
+    <title>AI Stock Review Video Harness — Planning Revision</title>
 
     <style>
         body {
@@ -25,12 +25,14 @@
             padding: 16px;
             border-radius: 10px;
             overflow: auto;
+            font-size: 0.88em;
         }
 
         code {
             background: #e5e7eb;
             padding: 2px 6px;
             border-radius: 4px;
+            font-size: 0.9em;
         }
 
         .section {
@@ -49,362 +51,510 @@
         th, td {
             border: 1px solid #ddd;
             padding: 12px;
+            vertical-align: top;
         }
 
         th {
             background: #f3f4f6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.78em;
+            font-weight: bold;
+        }
+
+        .badge-core { background: #d1fae5; color: #065f46; }
+        .badge-change { background: #dbeafe; color: #1e40af; }
+        .badge-warn { background: #fef3c7; color: #92400e; }
+
+        .note {
+            background: #fef9c3;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 0.92em;
+            margin-top: 12px;
         }
     </style>
 </head>
 
 <body>
 
-<h1>AI Stock Review Video Harness — MVP Design</h1>
+<h1>AI Stock Review Video Harness — Planning 模块修改文档</h1>
+<p style="color:#6b7280; font-size:0.9em;">基于当前 Harness 设计整理 · 2026-05-28</p>
 
 <div class="section">
-    <h2>1. Goal</h2>
-
+    <h2>1. 修改目标</h2>
     <p>
-        Build a minimal AI-powered harness that generates:
+        当前 Harness 的整体方向合理，但 Planning 阶段需要进一步明确边界：
+        Planner 应该负责数据抓取、清洗、计算和证据整理，而不应该过早输出投资结论。
     </p>
 
+    <p>本次修改目标：</p>
     <ul>
-        <li>HTML animated PPT website</li>
-        <li>Stock review narration script</li>
-        <li>Structured slide JSON</li>
-    </ul>
-
-    <p>
-        from a single stock ticker input.
-    </p>
-
-    <p>
-        Final output should be directly usable for:
-    </p>
-
-    <ul>
-        <li>YouTube recording</li>
-        <li>OBS screen capture</li>
-        <li>TTS narration</li>
+        <li>强化 Planner 作为 <strong>Evidence Pack Builder</strong> 的职责</li>
+        <li>减少 Planner 对最终投资判断的提前锚定</li>
+        <li>提升新闻、技术指标、估值数据的可解释性</li>
+        <li>让后续 Fundamental / Technical / Narrative / Synthesis Agent 拿到更稳定的结构化输入</li>
+        <li>提升 slides.json 与 narration.txt 的生成一致性</li>
     </ul>
 </div>
 
 <div class="section">
-    <h2>2. MVP Scope</h2>
+    <h2>2. Planner 新职责边界</h2>
 
     <table>
         <tr>
-            <th>Included</th>
-            <th>Not Included Yet</th>
+            <th>职责</th>
+            <th>是否属于 Planner</th>
+            <th>说明</th>
         </tr>
-
         <tr>
-            <td>Stock analysis generation</td>
-            <td>Automatic video rendering</td>
+            <td>行情数据抓取</td>
+            <td><span class="badge badge-core">是</span></td>
+            <td>价格、成交量、市值、52 周区间、估值、财务、分析师数据</td>
         </tr>
-
         <tr>
-            <td>HTML slide generation</td>
-            <td>YouTube upload</td>
+            <td>技术指标计算</td>
+            <td><span class="badge badge-core">是</span></td>
+            <td>RSI、MA20、MA50、布林带、成交量趋势、价格区间位置</td>
         </tr>
-
         <tr>
-            <td>Narration generation</td>
-            <td>Multi-agent orchestration</td>
+            <td>新闻初筛</td>
+            <td><span class="badge badge-core">是</span></td>
+            <td>按 ticker、公司名、主题关键词做相关性过滤</td>
         </tr>
-
         <tr>
-            <td>CLI execution</td>
-            <td>Cloud deployment</td>
+            <td>新闻分类</td>
+            <td><span class="badge badge-change">新增</span></td>
+            <td>earnings / product / regulation / analyst / macro / partnership / insider</td>
         </tr>
-
         <tr>
-            <td>Local browser preview</td>
-            <td>Realtime streaming</td>
+            <td>信号计算</td>
+            <td><span class="badge badge-core">是</span></td>
+            <td>只输出 computed signals，不输出最终投资结论</td>
+        </tr>
+        <tr>
+            <td>最终买入 / 卖出判断</td>
+            <td><span class="badge badge-warn">否</span></td>
+            <td>交给 Synthesis Agent 完成</td>
+        </tr>
+        <tr>
+            <td>目标价解释</td>
+            <td><span class="badge badge-warn">否</span></td>
+            <td>Planner 只提供 analyst target 原始数据</td>
+        </tr>
+        <tr>
+            <td>股票故事线定性</td>
+            <td><span class="badge badge-warn">否</span></td>
+            <td>交给 Narrative Agent 完成</td>
+        </tr>
+        <tr>
+            <td>幻灯片大纲规划</td>
+            <td><span class="badge badge-core">是</span></td>
+            <td>根据 duration 生成结构，但不直接生成内容观点</td>
         </tr>
     </table>
 </div>
 
 <div class="section">
-    <h2>3. System Architecture</h2>
+    <h2>3. 修改后的 Planner 数据流</h2>
 
     <pre>
-User Input
-    ↓
-CLI Harness
-    ↓
-AI Analysis
-    ↓
-slides.json
-    ↓
-HTML Template Renderer
-    ↓
-deck.html
-    ↓
-Browser Playback / OBS Recording
+Stage 1: Planner
+
+Input:
+  ticker / duration / language / market / style
+
+Process:
+  1. Fetch market snapshot
+  2. Fetch price history
+  3. Calculate technical indicators
+  4. Fetch valuation and financial data
+  5. Fetch analyst consensus
+  6. Fetch weekly news
+  7. Filter and classify news
+  8. Generate computed signals
+  9. Generate slide outline
+  10. Export plan.json
+
+Output:
+  plan.json = structured evidence package
 </pre>
+
+    <div class="note">
+        核心原则：Planner 输出“证据包”，不是“投资结论”。
+    </div>
 </div>
 
 <div class="section">
-    <h2>4. Minimal Input</h2>
+    <h2>4. plan.json 新结构建议</h2>
 
     <pre>{
-  "ticker": "NVDA",
-  "market": "US",
-  "language": "zh-CN",
-  "duration_minutes": 6,
-  "style": "professional"
-}</pre>
-</div>
+  "generated_at": "ISO 8601 UTC",
+  "current_date": "YYYY-MM-DD",
 
-<div class="section">
-    <h2>5. Output Files</h2>
+  "input": {
+    "ticker": "NVDA",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
 
-    <pre>
-output/
-├── deck.html
-├── slides.json
-├── narration.txt
-└── metadata.json
-</pre>
-</div>
+  "market_snapshot": {
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "short_description": "...",
 
-<div class="section">
-    <h2>6. Folder Structure</h2>
+    "current_price": 0,
+    "prev_close": 0,
+    "price_change": 0,
+    "price_change_pct": 0,
 
-    <pre>
-stock-video-harness/
-├── input.json
-├── run.py
-├── prompts/
-│   ├── analysis.txt
-│   └── slides.txt
-├── templates/
-│   └── deck.html
-├── output/
-└── assets/
-</pre>
-</div>
+    "market_cap": 0,
+    "market_cap_str": "...",
+    "volume": 0,
+    "avg_volume": 0,
+    "beta": 0,
 
-<div class="section">
-    <h2>7. Core Pipeline</h2>
+    "52w_high": 0,
+    "52w_low": 0,
+    "52w_range_position_pct": 0
+  },
 
-    <pre>
-ticker
-↓
-AI generates stock analysis
-↓
-AI generates narration
-↓
-AI generates slides.json
-↓
-Template engine renders HTML PPT
-↓
-Browser opens deck.html
-</pre>
-</div>
+  "price_history": {
+    "period": "30d",
+    "items": [
+      { "date": "YYYY-MM-DD", "close": 0 }
+    ]
+  },
 
-<div class="section">
-    <h2>8. slides.json Schema</h2>
+  "technical_indicators": {
+    "rsi_14": 0,
+    "rsi_signal": "overbought | neutral | oversold",
 
-    <pre>{
-  "title": "NVDA Weekly Review",
-  "slides": [
+    "ma20": 0,
+    "ma50": 0,
+    "price_vs_ma20_pct": 0,
+    "price_vs_ma50_pct": 0,
+    "ma_signal": "bullish | bearish | mixed",
+
+    "bollinger": {
+      "upper": 0,
+      "middle": 0,
+      "lower": 0
+    },
+
+    "volume_trend": "expanding | stable | shrinking",
+    "technical_notes": [
+      "Price is above MA20",
+      "RSI is neutral",
+      "Volume is expanding"
+    ]
+  },
+
+  "valuation_snapshot": {
+    "pe_trailing": 0,
+    "pe_forward": 0,
+    "peg": 0,
+    "ps_ratio": 0,
+    "pb_ratio": 0,
+    "ev_ebitda": 0
+  },
+
+  "financial_snapshot": {
+    "revenue": 0,
+    "revenue_growth_yoy": 0,
+    "earnings_growth_yoy": 0,
+    "gross_margin": 0,
+    "operating_margin": 0,
+    "profit_margin": 0,
+    "free_cashflow": 0,
+    "roe": 0,
+    "eps_trailing": 0,
+    "eps_forward": 0
+  },
+
+  "analyst_snapshot": {
+    "recommendation": "buy | hold | sell | unknown",
+    "target_mean": 0,
+    "target_high": 0,
+    "target_low": 0,
+    "analyst_count": 0,
+    "upside_pct": 0
+  },
+
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 15,
+    "items": [
+      {
+        "title": "...",
+        "publisher": "...",
+        "published_at": "ISO 8601",
+        "url": "...",
+        "relevance_score": 0.86,
+        "category": "earnings | product | regulation | analyst | macro | insider | partnership | other",
+        "matched_keywords": ["NVDA", "AI chips"],
+        "why_relevant": "This news may affect near-term AI chip demand expectations."
+      }
+    ]
+  },
+
+  "computed_signals": {
+    "technical_sentiment_score": 0,
+    "valuation_pressure": "low | medium | high",
+    "momentum_state": "strong | neutral | weak",
+    "news_intensity": "low | medium | high",
+    "risk_flags": [
+      "High valuation",
+      "Crowded AI trade",
+      "Earnings expectation risk"
+    ],
+    "signal_basis": [
+      "RSI neutral",
+      "Price above MA20",
+      "Analyst upside positive",
+      "Recent news intensity high"
+    ]
+  },
+
+  "slide_outline": [
     {
       "type": "cover",
-      "headline": "Can NVDA Continue Rising?",
-      "subtitle": "AI Leader Analysis"
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and main question of the video.",
+      "required_inputs": ["ticker", "company_name", "current_price"]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent movement.",
+      "required_inputs": ["market_snapshot", "valuation_snapshot"]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using price history and technical indicators.",
+      "required_inputs": ["price_history", "technical_indicators"]
     },
     {
       "type": "key_points",
-      "headline": "Key Takeaways",
-      "bullets": [
-        "Momentum remains strong",
-        "Valuation risk exists",
-        "Earnings are critical"
-      ]
+      "approx_seconds": 90,
+      "goal": "Summarize the strongest bullish and bearish evidence.",
+      "required_inputs": ["computed_signals", "news_evidence_pack"]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": ["financial_snapshot", "valuation_snapshot"]
     },
     {
       "type": "risk",
-      "headline": "Risks",
-      "bullets": [
-        "Market correction",
-        "AI hype cooling",
-        "Weak guidance"
-      ]
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": ["computed_signals.risk_flags", "valuation_snapshot"]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": ["news_evidence_pack", "analyst_snapshot"]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy or sell conclusion.",
+      "required_inputs": ["technical_indicators", "financial_snapshot", "computed_signals"]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the final watchpoints and include disclaimer.",
+      "required_inputs": ["computed_signals", "risk_flags"]
     }
   ]
 }</pre>
 </div>
 
 <div class="section">
-    <h2>9. HTML Rendering Strategy</h2>
+    <h2>5. 关键修改点</h2>
 
+    <h3>5.1 narrative_signals 改为 computed_signals</h3>
     <p>
-        AI should NOT directly generate HTML.
-    </p>
-
-    <p>
-        Correct approach:
+        原来的 <code>narrative_signals</code> 容易让 Planner 过早进入叙事判断。
+        建议改名为 <code>computed_signals</code>，强调这是由数据计算出的辅助信号，而不是最终观点。
     </p>
 
     <pre>
-AI → slides.json
-Program → render HTML template
-</pre>
+Before:
+"narrative_signals": {
+  "sentiment_score": 72,
+  "sentiment_label": "偏强",
+  "risk_level": "medium"
+}
 
+After:
+"computed_signals": {
+  "technical_sentiment_score": 72,
+  "momentum_state": "strong",
+  "valuation_pressure": "high",
+  "signal_basis": [
+    "Price above MA20",
+    "RSI neutral",
+    "Analyst upside positive"
+  ]
+}</pre>
+
+    <h3>5.2 weekly_news 改为 news_evidence_pack</h3>
     <p>
-        Benefits:
+        新闻不应该只是标题列表，而应该是后续 Narrative Agent 的证据输入。
+        因此需要增加分类、相关性说明、匹配关键词和 URL。
     </p>
 
-    <ul>
-        <li>Stable output</li>
-        <li>Reusable templates</li>
-        <li>Easy styling</li>
-        <li>Easy animation upgrades</li>
-        <li>Deterministic rendering</li>
-    </ul>
+    <pre>
+"news_evidence_pack": {
+  "lookback_days": 7,
+  "items": [
+    {
+      "title": "...",
+      "publisher": "...",
+      "published_at": "...",
+      "url": "...",
+      "relevance_score": 0.86,
+      "category": "product",
+      "matched_keywords": ["AI", "GPU", "NVDA"],
+      "why_relevant": "This news may affect AI infrastructure demand expectations."
+    }
+  ]
+}</pre>
+
+    <h3>5.3 slide_outline 增加 goal 和 required_inputs</h3>
+    <p>
+        原本只用 type 和 approx_seconds 容易导致每页内容重复。
+        增加 <code>goal</code> 和 <code>required_inputs</code> 后，每一页的生成目标更明确。
+    </p>
+
+    <pre>
+{
+  "type": "price_action",
+  "approx_seconds": 70,
+  "goal": "Explain recent price behavior using price history and technical indicators.",
+  "required_inputs": ["price_history", "technical_indicators"]
+}</pre>
 </div>
 
 <div class="section">
-    <h2>10. CLI Design</h2>
-
-    <pre>
-python run.py \
-  --ticker NVDA \
-  --duration 6 \
-  --language zh-CN
-</pre>
-
-    <p>
-        Expected output:
-    </p>
-
-    <pre>
-Generated:
-- output/deck.html
-- output/slides.json
-- output/narration.txt
-</pre>
-</div>
-
-<div class="section">
-    <h2>11. Recommended Tech Stack</h2>
+    <h2>6. 对 Generator 的影响</h2>
 
     <table>
         <tr>
-            <th>Layer</th>
-            <th>Technology</th>
+            <th>Agent</th>
+            <th>输入变化</th>
+            <th>预期收益</th>
         </tr>
-
         <tr>
-            <td>Programming</td>
-            <td>Python</td>
+            <td>Fundamental Agent</td>
+            <td>使用 financial_snapshot / valuation_snapshot / analyst_snapshot</td>
+            <td>减少无关市场噪音，聚焦估值与业绩质量</td>
         </tr>
-
         <tr>
-            <td>LLM</td>
-            <td>OpenAI / Anthropic</td>
+            <td>Technical Agent</td>
+            <td>使用 price_history / technical_indicators</td>
+            <td>技术分析更稳定，不依赖 LLM 自行推导指标</td>
         </tr>
-
         <tr>
-            <td>Template Engine</td>
-            <td>Jinja2</td>
+            <td>Narrative Agent</td>
+            <td>使用 news_evidence_pack / computed_signals</td>
+            <td>叙事判断更有证据，降低新闻幻觉</td>
         </tr>
-
         <tr>
-            <td>Charts</td>
-            <td>Chart.js</td>
+            <td>Synthesis Agent</td>
+            <td>使用三份 Agent 输出 + computed_signals</td>
+            <td>最终结论由 Synthesis 统一生成，避免 Planner 提前定调</td>
         </tr>
-
         <tr>
-            <td>Slide Animation</td>
-            <td>Reveal.js</td>
-        </tr>
-
-        <tr>
-            <td>Recording</td>
-            <td>OBS / Playwright</td>
+            <td>Slides Generator</td>
+            <td>使用 slide_outline.goal / required_inputs</td>
+            <td>每页内容更清晰，减少重复表达</td>
         </tr>
     </table>
 </div>
 
 <div class="section">
-    <h2>12. Future Versions</h2>
+    <h2>7. 推荐后的 Planning 代码模块结构</h2>
 
     <pre>
-V1:
-CLI Harness
+harness/
+├── planner.py
+├── planning/
+│   ├── __init__.py
+│   ├── market_fetcher.py       # yfinance 数据抓取
+│   ├── technicals.py           # RSI / MA / Bollinger / volume trend
+│   ├── news_filter.py          # 新闻抓取、过滤、分类
+│   ├── signal_builder.py       # computed_signals 构建
+│   ├── outline_builder.py      # slide_outline 构建
+│   └── schema.py               # plan.json dataclass / pydantic schema
+</pre>
 
-V2:
-HTTP API
+    <p>
+        如果当前项目还处于 V1，可以先保留单文件 <code>planner.py</code>。
+        等逻辑稳定后，再拆成 planning 子模块。
+    </p>
+</div>
 
-V3:
-MCP Tool
+<div class="section">
+    <h2>8. 第一阶段验收标准</h2>
 
-V4:
-Auto Video Rendering
+    <pre>
+输入：
+python run.py --ticker NVDA --duration 9 --skip-eval
 
-V5:
-Autonomous Agent Workflow
+期望：
+✓ output/plan.json 正常生成
+✓ market_snapshot 字段完整
+✓ technical_indicators 字段完整
+✓ news_evidence_pack 至少包含 title / publisher / category / why_relevant
+✓ computed_signals 不包含直接 buy / sell / hold 操作结论
+✓ slide_outline 每一页包含 type / approx_seconds / goal / required_inputs
+✓ Generator 可以基于新 plan.json 正常生成 analysis / narration / slides
 </pre>
 </div>
 
 <div class="section">
-    <h2>13. Skill Integration</h2>
+    <h2>9. 总结</h2>
 
     <p>
-        Skill should:
-    </p>
-
-    <ul>
-        <li>Teach AI how to use the harness</li>
-        <li>Define output schema</li>
-        <li>Define stock review workflow</li>
-        <li>Define prompting conventions</li>
-        <li>Define compliance rules</li>
-    </ul>
-
-    <p>
-        Harness should:
-    </p>
-
-    <ul>
-        <li>Actually execute generation</li>
-        <li>Render HTML</li>
-        <li>Manage files</li>
-        <li>Handle deterministic outputs</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>14. First Milestone</h2>
-
-    <p>
-        Success Criteria:
+        修改后的 Planning 阶段定位为：
     </p>
 
     <pre>
-Input:
-NVDA
-
-Output:
-deck.html opens in browser
-with animated slides
-and usable narration script
+Ticker Input
+   ↓
+Structured Market Evidence
+   ↓
+Computed Signals
+   ↓
+Slide Intent Outline
+   ↓
+Agent-ready plan.json
 </pre>
-</div>
 
-<div class="section">
-    <h2>15. Core Philosophy</h2>
+    <p>
+        这样可以让整个 Harness 更接近产品化流水线：
+        Planner 保证数据稳定，Agent 负责分析判断，Renderer 负责确定性输出。
+    </p>
 
-    <pre>
-Minimal human input
-Maximum AI generation
-Structured intermediate data
-Deterministic rendering
-AI-callable workflow
-</pre>
+    <div class="note">
+        最重要的原则：不要让 Planner 成为“半个分析师”。Planner 应该是数据工程层，而不是投资观点层。
+    </div>
 </div>
 
 </body>

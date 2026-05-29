@@ -1,54 +1,51 @@
-今天是{current_date}。根据以下股票分析内容，生成结构化的幻灯片数据（JSON格式）。禁止在幻灯片文案中引用任何未经数据验证的具体历史日期。
+今天是{current_date}。根据以下股票分析，生成内容丰富的幻灯片JSON数据。
 
 ## 股票信息
 - 代码：{ticker}
 - 公司：{company_name}
 - 语言：{language}
 
-## 幻灯片结构要求
+## 幻灯片结构
 {slide_outline}
 
 ## 分析内容
 {analysis}
 
-## 输出要求
-
-严格按照以下JSON Schema生成数据。每个幻灯片的内容要求：
+## JSON Schema（严格遵守，不得省略必填字段）
 
 ### cover（封面）
-- headline：吸引眼球的大标题问句（15字以内）
-- subtitle：副标题，注明是【本周深度分析】，可加上日期（{current_date}）
+{{"type":"cover","headline":"吸引眼球的问句或悬念标题（15字以内）","subtitle":"本周深度分析·{current_date}","hook":"一句话点出本期最核心矛盾（25字以内，要有张力）"}}
 
 ### market_overview（市场概览）
-- headline：3-5个关键数字要点
-- bullets 中放：价格、涨跌幅、市值、PE等核心数据点
+不需要 bullets，stat卡片由系统注入。
+headline 必须包含至少一个具体数字（价格、PE、涨跌幅、区间位置等），禁止使用"高位""低位""强势"等模糊定性词。
+{{"type":"market_overview","headline":"本周关键数字：$X，PE Xx，区间位置X%","callout":"最值得关注的数据异常或关键信号，必须有具体数字（35字以内）"}}
 
 ### price_action（价格走势）
-- headline：一句话技术面判断
-- bullets：支撑位、阻力位、趋势方向（各1-2条）
+{{"type":"price_action","headline":"一句话技术判断","signal":"bullish或bearish或neutral","bullets":["支撑位：$X（来源：MA50/布林带下轨等）","阻力位：$X（来源：MA20/布林带中轨等）","趋势：具体描述","RSI：数值+含义"]}}
 
 ### key_points（核心要点）
-- headline：本期最重要的3字主题
-- bullets：3-5条核心亮点，每条20字以内
+必须用 points 数组，不要用 bullets。
+{{"type":"key_points","headline":"本期核心主题（6字以内）","points":[{{"title":"要点标题（10字以内）","body":"展开说明，必须含具体数字和逻辑（40字以内）","tag":"bull或bear或neutral"}}]}}
 
-### financials（财务分析，如有）
-- headline：财务健康度一句话总结
-- bullets：关键财务指标
+### financials（财务分析）
+必须用 metrics 数组 + callout，不要用 bullets。
+{{"type":"financials","headline":"财务健康度一句话结论","metrics":[{{"label":"营收增速","value":"+X%","trend":"up或down或flat"}},{{"label":"毛利率","value":"X%","trend":"up或down或flat"}},{{"label":"净利率","value":"X%","trend":"up或down或flat"}},{{"label":"Forward PE","value":"Xx","trend":"up或down或flat"}},{{"label":"自由现金流","value":"$XB或负","trend":"up或down或flat"}},{{"label":"ROE","value":"X%","trend":"up或down或flat"}}],"callout":"最关键的财务风险或亮点，必须有具体数字（30字以内）"}}
 
 ### risk（风险提示）
-- headline：风险等级描述
-- bullets：3-4条具体风险
+必须用 risks 数组，不要用 bullets。
+{{"type":"risk","headline":"风险等级：高或中或低","risks":[{{"title":"风险标题（10字以内）","body":"风险机制说明（40字以内）","severity":"high或medium或low"}}]}}
 
-### catalyst（催化剂，如有）
-- headline：近期催化剂概述
-- bullets：具体事件列表
+### catalyst（催化剂）
+必须用 catalysts 数组。
+{{"type":"catalyst","headline":"催化剂概览（20字以内）","catalysts":[{{"event":"事件名称（15字以内）","direction":"positive或negative","timing":"时间描述（如：下周/Q2末/财报前后）","impact":"large或medium或small"}}]}}
 
 ### outlook（未来展望）
-- headline：方向判断（看多/中性/看空 + 时间维度）
-- bullets：目标价区间、关键节点
+必须包含 base_range + scenario_bull + scenario_bear。
+{{"type":"outlook","headline":"方向判断（看多/中性/看空+时间维度）","subtitle":"看多或中性或看空","base_range":{{"low":"$X","high":"$X","timeframe":"1-4周"}},"scenario_bull":{{"condition":"多头触发条件（20字以内）","target":"目标价如$145"}},"scenario_bear":{{"condition":"空头破位条件（20字以内）","target":"风险价位如$94"}}}}
 
 ### summary（总结）
-- headline：一句话核心结论
-- subtitle：风险提示声明
+{{"type":"summary","headline":"一句话核心结论，要有记忆点（25字以内）","verdict":"bullish或bearish或neutral","action":"操作框架一句话：具体说仓位和等待条件（30字以内）","subtitle":"投资有风险，以上内容仅供参考，不构成任何投资建议。"}}
 
-所有文字使用 {language} 语言，保持专业简洁。
+所有文字使用{language}，禁止引用未经验证的具体历史日期。
+将以上所有幻灯片组合成最终JSON：{{"title":"...","ticker":"{ticker}","slides":[...]}}

@@ -4,10 +4,21 @@
 
 ## 视频参数
 - 股票代码：{ticker}
-- 目标时长：{duration_minutes}分钟（约{word_count}字，请严格控制，不要超过{word_count_max}字）
+- 目标时长：{duration_minutes}分钟
+- **字数硬性要求：最少 {word_count_min} 字，目标 {word_count} 字，最多 {word_count_max} 字**
+- 每个幻灯片段落平均不少于 {word_count_per_slide} 字，不得简短带过
 - 语言：{language}
 - 风格：口播，适配 ElevenLabs TTS 朗读
 - 幻灯片顺序：{slide_types}
+
+## 字数达标策略（必须执行）
+每个要点都要"说透"而不是"点到"：
+1. 先抛出核心结论（1句）
+2. 给出具体数据支撑（1-2句）
+3. 用类比或场景让数字有画面感（1-2句）
+4. 说明这个数据对投资者意味着什么（1-2句）
+5. 过渡到下一个点（1句）
+这是YouTube的节奏，不是研报摘要，要展开说。
 
 ## 分析内容
 {analysis}

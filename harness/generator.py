@@ -60,12 +60,12 @@ def _chat_call(client: OpenAI, system: str, user: str, json_mode: bool = False, 
 
 def _agent_fundamental(client: OpenAI, plan: dict) -> str:
     print("[Agent:Fundamental] Analyzing...")
-    md = plan["market_data"]
+    md = plan["market_snapshot"]
     current_date = plan["current_date"]
     inp = plan["input"]
-    val = md["valuation"]
-    fin = md["financials"]
-    analyst = md["analyst"]
+    val = plan["valuation_snapshot"]
+    fin = plan["financial_snapshot"]
+    analyst = plan["analyst_snapshot"]
 
     prompt = _load_prompt("fundamental").format(
         current_date=current_date,
@@ -110,13 +110,13 @@ def _agent_fundamental(client: OpenAI, plan: dict) -> str:
 
 def _agent_technical(client: OpenAI, plan: dict) -> str:
     print("[Agent:Technical] Analyzing...")
-    md = plan["market_data"]
+    md = plan["market_snapshot"]
     current_date = plan["current_date"]
     inp = plan["input"]
-    tech = md["technical"]
+    tech = plan["technical_indicators"]
 
     # Build price table (last 14 rows for display)
-    history = md.get("price_history", [])[-14:]
+    history = plan["price_history"]["items"][-14:]
     price_table = "\n".join(f"{p['date']}: ${p['close']}" for p in history)
 
     bb = tech.get("bollinger") or {}
@@ -157,19 +157,20 @@ def _agent_technical(client: OpenAI, plan: dict) -> str:
 
 def _agent_narrative(client: OpenAI, plan: dict) -> str:
     print("[Agent:Narrative] Analyzing...")
-    md = plan["market_data"]
+    md = plan["market_snapshot"]
     current_date = plan["current_date"]
     inp = plan["input"]
-    tech = md["technical"]
-    analyst = md["analyst"]
-    ns = plan["narrative_signals"]
+    tech = plan["technical_indicators"]
+    analyst = plan["analyst_snapshot"]
+    ns = plan["computed_signals"]
 
-    # Format weekly news for prompt (show relevance tag for the model)
-    weekly_news = md.get("weekly_news", [])
-    if weekly_news:
+    # Format news evidence pack for prompt — include category and impact hint
+    news_items = plan["news_evidence_pack"].get("items", [])
+    if news_items:
         news_lines = "\n".join(
-            f"- [{n['published_at']}] [{n.get('relevance','?')}] {n['publisher']}: {n['title']}"
-            for n in weekly_news
+            f"- [{n['published_at']}] [{n.get('category', 'other')}] {n['publisher']}: {n['title']}"
+            + (f"\n  → {n['why_relevant']}" if n.get("why_relevant") else "")
+            for n in news_items
         )
     else:
         news_lines = "（本周暂无抓取到新闻，请基于技术和情绪数据进行分析）"
@@ -177,6 +178,7 @@ def _agent_narrative(client: OpenAI, plan: dict) -> str:
     from datetime import date, timedelta
     week_start = (date.fromisoformat(current_date) - timedelta(days=7)).isoformat()
 
+    _momentum_zh = {"strong": "强势", "neutral": "中性", "weak": "弱势"}
     prompt = _load_prompt("narrative").format(
         current_date=current_date,
         week_start=week_start,
@@ -191,15 +193,15 @@ def _agent_narrative(client: OpenAI, plan: dict) -> str:
         rsi_14=tech.get("rsi_14", "N/A"),
         rsi_signal=tech.get("rsi_signal", "N/A"),
         volume_trend=tech.get("volume_trend", "N/A"),
-        sentiment_score=ns.get("sentiment_score", "N/A"),
-        sentiment_label=ns.get("sentiment_label", "N/A"),
+        sentiment_score=ns.get("technical_sentiment_score", "N/A"),
+        sentiment_label=_momentum_zh.get(ns.get("momentum_state", ""), "中性"),
         recommendation=analyst.get("recommendation", "N/A"),
         upside_pct=analyst.get("upside_pct", "N/A"),
         short_interest=md.get("short_interest", "N/A"),
         institutional_pct=md.get("institutional_ownership_pct", "N/A"),
         beta=md.get("beta", "N/A"),
-        key_themes="; ".join(ns.get("key_themes", [])),
-        risk_level=ns.get("risk_level", "N/A"),
+        key_themes="; ".join(ns.get("signal_basis", [])),
+        risk_level="; ".join(ns.get("risk_flags", [])) or "N/A",
         short_description=md.get("short_description", ""),
         weekly_news=news_lines,
     )
@@ -214,7 +216,7 @@ def _agent_narrative(client: OpenAI, plan: dict) -> str:
 
 def _agent_synthesis(client: OpenAI, plan: dict, fundamental: str, technical: str, narrative: str) -> str:
     print("[Agent:Synthesis] Synthesizing all dimensions...")
-    md = plan["market_data"]
+    md = plan["market_snapshot"]
     current_date = plan["current_date"]
     inp = plan["input"]
 
@@ -249,51 +251,160 @@ def _normalize_slides(slides_data: dict) -> dict:
     return slides_data
 
 
+# Per-slide narration instructions (extracted from global prompt, per slide type)
+_SLIDE_NARRATION_INSTRUCTIONS: dict[str, str] = {
+    "cover": (
+        "写30秒的狠Hook（约150字）：\n"
+        "- 以反常识陈述句或悬念问句开场，禁止以'大家好''欢迎收看'开场\n"
+        "- 引发恐惧/好奇/认知冲突，体现本周时效性\n"
+        "- 结尾固定接：'今天我就带你把这周发生的事情掰开揉碎说清楚。'\n"
+        "- Hook结束后，再用2-3句点出股价和核心矛盾"
+    ),
+    "market_overview": (
+        "- 从宏观或行业背景切入，1-2句定性\n"
+        "- 用具体数字说话（价格、涨跌幅、市值、PE），不要形容词堆砌\n"
+        "- 引导观众注意最关键的1个数据异常点\n"
+        "- 用类比让数字有感觉（如：这市值，相当于整个X行业的Y%）"
+    ),
+    "price_action": (
+        "- 引导观众'看图'，描述近期走势特征和形态\n"
+        "- 明确说出支撑位和阻力位的具体价格（不要模糊表达）\n"
+        "- 给出一个明确的技术判断：偏多/偏空/震荡\n"
+        "- 说明触发反转需要满足的具体条件"
+    ),
+    "key_points": (
+        "这是全片核心段，必须写最多字：\n"
+        "- 每个要点单独成段，用'第一点''第二点'引出\n"
+        "- 每个要点：给结论 → 给具体数据 → 用类比或场景 → 说投资含义\n"
+        "- 每个要点结尾用一句金句式总结（要有记忆点）\n"
+        "- 各要点之间有逻辑关联，不要简单罗列"
+    ),
+    "financials": (
+        "- 用比喻让财务数字有画面感（如：这毛利率，比卖茅台还高）\n"
+        "- 触及盈利质量、增长可持续性、现金流三个维度\n"
+        "- 用对比说明（如：同期行业平均是X，它是Y）\n"
+        "- 结尾说明财务数据对估值的含义"
+    ),
+    "risk": (
+        "- 用'但是'或'然而'硬转折引入风险主题\n"
+        "- 每个风险说清楚：是什么 → 为什么有这个风险 → 影响有多大\n"
+        "- 不要只列标题，要说影响机制和传导路径\n"
+        "- 结尾必须是：'知道了风险，才能管好仓位。'（不要劝退）"
+    ),
+    "catalyst": (
+        "- 说明具体时间节点（下周/本季度末/财报前后）\n"
+        "- 每个催化剂说明潜在影响量级（小/中/大）及理由\n"
+        "- 区分正向和负向催化剂，各自展开说"
+    ),
+    "outlook": (
+        "- 给出明确的短期区间（1-4周的价格区间上下限）\n"
+        "- 给出中期目标价（3-6个月）和触发条件\n"
+        "- 区分多头和空头各自的入场/出场逻辑\n"
+        "- 结尾一句话定性：看多/中性/谨慎"
+    ),
+    "summary": (
+        "- 一句话核心结论，要有记忆点，像金句\n"
+        "- 提醒仓位管理（1句，具体说多少仓位合适）\n"
+        "- 引导点赞订阅不超过2句，要自然不硬推\n"
+        "- 最后一句必须是：'投资有风险，以上内容仅供参考，不构成任何投资建议。'"
+    ),
+}
+
+
+def _generate_slide_narration(
+    client: OpenAI,
+    plan: dict,
+    synthesis: str,
+    slide: dict,
+    target_chars: int,
+) -> str:
+    """Generate narration for a single slide with its own word-count target."""
+    md = plan["market_snapshot"]
+    current_date = plan["current_date"]
+    inp = plan["input"]
+
+    slide_type = slide["type"]
+    slide_goal = slide.get("goal", f"展开讲解 {slide_type} 相关内容")
+    min_chars = int(target_chars * 0.85)
+    max_chars = int(target_chars * 1.15)
+    instructions = _SLIDE_NARRATION_INSTRUCTIONS.get(slide_type, "展开说明本幻灯片的内容，要说透而不是点到。")
+
+    prompt_tpl = _load_prompt("narration_slide")
+    user_msg = prompt_tpl.format(
+        current_date=current_date,
+        ticker=md["ticker"],
+        slide_type=slide_type,
+        slide_goal=slide_goal,
+        target_chars=target_chars,
+        min_chars=min_chars,
+        max_chars=max_chars,
+        language=inp["language"],
+        analysis=synthesis,
+        slide_instructions=instructions,
+    )
+
+    system = (
+        f"你是中文YouTube顶级财经主播，今天是{current_date}。"
+        "以强Hook、高retention著称。稿子适配ElevenLabs TTS，"
+        "句子短促有力，数字用中文读法。"
+        "禁止引用训练数据中的具体历史日期。"
+    )
+
+    # Use reasoner for high-stakes slides, chat for data/summary slides
+    if slide_type in ("cover", "key_points", "risk"):
+        return _stream_call(client, system, user_msg, model=MODEL_REASONER)
+    return _chat_call(client, system, user_msg, model=MODEL_CHAT)
+
+
 def generate_narration(client: OpenAI, plan: dict, synthesis: str) -> str:
-    print("[Generator] Generating narration script...")
-    md = plan["market_data"]
+    print("[Generator] Generating narration per slide (parallel)...")
     inp = plan["input"]
     outline = plan["slide_outline"]
     current_date = plan["current_date"]
 
     chars_per_minute = 350 if inp["language"].startswith("zh") else 140
-    word_count = chars_per_minute * inp["duration_minutes"]
-    word_count_max = int(word_count * 1.15)
-    slide_types = ", ".join(s["type"] for s in outline)
+    total_chars = chars_per_minute * inp["duration_minutes"]
+    total_seconds = sum(s.get("approx_seconds", 60) for s in outline)
 
-    prompt_tpl = _load_prompt("narration")
-    user_msg = prompt_tpl.format(
-        current_date=current_date,
-        ticker=md["ticker"],
-        duration_minutes=inp["duration_minutes"],
-        word_count=word_count,
-        word_count_max=word_count_max,
-        language=inp["language"],
-        style=inp["style"],
-        slide_types=slide_types,
-        analysis=synthesis,
-    )
+    def _target(slide: dict) -> int:
+        secs = slide.get("approx_seconds", 60)
+        return max(150, int(total_chars * secs / total_seconds))
 
-    system = (
-        f"你是中文YouTube顶级财经主播，今天是{current_date}。"
-        "以强Hook、高retention、节奏紧凑著称。"
-        "稿子适配ElevenLabs TTS朗读，句子短促有力，数字用中文读法。"
-        "禁止引用训练数据中的具体历史日期，所有日期信息来自提供的分析内容。"
-    )
-    result = _stream_call(client, system, user_msg)
-    print("[Generator] Narration complete.")
-    return result
+    slide_results: dict[str, str] = {}
+
+    def _gen(slide: dict) -> tuple[str, str]:
+        chars = _target(slide)
+        text = _generate_slide_narration(client, plan, synthesis, slide, chars)
+        print(f"[Narration:{slide['type']}] {len(text)}字 (目标{chars}字)")
+        return slide["type"], text
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {executor.submit(_gen, s): s for s in outline}
+        for future in as_completed(futures):
+            stype, text = future.result()
+            slide_results[stype] = text
+
+    # Reassemble in outline order
+    parts = [
+        f"[幻灯片: {s['type']}]\n{slide_results.get(s['type'], '')}"
+        for s in outline
+    ]
+    full = "\n\n".join(parts)
+    total = sum(len(t) for t in slide_results.values())
+    print(f"[Generator] Narration complete. {total}字 ≈ {total/chars_per_minute:.1f}分钟")
+    return full
 
 
 def generate_slides(client: OpenAI, plan: dict, synthesis: str) -> dict:
     print("[Generator] Generating slides JSON...")
-    md = plan["market_data"]
+    md = plan["market_snapshot"]
     inp = plan["input"]
     outline = plan["slide_outline"]
     current_date = plan["current_date"]
 
     slide_outline_str = "\n".join(
-        f"- {s['type']}（约{s['approx_seconds']}秒）" for s in outline
+        f"- {s['type']}（约{s['approx_seconds']}秒）：{s.get('goal', '')}"
+        for s in outline
     )
 
     prompt_tpl = _load_prompt("slides")
@@ -307,11 +418,13 @@ def generate_slides(client: OpenAI, plan: dict, synthesis: str) -> dict:
     )
 
     system = (
-        "你是专业的演示文稿设计师，今天是{current_date}。"
-        "请严格以合法的JSON格式返回结果，包含 title、ticker、slides 三个字段。"
-        "slides 必须是一个数组（array），每个元素包含 type 和 headline 字段。"
-        "示例：{{\"title\": \"...\", \"ticker\": \"...\", \"slides\": [{{\"type\": \"cover\", \"headline\": \"...\"}}]}}"
-    ).format(current_date=current_date)
+        f"你是专业的财经演示文稿设计师，今天是{current_date}。"
+        "严格按照 prompt 中定义的 JSON Schema 生成每张幻灯片，"
+        "key_points 必须用 points 数组，financials 必须用 metrics 数组，"
+        "risk 必须用 risks 数组，catalyst 必须用 catalysts 数组，"
+        "outlook 必须包含 base_range / scenario_bull / scenario_bear。"
+        "返回合法 JSON，根字段为 title、ticker、slides（array）。"
+    )
 
     raw = _chat_call(client, system, user_msg, json_mode=True)
     slides_data = json.loads(raw)

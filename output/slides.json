@@ -1,85 +1,167 @@
 {
-  "title": "NVIDIA (NVDA) 股票深度分析",
-  "ticker": "NVDA",
+  "title": "Circle Internet Group 综合股票点评",
+  "ticker": "CRCL",
   "slides": [
     {
       "type": "cover",
-      "headline": "NVDA 战略买入区已到？",
-      "subtitle": "【本周深度分析】2026-05-27"
+      "headline": "CRCL：等待催化剂打破僵局？",
+      "subtitle": "本周深度分析·2026-05-28",
+      "hook": "基本面偏空 vs 技术面支撑，僵持中"
     },
     {
       "type": "market_overview",
-      "headline": "核心数据亮点",
-      "bullets": [
-        "股价：$202.15",
-        "周涨幅：-3.2%",
-        "市值：5.1万亿美元",
-        "前瞻P/E：16.8倍",
-        "PEG：0.66"
-      ]
+      "headline": "$108.24  +5.46%  ·  PE 48.52x  ·  52W区间 23.4%",
+      "callout": "前瞻PE 48.5倍，PEG 4.34，估值严重脱离盈利"
     },
     {
       "type": "price_action",
-      "headline": "短期震荡偏空，中期趋势完好",
+      "headline": "窄幅震荡，等待方向突破",
+      "signal": "neutral",
       "bullets": [
-        "支撑位：$198 (MA50)",
-        "阻力位：$225 (近期高点)",
-        "趋势：跌破MA20，MA50上行"
+        "支撑位：$106.32（MA50）",
+        "阻力位：$113.5（MA20/布林带中轨）",
+        "趋势：均线死叉，成交量萎缩，布林带弱势区",
+        "RSI：48.9，中性偏弱"
       ]
     },
     {
       "type": "key_points",
-      "headline": "三维共振",
-      "bullets": [
-        "基本面低估：PEG仅0.66",
-        "AI链主地位稳固",
-        "机构持仓70.8%",
-        "空头比例仅1.2%",
-        "短期技术面回调"
+      "headline": "核心逻辑",
+      "points": [
+        {
+          "title": "USDC基本盘",
+          "body": "宏观赛道（稳定币）具备长期潜力，但尚未兑现利润",
+          "tag": "bull"
+        },
+        {
+          "title": "技术面支撑",
+          "body": "MA50（106.32）和机构持仓63.4%提供底部支撑",
+          "tag": "bull"
+        },
+        {
+          "title": "盈利质量恶化",
+          "body": "EBITDA为负、净利率-2.8%，主营不盈利",
+          "tag": "bear"
+        },
+        {
+          "title": "监管风险未明",
+          "body": "限制性法规可能压制商业模式和增长",
+          "tag": "bear"
+        }
       ]
     },
     {
       "type": "financials",
-      "headline": "盈利增速远超估值，财务健康",
-      "bullets": [
-        "营收同比增长：214.5%",
-        "净利润率：55%",
-        "自由现金流：强劲",
-        "负债率：低"
-      ]
+      "headline": "财务健康度弱，估值严重超前",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "+20%",
+          "trend": "up"
+        },
+        {
+          "label": "毛利率",
+          "value": "8.1%",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "-2.8%",
+          "trend": "down"
+        },
+        {
+          "label": "Forward PE",
+          "value": "48.5x",
+          "trend": "up"
+        },
+        {
+          "label": "自由现金流",
+          "value": "负",
+          "trend": "down"
+        },
+        {
+          "label": "ROE",
+          "value": "负",
+          "trend": "down"
+        }
+      ],
+      "callout": "EV/EBITDA为-190.46，高估值缺乏盈利支撑"
     },
     {
       "type": "risk",
-      "headline": "中等风险，关注关键支撑",
-      "bullets": [
-        "短期跌破MA50风险",
-        "增速放缓致PEG回升",
-        "宏观系统性回调（Beta 2.24）",
-        "竞争叙事或悲观情绪"
+      "headline": "风险等级：高",
+      "risks": [
+        {
+          "title": "盈利恶化",
+          "body": "若营收增速下滑而成本未改善，估值体系崩塌",
+          "severity": "high"
+        },
+        {
+          "title": "负面监管",
+          "body": "限制性法规落地，直接压制USDC业务增长",
+          "severity": "high"
+        },
+        {
+          "title": "技术破位",
+          "body": "有效跌破MA50可能触发机构止损，打开下行空间",
+          "severity": "medium"
+        }
       ]
     },
     {
       "type": "catalyst",
-      "headline": "AI需求扩散，生态持续强化",
-      "bullets": [
-        "AI产业链业绩共振",
-        "汽车、机器人新叙事",
-        "产品迭代预期"
+      "headline": "催化剂：等待事件打破僵局",
+      "catalysts": [
+        {
+          "event": "监管政策落地",
+          "direction": "positive",
+          "timing": "近期",
+          "impact": "large"
+        },
+        {
+          "event": "财报超预期",
+          "direction": "positive",
+          "timing": "下季度",
+          "impact": "large"
+        },
+        {
+          "event": "技术形态突破",
+          "direction": "positive",
+          "timing": "任何时间",
+          "impact": "medium"
+        },
+        {
+          "event": "负面监管消息",
+          "direction": "negative",
+          "timing": "任何时间",
+          "impact": "large"
+        }
       ]
     },
     {
       "type": "outlook",
-      "headline": "中期看多，短期等待回调",
-      "bullets": [
-        "目标价：$225-$235",
-        "关键节点：MA50支撑$198",
-        "策略：逢低吸纳，严格止损"
-      ]
+      "headline": "中性，等待方向信号",
+      "subtitle": "中性",
+      "base_range": {
+        "low": "$106",
+        "high": "$114",
+        "timeframe": "1-4周"
+      },
+      "scenario_bull": {
+        "condition": "放量突破MA20（113.5）",
+        "target": "$124 (前高阻力)"
+      },
+      "scenario_bear": {
+        "condition": "有效跌破MA50（106.32）",
+        "target": "$95 (布林带下轨)"
+      }
     },
     {
       "type": "summary",
-      "headline": "NVDA基本面强劲，建议在$198附近布局",
-      "subtitle": "风险提示：投资有风险，入市需谨慎。本报告不构成投资建议。"
+      "headline": "僵持阶段，等待突破信号",
+      "verdict": "neutral",
+      "action": "建议空仓观望，突破113.5或106.32再决定方向",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。"
     }
   ]
 }

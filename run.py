@@ -23,6 +23,16 @@ def save_text(text: str, path: Path) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def make_tts_narration(narration: str) -> str:
+    """Strip slide markers and clean up for ElevenLabs TTS input."""
+    import re
+    # Remove [幻灯片: xxx] markers
+    text = re.sub(r'\[幻灯片: \w+\]\n?', '', narration)
+    # Collapse 3+ blank lines into 2 (natural paragraph pause)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    return text.strip()
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AI Stock Review Video Harness")
     parser.add_argument("--ticker", required=True, help="Stock ticker symbol (e.g. NVDA)")
@@ -59,7 +69,7 @@ def main() -> None:
     save_text(gen_result.get("narrative_analysis", ""), OUTPUT_DIR / "analysis_narrative.txt")
     save_text(gen_result["analysis"], OUTPUT_DIR / "analysis_synthesis.txt")
     save_text(gen_result["narration"], OUTPUT_DIR / "narration.txt")
-    save_json(gen_result["slides"], OUTPUT_DIR / "slides.json")
+    save_text(make_tts_narration(gen_result["narration"]), OUTPUT_DIR / "narration_tts.txt")
 
     # Stage 3: Evaluate
     if not args.skip_eval:
@@ -74,9 +84,12 @@ def main() -> None:
     else:
         eval_report = {"score": -1, "passed": True, "skipped": True}
 
-    # Stage 4: Render
+    # Stage 4: Render — renderer patches slides in-place (e.g. market_overview headline)
     deck_path = OUTPUT_DIR / "deck.html"
     renderer.run(plan, gen_result["slides"], deck_path)
+
+    # Save slides.json AFTER renderer so the file reflects patched values
+    save_json(gen_result["slides"], OUTPUT_DIR / "slides.json")
 
     # Metadata
     metadata = {
@@ -94,7 +107,8 @@ def main() -> None:
     print("  Generated:")
     print(f"  - output/deck.html")
     print(f"  - output/slides.json")
-    print(f"  - output/narration.txt")
+    print(f"  - output/narration.txt        (含幻灯片标注，供对照)")
+    print(f"  - output/narration_tts.txt    (纯净版，直接送 ElevenLabs)")
     print(f"  - output/analysis_fundamental.txt")
     print(f"  - output/analysis_technical.txt")
     print(f"  - output/analysis_narrative.txt")

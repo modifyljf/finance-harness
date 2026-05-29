@@ -53,7 +53,7 @@ def validate_narration_length(narration: str, duration_minutes: int, language: s
 
 
 def llm_judge(client: OpenAI, plan: dict, analysis: str, narration: str, slides_data: dict) -> dict:
-    ticker = plan["market_data"]["ticker"]
+    ticker = plan["market_snapshot"]["ticker"]
     language = plan["input"]["language"]
     slide_count = len(slides_data.get("slides", []))
 
