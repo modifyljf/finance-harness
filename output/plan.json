@@ -1,234 +1,245 @@
 {
-  "generated_at": "2026-05-29T03:15:14.618571+00:00",
-  "current_date": "2026-05-28",
+  "generated_at": "2026-05-29T04:55:53.807940+00:00",
+  "current_date": "2026-05-29",
   "input": {
-    "ticker": "CRCL",
+    "ticker": "NVDA",
     "market": "US",
     "language": "zh-CN",
-    "duration_minutes": 10,
+    "duration_minutes": 6,
     "style": "professional"
   },
   "market_snapshot": {
-    "ticker": "CRCL",
-    "company_name": "Circle Internet Group",
-    "sector": "Financial Services",
-    "industry": "Capital Markets",
-    "short_description": "Circle Internet Group, Inc. operates as a platform, network, and market infrastructure for stablecoin and blockchain applications. The company provides various platform including Arc Blockchain and Developer Infrastructure, an open, layer-1 blockchain network purpose-built to bring real world economic activity onchain; Circle Digital Assets and Services, which includes circle digital assets, USDC,",
-    "current_price": 108.24,
-    "prev_close": 102.64,
-    "price_change": 5.6,
-    "price_change_pct": 5.46,
-    "market_cap": 28931543040,
-    "market_cap_str": "$28.93B",
-    "volume": 11693435,
-    "avg_volume": 16955432,
-    "beta": null,
-    "52w_high": 298.99,
-    "52w_low": 49.9,
-    "52w_range_position_pct": 23.4,
-    "short_interest": 8.0,
-    "institutional_ownership_pct": 63.4
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "short_description": "NVIDIA Corporation operates as a data center scale AI infrastructure company. The company operates through two segments, Compute & Networking, and Graphics segments. The Compute & Networking segment provides data center accelerated computing and networking platforms and artificial intelligence solutions and software, and automotive platforms and autonomous and electric vehicle solutions, including",
+    "current_price": 214.25,
+    "prev_close": 212.6,
+    "price_change": 1.65,
+    "price_change_pct": 0.78,
+    "market_cap": 5189349146624,
+    "market_cap_str": "$5.19T",
+    "volume": 141557394,
+    "avg_volume": 164380275,
+    "beta": 2.244,
+    "52w_high": 236.54,
+    "52w_low": 132.92,
+    "52w_range_position_pct": 78.5,
+    "short_interest": 1.3,
+    "institutional_ownership_pct": 70.8
   },
   "price_history": {
     "period": "30d",
     "items": [
       {
         "date": "2026-04-16",
-        "close": 107.46
+        "close": 198.35
       },
       {
         "date": "2026-04-17",
-        "close": 105.91
+        "close": 201.68
       },
       {
         "date": "2026-04-20",
-        "close": 106.36
+        "close": 202.06
       },
       {
         "date": "2026-04-21",
-        "close": 96.02
+        "close": 199.88
       },
       {
         "date": "2026-04-22",
-        "close": 104.36
+        "close": 202.5
       },
       {
         "date": "2026-04-23",
-        "close": 100.01
+        "close": 199.64
       },
       {
         "date": "2026-04-24",
-        "close": 99.66
+        "close": 208.27
       },
       {
         "date": "2026-04-27",
-        "close": 95.44
+        "close": 216.61
       },
       {
         "date": "2026-04-28",
-        "close": 94.35
+        "close": 213.17
       },
       {
         "date": "2026-04-29",
-        "close": 95.56
+        "close": 209.25
       },
       {
         "date": "2026-04-30",
-        "close": 90.88
+        "close": 199.57
       },
       {
         "date": "2026-05-01",
-        "close": 99.7
+        "close": 198.45
       },
       {
         "date": "2026-05-04",
-        "close": 119.53
+        "close": 198.48
       },
       {
         "date": "2026-05-05",
-        "close": 114.19
+        "close": 196.5
       },
       {
         "date": "2026-05-06",
-        "close": 121.8
+        "close": 207.83
       },
       {
         "date": "2026-05-07",
-        "close": 113.25
+        "close": 211.5
       },
       {
         "date": "2026-05-08",
-        "close": 113.67
+        "close": 215.2
       },
       {
         "date": "2026-05-11",
-        "close": 131.76
+        "close": 219.44
       },
       {
         "date": "2026-05-12",
-        "close": 123.65
+        "close": 220.78
       },
       {
         "date": "2026-05-13",
-        "close": 126.57
+        "close": 225.83
       },
       {
         "date": "2026-05-14",
-        "close": 123.88
+        "close": 235.74
       },
       {
         "date": "2026-05-15",
-        "close": 114.0
+        "close": 225.32
       },
       {
         "date": "2026-05-18",
-        "close": 111.39
+        "close": 222.32
       },
       {
         "date": "2026-05-19",
-        "close": 111.03
+        "close": 220.61
       },
       {
         "date": "2026-05-20",
-        "close": 111.62
+        "close": 223.47
       },
       {
         "date": "2026-05-21",
-        "close": 114.88
+        "close": 219.51
       },
       {
         "date": "2026-05-22",
-        "close": 113.12
+        "close": 215.33
       },
       {
         "date": "2026-05-26",
-        "close": 104.17
+        "close": 214.86
       },
       {
         "date": "2026-05-27",
-        "close": 102.64
+        "close": 212.6
       },
       {
         "date": "2026-05-28",
-        "close": 108.24
+        "close": 214.25
       }
     ]
   },
   "technical_indicators": {
-    "rsi_14": 48.9,
+    "rsi_14": 52.6,
     "rsi_signal": "neutral",
-    "ma20": 113.5,
-    "ma50": 106.32,
+    "ma20": 214.88,
+    "ma50": 198.73,
     "bollinger": {
-      "upper": 132.32,
-      "middle": 113.5,
-      "lower": 94.67
+      "upper": 235.28,
+      "middle": 214.88,
+      "lower": 194.48
     },
-    "volume_trend": "shrinking",
+    "volume_trend": "stable",
     "ma_signal": "mixed",
-    "price_vs_ma20_pct": -4.6,
-    "price_vs_ma50_pct": 1.8
+    "price_vs_ma20_pct": -0.3,
+    "price_vs_ma50_pct": 7.8
   },
   "valuation_snapshot": {
-    "pe_trailing": null,
-    "pe_forward": 48.52,
-    "peg": 4.34,
-    "ps_ratio": 10.11,
-    "pb_ratio": 7.82,
-    "ev_ebitda": -190.46
+    "pe_trailing": 32.81,
+    "pe_forward": 16.93,
+    "peg": 0.66,
+    "ps_ratio": 20.47,
+    "pb_ratio": 33.1,
+    "ev_ebitda": 31.08
   },
   "financial_snapshot": {
-    "revenue": 2862202112,
-    "revenue_growth_yoy": 20.0,
-    "earnings_growth_yoy": -80.9,
-    "gross_margin": 8.1,
-    "operating_margin": 6.5,
-    "profit_margin": -2.8,
-    "free_cashflow": -141372752,
-    "roe": -3.0,
-    "eps_trailing": -0.23,
-    "eps_forward": 2.23096
+    "revenue": 253491003392,
+    "revenue_growth_yoy": 85.2,
+    "earnings_growth_yoy": 214.5,
+    "gross_margin": 74.1,
+    "operating_margin": 65.6,
+    "profit_margin": 63.0,
+    "free_cashflow": 46335873024,
+    "roe": 114.3,
+    "eps_trailing": 6.53,
+    "eps_forward": 12.6575
   },
   "analyst_snapshot": {
-    "recommendation": "Buy",
-    "target_mean": 145.80228,
-    "target_high": 243.0,
-    "target_low": 65.0,
-    "analyst_count": 22,
-    "upside_pct": 34.7
+    "recommendation": "Strong Buy",
+    "target_mean": 296.81033,
+    "target_high": 500.0,
+    "target_low": 180.0,
+    "analyst_count": 58,
+    "upside_pct": 38.5
   },
   "news_evidence_pack": {
     "lookback_days": 7,
     "max_items": 15,
     "items": [
       {
-        "title": "Wall Street bank predicts $1 trillion boom after IPOs",
+        "title": "5-star analyst sets jaw-dropping Nvidia stock price target",
         "publisher": "TheStreet",
-        "published_at": "2026-05-27 20:59",
-        "category": "regulation",
-        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "published_at": "2026-05-29 01:37",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
         "matched_keywords": [
-          "CRCL"
+          "nvidia"
+        ],
+        "relevance_score": 0.67
+      },
+      {
+        "title": "Samsung Electronics ships faster HBM4E chip samples to customers; shares jump",
+        "publisher": "Reuters",
+        "published_at": "2026-05-29 02:30",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
         ],
         "relevance_score": 0.33
       }
     ]
   },
   "computed_signals": {
-    "as_of_date": "2026-05-28",
-    "technical_sentiment_score": 57.1,
+    "as_of_date": "2026-05-29",
+    "technical_sentiment_score": 74.4,
     "momentum_state": "neutral",
-    "valuation_pressure": "high",
+    "valuation_pressure": "medium",
     "news_intensity": "low",
     "risk_flags": [
-      "Elevated valuation multiples — multiple compression risk"
+      "High volatility (Beta 2.2)"
     ],
     "signal_basis": [
-      "RSI 48.9 (neutral)",
+      "RSI 52.6 (neutral)",
       "MA signal: mixed",
-      "Volume trend: shrinking",
-      "52W range position: 23.4%",
-      "Analyst upside: 34.7%"
+      "Volume trend: stable",
+      "52W range position: 78.5%",
+      "Analyst upside: 38.5%"
     ]
   },
   "slide_outline": [
@@ -285,15 +296,6 @@
       "required_inputs": [
         "computed_signals.risk_flags",
         "valuation_snapshot"
-      ]
-    },
-    {
-      "type": "catalyst",
-      "approx_seconds": 70,
-      "goal": "Identify near-term events or narratives that may move the stock.",
-      "required_inputs": [
-        "news_evidence_pack",
-        "analyst_snapshot"
       ]
     },
     {

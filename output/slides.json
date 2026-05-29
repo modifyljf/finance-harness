@@ -1,166 +1,155 @@
 {
-  "title": "Circle Internet Group 综合股票点评",
+  "title": "Circle Internet Group 深度分析",
   "ticker": "CRCL",
   "slides": [
     {
       "type": "cover",
-      "headline": "CRCL：等待催化剂打破僵局？",
-      "subtitle": "本周深度分析·2026-05-28",
-      "hook": "基本面偏空 vs 技术面支撑，僵持中"
+      "headline": "CRCL：拉锯战中的机会？",
+      "subtitle": "本周深度分析·2026-05-29",
+      "hook": "利好叙事 vs 风险现实，等待突破信号"
     },
     {
       "type": "market_overview",
       "headline": "$108.24  +5.46%  ·  PE 48.52x  ·  52W区间 23.4%",
-      "callout": "前瞻PE 48.5倍，PEG 4.34，估值严重脱离盈利"
+      "callout": "成交量萎缩至30日均值60%，观望情绪浓厚"
     },
     {
       "type": "price_action",
-      "headline": "窄幅震荡，等待方向突破",
+      "headline": "区间震荡，方向待定",
       "signal": "neutral",
       "bullets": [
-        "支撑位：$106.32（MA50）",
-        "阻力位：$113.5（MA20/布林带中轨）",
-        "趋势：均线死叉，成交量萎缩，布林带弱势区",
-        "RSI：48.9，中性偏弱"
+        "支撑位：$106.3（来源：MA50）",
+        "阻力位：$113.5（来源：MA20/布林中轨）",
+        "趋势：30日区间$102.6-$113.5，振幅10.6%",
+        "RSI：51，中性偏弱"
       ]
     },
     {
       "type": "key_points",
-      "headline": "核心逻辑",
+      "headline": "核心逻辑 vs 风险",
       "points": [
         {
-          "title": "USDC基本盘",
-          "body": "宏观赛道（稳定币）具备长期潜力，但尚未兑现利润",
+          "title": "万亿美元叙事",
+          "body": "区块链基础设施长期潜力，USDC先行者优势，支撑估值",
           "tag": "bull"
         },
         {
-          "title": "技术面支撑",
-          "body": "MA50（106.32）和机构持仓63.4%提供底部支撑",
+          "title": "机构重仓托底",
+          "body": "63.4%机构持股，为股价提供下限支撑",
           "tag": "bull"
         },
         {
-          "title": "盈利质量恶化",
-          "body": "EBITDA为负、净利率-2.8%，主营不盈利",
-          "tag": "bear"
-        },
-        {
-          "title": "监管风险未明",
-          "body": "限制性法规可能压制商业模式和增长",
+          "title": "盈利无法兑现",
+          "body": "EV/EBITDA为负，若EPS不达预期，估值下修风险40%",
           "tag": "bear"
         }
       ]
     },
     {
       "type": "financials",
-      "headline": "财务健康度弱，估值严重超前",
+      "headline": "高增长低盈利，估值承压",
       "metrics": [
         {
           "label": "营收增速",
-          "value": "+20%",
+          "value": "+102%",
           "trend": "up"
         },
         {
           "label": "毛利率",
-          "value": "8.1%",
+          "value": "88%",
           "trend": "flat"
         },
         {
           "label": "净利率",
-          "value": "-2.8%",
+          "value": "-12%",
           "trend": "down"
         },
         {
           "label": "Forward PE",
           "value": "48.5x",
-          "trend": "up"
+          "trend": "flat"
         },
         {
           "label": "自由现金流",
-          "value": "负",
-          "trend": "down"
+          "value": "$2.1B",
+          "trend": "up"
         },
         {
           "label": "ROE",
-          "value": "负",
+          "value": "-15%",
           "trend": "down"
         }
       ],
-      "callout": "EV/EBITDA为-190.46，高估值缺乏盈利支撑"
+      "callout": "净利率为负，高估值需盈利验证，风险点"
     },
     {
       "type": "risk",
-      "headline": "风险等级：高",
+      "headline": "风险等级：中",
       "risks": [
         {
-          "title": "盈利恶化",
-          "body": "若营收增速下滑而成本未改善，估值体系崩塌",
+          "title": "盈利miss风险",
+          "body": "EPS预期从$-0.23到$2.23，若未兑现，下行40%",
           "severity": "high"
         },
         {
-          "title": "负面监管",
-          "body": "限制性法规落地，直接压制USDC业务增长",
+          "title": "监管黑天鹅",
+          "body": "USDC受监管打击，动摇商业模式基础",
           "severity": "high"
         },
         {
-          "title": "技术破位",
-          "body": "有效跌破MA50可能触发机构止损，打开下行空间",
+          "title": "降息压缩利润",
+          "body": "核心收入依赖利息，降息直接压缩息差",
           "severity": "medium"
         }
       ]
     },
     {
       "type": "catalyst",
-      "headline": "催化剂：等待事件打破僵局",
+      "headline": "催化剂：监管动态与利率决议",
       "catalysts": [
         {
-          "event": "监管政策落地",
-          "direction": "positive",
-          "timing": "近期",
+          "event": "稳定币监管法案",
+          "direction": "negative",
+          "timing": "Q3 2026",
           "impact": "large"
         },
         {
-          "event": "财报超预期",
-          "direction": "positive",
-          "timing": "下季度",
-          "impact": "large"
-        },
-        {
-          "event": "技术形态突破",
-          "direction": "positive",
-          "timing": "任何时间",
+          "event": "美联储降息预期",
+          "direction": "negative",
+          "timing": "9月会议",
           "impact": "medium"
         },
         {
-          "event": "负面监管消息",
-          "direction": "negative",
-          "timing": "任何时间",
-          "impact": "large"
+          "event": "USDC市场份额变化",
+          "direction": "positive",
+          "timing": "持续关注",
+          "impact": "medium"
         }
       ]
     },
     {
       "type": "outlook",
-      "headline": "中性，等待方向信号",
+      "headline": "中性，等待区间突破",
       "subtitle": "中性",
       "base_range": {
-        "low": "$106",
-        "high": "$114",
+        "low": "$102.6",
+        "high": "$113.5",
         "timeframe": "1-4周"
       },
       "scenario_bull": {
-        "condition": "放量突破MA20（113.5）",
-        "target": "$124 (前高阻力)"
+        "condition": "放量突破$113.5",
+        "target": "$145"
       },
       "scenario_bear": {
-        "condition": "有效跌破MA50（106.32）",
-        "target": "$95 (布林带下轨)"
+        "condition": "放量跌破$102.6",
+        "target": "$94"
       }
     },
     {
       "type": "summary",
-      "headline": "僵持阶段，等待突破信号",
+      "headline": "观望，等待$113.5或$102.6突破信号",
       "verdict": "neutral",
-      "action": "建议空仓观望，突破113.5或106.32再决定方向",
+      "action": "建议空仓观望，突破确认后跟随",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。"
     }
   ]

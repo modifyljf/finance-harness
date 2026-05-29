@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-29T03:16:19.713672+00:00",
+  "generated_at": "2026-05-29T04:53:55.109395+00:00",
   "ticker": "CRCL",
-  "duration_minutes": 10,
+  "duration_minutes": 6,
   "language": "zh-CN",
-  "eval_score": -1,
+  "eval_score": 75,
   "eval_passed": true,
   "slide_count": 9
 }

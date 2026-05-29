@@ -311,14 +311,39 @@ _SLIDE_NARRATION_INSTRUCTIONS: dict[str, str] = {
 }
 
 
+_POSITION_RULE_FIRST = (
+    "这是视频的第一段（cover/hook）。\n"
+    "必须以反常识陈述句或悬念问句开场，制造张力。\n"
+    "可以引入股票代码和核心矛盾。\n"
+    "结尾用：'今天我就带你把这周发生的事情掰开揉碎说清楚。'"
+)
+
+_POSITION_RULE_MIDDLE = (
+    "这是视频的中间段，前面已经介绍过股票和日期。\n"
+    "绝对禁止：\n"
+    "  × '大家好' '朋友们' '欢迎收看' 等问候语\n"
+    "  × 重新介绍股票代码、公司名称、今天日期\n"
+    "  × 任何'开场白'式的引入句\n"
+    "直接承接上一段节奏展开本段内容，用一句承上启下的话作为段首。"
+)
+
+_POSITION_RULE_LAST = (
+    "这是视频的最后一段（summary）。\n"
+    "绝对禁止重复问候语和股票介绍。\n"
+    "直接收束全片，给出核心结论，引导点赞订阅，结尾必须有免责声明。"
+)
+
+
 def _generate_slide_narration(
     client: OpenAI,
     plan: dict,
     synthesis: str,
     slide: dict,
     target_chars: int,
+    slide_index: int,
+    total_slides: int,
 ) -> str:
-    """Generate narration for a single slide with its own word-count target."""
+    """Generate narration for a single slide with position-aware context."""
     md = plan["market_snapshot"]
     current_date = plan["current_date"]
     inp = plan["input"]
@@ -328,6 +353,13 @@ def _generate_slide_narration(
     min_chars = int(target_chars * 0.85)
     max_chars = int(target_chars * 1.15)
     instructions = _SLIDE_NARRATION_INSTRUCTIONS.get(slide_type, "展开说明本幻灯片的内容，要说透而不是点到。")
+
+    if slide_index == 0:
+        position_rule = _POSITION_RULE_FIRST
+    elif slide_index == total_slides - 1:
+        position_rule = _POSITION_RULE_LAST
+    else:
+        position_rule = _POSITION_RULE_MIDDLE
 
     prompt_tpl = _load_prompt("narration_slide")
     user_msg = prompt_tpl.format(
@@ -341,6 +373,9 @@ def _generate_slide_narration(
         language=inp["language"],
         analysis=synthesis,
         slide_instructions=instructions,
+        slide_index=slide_index + 1,
+        total_slides=total_slides,
+        position_rule=position_rule,
     )
 
     system = (
@@ -350,10 +385,46 @@ def _generate_slide_narration(
         "禁止引用训练数据中的具体历史日期。"
     )
 
-    # Use reasoner for high-stakes slides, chat for data/summary slides
     if slide_type in ("cover", "key_points", "risk"):
         return _stream_call(client, system, user_msg, model=MODEL_REASONER)
     return _chat_call(client, system, user_msg, model=MODEL_CHAT)
+
+
+def _smooth_narration(client: OpenAI, plan: dict, narration: str) -> str:
+    """
+    One editor pass: fix cross-segment greeting repetition and improve flow.
+    Uses fast MODEL_CHAT; input/output keeps [幻灯片: xxx] markers intact.
+    """
+    md = plan["market_snapshot"]
+    current_date = plan["current_date"]
+
+    system = (
+        "你是专业的视频脚本编辑，负责将分段口播稿整合成一篇连贯的视频稿件。"
+        "只修改影响连贯性的部分，不改变实质分析内容和数据。"
+    )
+    ticker = md["ticker"]
+    company = md.get("company_name", "")
+    segment_count = narration.count("[幻灯片:")
+    user_msg = f"""以下是{ticker}（{company}）股票点评视频的分段口播稿，今天是{current_date}，总共{segment_count}段。
+
+存在的问题需要修复：
+1. 非首段（非cover）出现了问候语（大家好、朋友们等）→ 直接删除
+2. 中间段重新介绍了日期、股票名称等已说过的内容 → 删除重复部分
+3. 部分段落之间缺乏衔接感 → 加一句承上启下的过渡
+
+修改要求：
+- 保留所有 [幻灯片: xxx] 标注，位置不变
+- 保持每段字数大致不变（允许±5%）
+- 不改变任何价格、数据、分析结论
+- 直接输出修改后的完整稿件，不加任何说明
+
+原始稿件：
+{narration}"""
+
+    print("[Generator] Editor pass: smoothing cross-segment continuity...")
+    result = _chat_call(client, system, user_msg, model=MODEL_CHAT)
+    print("[Generator] Editor pass done.")
+    return result
 
 
 def generate_narration(client: OpenAI, plan: dict, synthesis: str) -> str:
@@ -371,15 +442,17 @@ def generate_narration(client: OpenAI, plan: dict, synthesis: str) -> str:
         return max(150, int(total_chars * secs / total_seconds))
 
     slide_results: dict[str, str] = {}
+    total_slides = len(outline)
 
-    def _gen(slide: dict) -> tuple[str, str]:
+    def _gen(args: tuple) -> tuple[str, str]:
+        idx, slide = args
         chars = _target(slide)
-        text = _generate_slide_narration(client, plan, synthesis, slide, chars)
+        text = _generate_slide_narration(client, plan, synthesis, slide, chars, idx, total_slides)
         print(f"[Narration:{slide['type']}] {len(text)}字 (目标{chars}字)")
         return slide["type"], text
 
     with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {executor.submit(_gen, s): s for s in outline}
+        futures = {executor.submit(_gen, (i, s)): s for i, s in enumerate(outline)}
         for future in as_completed(futures):
             stype, text = future.result()
             slide_results[stype] = text
@@ -389,8 +462,12 @@ def generate_narration(client: OpenAI, plan: dict, synthesis: str) -> str:
         f"[幻灯片: {s['type']}]\n{slide_results.get(s['type'], '')}"
         for s in outline
     ]
-    full = "\n\n".join(parts)
-    total = sum(len(t) for t in slide_results.values())
+    raw = "\n\n".join(parts)
+
+    # Editor pass: fix greeting repetition and improve cross-segment flow
+    full = _smooth_narration(client, plan, raw)
+
+    total = len(full)
     print(f"[Generator] Narration complete. {total}字 ≈ {total/chars_per_minute:.1f}分钟")
     return full
 

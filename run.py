@@ -10,6 +10,9 @@ import webbrowser
 from datetime import datetime, timezone
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()  # reads .env in project root, does nothing if file absent
+
 from harness import planner, generator, evaluator, renderer
 
 OUTPUT_DIR = Path(__file__).parent / "output"
