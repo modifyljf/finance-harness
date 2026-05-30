@@ -404,7 +404,7 @@
 
 {# ── Cover ── #}
 {% if slide.type == 'cover' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="cover-wrap">
     <div class="cover-left">
       <div class="cover-eyebrow">{{ ticker }} &nbsp;·&nbsp; 本周深度分析</div>
@@ -433,7 +433,7 @@
 
 {# ── Market Overview ── #}
 {% elif slide.type == 'market_overview' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag">市场概览</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -460,7 +460,7 @@
 
 {# ── Price Action ── #}
 {% elif slide.type == 'price_action' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag gold">价格走势</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -485,7 +485,7 @@
 
 {# ── Key Points ── #}
 {% elif slide.type == 'key_points' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag green">核心要点</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -516,7 +516,7 @@
 
 {# ── Financials ── #}
 {% elif slide.type == 'financials' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag">财务分析</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -551,7 +551,7 @@
 
 {# ── Risk ── #}
 {% elif slide.type == 'risk' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag red">风险提示</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -584,7 +584,7 @@
 
 {# ── Catalyst ── #}
 {% elif slide.type == 'catalyst' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag gold">催化剂</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -619,7 +619,7 @@
 
 {# ── Outlook ── #}
 {% elif slide.type == 'outlook' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag purple">未来展望</div>
     <div class="slide-headline">{{ slide.headline }}</div>
@@ -662,7 +662,7 @@
 
 {# ── Summary ── #}
 {% elif slide.type == 'summary' %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag">总结</div>
     <div class="slide-headline">本期结论</div>
@@ -692,7 +692,7 @@
 
 {# ── Fallback ── #}
 {% else %}
-<section>
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
     <div class="tag">{{ slide.type }}</div>
     <div class="slide-headline">{{ slide.headline }}</div>

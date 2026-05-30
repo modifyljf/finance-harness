@@ -1,0 +1,562 @@
+{
+  "generated_at": "2026-05-30T02:04:21.024510+00:00",
+  "current_date": "2026-05-29",
+  "input": {
+    "ticker": "AVGO",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "AVGO",
+    "company_name": "Broadcom Inc.",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "short_description": "Broadcom Inc. designs, develops, and supplies various semiconductor devices and infrastructure software solutions internationally. The company operates in two segments: Semiconductor Solutions and Infrastructure Software. The company offers networking connectivity, such as custom silicon solutions, ethernet switching & routing, ethernet NIC controllers, physical layer devices, and fiber optic comp",
+    "current_price": 446.77,
+    "prev_close": 426.58,
+    "price_change": 20.19,
+    "price_change_pct": 4.73,
+    "market_cap": 2115307700224,
+    "market_cap_str": "$2.12T",
+    "volume": 41606320,
+    "avg_volume": 23788206,
+    "beta": 1.44,
+    "52w_high": 448.9,
+    "52w_low": 241.11,
+    "52w_range_position_pct": 99.0,
+    "short_interest": 1.1,
+    "institutional_ownership_pct": 80.2
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 406.54
+      },
+      {
+        "date": "2026-04-20",
+        "close": 399.63
+      },
+      {
+        "date": "2026-04-21",
+        "close": 402.17
+      },
+      {
+        "date": "2026-04-22",
+        "close": 422.65
+      },
+      {
+        "date": "2026-04-23",
+        "close": 419.94
+      },
+      {
+        "date": "2026-04-24",
+        "close": 422.76
+      },
+      {
+        "date": "2026-04-27",
+        "close": 418.2
+      },
+      {
+        "date": "2026-04-28",
+        "close": 399.83
+      },
+      {
+        "date": "2026-04-29",
+        "close": 405.45
+      },
+      {
+        "date": "2026-04-30",
+        "close": 417.43
+      },
+      {
+        "date": "2026-05-01",
+        "close": 421.28
+      },
+      {
+        "date": "2026-05-04",
+        "close": 416.5
+      },
+      {
+        "date": "2026-05-05",
+        "close": 427.36
+      },
+      {
+        "date": "2026-05-06",
+        "close": 425.44
+      },
+      {
+        "date": "2026-05-07",
+        "close": 412.56
+      },
+      {
+        "date": "2026-05-08",
+        "close": 430.0
+      },
+      {
+        "date": "2026-05-11",
+        "close": 428.43
+      },
+      {
+        "date": "2026-05-12",
+        "close": 419.3
+      },
+      {
+        "date": "2026-05-13",
+        "close": 416.79
+      },
+      {
+        "date": "2026-05-14",
+        "close": 439.79
+      },
+      {
+        "date": "2026-05-15",
+        "close": 425.19
+      },
+      {
+        "date": "2026-05-18",
+        "close": 420.71
+      },
+      {
+        "date": "2026-05-19",
+        "close": 411.07
+      },
+      {
+        "date": "2026-05-20",
+        "close": 417.76
+      },
+      {
+        "date": "2026-05-21",
+        "close": 414.57
+      },
+      {
+        "date": "2026-05-22",
+        "close": 414.14
+      },
+      {
+        "date": "2026-05-26",
+        "close": 422.01
+      },
+      {
+        "date": "2026-05-27",
+        "close": 421.86
+      },
+      {
+        "date": "2026-05-28",
+        "close": 426.58
+      },
+      {
+        "date": "2026-05-29",
+        "close": 446.77
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 65.9,
+    "rsi_signal": "neutral",
+    "ma20": 422.91,
+    "ma50": 385.67,
+    "bollinger": {
+      "upper": 440.23,
+      "middle": 422.91,
+      "lower": 405.58
+    },
+    "volume_trend": "stable",
+    "ma_signal": "bullish",
+    "price_vs_ma20_pct": 5.6,
+    "price_vs_ma50_pct": 15.8
+  },
+  "valuation_snapshot": {
+    "pe_trailing": 87.26,
+    "pe_forward": 24.23,
+    "peg": 0.93,
+    "ps_ratio": 30.98,
+    "pb_ratio": 26.49,
+    "ev_ebitda": 58.23
+  },
+  "financial_snapshot": {
+    "revenue": 68281999360,
+    "revenue_growth_yoy": 29.5,
+    "earnings_growth_yoy": 31.6,
+    "gross_margin": 76.7,
+    "operating_margin": 44.9,
+    "profit_margin": 36.6,
+    "free_cashflow": 25503750144,
+    "roe": 33.4,
+    "eps_trailing": 5.12,
+    "eps_forward": 18.44094
+  },
+  "analyst_snapshot": {
+    "recommendation": "Strong Buy",
+    "target_mean": 481.9678,
+    "target_high": 630.0,
+    "target_low": 215.88,
+    "analyst_count": 44,
+    "upside_pct": 7.9
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "Broadcom (AVGO) is Among Claude AI’s Top Stock Picks for 2026",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-29 20:07",
+        "url": "",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Best AI Stocks to Buy in June and Hold Forever: AVGO",
+        "publisher": "Zacks",
+        "published_at": "2026-05-29 19:07",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Inflation Fears Weighed on Broadcom (AVGO) in Q1",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-22 13:29",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/inflation-fears-weighed-broadcom-avgo-132922719.html",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom (AVGO) Could Be Positioned For The Next Big Shift In AI Infrastructure",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 11:53",
+        "url": "https://finance.yahoo.com/sectors/technology/articles/broadcom-avgo-could-positioned-next-115314220.html",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom (AVGO): Top 10 Steve Cohen Stock To Buy",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 13:14",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-avgo-top-10-steve-131433990.html",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom’s AI Packaging Bet Gets Bigger. Wall Street Is Betting on More Upside for AVGO Stock.",
+        "publisher": "Barchart.com",
+        "published_at": "2026-05-23 16:00",
+        "url": "https://www.barchart.com/story/news/2102972/broadcoms-ai-packaging-bet-gets-bigger-wall-street-is-betting-on-more-upside-for-avgo-stock",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Is Broadcom (AVGO) One of the 10 Safe Stocks to Buy for the Long Term in 2026?",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 12:52",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_c3d86fd5-f1e0-415b-bea7-d3e13db92d6d",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom’s AI Revenue Is Taking Off. Back Up the Truck on AVGO Stock Now.",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-27 13:00",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8dd296a0-2f35-4aee-99a9-17b2b2e34b4e",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "AVGO"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Jobs Report, Broadcom Earnings: What to Watch in the Next Week",
+        "publisher": "The Wall Street Journal",
+        "published_at": "2026-05-29 22:36",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom's custom ASIC biz adds South Korea's FuriosaAI to its empire",
+        "publisher": "Theregister.com",
+        "published_at": "2026-05-27 13:00",
+        "url": "https://www.theregister.com/ai-ml/2026/05/27/broadcom-lands-furiosaai-as-latest-custom-ai-chip-partner/5246536",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom's Hidden Risk: VMware Under Pressure?",
+        "publisher": "Trefis",
+        "published_at": "2026-05-26 14:49",
+        "url": "https://www.trefis.com/articles/600381/broadcoms-hidden-risk-vmware-under-pressure/2026-05-26",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom gets early start on WiFi 8 with next-gen wireless routing kit",
+        "publisher": "Theregister.com",
+        "published_at": "2026-05-27 13:00",
+        "url": "https://www.theregister.com/networks/2026/05/27/broadcom-gets-early-start-on-wifi-8-with-new-routing-kit/5246623",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Applied Materials, Inc. (AMAT) Partners with Broadcom on Advanced Chip Packaging Technologies for AI Systems",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-27 21:50",
+        "url": "https://finance.yahoo.com/sectors/technology/articles/applied-materials-inc-amat-partners-215026360.html",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "(PR) Broadcom Delivers Industry's First Integrated Wi-Fi 8 SoCs to Power Next-Gen Mesh and Multi-Gigabit Routers",
+        "publisher": "Techpowerup.com",
+        "published_at": "2026-05-27 21:04",
+        "url": "https://www.techpowerup.com/349415/broadcom-delivers-industrys-first-integrated-wi-fi-8-socs-to-power-next-gen-mesh-and-multi-gigabit-routers",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "The Best Stocks to Buy Right Now: Nvidia vs. AMD vs. Broadcom",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-24 21:50",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_0aebc3c7-6870-4de7-9375-6de65545f240",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "The Broadcom Stock Paradox: Why a $2 Trillion Valuation Ignores the Base Economics of Custom Chips",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-24 17:00",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_b115bcc7-acac-4edf-a781-fd24ffca919d",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "One Expert Sees Broadcom at $630 — and the AI Infrastructure Math Backs the Case",
+        "publisher": "24/7 Wall St.",
+        "published_at": "2026-05-26 14:58",
+        "url": "https://247wallst.com/investing/2026/05/26/one-expert-sees-broadcom-at-630-and-the-ai-infrastructure-math-backs-the-case/",
+        "category": "macro",
+        "why_relevant": "May affect sector risk appetite, valuation multiples, or macro conditions.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Broadcom and Taiwan's chipmakers ride ASIC wave",
+        "publisher": "Digitimes",
+        "published_at": "2026-05-27 01:59",
+        "url": "https://www.digitimes.com/news/a20260527PD215/asic-chipmakers-broadcom-taiwan-demand.html",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "broadcom"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": [
+      {
+        "source": "Susquehanna",
+        "quote": "Susquehanna changed rating from Positive to Positive",
+        "stance": "bullish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      }
+    ]
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-29",
+    "technical_sentiment_score": 80.7,
+    "momentum_state": "strong",
+    "valuation_pressure": "high",
+    "news_intensity": "high",
+    "risk_flags": [
+      "Near 52-week high (99.0%) — limited upside buffer",
+      "Elevated valuation multiples — multiple compression risk"
+    ],
+    "signal_basis": [
+      "RSI 65.9 (neutral)",
+      "MA signal: bullish",
+      "Volume trend: stable",
+      "52W range position: 99.0%",
+      "Analyst upside: 7.9%",
+      "News intensity: high (8 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}

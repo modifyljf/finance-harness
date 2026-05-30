@@ -8,7 +8,7 @@
 - **字数硬性要求：最少 {word_count_min} 字，目标 {word_count} 字，最多 {word_count_max} 字**
 - 每个幻灯片段落平均不少于 {word_count_per_slide} 字，不得简短带过
 - 语言：{language}
-- 风格：口播，适配 ElevenLabs TTS 朗读
+- 风格：口播，适配 fish.audio TTS 朗读
 - 幻灯片顺序：{slide_types}
 
 ## 字数达标策略（必须执行）
@@ -43,7 +43,7 @@
 
 每段开头用 [幻灯片: 类型名] 标注。
 
-**节奏规则（ElevenLabs TTS 优化）：**
+**节奏规则（fish.audio TTS 优化）：**
 - 每句话不超过30个汉字，复杂内容拆成2句
 - 数字一律用中文读法（212.6读作"两百一十二点六"，5.15万亿读作"五点一五万亿"）
 - 禁止使用特殊符号：【】《》……——★※ 等

@@ -510,6 +510,50 @@ def generate_slides(client: OpenAI, plan: dict, synthesis: str) -> dict:
     return slides_data
 
 
+# ── YouTube Metadata ─────────────────────────────────────────────────────────
+
+def generate_youtube_meta(plan: dict, synthesis: str) -> dict:
+    """Generate YouTube title, description, and tags from synthesis + slide outline."""
+    print("[Generator] Generating YouTube metadata...")
+    md     = plan["market_snapshot"]
+    inp    = plan["input"]
+    outline = plan["slide_outline"]
+    current_date = plan["current_date"]
+
+    # Build slide type list for context (no timestamps — they don't match real audio)
+    slide_outline_str = " → ".join(
+        s["type"] for s in outline
+    )
+
+    # Trim synthesis to first 600 chars as summary
+    analysis_summary = synthesis[:600].rsplit("。", 1)[0] + "。"
+
+    prompt_tpl = _load_prompt("youtube")
+    user_msg = prompt_tpl.format(
+        current_date=current_date,
+        ticker=md["ticker"],
+        company_name=md.get("company_name", md["ticker"]),
+        duration_minutes=inp["duration_minutes"],
+        analysis_summary=analysis_summary,
+        slide_outline=slide_outline_str,
+    )
+
+    system = (
+        f"你是YouTube财经频道运营专家，今天是{current_date}。"
+        "严格按照JSON格式返回，字段：title、description、tags（数组）。"
+    )
+
+    api_key = os.environ.get("DEEPSEEK_API_KEY")
+    if not api_key:
+        raise EnvironmentError("DEEPSEEK_API_KEY environment variable not set.")
+    client = OpenAI(api_key=api_key, base_url=DEEPSEEK_BASE_URL)
+
+    raw = _chat_call(client, system, user_msg, json_mode=True, model=MODEL_CHAT)
+    meta = json.loads(raw)
+    print(f"[Generator] YouTube metadata done. Title: {meta.get('title', '')[:60]}")
+    return meta
+
+
 # ── Targeted Re-generation (called by run.py retry loop) ─────────────────────
 
 def _make_client() -> OpenAI:
