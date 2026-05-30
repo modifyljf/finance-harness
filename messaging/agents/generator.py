@@ -691,11 +691,20 @@ class GeneratorAgent(BaseAgent):
         system = (
             f"你是YouTube财经频道运营专家，今天是{current_date}。"
             "标题内容必须严格基于提供的【分析摘要】和【本周新闻】，禁止虚构事件结果。"
-            "严格按照JSON格式返回，字段：title、description、tags（数组）。"
+            "严格按照JSON格式返回，字段：title、description、tags（数组）、"
+            "thumbnail_hook（封面主标题，15字以内，省略股票代码，保留最强冲突/悬念）、"
+            "thumbnail_highlight（hook中最关键的1-4个字，必须是hook的子字符串，将用高亮色标注）、"
+            "thumbnail_subhook（封面副标题，20字以内，口语化补充说明）、"
+            "thumbnail_verdict（根据标题语气：bullish或bearish或neutral）。"
         )
         raw = self._chat(system, user_msg, json_mode=True, model=MODEL_CHAT)
         meta = json.loads(raw)
-        print(f"[Generator] YouTube metadata done. Title: {meta.get('title', '')[:60]}")
+        print(
+            f"[Generator] YouTube metadata done. Title: {meta.get('title', '')[:60]}\n"
+            f"[Generator] Thumbnail hook: '{meta.get('thumbnail_hook', '')}' "
+            f"| highlight: '{meta.get('thumbnail_highlight', '')}' "
+            f"| verdict: {meta.get('thumbnail_verdict', '')}"
+        )
         return meta
 
     # ── Entry points ───────────────────────────────────────────────────────────

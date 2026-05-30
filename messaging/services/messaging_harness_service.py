@@ -77,9 +77,12 @@ class MessagingHarnessService:
         # Save slides AFTER renderer patches market_overview headline
         self._save_json(candidate.slides, "slides.json")
 
-        # Stage 5: YouTube metadata
+        # Stage 5: YouTube metadata + thumbnail
         youtube_meta = self._generator.generate_youtube_meta(plan, candidate.synthesis)
         self._save_json(youtube_meta, "youtube_meta.json")
+
+        thumbnail_html = self._renderer.generate_thumbnail(plan, youtube_meta)
+        (self._out_dir / "thumbnail.html").write_text(thumbnail_html, encoding="utf-8")
 
         metadata = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -99,6 +102,7 @@ class MessagingHarnessService:
             narration=candidate.narration,
             narration_tts=candidate.narration_tts,
             youtube_meta=youtube_meta,
+            thumbnail_html=thumbnail_html,
             metadata=metadata,
         )
 

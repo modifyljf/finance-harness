@@ -8,4 +8,5 @@ class RenderedMessage:
     narration: str
     narration_tts: str
     youtube_meta: dict
+    thumbnail_html: str
     metadata: dict

@@ -57,6 +57,7 @@ def main() -> None:
     print(f"  - {folder}analysis_synthesis.txt")
     print(f"  - {folder}eval_report.json")
     print(f"  - {folder}youtube_meta.json")
+    print(f"  - {folder}thumbnail.html      (1280×720 封面图，浏览器截图上传)")
     print(f"  - {folder}metadata.json")
     if not args.skip_eval:
         print(f"\n  Quality Score: {result.metadata.get('eval_score', 'N/A')}/100")

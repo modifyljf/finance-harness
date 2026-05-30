@@ -1,0 +1,520 @@
+{
+  "generated_at": "2026-05-30T04:23:56.172170+00:00",
+  "current_date": "2026-05-30",
+  "input": {
+    "ticker": "CRWD",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "CRWD",
+    "company_name": "CrowdStrike Holdings, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "short_description": "CrowdStrike Holdings, Inc. provides cybersecurity solutions in the United States and internationally. Its unified platform provides cloud-delivered protection of endpoints, cloud workloads, identity, and data through a software as a service (SaaS) subscription-based model. The company offers corporate endpoint and cloud workload security, managed security, security and vulnerability management, IT",
+    "current_price": 731.0,
+    "prev_close": 671.0,
+    "price_change": 60.0,
+    "price_change_pct": 8.94,
+    "market_cap": 186066206720,
+    "market_cap_str": "$186.07B",
+    "volume": 4286217,
+    "avg_volume": 3587226,
+    "beta": 1.06,
+    "52w_high": 731.49,
+    "52w_low": 342.72,
+    "52w_range_position_pct": 99.9,
+    "short_interest": 3.0,
+    "institutional_ownership_pct": 74.9
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 423.95
+      },
+      {
+        "date": "2026-04-20",
+        "close": 433.15
+      },
+      {
+        "date": "2026-04-21",
+        "close": 449.61
+      },
+      {
+        "date": "2026-04-22",
+        "close": 466.68
+      },
+      {
+        "date": "2026-04-23",
+        "close": 445.39
+      },
+      {
+        "date": "2026-04-24",
+        "close": 448.13
+      },
+      {
+        "date": "2026-04-27",
+        "close": 454.61
+      },
+      {
+        "date": "2026-04-28",
+        "close": 454.99
+      },
+      {
+        "date": "2026-04-29",
+        "close": 452.38
+      },
+      {
+        "date": "2026-04-30",
+        "close": 445.75
+      },
+      {
+        "date": "2026-05-01",
+        "close": 455.64
+      },
+      {
+        "date": "2026-05-04",
+        "close": 469.24
+      },
+      {
+        "date": "2026-05-05",
+        "close": 476.53
+      },
+      {
+        "date": "2026-05-06",
+        "close": 468.07
+      },
+      {
+        "date": "2026-05-07",
+        "close": 505.72
+      },
+      {
+        "date": "2026-05-08",
+        "close": 527.77
+      },
+      {
+        "date": "2026-05-11",
+        "close": 542.26
+      },
+      {
+        "date": "2026-05-12",
+        "close": 546.18
+      },
+      {
+        "date": "2026-05-13",
+        "close": 562.57
+      },
+      {
+        "date": "2026-05-14",
+        "close": 579.95
+      },
+      {
+        "date": "2026-05-15",
+        "close": 594.08
+      },
+      {
+        "date": "2026-05-18",
+        "close": 618.83
+      },
+      {
+        "date": "2026-05-19",
+        "close": 616.88
+      },
+      {
+        "date": "2026-05-20",
+        "close": 650.11
+      },
+      {
+        "date": "2026-05-21",
+        "close": 648.23
+      },
+      {
+        "date": "2026-05-22",
+        "close": 663.46
+      },
+      {
+        "date": "2026-05-26",
+        "close": 671.55
+      },
+      {
+        "date": "2026-05-27",
+        "close": 645.36
+      },
+      {
+        "date": "2026-05-28",
+        "close": 671.0
+      },
+      {
+        "date": "2026-05-29",
+        "close": 731.0
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 83.8,
+    "rsi_signal": "overbought",
+    "ma20": 582.22,
+    "ma50": 482.51,
+    "bollinger": {
+      "upper": 740.54,
+      "middle": 582.22,
+      "lower": 423.9
+    },
+    "volume_trend": "expanding",
+    "ma_signal": "bullish",
+    "price_vs_ma20_pct": 25.6,
+    "price_vs_ma50_pct": 51.5
+  },
+  "valuation_snapshot": {
+    "pe_trailing": null,
+    "pe_forward": 118.46,
+    "peg": 5.32,
+    "ps_ratio": 38.67,
+    "pb_ratio": 41.82,
+    "ev_ebitda": -3879.35
+  },
+  "financial_snapshot": {
+    "revenue": 4812004864,
+    "revenue_growth_yoy": 23.3,
+    "earnings_growth_yoy": null,
+    "gross_margin": 74.8,
+    "operating_margin": 1.0,
+    "profit_margin": -3.4,
+    "free_cashflow": 1604615040,
+    "roe": -4.1,
+    "eps_trailing": -0.67,
+    "eps_forward": 6.17094
+  },
+  "analyst_snapshot": {
+    "recommendation": "Buy",
+    "target_mean": 550.52783,
+    "target_high": 764.0,
+    "target_low": 368.0,
+    "analyst_count": 51,
+    "upside_pct": -24.7
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "Curious about CrowdStrike (CRWD) Q1 Performance? Explore Wall Street Estimates for Key Metrics",
+        "publisher": "Zacks",
+        "published_at": "2026-05-29 13:15",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "CRWD"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike Holdings (CRWD) Launches New Integration with Claude Compliance API",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-27 06:27",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_681f28f2-d8b1-49f2-841d-fe80578d169a",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "CRWD"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Jim Cramer Makes Big Claim About CrowdStrike (CRWD)",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-25 17:17",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_a28ba379-64c5-49c5-b1ff-ab61f58b3930",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "CRWD"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Why CrowdStrike’s (CRWD) Latest AI Partnership Could Be Strategically Important",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 12:17",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_eed685c2-b58d-4f6b-9471-0e95b2e465a1",
+        "category": "partnership",
+        "why_relevant": "May affect revenue growth opportunities or supply chain positioning.",
+        "matched_keywords": [
+          "CRWD"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike and Palo Alto Networks Shares Are Soaring, What You Need To Know",
+        "publisher": "StockStory",
+        "published_at": "2026-05-30 00:24",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike Set to Report Q1 Earnings: How to Play the Stock?",
+        "publisher": "Zacks",
+        "published_at": "2026-05-29 14:07",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "As ARR Swells on AI Tailwinds, CrowdStrike Stock Is a Cash Flow Machine",
+        "publisher": "Barchart",
+        "published_at": "2026-05-29 13:55",
+        "url": "",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "'Adversaries are no longer just targeting products, they're targeting the developers who build them': CrowdStrike takes down major botnet targeting developers across the world",
+        "publisher": "TechRadar",
+        "published_at": "2026-05-27 17:35",
+        "url": "https://www.techradar.com/pro/security/adversaries-are-no-longer-just-targeting-products-theyre-targeting-the-developers-who-build-them-crowdstrike-takes-down-major-botnet-targeting-developers-across-the-world",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike, Google shatter Glassworm botnet",
+        "publisher": "Theregister.com",
+        "published_at": "2026-05-27 17:56",
+        "url": "https://www.theregister.com/cyber-crime/2026/05/27/crowdstrike-google-shatter-glassworm-botnet/5247337",
+        "category": "partnership",
+        "why_relevant": "May affect revenue growth opportunities or supply chain positioning.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike, Google Take Down Glassworm Botnet",
+        "publisher": "Infosecurity Magazine",
+        "published_at": "2026-05-27 14:00",
+        "url": "https://www.infosecurity-magazine.com/news/crowdstrike-google-takedown/",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "What did CrowdStrike and Google stop? #tech",
+        "publisher": "Alltoc.com",
+        "published_at": "2026-05-27 18:01",
+        "url": "https://alltoc.com/tech/what-did-crowdstrike-and-google-stop",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "bibliocommons-mcp-crowdstrike 1.3.3",
+        "publisher": "Pypi.org",
+        "published_at": "2026-05-29 02:44",
+        "url": "https://pypi.org/project/bibliocommons-mcp-crowdstrike/1.3.3/",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "CrowdStrike and Google dismantle Glassworm botnet that targeted developers and drained crypto wallets",
+        "publisher": "Crypto Briefing",
+        "published_at": "2026-05-27 17:14",
+        "url": "https://cryptobriefing.com/glassworm-botnet-takedown-crypto-wallets/",
+        "category": "regulation",
+        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "matched_keywords": [
+          "crowdstrike"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": [
+      {
+        "source": "Jefferies",
+        "quote": "Jefferies changed rating from Buy to Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-29",
+        "date": "2026-05-29"
+      },
+      {
+        "source": "Benchmark",
+        "quote": "Benchmark changed rating from Buy to Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-27",
+        "date": "2026-05-27"
+      },
+      {
+        "source": "Wedbush",
+        "quote": "Wedbush changed rating from Outperform to Outperform",
+        "stance": "bullish",
+        "context": "main on 2026-05-27",
+        "date": "2026-05-27"
+      },
+      {
+        "source": "BTIG",
+        "quote": "BTIG changed rating from Buy to Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-26",
+        "date": "2026-05-26"
+      }
+    ]
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-30",
+    "technical_sentiment_score": 69.1,
+    "momentum_state": "strong",
+    "valuation_pressure": "high",
+    "news_intensity": "medium",
+    "risk_flags": [
+      "RSI overbought (83.8) — momentum reversal risk",
+      "Near 52-week high (99.9%) — limited upside buffer",
+      "Elevated valuation multiples — multiple compression risk",
+      "Analyst target below current price (-24.7% downside)"
+    ],
+    "signal_basis": [
+      "RSI 83.8 (overbought)",
+      "MA signal: bullish",
+      "Volume trend: expanding",
+      "52W range position: 99.9%",
+      "Analyst upside: -24.7%",
+      "News intensity: medium (4 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}
