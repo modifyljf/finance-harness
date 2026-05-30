@@ -691,19 +691,42 @@ class GeneratorAgent(BaseAgent):
         system = (
             f"你是YouTube财经频道运营专家，今天是{current_date}。"
             "标题内容必须严格基于提供的【分析摘要】和【本周新闻】，禁止虚构事件结果。"
-            "严格按照JSON格式返回，字段：title、description、tags（数组）、"
-            "thumbnail_hook（封面主标题，15字以内，省略股票代码，保留最强冲突/悬念）、"
-            "thumbnail_highlight（hook中最关键的1-4个字，必须是hook的子字符串，将用高亮色标注）、"
-            "thumbnail_subhook（封面副标题，20字以内，口语化补充说明）、"
-            "thumbnail_verdict（根据标题语气：bullish或bearish或neutral）。"
+            "严格按照JSON格式返回，字段：title、description、tags（数组）。"
         )
         raw = self._chat(system, user_msg, json_mode=True, model=MODEL_CHAT)
         meta = json.loads(raw)
+        print(f"[Generator] YouTube metadata done. Title: {meta.get('title', '')[:60]}")
+
+        # Second dedicated call: thumbnail copy from the title
+        title = meta.get("title", md["ticker"])
+        thumb_sys = "你是YouTube封面图文案专家。严格以JSON格式返回，不要任何额外文字。"
+        thumb_user = (
+            f"将以下YouTube标题拆解为封面图文字：\n标题：{title}\n\n"
+            "规则：\n"
+            "- hook：主标题，12字以内，省略股票代码，保留最强冲突/悬念\n"
+            "- hook_highlight：hook中最关键的2-4个字（会用高亮色标注），必须是hook的子字符串\n"
+            "- subhook：副标题，18字以内，口语化补充\n"
+            "- verdict：根据标题语气判断，只能填 bullish 或 bearish 或 neutral\n\n"
+            '返回格式：{"hook":"...","hook_highlight":"...","subhook":"...","verdict":"..."}'
+        )
+        try:
+            thumb_raw = self._chat(thumb_sys, thumb_user, json_mode=True, model=MODEL_CHAT)
+            thumb = json.loads(thumb_raw)
+            meta["thumbnail_hook"]      = thumb.get("hook", "")
+            meta["thumbnail_highlight"] = thumb.get("hook_highlight", "")
+            meta["thumbnail_subhook"]   = thumb.get("subhook", "")
+            meta["thumbnail_verdict"]   = thumb.get("verdict", "neutral")
+        except Exception as exc:
+            print(f"[Generator] Thumbnail copy fallback: {exc}")
+            meta.setdefault("thumbnail_hook", title.split("｜")[-1][:12] if "｜" in title else title[:12])
+            meta.setdefault("thumbnail_highlight", "")
+            meta.setdefault("thumbnail_subhook", "")
+            meta.setdefault("thumbnail_verdict", "neutral")
+
         print(
-            f"[Generator] YouTube metadata done. Title: {meta.get('title', '')[:60]}\n"
-            f"[Generator] Thumbnail hook: '{meta.get('thumbnail_hook', '')}' "
-            f"| highlight: '{meta.get('thumbnail_highlight', '')}' "
-            f"| verdict: {meta.get('thumbnail_verdict', '')}"
+            f"[Generator] Thumbnail hook: '{meta['thumbnail_hook']}' "
+            f"| highlight: '{meta['thumbnail_highlight']}' "
+            f"| verdict: {meta['thumbnail_verdict']}"
         )
         return meta
 

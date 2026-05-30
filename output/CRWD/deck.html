@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"/>
-<title>{{ title }}</title>
+<title>AI信仰还是最后狂欢？</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
@@ -400,356 +400,479 @@
 <div class="reveal">
 <div class="slides">
 
-{% for slide in slides %}
 
-{# ── Cover ── #}
-{% if slide.type == 'cover' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+<section data-autoslide="26450">
   <div class="cover-wrap">
     <div class="cover-left">
-      <div class="cover-eyebrow">{{ ticker }} &nbsp;·&nbsp; 本周深度分析</div>
-      <div class="cover-headline">{{ slide.headline }}</div>
+      <div class="cover-eyebrow">CRWD &nbsp;·&nbsp; 本周深度分析</div>
+      <div class="cover-headline">AI信仰还是最后狂欢？</div>
       <div class="cover-divider"></div>
-      <div class="cover-company">{{ company_name }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ slide.subtitle if slide.subtitle else '每周股票点评' }}</div>
-      {% if slide.hook %}
-      <div class="cover-hook">{{ slide.hook }}</div>
-      {% endif %}
+      <div class="cover-company">CrowdStrike Holdings, Inc.&nbsp;&nbsp;·&nbsp;&nbsp;本周深度分析·2026-05-30</div>
+      
+      <div class="cover-hook">股价七天暴涨百分之九，全网却齐声高呼还有十倍空间。</div>
+      
     </div>
     <div class="cover-right">
       <div class="price-widget">
         <div class="pw-label">当前价格</div>
-        <div class="pw-price">${{ current_price }}</div>
-        <div class="pw-change {{ 'up' if price_change_pct >= 0 else 'down' }}">{{ price_sign }}{{ price_change_pct }}%</div>
+        <div class="pw-price">$731.0</div>
+        <div class="pw-change up">+8.94%</div>
       </div>
-      <div class="cover-info-card"><strong>{{ market_cap_str }}</strong>市值</div>
-      <div class="cover-info-card"><strong>Fwd PE {{ pe_ratio if pe_ratio else 'N/A' }}</strong>预期市盈率</div>
+      <div class="cover-info-card"><strong>$186.07B</strong>市值</div>
+      <div class="cover-info-card"><strong>Fwd PE 118.46</strong>预期市盈率</div>
     </div>
   </div>
   <div class="slide-footer">
-    <span class="footer-ticker">{{ ticker }}</span>
+    <span class="footer-ticker">CRWD</span>
     <span>股票深度点评</span>
   </div>
 </section>
 
-{# ── Market Overview ── #}
-{% elif slide.type == 'market_overview' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="51262">
   <div class="slide-inner">
     <div class="tag">市场概览</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
+    <div class="slide-headline">$731.0  +8.94%  ·  Forward PE 118.46x  ·  目标价空间 -24.7%</div>
     <div class="stats-grid">
-      <div class="stat-card a"><div class="stat-label">当前价格</div><div class="stat-value">${{ current_price }}</div></div>
-      <div class="stat-card {{ 'g' if price_change_pct >= 0 else 'r' }}">
+      <div class="stat-card a"><div class="stat-label">当前价格</div><div class="stat-value">$731.0</div></div>
+      <div class="stat-card g">
         <div class="stat-label">日涨跌幅</div>
-        <div class="stat-value {{ 'up' if price_change_pct >= 0 else 'down' }}">{{ price_sign }}{{ price_change_pct }}%</div>
+        <div class="stat-value up">+8.94%</div>
       </div>
-      <div class="stat-card o"><div class="stat-label">市值</div><div class="stat-value">{{ market_cap_str }}</div></div>
-      <div class="stat-card a"><div class="stat-label">预期市盈率 (Fwd PE)</div><div class="stat-value">{{ pe_ratio if pe_ratio else 'N/A' }}</div></div>
-      <div class="stat-card g"><div class="stat-label">分析师目标价</div><div class="stat-value">{{ analyst_target if analyst_target else 'N/A' }}</div></div>
-      <div class="stat-card o"><div class="stat-label">Beta</div><div class="stat-value">{{ beta if beta else 'N/A' }}</div></div>
+      <div class="stat-card o"><div class="stat-label">市值</div><div class="stat-value">$186.07B</div></div>
+      <div class="stat-card a"><div class="stat-label">预期市盈率 (Fwd PE)</div><div class="stat-value">118.46</div></div>
+      <div class="stat-card g"><div class="stat-label">分析师目标价</div><div class="stat-value">550.52783</div></div>
+      <div class="stat-card o"><div class="stat-label">Beta</div><div class="stat-value">1.06</div></div>
     </div>
-    {% if slide.callout %}
+    
     <div class="callout-box fragment fade-up">
       <div class="callout-icon">◈</div>
-      <div class="callout-text">{{ slide.callout }}</div>
+      <div class="callout-text">ROE负4.1%，目标价550美元，当前股价高估近1/4</div>
     </div>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>市场数据</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>市场数据</span></div>
 </section>
 
-{# ── Price Action ── #}
-{% elif slide.type == 'price_action' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="80168">
   <div class="slide-inner">
     <div class="tag gold">价格走势</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.signal %}
-    {% set sig = slide.signal | lower %}
-    <div class="direction-badge {{ sig }}">
-      {{ '▲' if sig == 'bullish' else '▼' if sig == 'bearish' else '◆' }}
-      {{ '技术偏多' if sig == 'bullish' else '技术偏空' if sig == 'bearish' else '技术中性' }}
+    <div class="slide-headline">短期偏多，但极度脆弱</div>
+    
+    
+    <div class="direction-badge bullish">
+      ▲
+      技术偏多
     </div>
-    {% endif %}
+    
     <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
-    {% if slide.bullets %}
+    
     <ul class="bullets" style="margin-top:8px">
-      {% for b in slide.bullets %}
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>{{ b }}</span></li>
-      {% endfor %}
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>支撑位：$582.22（MA20，中线多头生命线）</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：$731.49（历史新高，必须突破否则双顶）</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>趋势描述：过去两周一路狂飙，五月十一号还在542美金，昨天收盘731美金，涨幅超过34%；MACD持续发散，成交量明显放大，典型放量加速形态；布林带上轨在740.54美金，当前价格几乎贴在上轨运行。</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>RSI高达83.8，严重超买。</span></li>
+      
     </ul>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>技术分析 · 30日走势</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>技术分析 · 30日走势</span></div>
 </section>
 
-{# ── Key Points ── #}
-{% elif slide.type == 'key_points' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="137052">
   <div class="slide-inner">
     <div class="tag green">核心要点</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.points %}
+    <div class="slide-headline">多空逻辑对撞</div>
+    
     <ul class="kp-list">
-      {% for p in slide.points %}
-      {% set t = p.tag | lower if p.tag else 'neutral' %}
+      
+      
       <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot {{ t }}"></div>
+        <div class="kp-tag-dot bull"></div>
         <div class="kp-content">
-          <div class="kp-title">{{ p.title }}</div>
-          <div class="kp-body">{{ p.body }}</div>
+          <div class="kp-title">技术面动量碾压</div>
+          <div class="kp-body">价格从542美元飙到731美元，MACD柱状线持续放大，成交量扩张，量价齐升。目标是布林带上轨740.54美元。</div>
         </div>
-        <div class="kp-badge {{ t }}">{{ '多' if t == 'bull' else '空' if t == 'bear' else '中性' }}</div>
+        <div class="kp-badge bull">多</div>
       </li>
-      {% endfor %}
+      
+      
+      <li class="kp-item fragment fade-up">
+        <div class="kp-tag-dot bear"></div>
+        <div class="kp-content">
+          <div class="kp-title">估值过贵风险大</div>
+          <div class="kp-body">前瞻市盈率118倍，ROE负4.1%，RSI 83.8极度超买。分析师目标价550美元，潜在下跌24.7%。</div>
+        </div>
+        <div class="kp-badge bear">空</div>
+      </li>
+      
     </ul>
-    {% elif slide.bullets %}
-    <ul class="bullets">
-      {% for b in slide.bullets %}
-      <li class="fragment fade-up"><span class="bullet-num">{{ loop.index }}</span><span>{{ b }}</span></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>核心逻辑</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>核心逻辑</span></div>
 </section>
 
-{# ── Financials ── #}
-{% elif slide.type == 'financials' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="66950">
+  <div class="slide-inner">
+    <div class="tag gold">本周新闻</div>
+    <div class="slide-headline">激烈多空对决，AI叙事激活但基本面警告刺耳</div>
+    
+    <div class="card-list" style="margin-top:8px">
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+          ▲
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">CrowdStrike与Anthropic启动深度整合</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">股价破七百三的核心推手，AI叙事再次被激活</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">product</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+          ▲
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">摩根士丹利上调CRWD评级至买入</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">看好企业客户转向AI安全服务的粘性，新合同增速超预期</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+          ▼
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">瑞银给予CRWD中性评级</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">警告一百一十八倍前瞻PE是空中楼阁，财报预期落空向下空间大</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+          ▼
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">本周涨近9%，空头占比跌至3%</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">一致性看多，一旦出坏消息踩踏风险急剧升高</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">other</div>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="callout-box fragment fade-up" style="margin-top:10px">
+      <div class="callout-icon">◈</div>
+      <div class="callout-text">机构观点：摩根士丹利上调至买入目标价760，瑞银中性目标价550，分歧极端</div>
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>本周资讯</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="102001">
   <div class="slide-inner">
     <div class="tag">财务分析</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.metrics %}
+    <div class="slide-headline">财务基本面建在流沙上的城堡</div>
+    
     <div class="metrics-grid">
-      {% for m in slide.metrics %}
-      {% set tr = m.trend | lower if m.trend else 'flat' %}
+      
+      
       <div class="metric-card fragment fade-up">
-        <div class="metric-label">{{ m.label }}</div>
-        <div class="metric-value {{ 'up' if tr == 'up' else 'down' if tr == 'down' else '' }}">
-          <span class="metric-trend">{{ '▲' if tr == 'up' else '▼' if tr == 'down' else '–' }}</span>{{ m.value }}
+        <div class="metric-label">营收增速</div>
+        <div class="metric-value down">
+          <span class="metric-trend">▼</span>+29%
         </div>
       </div>
-      {% endfor %}
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">毛利率</div>
+        <div class="metric-value ">
+          <span class="metric-trend">–</span>78.5%
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">净利率</div>
+        <div class="metric-value ">
+          <span class="metric-trend">–</span>负值
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">Forward PE</div>
+        <div class="metric-value ">
+          <span class="metric-trend">–</span>118x
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">自由现金流</div>
+        <div class="metric-value ">
+          <span class="metric-trend">–</span>11.2亿美元，转化率超过50%
+        </div>
+      </div>
+      
     </div>
-    {% elif slide.bullets %}
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px">
-      {% for b in slide.bullets %}
-      <div class="metric-card fragment fade-up" style="font-size:0.76em;color:var(--c-text);line-height:1.5">{{ b }}</div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    {% if slide.callout %}
+    
+    
     <div class="callout-box fragment fade-up" style="margin-top:12px">
       <div class="callout-icon">◈</div>
-      <div class="callout-text">{{ slide.callout }}</div>
+      <div class="callout-text">一百一十八倍前瞻市盈率，需要的是利润爆发式增长来填坑。</div>
     </div>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>财务健康度</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>财务健康度</span></div>
 </section>
 
-{# ── Risk ── #}
-{% elif slide.type == 'risk' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="89957">
   <div class="slide-inner">
     <div class="tag red">风险提示</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.risks %}
+    <div class="slide-headline">高</div>
+    
     <div class="card-list">
-      {% for r in slide.risks %}
-      {% set sev = r.severity | lower if r.severity else 'medium' %}
+      
+      
       <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity {{ sev }}">{{ '高' if sev == 'high' else '中' if sev == 'medium' else '低' }}</div>
+        <div class="risk-severity high">高</div>
         <div class="risk-content">
-          <div class="risk-title">{{ r.title }}</div>
-          <div class="risk-body">{{ r.body }}</div>
+          <div class="risk-title">估值修正灰犀牛</div>
+          <div class="risk-body">预期市盈率高达118倍，向下回归空间接近25%，一旦AI叙事退潮，杀估值踩踏发生。</div>
         </div>
       </div>
-      {% endfor %}
-    </div>
-    {% elif slide.bullets %}
-    <div class="card-list">
-      {% for b in slide.bullets %}
+      
+      
       <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity medium">风险</div>
-        <div class="risk-content"><div class="risk-title">{{ b }}</div></div>
+        <div class="risk-severity high">高</div>
+        <div class="risk-content">
+          <div class="risk-title">财报地雷风险</div>
+          <div class="risk-body">市场押注下周财报，若Q1 ARR或指引未能大幅碾压最激进预期，卖事实剧本立刻上演。</div>
+        </div>
       </div>
-      {% endfor %}
+      
+      
+      <div class="risk-card-v2 fragment fade-up">
+        <div class="risk-severity high">高</div>
+        <div class="risk-content">
+          <div class="risk-title">系统性冲击风险</div>
+          <div class="risk-body">Beta值超1，若宏观通胀超预期引发利率上行担忧，资金抛售高估值成长股，导致剧烈回调。</div>
+        </div>
+      </div>
+      
     </div>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>下行风险</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>下行风险</span></div>
 </section>
 
-{# ── Catalyst ── #}
-{% elif slide.type == 'catalyst' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="78624">
   <div class="slide-inner">
     <div class="tag gold">催化剂</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.catalysts %}
+    <div class="slide-headline">多空博弈最关键的时刻</div>
+    
     <div class="card-list">
-      {% for c in slide.catalysts %}
-      {% set dir = c.direction | lower if c.direction else 'positive' %}
-      {% set imp = c.impact | lower if c.impact else 'medium' %}
-      <div class="catalyst-card-v2 {{ dir }} fragment fade-up">
-        <div class="cat-icon {{ 'pos' if dir == 'positive' else 'neg' }}">{{ '▲' if dir == 'positive' else '▼' }}</div>
-        <div class="cat-content">
-          <div class="cat-event">{{ c.event }}</div>
-          <div class="cat-meta">{{ c.timing if c.timing else '' }}</div>
-        </div>
-        <div class="cat-impact {{ imp }}">{{ '大' if imp == 'large' else '中' if imp == 'medium' else '小' }}</div>
-      </div>
-      {% endfor %}
-    </div>
-    {% elif slide.bullets %}
-    <div class="card-list">
-      {% for b in slide.bullets %}
+      
+      
+      
       <div class="catalyst-card-v2 positive fragment fade-up">
-        <div class="cat-icon pos">◆</div>
-        <div class="cat-content"><div class="cat-event">{{ b }}</div></div>
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">ARR增速超预期</div>
+          <div class="cat-meta">下周六月第一周</div>
+        </div>
+        <div class="cat-impact medium">中</div>
       </div>
-      {% endfor %}
+      
+      
+      
+      <div class="catalyst-card-v2 negative fragment fade-up">
+        <div class="cat-icon neg">▼</div>
+        <div class="cat-content">
+          <div class="cat-event">财报出现瑕疵</div>
+          <div class="cat-meta">下周六月第一周</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
     </div>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>近期催化剂</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>近期催化剂</span></div>
 </section>
 
-{# ── Outlook ── #}
-{% elif slide.type == 'outlook' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="69573">
   <div class="slide-inner">
     <div class="tag purple">未来展望</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.subtitle %}
-    {% set sub = slide.subtitle | lower %}
-    {% set dir = 'bullish' if ('看多' in slide.subtitle or '多头' in slide.subtitle) else 'bearish' if ('看空' in slide.subtitle or '空头' in slide.subtitle) else 'neutral' %}
-    <div class="direction-badge {{ dir }}">
-      {{ '▲ 看多' if dir == 'bullish' else '▼ 看空' if dir == 'bearish' else '◆ 中性' }}
+    <div class="slide-headline">三维分歧，已经到了必须选择的十字路口。短期动量在，但性价比极差</div>
+    
+    
+    
+    <div class="direction-badge neutral">
+      ◆ 中性
     </div>
-    {% endif %}
-    {% if slide.base_range %}
+    
+    
     <div class="range-box">
-      <div class="range-label">基础区间 · {{ slide.base_range.timeframe if slide.base_range.timeframe else '1-4周' }}</div>
-      <div class="range-values">{{ slide.base_range.low }} &nbsp;—&nbsp; {{ slide.base_range.high }}</div>
+      <div class="range-label">基础区间 · 1-4周</div>
+      <div class="range-values">$700 &nbsp;—&nbsp; $760</div>
     </div>
-    {% endif %}
-    {% if slide.scenario_bull and slide.scenario_bear %}
+    
+    
     <div class="scenarios">
       <div class="scenario bull fragment fade-up">
         <div class="scenario-label">▲ 看多条件</div>
-        <div class="scenario-condition">{{ slide.scenario_bull.condition }}</div>
-        <div class="scenario-target">目标 {{ slide.scenario_bull.target }}</div>
+        <div class="scenario-condition">在731.5放量突破且分时图不弱</div>
+        <div class="scenario-target">目标 $760</div>
       </div>
       <div class="scenario bear fragment fade-up">
         <div class="scenario-label">▼ 看空条件</div>
-        <div class="scenario-condition">{{ slide.scenario_bear.condition }}</div>
-        <div class="scenario-target">风险 {{ slide.scenario_bear.target }}</div>
+        <div class="scenario-condition">在731.5反复受阻且长上影线，回落至671下方</div>
+        <div class="scenario-target">风险 $671</div>
       </div>
     </div>
-    {% elif slide.bullets %}
-    <ul class="bullets" style="margin-top:8px">
-      {% for b in slide.bullets %}
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>{{ b }}</span></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>后市展望</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>后市展望</span></div>
 </section>
 
-{# ── Summary ── #}
-{% elif slide.type == 'summary' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+
+
+
+
+
+
+
+<section data-autoslide="37856">
   <div class="slide-inner">
     <div class="tag">总结</div>
     <div class="slide-headline">本期结论</div>
     <div class="summary-quote">
-      <div class="summary-text">{{ slide.headline }}</div>
+      <div class="summary-text">共识全是看多, 这才是最危险的信号</div>
     </div>
-    {% if slide.verdict or slide.action %}
+    
     <div class="verdict-row">
-      {% if slide.verdict %}
-      {% set v = slide.verdict | lower %}
-      <div class="verdict-badge {{ v }}">
-        {{ '▲ 看多' if v == 'bullish' else '▼ 看空' if v == 'bearish' else '◆ 中性' }}
+      
+      
+      <div class="verdict-badge bearish">
+        ▼ 看空
       </div>
-      {% endif %}
-      {% if slide.action %}
+      
+      
       <div class="action-box fragment fade-up" style="flex:1">
         <div class="action-label">操作框架</div>
-        <div class="action-text">{{ slide.action }}</div>
+        <div class="action-text">只适合极短线高手博弈。仓位不超过5%，持仓等待不如等待回调。</div>
       </div>
-      {% endif %}
+      
     </div>
-    {% endif %}
-    <div class="disclaimer">⚠ {{ slide.subtitle if slide.subtitle else '投资有风险，以上内容仅供参考，不构成任何投资建议。' }}</div>
+    
+    <div class="disclaimer">⚠ 投资有风险，以上内容仅供参考，不构成任何投资建议。</div>
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>免责声明</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRWD</span><span>免责声明</span></div>
 </section>
 
-{# ── News ── #}
-{% elif slide.type == 'news' %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
-  <div class="slide-inner">
-    <div class="tag gold">本周新闻</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.news_items %}
-    <div class="card-list" style="margin-top:8px">
-      {% for item in slide.news_items %}
-      {% set imp = item.impact | default('neutral') | lower %}
-      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
-        {% if imp == 'positive' %}background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
-        {% elif imp == 'negative' %}background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
-        {% else %}background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.18);border-left:3px solid var(--c-accent){% endif %}">
-        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
-          {% if imp == 'positive' %}color:var(--c-green){% elif imp == 'negative' %}color:var(--c-red){% else %}color:var(--c-accent){% endif %}">
-          {{ '▲' if imp == 'positive' else '▼' if imp == 'negative' else '◆' }}
-        </div>
-        <div style="flex:1">
-          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">{{ item.title }}</div>
-          {% if item.note %}<div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">{{ item.note }}</div>{% endif %}
-        </div>
-        {% if item.category %}
-        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
-          background:rgba(59,130,246,0.12);color:var(--c-accent)">{{ item.category }}</div>
-        {% endif %}
-      </div>
-      {% endfor %}
-    </div>
-    {% endif %}
-    {% if slide.analyst_summary %}
-    <div class="callout-box fragment fade-up" style="margin-top:10px">
-      <div class="callout-icon">◈</div>
-      <div class="callout-text">机构观点：{{ slide.analyst_summary }}</div>
-    </div>
-    {% endif %}
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>本周资讯</span></div>
-</section>
 
-{# ── Fallback ── #}
-{% else %}
-<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
-  <div class="slide-inner">
-    <div class="tag">{{ slide.type }}</div>
-    <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.subtitle %}<div style="font-size:0.78em;color:var(--c-muted2);margin-bottom:14px">{{ slide.subtitle }}</div>{% endif %}
-    {% if slide.bullets %}
-    <ul class="bullets">
-      {% for b in slide.bullets %}
-      <li class="fragment fade-up"><span class="bullet-dot"></span><span>{{ b }}</span></li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>{{ slide.type }}</span></div>
-</section>
-{% endif %}
 
-{% endfor %}
+
+
 
 </div></div>
 
@@ -840,10 +963,10 @@ Reveal.initialize({
 })();
 
 (function () {
-  var labels = {{ price_labels }};
-  var values = {{ price_values }};
-  var ma20   = {{ ma20 if ma20 is not none else 'null' }};
-  var ma50   = {{ ma50 if ma50 is not none else 'null' }};
+  var labels = ["2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29"];
+  var values = [423.95, 433.15, 449.61, 466.68, 445.39, 448.13, 454.61, 454.99, 452.38, 445.75, 455.64, 469.24, 476.53, 468.07, 505.72, 527.77, 542.26, 546.18, 562.57, 579.95, 594.08, 618.83, 616.88, 650.11, 648.23, 663.46, 671.55, 645.36, 671.0, 731.0];
+  var ma20   = 582.22;
+  var ma50   = 482.51;
 
   if (!labels || !labels.length) return;
   var canvas = document.getElementById('priceChart');

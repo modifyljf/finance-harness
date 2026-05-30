@@ -32,7 +32,7 @@
     bottom: -100px; right: -60px;
     width: 500px; height: 500px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba({{ glow_r }},{{ glow_g }},{{ glow_b }},0.22) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(245,158,11,0.22) 0%, transparent 70%);
   }
   .bg-line {
     position: absolute;
@@ -63,7 +63,7 @@
   .eyebrow span { color: #64748b; }
 
   .hook {
-    font-size: {{ hook_font_size }}px;
+    font-size: 76px;
     font-weight: 900;
     line-height: 1.18;
     color: #f1f5f9;
@@ -72,7 +72,7 @@
   }
   .hook em {
     font-style: normal;
-    color: {{ accent_color }};
+    color: #f59e0b;
     position: relative;
   }
 
@@ -157,42 +157,42 @@
 
   <!-- Left: Hook -->
   <div class="left">
-    <div class="eyebrow">{{ ticker }} <span>·</span> 周度深度</div>
-    <div class="hook">{{ hook_html | safe }}</div>
-    <div class="subhook">{{ subhook }}</div>
+    <div class="eyebrow">CRWD <span>·</span> 周度深度</div>
+    <div class="hook">股价飙升，<em>估值高企</em>？</div>
+    <div class="subhook">CrowdStrike股价飞涨，百倍PE能靠AI撑住吗？</div>
   </div>
 
   <!-- Right: Data cards -->
   <div class="right">
     <div class="price-card">
       <div class="price-label">当前股价</div>
-      <div class="price-val">${{ current_price }}</div>
-      <div class="price-chg {{ 'up' if price_change_pct >= 0 else 'down' }}">
-        {{ '+' if price_change_pct >= 0 else '' }}{{ price_change_pct }}%
+      <div class="price-val">$731.0</div>
+      <div class="price-chg up">
+        +8.94%
       </div>
     </div>
 
     <div class="metrics-row">
       <div class="metric-card">
         <div class="metric-label">Fwd PE</div>
-        <div class="metric-val gold">{{ fwd_pe }}x</div>
+        <div class="metric-val gold">118.46x</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">PEG</div>
-        <div class="metric-val {{ 'green' if peg and peg < 1 else 'gold' }}">{{ peg if peg else 'N/A' }}</div>
+        <div class="metric-val gold">5.32</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">RSI(14)</div>
-        <div class="metric-val {{ 'red' if rsi and rsi > 70 else 'green' if rsi and rsi < 30 else 'gold' }}">{{ rsi if rsi else 'N/A' }}</div>
+        <div class="metric-val red">83.8</div>
       </div>
       <div class="metric-card">
         <div class="metric-label">机构持仓</div>
-        <div class="metric-val">{{ inst_pct }}%</div>
+        <div class="metric-val">74.9%</div>
       </div>
     </div>
 
-    <div class="verdict-pill {{ verdict }}">
-      {{ '▲ 看多' if verdict == 'bullish' else '▼ 看空' if verdict == 'bearish' else '◆ 中性观望' }}
+    <div class="verdict-pill neutral">
+      ◆ 中性观望
     </div>
   </div>
 
@@ -200,9 +200,9 @@
 
 <div class="footer">
   <div class="footer-left">
-    <span class="footer-ticker">{{ ticker }}</span>{{ company_name }}
+    <span class="footer-ticker">CRWD</span>CrowdStrike Holdings, Inc.
   </div>
-  <div class="footer-right">{{ current_date }} · AI 股票深度点评</div>
+  <div class="footer-right">2026-05-30 · AI 股票深度点评</div>
 </div>
 
 </body>

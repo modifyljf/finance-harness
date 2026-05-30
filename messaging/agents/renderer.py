@@ -67,8 +67,10 @@ class RendererAgent(BaseAgent):
         parts = [f"${md.get('current_price', 'N/A')}  {change_str}"]
         if pe_val:
             parts.append(f"Forward PE {pe_val}x")
-        if range_pos is not None:
-            parts.append(f"52W区间 {range_pos}%")
+        analyst = plan.get("analyst_snapshot", {})
+        upside = analyst.get("upside_pct")
+        if upside is not None:
+            parts.append(f"目标价空间 {'+' if upside >= 0 else ''}{upside}%")
         real_overview_headline = "  ·  ".join(parts)
 
         slides = candidate.slides
@@ -98,6 +100,8 @@ class RendererAgent(BaseAgent):
             high_52w=md.get("52w_high", "N/A"),
             low_52w=md.get("52w_low", "N/A"),
             volume=md.get("volume", "N/A"),
+            beta=md.get("beta", "N/A"),
+            analyst_target=plan.get("analyst_snapshot", {}).get("target_mean", "N/A"),
             price_labels=price_labels,
             price_values=price_values,
             ma20=tech.get("ma20"),
@@ -138,11 +142,12 @@ class RendererAgent(BaseAgent):
 
         accent = {"bullish": "#10b981", "bearish": "#f43f5e", "neutral": "#f59e0b"}.get(verdict, "#3b82f6")
 
+        tech      = plan["technical_indicators"]
         price_change = md.get("price_change_pct", 0) or 0
         fwd_pe   = val.get("pe_forward") or val.get("pe_trailing") or "N/A"
         peg      = val.get("peg")
-        range_pos = md.get("52w_range_position_pct") or 0
-        inst_pct  = md.get("institutional_ownership_pct") or "N/A"
+        rsi      = tech.get("rsi_14")
+        inst_pct = md.get("institutional_ownership_pct") or "N/A"
 
         env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=False)
         tmpl = env.get_template("thumbnail.html.j2")
@@ -154,7 +159,7 @@ class RendererAgent(BaseAgent):
             price_change_pct=price_change,
             fwd_pe=fwd_pe,
             peg=round(peg, 2) if peg else None,
-            range_pos=range_pos,
+            rsi=round(rsi, 1) if rsi else None,
             inst_pct=inst_pct,
             hook_html=hook_html,
             subhook=subhook,

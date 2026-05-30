@@ -1,0 +1,181 @@
+{
+  "title": "AI信仰还是最后狂欢？",
+  "ticker": "CRWD",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "AI信仰还是最后狂欢？",
+      "subtitle": "本周深度分析·2026-05-30",
+      "hook": "股价七天暴涨百分之九，全网却齐声高呼还有十倍空间。",
+      "autoslide_ms": 26450
+    },
+    {
+      "type": "market_overview",
+      "headline": "$731.0  +8.94%  ·  Forward PE 118.46x  ·  目标价空间 -24.7%",
+      "callout": "ROE负4.1%，目标价550美元，当前股价高估近1/4",
+      "autoslide_ms": 51262
+    },
+    {
+      "type": "price_action",
+      "headline": "短期偏多，但极度脆弱",
+      "signal": "bullish",
+      "bullets": [
+        "支撑位：$582.22（MA20，中线多头生命线）",
+        "阻力位：$731.49（历史新高，必须突破否则双顶）",
+        "趋势描述：过去两周一路狂飙，五月十一号还在542美金，昨天收盘731美金，涨幅超过34%；MACD持续发散，成交量明显放大，典型放量加速形态；布林带上轨在740.54美金，当前价格几乎贴在上轨运行。",
+        "RSI高达83.8，严重超买。"
+      ],
+      "autoslide_ms": 80168
+    },
+    {
+      "type": "key_points",
+      "headline": "多空逻辑对撞",
+      "points": [
+        {
+          "title": "技术面动量碾压",
+          "body": "价格从542美元飙到731美元，MACD柱状线持续放大，成交量扩张，量价齐升。目标是布林带上轨740.54美元。",
+          "tag": "bull"
+        },
+        {
+          "title": "估值过贵风险大",
+          "body": "前瞻市盈率118倍，ROE负4.1%，RSI 83.8极度超买。分析师目标价550美元，潜在下跌24.7%。",
+          "tag": "bear"
+        }
+      ],
+      "autoslide_ms": 137052
+    },
+    {
+      "type": "news",
+      "headline": "激烈多空对决，AI叙事激活但基本面警告刺耳",
+      "news_items": [
+        {
+          "title": "CrowdStrike与Anthropic启动深度整合",
+          "category": "product",
+          "impact": "positive",
+          "note": "股价破七百三的核心推手，AI叙事再次被激活"
+        },
+        {
+          "title": "摩根士丹利上调CRWD评级至买入",
+          "category": "analyst",
+          "impact": "positive",
+          "note": "看好企业客户转向AI安全服务的粘性，新合同增速超预期"
+        },
+        {
+          "title": "瑞银给予CRWD中性评级",
+          "category": "analyst",
+          "impact": "negative",
+          "note": "警告一百一十八倍前瞻PE是空中楼阁，财报预期落空向下空间大"
+        },
+        {
+          "title": "本周涨近9%，空头占比跌至3%",
+          "category": "other",
+          "impact": "negative",
+          "note": "一致性看多，一旦出坏消息踩踏风险急剧升高"
+        }
+      ],
+      "analyst_summary": "摩根士丹利上调至买入目标价760，瑞银中性目标价550，分歧极端",
+      "autoslide_ms": 66950
+    },
+    {
+      "type": "financials",
+      "headline": "财务基本面建在流沙上的城堡",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "+29%",
+          "trend": "down"
+        },
+        {
+          "label": "毛利率",
+          "value": "78.5%",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "负值",
+          "trend": "flat"
+        },
+        {
+          "label": "Forward PE",
+          "value": "118x",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "11.2亿美元，转化率超过50%",
+          "trend": "flat"
+        }
+      ],
+      "callout": "一百一十八倍前瞻市盈率，需要的是利润爆发式增长来填坑。",
+      "autoslide_ms": 102001
+    },
+    {
+      "type": "risk",
+      "headline": "高",
+      "risks": [
+        {
+          "title": "估值修正灰犀牛",
+          "body": "预期市盈率高达118倍，向下回归空间接近25%，一旦AI叙事退潮，杀估值踩踏发生。",
+          "severity": "high"
+        },
+        {
+          "title": "财报地雷风险",
+          "body": "市场押注下周财报，若Q1 ARR或指引未能大幅碾压最激进预期，卖事实剧本立刻上演。",
+          "severity": "high"
+        },
+        {
+          "title": "系统性冲击风险",
+          "body": "Beta值超1，若宏观通胀超预期引发利率上行担忧，资金抛售高估值成长股，导致剧烈回调。",
+          "severity": "high"
+        }
+      ],
+      "autoslide_ms": 89957
+    },
+    {
+      "type": "catalyst",
+      "headline": "多空博弈最关键的时刻",
+      "catalysts": [
+        {
+          "event": "ARR增速超预期",
+          "direction": "positive",
+          "timing": "下周六月第一周",
+          "impact": "medium"
+        },
+        {
+          "event": "财报出现瑕疵",
+          "direction": "negative",
+          "timing": "下周六月第一周",
+          "impact": "large"
+        }
+      ],
+      "autoslide_ms": 78624
+    },
+    {
+      "type": "outlook",
+      "headline": "三维分歧，已经到了必须选择的十字路口。短期动量在，但性价比极差",
+      "subtitle": "中性",
+      "base_range": {
+        "low": "$700",
+        "high": "$760",
+        "timeframe": "1-4周"
+      },
+      "scenario_bull": {
+        "condition": "在731.5放量突破且分时图不弱",
+        "target": "$760"
+      },
+      "scenario_bear": {
+        "condition": "在731.5反复受阻且长上影线，回落至671下方",
+        "target": "$671"
+      },
+      "autoslide_ms": 69573
+    },
+    {
+      "type": "summary",
+      "headline": "共识全是看多, 这才是最危险的信号",
+      "verdict": "bearish",
+      "action": "只适合极短线高手博弈。仓位不超过5%，持仓等待不如等待回调。",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
+      "autoslide_ms": 37856
+    }
+  ]
+}
