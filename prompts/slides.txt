@@ -37,8 +37,8 @@ headline 必须包含至少一个具体数字（价格、PE、涨跌幅、区间
 {{"type":"risk","headline":"风险等级：高或中或低","risks":[{{"title":"风险标题（10字以内）","body":"风险机制说明（40字以内）","severity":"high或medium或low"}}]}}
 
 ### news（本周新闻与机构观点）
-必须用 items 数组，每条新闻一个对象。
-{{"type":"news","headline":"本周市场焦点一句话（20字以内）","items":[{{"title":"新闻标题摘要（25字以内）","category":"earnings或analyst或product或regulation或macro或insider或other","impact":"positive或negative或neutral","note":"一句话影响解读（20字以内）"}}],"analyst_summary":"本周分析师评级变化概述，如无则填'暂无评级变化'（25字以内）"}}
+必须用 news_items 数组，每条新闻一个对象。
+{{"type":"news","headline":"本周市场焦点一句话（20字以内）","news_items":[{{"title":"新闻标题摘要（25字以内）","category":"earnings或analyst或product或regulation或macro或insider或other","impact":"positive或negative或neutral","note":"一句话影响解读（20字以内）"}}],"analyst_summary":"本周分析师评级变化概述，如无则填'暂无评级变化'（25字以内）"}}
 
 ### catalyst（催化剂）
 必须用 catalysts 数组。

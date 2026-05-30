@@ -690,6 +690,46 @@
   <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>免责声明</span></div>
 </section>
 
+{# ── News ── #}
+{% elif slide.type == 'news' %}
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+  <div class="slide-inner">
+    <div class="tag gold">本周新闻</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.news_items %}
+    <div class="card-list" style="margin-top:8px">
+      {% for item in slide.news_items %}
+      {% set imp = item.impact | default('neutral') | lower %}
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        {% if imp == 'positive' %}background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        {% elif imp == 'negative' %}background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        {% else %}background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.18);border-left:3px solid var(--c-accent){% endif %}">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          {% if imp == 'positive' %}color:var(--c-green){% elif imp == 'negative' %}color:var(--c-red){% else %}color:var(--c-accent){% endif %}">
+          {{ '▲' if imp == 'positive' else '▼' if imp == 'negative' else '◆' }}
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">{{ item.title }}</div>
+          {% if item.note %}<div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">{{ item.note }}</div>{% endif %}
+        </div>
+        {% if item.category %}
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">{{ item.category }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if slide.analyst_summary %}
+    <div class="callout-box fragment fade-up" style="margin-top:10px">
+      <div class="callout-icon">◈</div>
+      <div class="callout-text">机构观点：{{ slide.analyst_summary }}</div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>本周资讯</span></div>
+</section>
+
 {# ── Fallback ── #}
 {% else %}
 <section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
@@ -716,11 +756,66 @@
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
 Reveal.initialize({
-  hash: true, progress: true, controls: true, center: false,
+  hash: false, progress: true, controls: true, center: false,
   transition: 'slide', transitionSpeed: 'default',
   autoSlide: 0, loop: false, width: 1280, height: 720,
   slideNumber: 'c/t', fragments: true,
+  keyboard: true,
 });
+
+// OBS-compatible auto-advance + fragment auto-reveal
+// No focus/visibility dependency — works in CEF / OBS Browser Source
+(function () {
+  var sections = document.querySelectorAll('.reveal .slides section');
+  var timings = [];
+  sections.forEach(function (s) {
+    timings.push(parseInt(s.getAttribute('data-autoslide') || '5000', 10));
+  });
+  if (!timings.length) return;
+
+  var idx       = 0;
+  var slideTimer = null;
+  var fragTimers = [];
+  var advancing  = false; // prevent slidechanged from double-scheduling
+
+  // Reveal all .fragment elements in a slide with fade-up stagger
+  function revealFragments(slideEl) {
+    fragTimers.forEach(clearTimeout);
+    fragTimers = [];
+    var frags = slideEl ? slideEl.querySelectorAll('.fragment') : [];
+    frags.forEach(function (f, i) {
+      fragTimers.push(setTimeout(function () {
+        f.classList.add('visible', 'current-fragment');
+      }, (i + 1) * 400));
+    });
+  }
+
+  function scheduleAdvance() {
+    clearTimeout(slideTimer);
+    if (idx >= timings.length - 1) return;
+    slideTimer = setTimeout(function () {
+      advancing = true;
+      idx++;
+      Reveal.slide(idx);
+      advancing = false;
+      revealFragments(sections[idx]);
+      scheduleAdvance();
+    }, timings[idx]);
+  }
+
+  Reveal.on('ready', function () {
+    revealFragments(sections[0]);
+    scheduleAdvance();
+  });
+
+  // Manual navigation resets everything cleanly
+  Reveal.on('slidechanged', function (e) {
+    if (advancing) return;
+    idx = e.indexh;
+    revealFragments(sections[idx]);
+    scheduleAdvance();
+  });
+})();
 
 (function () {
   var labels = {{ price_labels }};

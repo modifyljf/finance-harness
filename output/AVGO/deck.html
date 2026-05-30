@@ -1,880 +1,1541 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<title>Broadcom Inc. (AVGO) 深度分析</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<style>
-  :root {
-    --c-bg:        #080d14;
-    --c-surface:   #111827;
-    --c-surface2:  #1a2235;
-    --c-border:    #1f2d40;
-    --c-accent:    #3b82f6;
-    --c-accent-lo: rgba(59,130,246,0.12);
-    --c-green:     #10b981;
-    --c-red:       #f43f5e;
-    --c-gold:      #f59e0b;
-    --c-purple:    #8b5cf6;
-    --c-text:      #f1f5f9;
-    --c-muted:     #64748b;
-    --c-muted2:    #94a3b8;
-  }
+    <meta charset="UTF-8"/>
+    <title>最后的狂欢或暴风雨前的宁静？</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --c-bg: #080d14;
+            --c-surface: #111827;
+            --c-surface2: #1a2235;
+            --c-border: #1f2d40;
+            --c-accent: #3b82f6;
+            --c-accent-lo: rgba(59, 130, 246, 0.12);
+            --c-green: #10b981;
+            --c-red: #f43f5e;
+            --c-gold: #f59e0b;
+            --c-purple: #8b5cf6;
+            --c-text: #f1f5f9;
+            --c-muted: #64748b;
+            --c-muted2: #94a3b8;
+        }
 
-  .reveal {
-    background: var(--c-bg);
-    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', Arial, sans-serif;
-  }
-  .reveal::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: radial-gradient(circle, #1a2540 1px, transparent 1px);
-    background-size: 32px 32px;
-    opacity: 0.45;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .reveal .slides { z-index: 1; }
-  .reveal .slides section { text-align: left; height: 100%; }
+        .reveal {
+            background: var(--c-bg);
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', Arial, sans-serif;
+        }
 
-  /* ── Footer ── */
-  .slide-footer {
-    position: absolute;
-    bottom: 16px; left: 60px; right: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.42em;
-    color: var(--c-muted);
-    border-top: 1px solid var(--c-border);
-    padding-top: 7px;
-    letter-spacing: 0.08em;
-  }
-  .footer-ticker { font-weight: 800; color: var(--c-accent); letter-spacing: 0.18em; }
+        .reveal::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle, #1a2540 1px, transparent 1px);
+            background-size: 32px 32px;
+            opacity: 0.45;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-  /* ── Common layout ── */
-  .slide-inner {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px 60px 52px;
-    box-sizing: border-box;
-    position: relative;
-  }
+        .reveal .slides {
+            z-index: 1;
+        }
 
-  .tag {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.46em;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 4px 13px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    width: fit-content;
-    background: var(--c-accent-lo);
-    color: var(--c-accent);
-    border: 1px solid rgba(59,130,246,0.25);
-  }
-  .tag.red    { background: rgba(244,63,94,0.1);  color: var(--c-red);    border-color: rgba(244,63,94,0.28); }
-  .tag.gold   { background: rgba(245,158,11,0.1); color: var(--c-gold);   border-color: rgba(245,158,11,0.28); }
-  .tag.green  { background: rgba(16,185,129,0.1); color: var(--c-green);  border-color: rgba(16,185,129,0.28); }
-  .tag.purple { background: rgba(139,92,246,0.1); color: var(--c-purple); border-color: rgba(139,92,246,0.28); }
+        .reveal .slides section {
+            text-align: left;
+            height: 100%;
+        }
 
-  .slide-headline {
-    font-size: 1.45em;
-    font-weight: 800;
-    color: var(--c-text);
-    line-height: 1.25;
-    margin: 0 0 12px;
-  }
+        /* ── Footer ── */
+        .slide-footer {
+            position: absolute;
+            bottom: 16px;
+            left: 60px;
+            right: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.42em;
+            color: var(--c-muted);
+            border-top: 1px solid var(--c-border);
+            padding-top: 7px;
+            letter-spacing: 0.08em;
+        }
 
-  /* ── Cover ── */
-  .cover-wrap { display: flex; height: 100%; box-sizing: border-box; }
-  .cover-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 50px 40px 50px 60px;
-  }
-  .cover-right {
-    width: 268px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 12px;
-    padding: 36px 48px 36px 0;
-  }
-  .cover-eyebrow {
-    font-size: 0.5em;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    color: var(--c-accent);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .cover-headline {
-    font-size: 2em;
-    font-weight: 900;
-    color: var(--c-text);
-    line-height: 1.2;
-    margin: 0 0 16px;
-  }
-  .cover-divider {
-    width: 44px; height: 3px;
-    background: linear-gradient(90deg, var(--c-accent), transparent);
-    border-radius: 2px;
-    margin-bottom: 12px;
-  }
-  .cover-company { font-size: 0.7em; color: var(--c-muted2); margin-bottom: 14px; }
-  .cover-hook {
-    font-size: 0.72em;
-    color: var(--c-gold);
-    line-height: 1.55;
-    padding: 10px 14px;
-    border-left: 3px solid var(--c-gold);
-    background: rgba(245,158,11,0.07);
-    border-radius: 0 6px 6px 0;
-  }
+        .footer-ticker {
+            font-weight: 800;
+            color: var(--c-accent);
+            letter-spacing: 0.18em;
+        }
 
-  /* price widget */
-  .price-widget {
-    background: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: 14px;
-    padding: 18px 20px;
-    text-align: center;
-  }
-  .pw-label { font-size: 0.46em; color: var(--c-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 7px; }
-  .pw-price { font-size: 1.85em; font-weight: 900; color: var(--c-text); line-height: 1; margin-bottom: 7px; }
-  .pw-change {
-    display: inline-block; font-size: 0.7em; font-weight: 700;
-    padding: 3px 12px; border-radius: 12px;
-  }
-  .pw-change.up   { background: rgba(16,185,129,0.15); color: var(--c-green); }
-  .pw-change.down { background: rgba(244,63,94,0.15);  color: var(--c-red); }
+        /* ── Common layout ── */
+        .slide-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px 60px 52px;
+            box-sizing: border-box;
+            position: relative;
+        }
 
-  .cover-info-card {
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-radius: 10px; padding: 11px 16px;
-    text-align: center; font-size: 0.5em; color: var(--c-muted2);
-  }
-  .cover-info-card strong {
-    display: block; font-size: 1.3em; font-weight: 700;
-    color: var(--c-text); margin-bottom: 2px;
-  }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.46em;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 4px 13px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: fit-content;
+            background: var(--c-accent-lo);
+            color: var(--c-accent);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+        }
 
-  /* ── Callout box (market_overview, financials) ── */
-  .callout-box {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 14px;
-    padding: 13px 16px;
-    background: rgba(59,130,246,0.08);
-    border: 1px solid rgba(59,130,246,0.22);
-    border-radius: 8px;
-  }
-  .callout-icon { font-size: 1em; color: var(--c-accent); flex-shrink: 0; margin-top: 1px; }
-  .callout-text { font-size: 0.78em; color: var(--c-text); line-height: 1.55; }
+        .tag.red {
+            background: rgba(244, 63, 94, 0.1);
+            color: var(--c-red);
+            border-color: rgba(244, 63, 94, 0.28);
+        }
 
-  /* ── Stats grid ── */
-  .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
-  .stat-card {
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-left: 3px solid var(--c-border); border-radius: 10px; padding: 12px 14px;
-  }
-  .stat-card.a { border-left-color: var(--c-accent); }
-  .stat-card.g { border-left-color: var(--c-green);  }
-  .stat-card.r { border-left-color: var(--c-red);    }
-  .stat-card.o { border-left-color: var(--c-gold);   }
-  .stat-label { font-size: 0.46em; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
-  .stat-value { font-size: 1.08em; font-weight: 700; color: var(--c-text); }
-  .stat-value.up   { color: var(--c-green); }
-  .stat-value.down { color: var(--c-red); }
+        .tag.gold {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--c-gold);
+            border-color: rgba(245, 158, 11, 0.28);
+        }
 
-  /* ── Chart ── */
-  .chart-wrap {
-    width: 100%; height: 240px; position: relative; margin-top: 10px;
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-radius: 10px; padding: 8px 12px 6px; box-sizing: border-box;
-  }
+        .tag.green {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--c-green);
+            border-color: rgba(16, 185, 129, 0.28);
+        }
 
-  /* ── Direction badge (price_action, outlook) ── */
-  .direction-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 7px 20px; border-radius: 22px; font-weight: 800;
-    font-size: 0.78em; margin-bottom: 12px; letter-spacing: 0.05em;
-  }
-  .direction-badge.bullish { background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.38); color: var(--c-green); }
-  .direction-badge.bearish { background: rgba(244,63,94,0.14);  border: 1px solid rgba(244,63,94,0.38);  color: var(--c-red); }
-  .direction-badge.neutral { background: rgba(245,158,11,0.14); border: 1px solid rgba(245,158,11,0.38); color: var(--c-gold); }
+        .tag.purple {
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--c-purple);
+            border-color: rgba(139, 92, 246, 0.28);
+        }
 
-  /* ── Bullets ── */
-  .bullets { list-style: none; margin: 0; padding: 0; }
-  .bullets li {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 9px 0; border-bottom: 1px solid var(--c-border);
-    font-size: 0.78em; color: var(--c-text); line-height: 1.55;
-  }
-  .bullets li:last-child { border-bottom: none; }
-  .bullet-num {
-    min-width: 21px; height: 21px; border-radius: 50%;
-    background: var(--c-accent-lo); border: 1px solid rgba(59,130,246,0.3);
-    color: var(--c-accent); font-size: 0.8em; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 2px;
-  }
-  .bullet-dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--c-accent); margin-top: 7px; flex-shrink: 0;
-  }
-  .bullet-dot.r { background: var(--c-red); }
-  .bullet-dot.g { background: var(--c-green); }
-  .bullet-dot.o { background: var(--c-gold); }
+        .slide-headline {
+            font-size: 1.45em;
+            font-weight: 800;
+            color: var(--c-text);
+            line-height: 1.25;
+            margin: 0 0 12px;
+        }
 
-  /* ── Key Points (title + body) ── */
-  .kp-list { list-style: none; margin: 0; padding: 0; }
-  .kp-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 10px 0; border-bottom: 1px solid var(--c-border);
-  }
-  .kp-item:last-child { border-bottom: none; }
-  .kp-tag-dot {
-    min-width: 8px; height: 8px; border-radius: 50%;
-    margin-top: 8px; flex-shrink: 0;
-  }
-  .kp-tag-dot.bull { background: var(--c-green); }
-  .kp-tag-dot.bear { background: var(--c-red); }
-  .kp-tag-dot.neutral { background: var(--c-gold); }
-  .kp-content { flex: 1; }
-  .kp-title { font-size: 0.82em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
-  .kp-body  { font-size: 0.72em; color: var(--c-muted2); line-height: 1.5; }
-  .kp-badge {
-    font-size: 0.52em; font-weight: 700; padding: 2px 8px;
-    border-radius: 10px; flex-shrink: 0; margin-top: 4px; align-self: flex-start;
-  }
-  .kp-badge.bull { background: rgba(16,185,129,0.15); color: var(--c-green); }
-  .kp-badge.bear { background: rgba(244,63,94,0.15);  color: var(--c-red); }
-  .kp-badge.neutral { background: rgba(245,158,11,0.15); color: var(--c-gold); }
+        /* ── Cover ── */
+        .cover-wrap {
+            display: flex;
+            height: 100%;
+            box-sizing: border-box;
+        }
 
-  /* ── Metrics grid (financials) ── */
-  .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; margin-top: 10px; }
-  .metric-card {
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-radius: 8px; padding: 11px 13px;
-  }
-  .metric-label { font-size: 0.48em; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
-  .metric-value { font-size: 0.98em; font-weight: 700; color: var(--c-text); }
-  .metric-value.up   { color: var(--c-green); }
-  .metric-value.down { color: var(--c-red); }
-  .metric-trend { font-size: 0.75em; margin-right: 3px; }
+        .cover-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px 40px 50px 60px;
+        }
 
-  /* ── Risk cards with severity ── */
-  .card-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-  .risk-card-v2 {
-    display: flex; align-items: flex-start; gap: 10px;
-    background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.16);
-    border-left: 3px solid var(--c-red); border-radius: 8px; padding: 10px 14px;
-  }
-  .risk-severity {
-    font-size: 0.52em; font-weight: 800; padding: 2px 8px; border-radius: 8px;
-    flex-shrink: 0; margin-top: 2px;
-  }
-  .risk-severity.high   { background: rgba(244,63,94,0.2);  color: var(--c-red); }
-  .risk-severity.medium { background: rgba(245,158,11,0.2); color: var(--c-gold); }
-  .risk-severity.low    { background: rgba(16,185,129,0.2); color: var(--c-green); }
-  .risk-content { flex: 1; }
-  .risk-title { font-size: 0.78em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
-  .risk-body  { font-size: 0.68em; color: var(--c-muted2); line-height: 1.5; }
+        .cover-right {
+            width: 268px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            padding: 36px 48px 36px 0;
+        }
 
-  /* ── Catalyst cards ── */
-  .catalyst-card-v2 {
-    display: flex; align-items: flex-start; gap: 10px;
-    border-radius: 8px; padding: 10px 14px;
-  }
-  .catalyst-card-v2.positive {
-    background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.18);
-    border-left: 3px solid var(--c-green);
-  }
-  .catalyst-card-v2.negative {
-    background: rgba(244,63,94,0.06); border: 1px solid rgba(244,63,94,0.18);
-    border-left: 3px solid var(--c-red);
-  }
-  .cat-icon { font-size: 0.9em; flex-shrink: 0; margin-top: 2px; }
-  .cat-icon.pos { color: var(--c-green); }
-  .cat-icon.neg { color: var(--c-red); }
-  .cat-content { flex: 1; }
-  .cat-event { font-size: 0.78em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
-  .cat-meta  { font-size: 0.62em; color: var(--c-muted2); }
-  .cat-impact {
-    font-size: 0.52em; font-weight: 700; padding: 2px 8px; border-radius: 8px;
-    flex-shrink: 0; margin-top: 3px; align-self: flex-start;
-  }
-  .cat-impact.large  { background: rgba(244,63,94,0.15); color: var(--c-red); }
-  .cat-impact.medium { background: rgba(245,158,11,0.15); color: var(--c-gold); }
-  .cat-impact.small  { background: rgba(16,185,129,0.12); color: var(--c-green); }
+        .cover-eyebrow {
+            font-size: 0.5em;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            color: var(--c-accent);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
 
-  /* ── Outlook: range + scenarios ── */
-  .range-box {
-    display: inline-flex; flex-direction: column; align-items: center;
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-radius: 10px; padding: 10px 24px; margin-bottom: 14px;
-  }
-  .range-label { font-size: 0.48em; color: var(--c-muted); letter-spacing: 0.1em; margin-bottom: 4px; }
-  .range-values { font-size: 1.1em; font-weight: 800; color: var(--c-text); }
+        .cover-headline {
+            font-size: 2em;
+            font-weight: 900;
+            color: var(--c-text);
+            line-height: 1.2;
+            margin: 0 0 16px;
+        }
 
-  .scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
-  .scenario {
-    border-radius: 10px; padding: 14px 16px;
-  }
-  .scenario.bull {
-    background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.22);
-    border-top: 3px solid var(--c-green);
-  }
-  .scenario.bear {
-    background: rgba(244,63,94,0.07); border: 1px solid rgba(244,63,94,0.22);
-    border-top: 3px solid var(--c-red);
-  }
-  .scenario-label {
-    font-size: 0.5em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .scenario.bull .scenario-label { color: var(--c-green); }
-  .scenario.bear .scenario-label { color: var(--c-red); }
-  .scenario-condition { font-size: 0.72em; color: var(--c-text); line-height: 1.5; margin-bottom: 6px; }
-  .scenario-target { font-size: 0.7em; font-weight: 700; }
-  .scenario.bull .scenario-target { color: var(--c-green); }
-  .scenario.bear .scenario-target { color: var(--c-red); }
+        .cover-divider {
+            width: 44px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--c-accent), transparent);
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
 
-  /* ── Summary ── */
-  .summary-quote {
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-left: 4px solid var(--c-accent); border-radius: 10px;
-    padding: 20px 24px 20px 26px; margin-top: 12px; position: relative;
-  }
-  .summary-quote::before {
-    content: '"'; position: absolute; top: -10px; left: 16px;
-    font-size: 3em; color: var(--c-accent); opacity: 0.22;
-    font-family: Georgia, serif; line-height: 1;
-  }
-  .summary-text { font-size: 1em; font-weight: 600; color: var(--c-text); line-height: 1.65; }
+        .cover-company {
+            font-size: 0.7em;
+            color: var(--c-muted2);
+            margin-bottom: 14px;
+        }
 
-  .verdict-row { display: flex; gap: 10px; margin-top: 12px; align-items: center; }
-  .verdict-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 18px; border-radius: 20px; font-weight: 800; font-size: 0.72em;
-  }
-  .verdict-badge.bullish { background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.38); color: var(--c-green); }
-  .verdict-badge.bearish { background: rgba(244,63,94,0.14);  border: 1px solid rgba(244,63,94,0.38);  color: var(--c-red); }
-  .verdict-badge.neutral { background: rgba(245,158,11,0.14); border: 1px solid rgba(245,158,11,0.38); color: var(--c-gold); }
+        .cover-hook {
+            font-size: 0.72em;
+            color: var(--c-gold);
+            line-height: 1.55;
+            padding: 10px 14px;
+            border-left: 3px solid var(--c-gold);
+            background: rgba(245, 158, 11, 0.07);
+            border-radius: 0 6px 6px 0;
+        }
 
-  .action-box {
-    display: flex; align-items: flex-start; gap: 10px;
-    margin-top: 10px; padding: 11px 14px;
-    background: rgba(59,130,246,0.07); border: 1px solid rgba(59,130,246,0.2);
-    border-radius: 8px;
-  }
-  .action-label { font-size: 0.5em; font-weight: 700; color: var(--c-accent); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; margin-top: 2px; }
-  .action-text  { font-size: 0.74em; color: var(--c-text); line-height: 1.55; }
+        /* price widget */
+        .price-widget {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 14px;
+            padding: 18px 20px;
+            text-align: center;
+        }
 
-  .disclaimer {
-    font-size: 0.44em; color: var(--c-muted); margin-top: 14px;
-    line-height: 1.6; padding: 8px 12px;
-    background: rgba(255,255,255,0.03); border: 1px solid var(--c-border); border-radius: 6px;
-  }
+        .pw-label {
+            font-size: 0.46em;
+            color: var(--c-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
 
-  /* Reveal overrides */
-  .reveal .progress { color: var(--c-accent); height: 3px; }
-  .reveal .controls button { color: var(--c-accent); }
-</style>
+        .pw-price {
+            font-size: 1.85em;
+            font-weight: 900;
+            color: var(--c-text);
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+
+        .pw-change {
+            display: inline-block;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 12px;
+        }
+
+        .pw-change.up {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--c-green);
+        }
+
+        .pw-change.down {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--c-red);
+        }
+
+        .cover-info-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 10px;
+            padding: 11px 16px;
+            text-align: center;
+            font-size: 0.5em;
+            color: var(--c-muted2);
+        }
+
+        .cover-info-card strong {
+            display: block;
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--c-text);
+            margin-bottom: 2px;
+        }
+
+        /* ── Callout box (market_overview, financials) ── */
+        .callout-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 14px;
+            padding: 13px 16px;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.22);
+            border-radius: 8px;
+        }
+
+        .callout-icon {
+            font-size: 1em;
+            color: var(--c-accent);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .callout-text {
+            font-size: 0.78em;
+            color: var(--c-text);
+            line-height: 1.55;
+        }
+
+        /* ── Stats grid ── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .stat-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-left: 3px solid var(--c-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+        }
+
+        .stat-card.a {
+            border-left-color: var(--c-accent);
+        }
+
+        .stat-card.g {
+            border-left-color: var(--c-green);
+        }
+
+        .stat-card.r {
+            border-left-color: var(--c-red);
+        }
+
+        .stat-card.o {
+            border-left-color: var(--c-gold);
+        }
+
+        .stat-label {
+            font-size: 0.46em;
+            color: var(--c-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.08em;
+            font-weight: 700;
+            color: var(--c-text);
+        }
+
+        .stat-value.up {
+            color: var(--c-green);
+        }
+
+        .stat-value.down {
+            color: var(--c-red);
+        }
+
+        /* ── Chart ── */
+        .chart-wrap {
+            width: 100%;
+            height: 240px;
+            position: relative;
+            margin-top: 10px;
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 10px;
+            padding: 8px 12px 6px;
+            box-sizing: border-box;
+        }
+
+        /* ── Direction badge (price_action, outlook) ── */
+        .direction-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 20px;
+            border-radius: 22px;
+            font-weight: 800;
+            font-size: 0.78em;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .direction-badge.bullish {
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(16, 185, 129, 0.38);
+            color: var(--c-green);
+        }
+
+        .direction-badge.bearish {
+            background: rgba(244, 63, 94, 0.14);
+            border: 1px solid rgba(244, 63, 94, 0.38);
+            color: var(--c-red);
+        }
+
+        .direction-badge.neutral {
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.38);
+            color: var(--c-gold);
+        }
+
+        /* ── Bullets ── */
+        .bullets {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--c-border);
+            font-size: 0.78em;
+            color: var(--c-text);
+            line-height: 1.55;
+        }
+
+        .bullets li:last-child {
+            border-bottom: none;
+        }
+
+        .bullet-num {
+            min-width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            background: var(--c-accent-lo);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--c-accent);
+            font-size: 0.8em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .bullet-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--c-accent);
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        .bullet-dot.r {
+            background: var(--c-red);
+        }
+
+        .bullet-dot.g {
+            background: var(--c-green);
+        }
+
+        .bullet-dot.o {
+            background: var(--c-gold);
+        }
+
+        /* ── Key Points (title + body) ── */
+        .kp-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .kp-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--c-border);
+        }
+
+        .kp-item:last-child {
+            border-bottom: none;
+        }
+
+        .kp-tag-dot {
+            min-width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .kp-tag-dot.bull {
+            background: var(--c-green);
+        }
+
+        .kp-tag-dot.bear {
+            background: var(--c-red);
+        }
+
+        .kp-tag-dot.neutral {
+            background: var(--c-gold);
+        }
+
+        .kp-content {
+            flex: 1;
+        }
+
+        .kp-title {
+            font-size: 0.82em;
+            font-weight: 700;
+            color: var(--c-text);
+            margin-bottom: 3px;
+        }
+
+        .kp-body {
+            font-size: 0.72em;
+            color: var(--c-muted2);
+            line-height: 1.5;
+        }
+
+        .kp-badge {
+            font-size: 0.52em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            margin-top: 4px;
+            align-self: flex-start;
+        }
+
+        .kp-badge.bull {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--c-green);
+        }
+
+        .kp-badge.bear {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--c-red);
+        }
+
+        .kp-badge.neutral {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--c-gold);
+        }
+
+        /* ── Metrics grid (financials) ── */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 9px;
+            margin-top: 10px;
+        }
+
+        .metric-card {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 8px;
+            padding: 11px 13px;
+        }
+
+        .metric-label {
+            font-size: 0.48em;
+            color: var(--c-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 0.98em;
+            font-weight: 700;
+            color: var(--c-text);
+        }
+
+        .metric-value.up {
+            color: var(--c-green);
+        }
+
+        .metric-value.down {
+            color: var(--c-red);
+        }
+
+        .metric-trend {
+            font-size: 0.75em;
+            margin-right: 3px;
+        }
+
+        /* ── Risk cards with severity ── */
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .risk-card-v2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(244, 63, 94, 0.05);
+            border: 1px solid rgba(244, 63, 94, 0.16);
+            border-left: 3px solid var(--c-red);
+            border-radius: 8px;
+            padding: 10px 14px;
+        }
+
+        .risk-severity {
+            font-size: 0.52em;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .risk-severity.high {
+            background: rgba(244, 63, 94, 0.2);
+            color: var(--c-red);
+        }
+
+        .risk-severity.medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--c-gold);
+        }
+
+        .risk-severity.low {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--c-green);
+        }
+
+        .risk-content {
+            flex: 1;
+        }
+
+        .risk-title {
+            font-size: 0.78em;
+            font-weight: 700;
+            color: var(--c-text);
+            margin-bottom: 3px;
+        }
+
+        .risk-body {
+            font-size: 0.68em;
+            color: var(--c-muted2);
+            line-height: 1.5;
+        }
+
+        /* ── Catalyst cards ── */
+        .catalyst-card-v2 {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 8px;
+            padding: 10px 14px;
+        }
+
+        .catalyst-card-v2.positive {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.18);
+            border-left: 3px solid var(--c-green);
+        }
+
+        .catalyst-card-v2.negative {
+            background: rgba(244, 63, 94, 0.06);
+            border: 1px solid rgba(244, 63, 94, 0.18);
+            border-left: 3px solid var(--c-red);
+        }
+
+        .cat-icon {
+            font-size: 0.9em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cat-icon.pos {
+            color: var(--c-green);
+        }
+
+        .cat-icon.neg {
+            color: var(--c-red);
+        }
+
+        .cat-content {
+            flex: 1;
+        }
+
+        .cat-event {
+            font-size: 0.78em;
+            font-weight: 700;
+            color: var(--c-text);
+            margin-bottom: 3px;
+        }
+
+        .cat-meta {
+            font-size: 0.62em;
+            color: var(--c-muted2);
+        }
+
+        .cat-impact {
+            font-size: 0.52em;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 8px;
+            flex-shrink: 0;
+            margin-top: 3px;
+            align-self: flex-start;
+        }
+
+        .cat-impact.large {
+            background: rgba(244, 63, 94, 0.15);
+            color: var(--c-red);
+        }
+
+        .cat-impact.medium {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--c-gold);
+        }
+
+        .cat-impact.small {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--c-green);
+        }
+
+        /* ── Outlook: range + scenarios ── */
+        .range-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 10px;
+            padding: 10px 24px;
+            margin-bottom: 14px;
+        }
+
+        .range-label {
+            font-size: 0.48em;
+            color: var(--c-muted);
+            letter-spacing: 0.1em;
+            margin-bottom: 4px;
+        }
+
+        .range-values {
+            font-size: 1.1em;
+            font-weight: 800;
+            color: var(--c-text);
+        }
+
+        .scenarios {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 4px;
+        }
+
+        .scenario {
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .scenario.bull {
+            background: rgba(16, 185, 129, 0.07);
+            border: 1px solid rgba(16, 185, 129, 0.22);
+            border-top: 3px solid var(--c-green);
+        }
+
+        .scenario.bear {
+            background: rgba(244, 63, 94, 0.07);
+            border: 1px solid rgba(244, 63, 94, 0.22);
+            border-top: 3px solid var(--c-red);
+        }
+
+        .scenario-label {
+            font-size: 0.5em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .scenario.bull .scenario-label {
+            color: var(--c-green);
+        }
+
+        .scenario.bear .scenario-label {
+            color: var(--c-red);
+        }
+
+        .scenario-condition {
+            font-size: 0.72em;
+            color: var(--c-text);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .scenario-target {
+            font-size: 0.7em;
+            font-weight: 700;
+        }
+
+        .scenario.bull .scenario-target {
+            color: var(--c-green);
+        }
+
+        .scenario.bear .scenario-target {
+            color: var(--c-red);
+        }
+
+        /* ── Summary ── */
+        .summary-quote {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-left: 4px solid var(--c-accent);
+            border-radius: 10px;
+            padding: 20px 24px 20px 26px;
+            margin-top: 12px;
+            position: relative;
+        }
+
+        .summary-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            font-size: 3em;
+            color: var(--c-accent);
+            opacity: 0.22;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .summary-text {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--c-text);
+            line-height: 1.65;
+        }
+
+        .verdict-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            align-items: center;
+        }
+
+        .verdict-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.72em;
+        }
+
+        .verdict-badge.bullish {
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(16, 185, 129, 0.38);
+            color: var(--c-green);
+        }
+
+        .verdict-badge.bearish {
+            background: rgba(244, 63, 94, 0.14);
+            border: 1px solid rgba(244, 63, 94, 0.38);
+            color: var(--c-red);
+        }
+
+        .verdict-badge.neutral {
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.38);
+            color: var(--c-gold);
+        }
+
+        .action-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 11px 14px;
+            background: rgba(59, 130, 246, 0.07);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+        }
+
+        .action-label {
+            font-size: 0.5em;
+            font-weight: 700;
+            color: var(--c-accent);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-top: 2px;
+        }
+
+        .action-text {
+            font-size: 0.74em;
+            color: var(--c-text);
+            line-height: 1.55;
+        }
+
+        .disclaimer {
+            font-size: 0.44em;
+            color: var(--c-muted);
+            margin-top: 14px;
+            line-height: 1.6;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--c-border);
+            border-radius: 6px;
+        }
+
+        /* Reveal overrides */
+        .reveal .progress {
+            color: var(--c-accent);
+            height: 3px;
+        }
+
+        .reveal .controls button {
+            color: var(--c-accent);
+        }
+    </style>
 </head>
 <body>
 <div class="reveal">
-<div class="slides">
+    <div class="slides">
 
 
+        <section data-autoslide="25182">
+            <div class="cover-wrap">
+                <div class="cover-left">
+                    <div class="cover-eyebrow">AVGO &nbsp;·&nbsp; 本周深度分析</div>
+                    <div class="cover-headline">最后的狂欢或暴风雨前的宁静？</div>
+                    <div class="cover-divider"></div>
+                    <div class="cover-company">Broadcom Inc.&nbsp;&nbsp;·&nbsp;&nbsp;本周深度分析·2026-05-29</div>
+
+                    <div class="cover-hook">大盘跌了百分之三，AVGO却创下历史新高</div>
+
+                </div>
+                <div class="cover-right">
+                    <div class="price-widget">
+                        <div class="pw-label">当前价格</div>
+                        <div class="pw-price">$446.77</div>
+                        <div class="pw-change up">+4.73%</div>
+                    </div>
+                    <div class="cover-info-card"><strong>$2.12T</strong>市值</div>
+                    <div class="cover-info-card"><strong>Fwd PE 24.23</strong>预期市盈率</div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span class="footer-ticker">AVGO</span>
+                <span>股票深度点评</span>
+            </div>
+        </section>
 
 
+        <section data-autoslide="65762">
+            <div class="slide-inner">
+                <div class="tag">市场概览</div>
+                <div class="slide-headline">$446.77 +4.73% · Forward PE 24.23x · 52W区间 99.0%</div>
+                <div class="stats-grid">
+                    <div class="stat-card a">
+                        <div class="stat-label">当前价格</div>
+                        <div class="stat-value">$446.77</div>
+                    </div>
+                    <div class="stat-card g">
+                        <div class="stat-label">日涨跌幅</div>
+                        <div class="stat-value up">+4.73%</div>
+                    </div>
+                    <div class="stat-card o">
+                        <div class="stat-label">市值</div>
+                        <div class="stat-value">$2.12T</div>
+                    </div>
+                    <div class="stat-card a">
+                        <div class="stat-label">预期市盈率 (Fwd PE)</div>
+                        <div class="stat-value">24.23</div>
+                    </div>
+                    <div class="stat-card g">
+                        <div class="stat-label">52周高点</div>
+                        <div class="stat-value">$448.9</div>
+                    </div>
+                    <div class="stat-card r">
+                        <div class="stat-label">52周低点</div>
+                        <div class="stat-value">$241.11</div>
+                    </div>
+                </div>
 
-<section data-autoslide="22280">
-  <div class="cover-wrap">
-    <div class="cover-left">
-      <div class="cover-eyebrow">AVGO &nbsp;·&nbsp; 本周深度分析</div>
-      <div class="cover-headline">完美预期已定价？</div>
-      <div class="cover-divider"></div>
-      <div class="cover-company">Broadcom Inc.&nbsp;&nbsp;·&nbsp;&nbsp;本周深度分析·2026-05-29</div>
-      
-      <div class="cover-hook">基本面强但情绪极致，财报前该追高吗？</div>
-      
+                <div class="callout-box fragment fade-up">
+                    <div class="callout-icon">◈</div>
+                    <div class="callout-text">市盈增长比小于1，市场对成长性定价不充分</div>
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>市场数据</span></div>
+        </section>
+
+
+        <section data-autoslide="82255">
+            <div class="slide-inner">
+                <div class="tag gold">价格走势</div>
+                <div class="slide-headline">多头趋势在，但离阻力位只有一步之遥</div>
+
+
+                <div class="direction-badge bullish">
+                    ▲
+                    技术偏多
+                </div>
+
+                <div class="chart-wrap">
+                    <canvas id="priceChart"></canvas>
+                </div>
+
+                <ul class="bullets" style="margin-top:8px">
+
+                    <li class="fragment fade-up"><span
+                            class="bullet-dot o"></span><span>支撑位：$440 (布林带上轨，刚突破)</span></li>
+
+                    <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：$448.9 (52周高点)</span>
+                    </li>
+
+                    <li class="fragment fade-up"><span
+                            class="bullet-dot o"></span><span>整体偏多，但短期进入超买临界区</span></li>
+
+                    <li class="fragment fade-up"><span
+                            class="bullet-dot o"></span><span>RSI: 65.9，不算极热，但动能开始衰减</span></li>
+
+                </ul>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>技术分析 · 30日走势</span></div>
+        </section>
+
+
+        <section data-autoslide="113501">
+            <div class="slide-inner">
+                <div class="tag green">核心要点</div>
+                <div class="slide-headline">多空博弈拆解</div>
+
+                <ul class="kp-list">
+
+
+                    <li class="kp-item fragment fade-up">
+                        <div class="kp-tag-dot bull"></div>
+                        <div class="kp-content">
+                            <div class="kp-title">AI定制芯片排他性增长</div>
+                            <div class="kp-body">营收增速冲到29.5%，毛利率高达76.7%，PEG只有0.93，成长完全覆盖估值。</div>
+                        </div>
+                        <div class="kp-badge bull">多</div>
+                    </li>
+
+
+                    <li class="kp-item fragment fade-up">
+                        <div class="kp-tag-dot bear"></div>
+                        <div class="kp-content">
+                            <div class="kp-title">财报前情绪极致化</div>
+                            <div class="kp-body">股价等于五十二周高点99%，情绪评分80.7，做空比例仅1.1%，容错空间几乎没有。
+                            </div>
+                        </div>
+                        <div class="kp-badge bear">空</div>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>核心逻辑</span></div>
+        </section>
+
+
+        <section data-autoslide="89595">
+            <div class="slide-inner">
+                <div class="tag gold">本周新闻</div>
+                <div class="slide-headline">本周新闻多条关键信号，整体对AVGO偏多</div>
+
+                <div class="card-list" style="margin-top:8px">
+
+
+                    <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+                        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+                            ▲
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">
+                                谷歌扩大下一代TPU订单，AVGO独家供应
+                            </div>
+                            <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">
+                                印证AI基建需求仍在加速，定制化芯片营收增速有望从29.5%跳升到45%以上
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">product
+                        </div>
+
+                    </div>
+
+
+                    <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+                        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+                            ▼
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">
+                                美联储暗示9月降息概率升至65%，但PCE数据可能打压预期
+                            </div>
+                            <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">
+                                降息预期利好估值修复，但数据公布前资金倾向避险，短期股价承压
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">macro
+                        </div>
+
+                    </div>
+
+
+                    <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+                        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+                            ▲
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">
+                                摩根士丹利上调目标价至480美元，巴克莱下调至持有
+                            </div>
+                            <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">
+                                两家机构分歧集中在短期涨幅透支问题，而非长期价值
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst
+                        </div>
+
+                    </div>
+
+
+                    <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+                        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+                            ▲
+                        </div>
+                        <div style="flex:1">
+                            <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">
+                                美国商务部放宽部分芯片出口许可，影响中性偏正
+                            </div>
+                            <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">
+                                AVGO的定制芯片主要面向国内云商，影响中性偏正
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">regulation
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="callout-box fragment fade-up" style="margin-top:10px">
+                    <div class="callout-icon">◈</div>
+                    <div class="callout-text">
+                        机构观点：摩根士丹利上调目标价至480美元维持增持，巴克莱下调至持有目标价420美元
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>本周资讯</span></div>
+        </section>
+
+
+        <section data-autoslide="79711">
+            <div class="slide-inner">
+                <div class="tag">财务分析</div>
+                <div class="slide-headline">基本面是安全垫，但不是追高理由</div>
+
+                <div class="metrics-grid">
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">营收增速</div>
+                        <div class="metric-value up">
+                            <span class="metric-trend">▲</span>+29.5%
+                        </div>
+                    </div>
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">毛利率</div>
+                        <div class="metric-value up">
+                            <span class="metric-trend">▲</span>76.7%
+                        </div>
+                    </div>
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">净利率</div>
+                        <div class="metric-value ">
+                            <span class="metric-trend">–</span>
+                        </div>
+                    </div>
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">Forward PE</div>
+                        <div class="metric-value ">
+                            <span class="metric-trend">–</span>24x
+                        </div>
+                    </div>
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">自由现金流</div>
+                        <div class="metric-value up">
+                            <span class="metric-trend">▲</span>必定丰厚
+                        </div>
+                    </div>
+
+
+                    <div class="metric-card fragment fade-up">
+                        <div class="metric-label">ROE</div>
+                        <div class="metric-value ">
+                            <span class="metric-trend">–</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="callout-box fragment fade-up" style="margin-top:12px">
+                    <div class="callout-icon">◈</div>
+                    <div class="callout-text">当前股价已包含最完美预期，业绩增速若掉到25%以下，估值压力瞬间放大。</div>
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>财务健康度</span></div>
+        </section>
+
+
+        <section data-autoslide="101095">
+            <div class="slide-inner">
+                <div class="tag red">风险提示</div>
+                <div class="slide-headline">高</div>
+
+                <div class="card-list">
+
+
+                    <div class="risk-card-v2 fragment fade-up">
+                        <div class="risk-severity high">高</div>
+                        <div class="risk-content">
+                            <div class="risk-title">预期双杀</div>
+                            <div class="risk-body">
+                                市场对AVGO的财报打分已经到了九十九分，急剧乐观。股价顶着五十二周高点。哪怕业绩符合预期，只要指引不够炸裂，提前埋伏的聪明钱就会毫不犹豫地砸盘。
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="risk-card-v2 fragment fade-up">
+                        <div class="risk-severity high">高</div>
+                        <div class="risk-content">
+                            <div class="risk-title">宏观估值压力</div>
+                            <div class="risk-body">
+                                AVGO本质是通用成长股，最怕高利率。下周如果PCE数据再超预期，市场对降息的幻想一破灭，高估值科技股肯定是机构减仓的第一梯队。
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="risk-card-v2 fragment fade-up">
+                        <div class="risk-severity medium">中</div>
+                        <div class="risk-content">
+                            <div class="risk-title">技术性回调需求</div>
+                            <div class="risk-body">
+                                股价已经远远甩开了二十日均线，还冲破了布林带上轨。技术指标天生就有均值回归的引力。短期内股价回踩四百四十甚至四百二十二去确认支撑，是完全正常的走法。
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>下行风险</span></div>
+        </section>
+
+
+        <section data-autoslide="95755">
+            <div class="slide-inner">
+                <div class="tag gold">催化剂</div>
+                <div class="slide-headline">催化剂的裂变节点</div>
+
+                <div class="card-list">
+
+
+                    <div class="catalyst-card-v2 positive fragment fade-up">
+                        <div class="cat-icon pos">▲</div>
+                        <div class="cat-content">
+                            <div class="cat-event">AI定制芯片订单加速</div>
+                            <div class="cat-meta">六月五号电话会</div>
+                        </div>
+                        <div class="cat-impact large">大</div>
+                    </div>
+
+
+                    <div class="catalyst-card-v2 negative fragment fade-up">
+                        <div class="cat-icon neg">▼</div>
+                        <div class="cat-content">
+                            <div class="cat-event">联储放鹰打压估值</div>
+                            <div class="cat-meta">下周联储会后</div>
+                        </div>
+                        <div class="cat-impact large">大</div>
+                    </div>
+
+
+                    <div class="catalyst-card-v2 negative fragment fade-up">
+                        <div class="cat-icon neg">▼</div>
+                        <div class="cat-content">
+                            <div class="cat-event">VMware营收指引低于预期</div>
+                            <div class="cat-meta">下周财报</div>
+                        </div>
+                        <div class="cat-impact large">大</div>
+                    </div>
+
+
+                    <div class="catalyst-card-v2 negative fragment fade-up">
+                        <div class="cat-icon neg">▼</div>
+                        <div class="cat-content">
+                            <div class="cat-event">情绪过满引发踩踏</div>
+                            <div class="cat-meta">下周财报后</div>
+                        </div>
+                        <div class="cat-impact large">大</div>
+                    </div>
+
+
+                    <div class="catalyst-card-v2 negative fragment fade-up">
+                        <div class="cat-icon neg">▼</div>
+                        <div class="cat-content">
+                            <div class="cat-event">高盛下调目标价信号</div>
+                            <div class="cat-meta">下周前</div>
+                        </div>
+                        <div class="cat-impact medium">中</div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>近期催化剂</span></div>
+        </section>
+
+
+        <section data-autoslide="76262">
+            <div class="slide-inner">
+                <div class="tag purple">未来展望</div>
+                <div class="slide-headline">短期谨慎，中期强烈看多</div>
+
+
+                <div class="direction-badge bullish">
+                    ▲ 看多
+                </div>
+
+
+                <div class="range-box">
+                    <div class="range-label">基础区间 · 1-4周</div>
+                    <div class="range-values">$422.9 &nbsp;—&nbsp; $448.9</div>
+                </div>
+
+
+                <div class="scenarios">
+                    <div class="scenario bull fragment fade-up">
+                        <div class="scenario-label">▲ 看多条件</div>
+                        <div class="scenario-condition">AI营收和指引大幅超预期，放量突破448.9</div>
+                        <div class="scenario-target">目标 481-630</div>
+                    </div>
+                    <div class="scenario bear fragment fade-up">
+                        <div class="scenario-label">▼ 看空条件</div>
+                        <div class="scenario-condition">财报符合预期或略弱，利好出尽</div>
+                        <div class="scenario-target">风险 $422.9</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>后市展望</span></div>
+        </section>
+
+
+        <section data-autoslide="37856">
+            <div class="slide-inner">
+                <div class="tag">总结</div>
+                <div class="slide-headline">本期结论</div>
+                <div class="summary-quote">
+                    <div class="summary-text">AVGO是AI基建的定海神针，短期情绪虽热但估值合理</div>
+                </div>
+
+                <div class="verdict-row">
+
+
+                    <div class="verdict-badge neutral">
+                        ◆ 中性
+                    </div>
+
+
+                    <div class="action-box fragment fade-up" style="flex:1">
+                        <div class="action-label">操作框架</div>
+                        <div class="action-text">仓位控制在10%以下，保持现金等待财报落地，回调至440或422再考虑</div>
+                    </div>
+
+                </div>
+
+                <div class="disclaimer">⚠ 投资有风险，以上内容仅供参考，不构成任何投资建议。</div>
+            </div>
+            <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>免责声明</span></div>
+        </section>
+
+
     </div>
-    <div class="cover-right">
-      <div class="price-widget">
-        <div class="pw-label">当前价格</div>
-        <div class="pw-price">$446.77</div>
-        <div class="pw-change up">+4.73%</div>
-      </div>
-      <div class="cover-info-card"><strong>$2.12T</strong>市值</div>
-      <div class="cover-info-card"><strong>Fwd PE 24.23</strong>预期市盈率</div>
-    </div>
-  </div>
-  <div class="slide-footer">
-    <span class="footer-ticker">AVGO</span>
-    <span>股票深度点评</span>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="61578">
-  <div class="slide-inner">
-    <div class="tag">市场概览</div>
-    <div class="slide-headline">$446.77  +4.73%  ·  Forward PE 24.23x  ·  52W区间 99.0%</div>
-    <div class="stats-grid">
-      <div class="stat-card a"><div class="stat-label">当前价格</div><div class="stat-value">$446.77</div></div>
-      <div class="stat-card g">
-        <div class="stat-label">日涨跌幅</div>
-        <div class="stat-value up">+4.73%</div>
-      </div>
-      <div class="stat-card o"><div class="stat-label">市值</div><div class="stat-value">$2.12T</div></div>
-      <div class="stat-card a"><div class="stat-label">预期市盈率 (Fwd PE)</div><div class="stat-value">24.23</div></div>
-      <div class="stat-card g"><div class="stat-label">52周高点</div><div class="stat-value">$448.9</div></div>
-      <div class="stat-card r"><div class="stat-label">52周低点</div><div class="stat-value">$241.11</div></div>
-    </div>
-    
-    <div class="callout-box fragment fade-up">
-      <div class="callout-icon">◈</div>
-      <div class="callout-text">RSI 65.9接近超买，做空比仅1.1%，市场极度乐观</div>
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>市场数据</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="76315">
-  <div class="slide-inner">
-    <div class="tag gold">价格走势</div>
-    <div class="slide-headline">超买区域，短期回调需求上升</div>
-    
-    
-    <div class="direction-badge bearish">
-      ▼
-      技术偏空
-    </div>
-    
-    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
-    
-    <ul class="bullets" style="margin-top:8px">
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>支撑位：$440（布林带上轨）</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：$449（52周高点）</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>趋势：高位震荡，等待财报突破</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>RSI：65.9，接近超买，需警惕回调</span></li>
-      
-    </ul>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>技术分析 · 30日走势</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="107192">
-  <div class="slide-inner">
-    <div class="tag green">核心要点</div>
-    <div class="slide-headline">短期谨慎，长期看多</div>
-    
-    <ul class="kp-list">
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bull"></div>
-        <div class="kp-content">
-          <div class="kp-title">AI定制芯片垄断</div>
-          <div class="kp-body">营收增速29.5%，毛利率76.7%，ASIC业务护城河深</div>
-        </div>
-        <div class="kp-badge bull">多</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bull"></div>
-        <div class="kp-content">
-          <div class="kp-title">PEG<1估值安全</div>
-          <div class="kp-body">PEG=0.93，高成长覆盖估值，GARP属性</div>
-        </div>
-        <div class="kp-badge bull">多</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bear"></div>
-        <div class="kp-content">
-          <div class="kp-title">情绪极度乐观</div>
-          <div class="kp-body">机构持仓80%，股价在52周高位99%，容错率低</div>
-        </div>
-        <div class="kp-badge bear">空</div>
-      </li>
-      
-    </ul>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>核心逻辑</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="75087">
-  <div class="slide-inner">
-    <div class="tag">财务分析</div>
-    <div class="slide-headline">财务稳健，高毛利支撑成长</div>
-    
-    <div class="metrics-grid">
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">营收增速</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>+29.5%
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">毛利率</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>76.7%
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">净利率</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>24.0%
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">Forward PE</div>
-        <div class="metric-value ">
-          <span class="metric-trend">–</span>24.2x
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">自由现金流</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>$120亿
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">ROE</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>35.0%
-        </div>
-      </div>
-      
-    </div>
-    
-    
-    <div class="callout-box fragment fade-up" style="margin-top:12px">
-      <div class="callout-icon">◈</div>
-      <div class="callout-text">PEG=0.93，成长与估值匹配，但需留意利率风险</div>
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>财务健康度</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="94561">
-  <div class="slide-inner">
-    <div class="tag red">风险提示</div>
-    <div class="slide-headline">风险等级：中</div>
-    
-    <div class="card-list">
-      
-      
-      <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity high">高</div>
-        <div class="risk-content">
-          <div class="risk-title">情绪双杀</div>
-          <div class="risk-body">预期已极度乐观，即使符合指引也可能引发获利了结</div>
-        </div>
-      </div>
-      
-      
-      <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity medium">中</div>
-        <div class="risk-content">
-          <div class="risk-title">利率压力</div>
-          <div class="risk-body">成长股对利率敏感，通胀超预期将压制估值</div>
-        </div>
-      </div>
-      
-      
-      <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity medium">中</div>
-        <div class="risk-content">
-          <div class="risk-title">技术回调</div>
-          <div class="risk-body">股价远离均线，RSI超买，均值回归需求强</div>
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>下行风险</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="82807">
-  <div class="slide-inner">
-    <div class="tag">news</div>
-    <div class="slide-headline">财报前消息面平静，聚焦下周AI收入</div>
-    
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>news</span></div>
-</section>
-
-
-
-
-
-
-<section data-autoslide="88771">
-  <div class="slide-inner">
-    <div class="tag gold">催化剂</div>
-    <div class="slide-headline">下周财报是最大催化剂</div>
-    
-    <div class="card-list">
-      
-      
-      
-      <div class="catalyst-card-v2 positive fragment fade-up">
-        <div class="cat-icon pos">▲</div>
-        <div class="cat-content">
-          <div class="cat-event">Q2财报发布</div>
-          <div class="cat-meta">下周</div>
-        </div>
-        <div class="cat-impact large">大</div>
-      </div>
-      
-      
-      
-      <div class="catalyst-card-v2 positive fragment fade-up">
-        <div class="cat-icon pos">▲</div>
-        <div class="cat-content">
-          <div class="cat-event">AI定制芯片订单</div>
-          <div class="cat-meta">财报前后</div>
-        </div>
-        <div class="cat-impact large">大</div>
-      </div>
-      
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>近期催化剂</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="72982">
-  <div class="slide-inner">
-    <div class="tag purple">未来展望</div>
-    <div class="slide-headline">中性等待财报落地</div>
-    
-    
-    
-    <div class="direction-badge neutral">
-      ◆ 中性
-    </div>
-    
-    
-    <div class="range-box">
-      <div class="range-label">基础区间 · 1-4周</div>
-      <div class="range-values">$435 &nbsp;—&nbsp; $455</div>
-    </div>
-    
-    
-    <div class="scenarios">
-      <div class="scenario bull fragment fade-up">
-        <div class="scenario-label">▲ 看多条件</div>
-        <div class="scenario-condition">AI营收指引超预期，突破$449</div>
-        <div class="scenario-target">目标 $481</div>
-      </div>
-      <div class="scenario bear fragment fade-up">
-        <div class="scenario-label">▼ 看空条件</div>
-        <div class="scenario-condition">业绩符合但情绪退潮，跌破$440</div>
-        <div class="scenario-target">风险 $423</div>
-      </div>
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>后市展望</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="35789">
-  <div class="slide-inner">
-    <div class="tag">总结</div>
-    <div class="slide-headline">本期结论</div>
-    <div class="summary-quote">
-      <div class="summary-text">基本面强，但短期待观察</div>
-    </div>
-    
-    <div class="verdict-row">
-      
-      
-      <div class="verdict-badge neutral">
-        ◆ 中性
-      </div>
-      
-      
-      <div class="action-box fragment fade-up" style="flex:1">
-        <div class="action-label">操作框架</div>
-        <div class="action-text">财报后再操作，等回调至$440或$422布局</div>
-      </div>
-      
-    </div>
-    
-    <div class="disclaimer">⚠ 投资有风险，以上内容仅供参考，不构成任何投资建议。</div>
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">AVGO</span><span>免责声明</span></div>
-</section>
-
-
-
-
-
-
-</div></div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
-Reveal.initialize({
-  hash: true, progress: true, controls: true, center: false,
-  transition: 'slide', transitionSpeed: 'default',
-  autoSlide: 0, loop: false, width: 1280, height: 720,
-  slideNumber: 'c/t', fragments: true,
-});
+    Reveal.initialize({
+        hash: false, progress: true, controls: true, center: false,
+        transition: 'slide', transitionSpeed: 'default',
+        autoSlide: 0, loop: false, width: 1280, height: 720,
+        slideNumber: 'c/t', fragments: true,
+        keyboard: true,
+    });
 
-(function () {
-  var labels = ["2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29"];
-  var values = [406.54, 399.63, 402.17, 422.65, 419.94, 422.76, 418.2, 399.83, 405.45, 417.43, 421.28, 416.5, 427.36, 425.44, 412.56, 430.0, 428.43, 419.3, 416.79, 439.79, 425.19, 420.71, 411.07, 417.76, 414.57, 414.14, 422.01, 421.86, 426.58, 446.77];
-  var ma20   = 422.91;
-  var ma50   = 385.67;
+    // OBS-compatible auto-advance + fragment auto-reveal
+    // No focus/visibility dependency — works in CEF / OBS Browser Source
+    (function () {
+        var sections = document.querySelectorAll('.reveal .slides section');
+        var timings = [];
+        sections.forEach(function (s) {
+            timings.push(parseInt(s.getAttribute('data-autoslide') || '5000', 10));
+        });
+        if (!timings.length) return;
 
-  if (!labels || !labels.length) return;
-  var canvas = document.getElementById('priceChart');
-  if (!canvas) return;
+        var idx = 0;
+        var slideTimer = null;
+        var fragTimers = [];
+        var advancing = false; // prevent slidechanged from double-scheduling
 
-  var first = values[0], last = values[values.length - 1];
-  var lineColor = last >= first ? '#10b981' : '#f43f5e';
-  var fillColor = last >= first ? 'rgba(16,185,129,0.07)' : 'rgba(244,63,94,0.07)';
-
-  var datasets = [{
-    label: '收盘价', data: values,
-    borderColor: lineColor, backgroundColor: fillColor,
-    borderWidth: 2.5, pointRadius: 0, pointHoverRadius: 5,
-    fill: true, tension: 0.35, order: 1,
-  }];
-  if (ma20 !== null) datasets.push({
-    label: 'MA20', data: Array(labels.length).fill(ma20),
-    borderColor: '#f59e0b', borderWidth: 1.3, borderDash: [6,4],
-    pointRadius: 0, fill: false, tension: 0, order: 2,
-  });
-  if (ma50 !== null) datasets.push({
-    label: 'MA50', data: Array(labels.length).fill(ma50),
-    borderColor: '#8b5cf6', borderWidth: 1.3, borderDash: [4,3],
-    pointRadius: 0, fill: false, tension: 0, order: 3,
-  });
-
-  new Chart(canvas, {
-    type: 'line',
-    data: { labels, datasets },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      interaction: { intersect: false, mode: 'index' },
-      plugins: {
-        legend: {
-          display: true, position: 'top', align: 'end',
-          labels: { color: '#64748b', font: { size: 10 }, boxWidth: 20, padding: 10, usePointStyle: true, pointStyleWidth: 14 }
-        },
-        tooltip: {
-          backgroundColor: '#1a2235', borderColor: '#1f2d40', borderWidth: 1,
-          titleColor: '#94a3b8', bodyColor: '#f1f5f9', padding: 10,
-          callbacks: { label: ctx => ' ' + ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) }
+        // Reveal all .fragment elements in a slide with fade-up stagger
+        function revealFragments(slideEl) {
+            fragTimers.forEach(clearTimeout);
+            fragTimers = [];
+            var frags = slideEl ? slideEl.querySelectorAll('.fragment') : [];
+            frags.forEach(function (f, i) {
+                fragTimers.push(setTimeout(function () {
+                    f.classList.add('visible', 'current-fragment');
+                }, (i + 1) * 400));
+            });
         }
-      },
-      scales: {
-        x: { ticks: { color: '#64748b', maxTicksLimit: 7, font: { size: 10 } }, grid: { color: 'rgba(31,45,64,0.9)' }, border: { color: '#1f2d40' } },
-        y: { position: 'right', ticks: { color: '#64748b', font: { size: 10 }, callback: v => '$' + v.toFixed(0) }, grid: { color: 'rgba(31,45,64,0.9)' }, border: { color: '#1f2d40' } }
-      }
-    }
-  });
-})();
+
+        function scheduleAdvance() {
+            clearTimeout(slideTimer);
+            if (idx >= timings.length - 1) return;
+            slideTimer = setTimeout(function () {
+                advancing = true;
+                idx++;
+                Reveal.slide(idx);
+                advancing = false;
+                revealFragments(sections[idx]);
+                scheduleAdvance();
+            }, timings[idx]);
+        }
+
+        Reveal.on('ready', function () {
+            revealFragments(sections[0]);
+            scheduleAdvance();
+        });
+
+        // Manual navigation resets everything cleanly
+        Reveal.on('slidechanged', function (e) {
+            if (advancing) return;
+            idx = e.indexh;
+            revealFragments(sections[idx]);
+            scheduleAdvance();
+        });
+    })();
+
+    (function () {
+        var labels = ["2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29"];
+        var values = [406.54, 399.63, 402.17, 422.65, 419.94, 422.76, 418.2, 399.83, 405.45, 417.43, 421.28, 416.5, 427.36, 425.44, 412.56, 430.0, 428.43, 419.3, 416.79, 439.79, 425.19, 420.71, 411.07, 417.76, 414.57, 414.14, 422.01, 421.86, 426.58, 446.77];
+        var ma20 = 422.91;
+        var ma50 = 385.67;
+
+        if (!labels || !labels.length) return;
+        var canvas = document.getElementById('priceChart');
+        if (!canvas) return;
+
+        var first = values[0], last = values[values.length - 1];
+        var lineColor = last >= first ? '#10b981' : '#f43f5e';
+        var fillColor = last >= first ? 'rgba(16,185,129,0.07)' : 'rgba(244,63,94,0.07)';
+
+        var datasets = [{
+            label: '收盘价', data: values,
+            borderColor: lineColor, backgroundColor: fillColor,
+            borderWidth: 2.5, pointRadius: 0, pointHoverRadius: 5,
+            fill: true, tension: 0.35, order: 1,
+        }];
+        if (ma20 !== null) datasets.push({
+            label: 'MA20', data: Array(labels.length).fill(ma20),
+            borderColor: '#f59e0b', borderWidth: 1.3, borderDash: [6, 4],
+            pointRadius: 0, fill: false, tension: 0, order: 2,
+        });
+        if (ma50 !== null) datasets.push({
+            label: 'MA50', data: Array(labels.length).fill(ma50),
+            borderColor: '#8b5cf6', borderWidth: 1.3, borderDash: [4, 3],
+            pointRadius: 0, fill: false, tension: 0, order: 3,
+        });
+
+        new Chart(canvas, {
+            type: 'line',
+            data: {labels, datasets},
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                interaction: {intersect: false, mode: 'index'},
+                plugins: {
+                    legend: {
+                        display: true, position: 'top', align: 'end',
+                        labels: {
+                            color: '#64748b',
+                            font: {size: 10},
+                            boxWidth: 20,
+                            padding: 10,
+                            usePointStyle: true,
+                            pointStyleWidth: 14
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1a2235', borderColor: '#1f2d40', borderWidth: 1,
+                        titleColor: '#94a3b8', bodyColor: '#f1f5f9', padding: 10,
+                        callbacks: {label: ctx => ' ' + ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2)}
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {color: '#64748b', maxTicksLimit: 7, font: {size: 10}},
+                        grid: {color: 'rgba(31,45,64,0.9)'},
+                        border: {color: '#1f2d40'}
+                    },
+                    y: {
+                        position: 'right',
+                        ticks: {color: '#64748b', font: {size: 10}, callback: v => '$' + v.toFixed(0)},
+                        grid: {color: 'rgba(31,45,64,0.9)'},
+                        border: {color: '#1f2d40'}
+                    }
+                }
+            }
+        });
+    })();
 </script>
 </body>
 </html>

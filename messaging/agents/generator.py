@@ -466,6 +466,101 @@ class GeneratorAgent(BaseAgent):
         print(f"[Generator] Narration complete. {len(full)}字 ≈ {len(full)/chars_per_minute:.1f}分钟")
         return full
 
+    # ── Slide schema snippets (one per type) ────────────────────────────────
+
+    _SLIDE_SCHEMAS: dict[str, str] = {
+        "cover": (
+            '{"type":"cover",'
+            '"headline":"吸引眼球的问句或悬念标题（15字以内，来自口播Hook）",'
+            '"subtitle":"本周深度分析·{current_date}",'
+            '"hook":"口播开场最核心的一句冲突或悬念（25字以内）"}'
+        ),
+        "market_overview": (
+            '{"type":"market_overview",'
+            '"headline":"本期关键数字摘要，必须含价格/PE/涨跌幅等具体数字（30字以内）",'
+            '"callout":"口播中最值得关注的数据异常或信号，必须有具体数字（35字以内）"}'
+        ),
+        "price_action": (
+            '{"type":"price_action",'
+            '"headline":"一句话技术判断（来自口播结论）",'
+            '"signal":"bullish或bearish或neutral",'
+            '"bullets":['
+            '"支撑位：$X（来自口播中提到的支撑价格）",'
+            '"阻力位：$X（来自口播中提到的阻力价格）",'
+            '"趋势描述（来自口播）",'
+            '"RSI数值+含义（来自口播）"'
+            ']}'
+        ),
+        "key_points": (
+            '{"type":"key_points",'
+            '"headline":"本期核心主题（8字以内）",'
+            '"points":['
+            '{"title":"要点标题（12字以内，来自口播）","body":"直接引用口播原句，保留具体数字和逻辑链（60字以内）","tag":"bull或bear或neutral"}'
+            ']}'
+        ),
+        "news": (
+            '{"type":"news",'
+            '"headline":"本周市场焦点一句话（25字以内，来自口播）",'
+            '"news_items":['
+            '{"title":"口播中提到的新闻标题（30字以内）","category":"earnings或analyst或product或regulation或macro或other","impact":"positive或negative或neutral","note":"口播对该条新闻的影响解读原句（35字以内）"}'
+            '],'
+            '"analyst_summary":"口播中提到的分析师观点（35字以内，含机构名）"}'
+        ),
+        "financials": (
+            '{"type":"financials",'
+            '"headline":"口播中的财务健康度结论（20字以内）",'
+            '"metrics":['
+            '{"label":"营收增速","value":"+X%（来自口播）","trend":"up或down或flat"},'
+            '{"label":"毛利率","value":"X%（来自口播）","trend":"up或down或flat"},'
+            '{"label":"净利率","value":"X%（来自口播）","trend":"up或down或flat"},'
+            '{"label":"Forward PE","value":"Xx（来自口播）","trend":"up或down或flat"},'
+            '{"label":"自由现金流","value":"口播中的描述","trend":"up或down或flat"},'
+            '{"label":"ROE","value":"X%（来自口播）","trend":"up或down或flat"}'
+            '],'
+            '"callout":"口播中最关键的财务风险或亮点原句，必须有具体数字（45字以内）"}'
+        ),
+        "risk": (
+            '{"type":"risk",'
+            '"headline":"口播中的风险等级判断（高/中/低）",'
+            '"risks":['
+            '{"title":"风险标题（12字以内，来自口播）","body":"直接引用口播中对该风险机制的说明原句（60字以内）","severity":"high或medium或low"}'
+            ']}'
+        ),
+        "catalyst": (
+            '{"type":"catalyst",'
+            '"headline":"催化剂概览（20字以内，来自口播）",'
+            '"catalysts":['
+            '{"event":"事件名称（20字以内，来自口播）","direction":"positive或negative","timing":"口播中提到的具体时间节点","impact":"large或medium或small"}'
+            ']}'
+        ),
+        "outlook": (
+            '{"type":"outlook",'
+            '"headline":"口播中的方向判断（看多/中性/看空+时间维度）",'
+            '"subtitle":"看多或中性或看空",'
+            '"base_range":{"low":"$X（来自口播）","high":"$X（来自口播）","timeframe":"1-4周"},'
+            '"scenario_bull":{"condition":"口播中多头触发条件原句（30字以内）","target":"目标价$X（来自口播）"},'
+            '"scenario_bear":{"condition":"口播中空头破位条件原句（30字以内）","target":"风险价位$X（来自口播）"}}'
+        ),
+        "summary": (
+            '{"type":"summary",'
+            '"headline":"口播中的核心结论金句（25字以内）",'
+            '"verdict":"bullish或bearish或neutral",'
+            '"action":"口播中的仓位和等待条件建议（30字以内）",'
+            '"subtitle":"投资有风险，以上内容仅供参考，不构成任何投资建议。"}'
+        ),
+    }
+
+    @staticmethod
+    def _parse_narration_segments(narration: str) -> dict[str, str]:
+        """Split narration into {slide_type: segment_text} by slide markers."""
+        parts = re.split(r'\[幻灯片: (\w+)\]', narration)
+        segments: dict[str, str] = {}
+        for i in range(1, len(parts), 2):
+            stype = parts[i]
+            content = parts[i + 1].strip() if i + 1 < len(parts) else ""
+            segments[stype] = content
+        return segments
+
     @staticmethod
     def _safe_parse_json(raw: str) -> dict:
         """Parse JSON, falling back to extracting the first {...} block if needed."""
@@ -482,45 +577,77 @@ class GeneratorAgent(BaseAgent):
                     pass
             raise
 
-    def generate_slides(self, plan: dict, synthesis: str, _attempt: int = 0) -> dict:
-        print(f"[Generator] Generating slides JSON{' (retry)' if _attempt else ''}...")
+    def _extract_one_slide(
+        self,
+        slide_type: str,
+        segment: str,
+        plan: dict,
+        _attempt: int = 0,
+    ) -> dict:
+        """Extract structured slide content from a single narration segment."""
         md = plan["market_snapshot"]
         inp = plan["input"]
-        outline = plan["slide_outline"]
         current_date = plan["current_date"]
+        schema = self._SLIDE_SCHEMAS.get(slide_type, '{"type":"' + slide_type + '","headline":""}')
+        schema = schema.replace("{current_date}", current_date)
 
-        slide_outline_str = "\n".join(
-            f"- {s['type']}（约{s['approx_seconds']}秒）：{s.get('goal', '')}"
-            for s in outline
-        )
-        user_msg = self._load_prompt("slides").format(
+        user_msg = self._load_prompt("slide_extract").format(
             current_date=current_date,
             ticker=md["ticker"],
             company_name=md["company_name"],
             language=inp["language"],
-            slide_outline=slide_outline_str,
-            analysis=synthesis,
+            slide_type=slide_type,
+            narration_segment=segment,
+            schema=schema,
         )
         system = (
-            f"你是专业的财经演示文稿设计师，今天是{current_date}。"
-            "严格按照 prompt 中定义的 JSON Schema 生成每张幻灯片，"
-            "key_points 必须用 points 数组，financials 必须用 metrics 数组，"
-            "risk 必须用 risks 数组，catalyst 必须用 catalysts 数组，"
-            "news 必须用 items 数组，"
-            "outlook 必须包含 base_range / scenario_bull / scenario_bear。"
-            "返回合法 JSON，根字段为 title、ticker、slides（array）。"
+            f"你是财经演示文稿设计师，今天是{current_date}。"
+            "只从口播稿中提取信息，不得编造任何数字或结论。"
+            "返回合法 JSON 对象，不要任何额外文字。"
         )
         raw = self._chat(system, user_msg, json_mode=True)
         try:
-            slides_data = self._safe_parse_json(raw)
+            return self._safe_parse_json(raw)
         except json.JSONDecodeError as exc:
             if _attempt < 2:
-                print(f"[Generator] Slides JSON parse failed ({exc}), retrying ({_attempt + 1}/2)...")
-                return self.generate_slides(plan, synthesis, _attempt + 1)
-            raise RuntimeError(f"Slides JSON parse failed after 3 attempts: {exc}") from exc
+                return self._extract_one_slide(slide_type, segment, plan, _attempt + 1)
+            print(f"[Generator] Slide '{slide_type}' parse failed: {exc}, using fallback.")
+            return {"type": slide_type, "headline": segment[:40]}
 
-        slides_data = self._normalize_slides(slides_data)
-        print(f"[Generator] Slides complete: {len(slides_data['slides'])} slides.")
+    def generate_slides(self, plan: dict, narration: str) -> dict:
+        """Generate slides by extracting content from each narration segment in parallel."""
+        print("[Generator] Generating slides from narration (parallel extraction)...")
+        md = plan["market_snapshot"]
+        outline = plan["slide_outline"]
+        current_date = plan["current_date"]
+
+        segments = self._parse_narration_segments(narration)
+
+        def _extract(slide: dict) -> dict:
+            stype = slide["type"]
+            segment = segments.get(stype, "")
+            if not segment:
+                return {"type": stype, "headline": ""}
+            result = self._extract_one_slide(stype, segment, plan)
+            print(f"[Slide:{stype}] extracted OK")
+            return result
+
+        slide_objects: list[dict] = [None] * len(outline)
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            futures = {executor.submit(_extract, s): i for i, s in enumerate(outline)}
+            for future in as_completed(futures):
+                idx = futures[future]
+                slide_objects[idx] = future.result()
+
+        title_slide = next((s for s in slide_objects if s.get("type") == "cover"), {})
+        headline = title_slide.get("headline", md["ticker"])
+
+        slides_data = {
+            "title": headline,
+            "ticker": md["ticker"],
+            "slides": slide_objects,
+        }
+        print(f"[Generator] Slides complete: {len(slide_objects)} slides.")
         return slides_data
 
     @staticmethod
@@ -590,7 +717,7 @@ class GeneratorAgent(BaseAgent):
 
         synthesis = self._synthesis(plan, results["fundamental"], results["technical"], results["narrative"])
         narration = self.generate_narration(plan, synthesis)
-        slides = self.generate_slides(plan, synthesis)
+        slides = self.generate_slides(plan, narration)   # extracted from narration, not synthesis
         narration_tts = _make_tts_narration(narration)
 
         return Candidate(
@@ -618,7 +745,7 @@ class GeneratorAgent(BaseAgent):
         if "narration" in targets:
             narration = self.generate_narration(plan, synthesis)
         if "slides" in targets:
-            slides = self.generate_slides(plan, synthesis)
+            slides = self.generate_slides(plan, narration)
 
         narration_tts = _make_tts_narration(narration)
         return Candidate(
