@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 AI Stock Review Video Harness
-Usage: python run.py --ticker NVDA --duration 6 --language zh-CN
+Usage: python3 run.py --ticker NVDA --duration 9 --language zh-CN
+Usage: source .venv/bin/activate && python run.py --ticker NVDA --duration 9 --language zh-CN
 """
 import argparse
 import webbrowser
