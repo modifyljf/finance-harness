@@ -527,7 +527,7 @@
       <div class="metric-card fragment fade-up">
         <div class="metric-label">{{ m.label }}</div>
         <div class="metric-value {{ 'up' if tr == 'up' else 'down' if tr == 'down' else '' }}">
-          <span class="metric-trend">{{ '▲' if tr == 'up' else '▼' if tr == 'down' else '–' }}</span>{{ m.value }}
+          {% if tr != 'flat' %}<span class="metric-trend">{{ '▲' if tr == 'up' else '▼' }}</span>{% endif %}{{ m.value }}
         </div>
       </div>
       {% endfor %}
