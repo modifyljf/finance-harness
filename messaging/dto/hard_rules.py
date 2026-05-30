@@ -1,8 +1,10 @@
 """Hard constraints that must never be violated across the pipeline."""
 
-CHARS_PER_MINUTE_ZH = 342   # measured from fish.audio TTS output
+CHARS_PER_MINUTE_ZH = 331        # calibrated: AVGO 767s actual playback
 CHARS_PER_MINUTE_EN = 140
-TTS_CHARS_PER_SEC_ZH = 5.70  # 342 / 60, used for per-slide autoslide timing
+TTS_CHARS_PER_SEC_ZH = 5.52     # 331 / 60, calibrated from 12:47 actual playback
+TTS_PAUSE_PER_BREAK_SEC = 1.0   # fish.audio 1s pause per paragraph break (\n\n)
+TTS_SLIDE_BUFFER_MS = 900        # Reveal.js transition overhead per slide
 
 MAX_NARRATION_MINUTES = 15   # hard ceiling regardless of target duration
 

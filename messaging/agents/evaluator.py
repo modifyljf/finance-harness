@@ -115,7 +115,18 @@ class EvaluatorAgent(BaseAgent):
 
         if hard_errors:
             print(f"[Evaluator] Hard validation failed: {hard_errors}")
+            # Infer retry_targets from error types so the service can actually retry
+            retry_targets = []
+            for err in hard_errors:
+                err_l = err.lower()
+                if any(k in err_l for k in ("slide", "missing", "schema", "field")):
+                    if "slides" not in retry_targets:
+                        retry_targets.append("slides")
+                if any(k in err_l for k in ("narration", "short", "long", "chars")):
+                    if "narration" not in retry_targets:
+                        retry_targets.append("narration")
             return Evaluation(score=0, passed=False, issues=hard_errors, hard_errors=hard_errors,
+                              retry_targets=retry_targets,
                               summary="Hard validation failed — schema or length errors.")
 
         print("[Evaluator] Running LLM quality check...")

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-30T02:04:21.024510+00:00",
+  "generated_at": "2026-05-30T03:02:16.241979+00:00",
   "current_date": "2026-05-29",
   "input": {
     "ticker": "AVGO",
@@ -170,7 +170,7 @@
     "price_vs_ma50_pct": 15.8
   },
   "valuation_snapshot": {
-    "pe_trailing": 87.26,
+    "pe_trailing": 86.92,
     "pe_forward": 24.23,
     "peg": 0.93,
     "ps_ratio": 30.98,
@@ -186,7 +186,7 @@
     "profit_margin": 36.6,
     "free_cashflow": 25503750144,
     "roe": 33.4,
-    "eps_trailing": 5.12,
+    "eps_trailing": 5.14,
     "eps_forward": 18.44094
   },
   "analyst_snapshot": {

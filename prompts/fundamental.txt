@@ -11,8 +11,7 @@
 - Beta：{beta}
 
 ## 估值指标
-- 市盈率（PE Trailing）：{pe_trailing}
-- 市盈率（PE Forward）：{pe_forward}
+- 预期市盈率（Forward PE）：{pe_forward}（**核心估值指标，重点分析**）
 - PEG 比率：{peg}
 - 市销率（PS）：{ps_ratio}
 - 市净率（PB）：{pb_ratio}
@@ -41,7 +40,7 @@
 ## 请输出以下内容（约600-800字，{language}）
 
 ### 一、估值判断
-结合当前PE/PEG/EV-EBITDA与行业基准，判断当前估值是否合理。明确给出"低估/合理/高估"的结论并说明理由。
+以 Forward PE 为核心估值锚点，结合 PEG/EV-EBITDA 与行业基准，判断当前估值是否合理。明确给出"低估/合理/高估"的结论并说明理由。不要强调或引用 TTM PE。
 
 ### 二、成长性分析
 分析营收增速、利润率趋势、EPS变化，判断成长动力是否可持续。

@@ -293,6 +293,56 @@ class GeneratorAgent(BaseAgent):
 
     # ── Narration ──────────────────────────────────────────────────────────────
 
+    @staticmethod
+    def _build_fact_anchor(plan: dict, slide_type: str) -> str:
+        """
+        For slides that make specific technical/price claims, inject the raw data
+        as a hard constraint so the model cannot fabricate candle counts or prices.
+        """
+        if slide_type not in ("price_action", "key_points"):
+            return ""
+
+        md = plan["market_snapshot"]
+        tech = plan["technical_indicators"]
+        history = plan["price_history"]["items"]
+
+        price_table = "\n".join(
+            f"  {p['date']}: ${p['close']}" for p in history[-14:]
+        )
+
+        # Detect consecutive up/down days from actual data
+        closes = [p["close"] for p in history]
+        streak_desc = ""
+        if len(closes) >= 2:
+            direction = "up" if closes[-1] > closes[-2] else "down"
+            streak = 1
+            for i in range(len(closes) - 2, 0, -1):
+                if direction == "up" and closes[i] > closes[i - 1]:
+                    streak += 1
+                elif direction == "down" and closes[i] < closes[i - 1]:
+                    streak += 1
+                else:
+                    break
+            streak_desc = f"最近连续{'上涨' if direction == 'up' else '下跌'} {streak} 天"
+
+        bb = tech.get("bollinger") or {}
+        lines = [
+            "## 数据锚点（技术描述必须以此为准，禁止编造价格走势）",
+            f"当前价格: ${md.get('current_price', 'N/A')}",
+            f"MA20: ${tech.get('ma20', 'N/A')}  MA50: ${tech.get('ma50', 'N/A')}",
+            f"RSI(14): {tech.get('rsi_14', 'N/A')} ({tech.get('rsi_signal', 'N/A')})",
+            f"布林带: 上轨${bb.get('upper','N/A')} / 中轨${bb.get('middle','N/A')} / 下轨${bb.get('lower','N/A')}",
+            f"成交量趋势: {tech.get('volume_trend', 'N/A')}",
+            f"MA信号: {tech.get('ma_signal', 'N/A')}",
+            f"52周高点: ${md.get('52w_high','N/A')}  52周低点: ${md.get('52w_low','N/A')}",
+            f"区间位置: {md.get('52w_range_position_pct','N/A')}%",
+            f"实际走势: {streak_desc}",
+            "近14日收盘价（唯一可引用的价格事实）:",
+            price_table,
+            "约束：所有具体价格数字、均线数值、K线描述（如'连续X根阳线'）必须与上方数据一致，不得编造。\n",
+        ]
+        return "\n".join(lines) + "\n"
+
     def _slide_narration(
         self,
         plan: dict,
@@ -317,6 +367,8 @@ class GeneratorAgent(BaseAgent):
         else:
             pos_rule = _POS_MIDDLE
 
+        fact_anchor = self._build_fact_anchor(plan, slide_type)
+
         user_msg = self._load_prompt("narration_slide").format(
             current_date=current_date,
             ticker=md["ticker"],
@@ -331,6 +383,7 @@ class GeneratorAgent(BaseAgent):
             slide_index=slide_index + 1,
             total_slides=total_slides,
             position_rule=pos_rule,
+            fact_anchor=fact_anchor,
         )
         system = (
             f"你是中文YouTube顶级财经主播，今天是{current_date}。"
@@ -413,8 +466,24 @@ class GeneratorAgent(BaseAgent):
         print(f"[Generator] Narration complete. {len(full)}字 ≈ {len(full)/chars_per_minute:.1f}分钟")
         return full
 
-    def generate_slides(self, plan: dict, synthesis: str) -> dict:
-        print("[Generator] Generating slides JSON...")
+    @staticmethod
+    def _safe_parse_json(raw: str) -> dict:
+        """Parse JSON, falling back to extracting the first {...} block if needed."""
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            # Try to extract JSON object from markdown fences or partial output
+            start = raw.find("{")
+            end = raw.rfind("}")
+            if start != -1 and end != -1 and end > start:
+                try:
+                    return json.loads(raw[start:end + 1])
+                except json.JSONDecodeError:
+                    pass
+            raise
+
+    def generate_slides(self, plan: dict, synthesis: str, _attempt: int = 0) -> dict:
+        print(f"[Generator] Generating slides JSON{' (retry)' if _attempt else ''}...")
         md = plan["market_snapshot"]
         inp = plan["input"]
         outline = plan["slide_outline"]
@@ -437,11 +506,19 @@ class GeneratorAgent(BaseAgent):
             "严格按照 prompt 中定义的 JSON Schema 生成每张幻灯片，"
             "key_points 必须用 points 数组，financials 必须用 metrics 数组，"
             "risk 必须用 risks 数组，catalyst 必须用 catalysts 数组，"
+            "news 必须用 items 数组，"
             "outlook 必须包含 base_range / scenario_bull / scenario_bear。"
             "返回合法 JSON，根字段为 title、ticker、slides（array）。"
         )
         raw = self._chat(system, user_msg, json_mode=True)
-        slides_data = json.loads(raw)
+        try:
+            slides_data = self._safe_parse_json(raw)
+        except json.JSONDecodeError as exc:
+            if _attempt < 2:
+                print(f"[Generator] Slides JSON parse failed ({exc}), retrying ({_attempt + 1}/2)...")
+                return self.generate_slides(plan, synthesis, _attempt + 1)
+            raise RuntimeError(f"Slides JSON parse failed after 3 attempts: {exc}") from exc
+
         slides_data = self._normalize_slides(slides_data)
         print(f"[Generator] Slides complete: {len(slides_data['slides'])} slides.")
         return slides_data
@@ -464,9 +541,16 @@ class GeneratorAgent(BaseAgent):
         inp = plan["input"]
         outline = plan["slide_outline"]
         current_date = plan["current_date"]
+        news_pack = plan["news_evidence_pack"]
 
         slide_outline_str = " → ".join(s["type"] for s in outline)
         analysis_summary = synthesis[:600].rsplit("。", 1)[0] + "。"
+
+        # Ground the title generator with actual this-week news to prevent hallucination
+        news_lines = "\n".join(
+            f"- [{n['published_at']}] {n['title']}"
+            for n in news_pack.get("items", [])[:8]
+        )
 
         user_msg = self._load_prompt("youtube").format(
             current_date=current_date,
@@ -475,9 +559,11 @@ class GeneratorAgent(BaseAgent):
             duration_minutes=inp["duration_minutes"],
             analysis_summary=analysis_summary,
             slide_outline=slide_outline_str,
+            weekly_news=news_lines or "（暂无新闻数据）",
         )
         system = (
             f"你是YouTube财经频道运营专家，今天是{current_date}。"
+            "标题内容必须严格基于提供的【分析摘要】和【本周新闻】，禁止虚构事件结果。"
             "严格按照JSON格式返回，字段：title、description、tags（数组）。"
         )
         raw = self._chat(system, user_msg, json_mode=True, model=MODEL_CHAT)
