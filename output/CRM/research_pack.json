@@ -1,97 +1,118 @@
 {
-  "product_segments": [],
+  "product_segments": [
+    {
+      "name": "Service Cloud",
+      "revenue": "$2.33 billion",
+      "growth_pct": 8,
+      "period": "Q3 FY2025",
+      "source": "Salesforce Spring 2025 PDF (University of Iowa)"
+    },
+    {
+      "name": "Sales Cloud",
+      "revenue": "$2.13 billion",
+      "growth_pct": 8,
+      "period": "Q3 FY2025",
+      "source": "Salesforce Spring 2025 PDF (University of Iowa)"
+    }
+  ],
   "management_guidance": [
     {
-      "metric": "FY2027 全年营收",
-      "value": "$45.8 - $46.2 billion",
-      "direction": "首次",
-      "context": "在 Q4 FY2026 财报电话会中提出"
+      "metric": "FY2026 Revenue",
+      "value": "$41.1 billion - $41.3 billion",
+      "direction": "维持",
+      "context": "2025年9月Q2 FY2026财报会议给出的全年指引"
     },
     {
-      "metric": "FY2027 调整后每股收益",
+      "metric": "FY2026 Adjusted EPS",
+      "value": "$11.33 - $11.37",
+      "direction": "上调",
+      "context": "2025年9月Q2 FY2026财报会议，指引高于LSEG共识$11.31"
+    },
+    {
+      "metric": "Full-year 2026 Revenue",
+      "value": "$46.05 billion",
+      "direction": "上调",
+      "context": "Tavily摘要提及，可能指CY2026或FY2027"
+    },
+    {
+      "metric": "Full-year 2026 Adjusted EPS",
       "value": "$14.09",
       "direction": "上调",
-      "context": "在 Q1 CY2026 财报后上调"
+      "context": "Tavily摘要提及，可能指CY2026或FY2027"
     },
     {
-      "metric": "FY2030 营收目标",
+      "metric": "FY30 Revenue Target",
       "value": "$63 billion",
       "direction": "上调",
-      "context": "在 Q4 FY2026 财报电话会中提出，对应 11% CAGR"
+      "context": "Q4 FY2026财报电话会，管理层设定11% CAGR目标"
     }
   ],
   "competitive_position": {
-    "market_share": "全球 CRM 市场份额约 20.7% - 21.7%",
+    "market_share": "20.7% of global CRM market in 2026",
     "key_competitors": [
-      "Microsoft Dynamics",
-      "SAP",
-      "Oracle"
+      "HubSpot",
+      "Microsoft Dynamics 365",
+      "Zoho CRM",
+      "Adobe Inc."
     ],
-    "moat": "全球 CRM 市场领导者，市场份额超过前四竞争对手之和",
-    "threats": "AI 竞争和宏观压力导致股价 2026 年下跌约 25% - 30%"
+    "moat": "综合云原生解决方案和强大的网络效应，为现代云时代构建的护城河",
+    "threats": "竞争对手在功能、定价和AI创新方面的追赶，以及宏观经济放缓影响企业软件支出"
   },
   "key_facts": [
     {
-      "fact": "FY2026 全年营收 $41.5B，同比增长 10%",
-      "metric_type": "Revenue",
-      "source": "FY2026 10-K 及 Q4 FY2026 财报电话会",
-      "confidence": "high",
-      "caveat": null
-    },
-    {
-      "fact": "Q4 FY2026 营收 $11.2B，同比增长 12%",
-      "metric_type": "Revenue",
-      "source": "Q4 FY2026 财报电话会",
-      "confidence": "high",
-      "caveat": null
-    },
-    {
-      "fact": "Agentforce 和 Data 360 年度经常性收入（ARR）达到 $2.9B，同比增长超过 200%",
+      "fact": "Agentforce and Data 360年度经常性收入达到29亿美元，同比增长超过200%",
       "metric_type": "ARR",
-      "source": "Q4 FY2026 财报电话会及 SEC 10-K",
+      "source": "Q4 FY2026财报电话会及SEC 10-K",
       "confidence": "high",
-      "caveat": "ARR 为已签约经常性收入，非确认收入"
+      "caveat": "包括Informatica Cloud的11亿美元ARR"
     },
     {
-      "fact": "Q1 CY2026 营收 $9.83B，同比增长 8%",
+      "fact": "FY2026全年营收415.25亿美元，同比增长9.58%",
       "metric_type": "Revenue",
-      "source": "Q1 CY2026 财报摘要（Yahoo）",
-      "confidence": "medium",
-      "caveat": "CY 代表日历年度，可能与财年 Q1 数据不同"
-    },
-    {
-      "fact": "FY2026 运营现金流 $6.5B（Q1 CY2026）",
-      "metric_type": "Other",
-      "source": "Q1 CY2026 财报摘要（Yahoo）",
-      "confidence": "medium",
+      "source": "SEC 10-K FY2026及Macrotrends",
+      "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "2026 年 3 月通过发行高级债券和定期贷款融资 $25B 用于加速股票回购",
-      "metric_type": "Other",
-      "source": "Tikr 文章",
+      "fact": "Q4 FY2026营收112亿美元，同比增长12%",
+      "metric_type": "Revenue",
+      "source": "Yahoo Finance earnings transcript",
       "confidence": "high",
-      "caveat": "债务融资用于回购，可能增加财务杠杆"
+      "caveat": null
+    },
+    {
+      "fact": "2026年第一季度（截至2026年4月30日）营收111.33亿美元，同比增长13.27%，高于分析师预期的110.5亿美元",
+      "metric_type": "Revenue",
+      "source": "SEC 10-Q及Yahoo Finance新闻报道",
+      "confidence": "high",
+      "caveat": "该季度为FY2027 Q1"
+    },
+    {
+      "fact": "管理层将FY30营收目标上调至630亿美元，隐含11%的年复合增长率",
+      "metric_type": "Other",
+      "source": "Q4 FY2026财报电话会",
+      "confidence": "high",
+      "caveat": "此为未来长期目标，非当前财年指引"
     }
   ],
   "analyst_thesis": {
-    "bull_case": "管理层上调 FY2030 营收目标至 $63B（11% CAGR），Agentforce ARR 爆发式增长至 $2.9B，债务回购支撑股价，当前远期 P/E 仅 12.3 倍，分析师目标价 $257.03 意味着 34.5% 上行空间。",
-    "bear_case": "2026 年股价已下跌 25%-30%，AI 竞争压力加大，以债务驱动的 $25B 回购增加财务风险，且 Q1 CY2026 营收增速放缓至 8%。",
+    "bull_case": "DCF估值显示内在价值中位数约为334.5美元，当前股价191.1美元有约75%的上行空间；EPS预计年增长10%，ROE达27.9%，AI产品Agentforce ARR增长超200%",
+    "bear_case": "2026年股价下跌25-30%，受AI竞争担忧和市场对软件股的抛售影响；CRMV龙头面临HubSpot等低价替代品的挑战",
     "key_institutions": [
       {
-        "firm": "共识分析师",
-        "rating": "HOLD",
-        "target": "$257.03",
-        "thesis": "75% 分析师仍持正面看法，但年初至今跌幅反映 AI 担忧"
+        "firm": "A.L. Capital Advisory",
+        "rating": "买入",
+        "target": "$334.5 (midpoint of $195-$474 range)",
+        "thesis": "DCF模型显示显著安全边际，建议买入"
       }
     ]
   },
   "data_quality": {
     "segment_data_available": false,
     "guidance_found": true,
-    "sources_count": 12,
+    "sources_count": 11,
     "confidence": "high",
-    "notes": "产品线收入拆分数据缺失；EDGAR 提供季度总营收，但无细分；Tavily 包含丰富电话会和指引信息；CY 与 FY 期间存在混淆，已注明来源和注意事项。"
+    "notes": "EDGAR无XBRL细分收入数据，Tavily提供了Q1 CY2026和FY2026的详细业绩以及竞争格局信息"
   },
   "_edgar_quarterly_revenue": [
     {

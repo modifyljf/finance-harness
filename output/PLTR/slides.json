@@ -1,90 +1,113 @@
 {
-  "title": "PLTR为何仍被低估？",
+  "title": "增速84.7，市场说没未来？",
   "ticker": "PLTR",
   "slides": [
     {
       "type": "cover",
-      "headline": "PLTR为何仍被低估？",
+      "headline": "增速84.7，市场说没未来？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "PLTR为何仍被低估？",
-      "autoslide_ms": 23907
+      "hook": "375亿市值，营收增速84.7%，市场却说它没未来？",
+      "autoslide_ms": 28900
     },
     {
       "type": "market_overview",
       "headline": "$156.54  +9.21%  ·  Forward PE 75.47x  ·  目标价空间 +17.4%",
-      "callout": "上涨时缩量，追高意愿弱，是隐患",
-      "autoslide_ms": 84233
+      "callout": "营收增速84.7%，盈利增速325%，RSI 67.4未超买",
+      "autoslide_ms": 94566
+    },
+    {
+      "type": "why_now",
+      "headline": "股东会窗口期",
+      "old_thesis": "商业增长不可持续，只靠政府合同",
+      "new_reality": "EPS 0.33美元，超预期17.9%；营收增速84.7%，毛利率84.1%",
+      "what_changed": "下周股东大会+投资者日，管理层或展示商业加速证据",
+      "why_now_statement": "市场还在看旧剧本，现实已进入AI平台时代",
+      "autoslide_ms": 78617
     },
     {
       "type": "price_action",
-      "headline": "短期偏多，但进入高波动区间",
+      "headline": "短期偏多，但追高风险极大",
       "signal": "bullish",
       "bullets": [
-        "支撑位：$149.2（布林带上轨，从压力变支撑）",
-        "支撑位：$141.79-$137.81（MA50与布林带中线共振强支撑区）",
-        "阻力位：$161（短期前高），突破看$173，$207.52是天花板",
-        "趋势描述：价格在涨，量在缩。市场情绪高涨，但真正愿意追高的资金在减少。",
-        "RSI：67.4，中性区域，并没有超买"
+        "支撑位：$149.2（布林带上轨）",
+        "阻力位：$207.52（52周前高）",
+        "典型突破型走势，中期趋势转多，但量价背离",
+        "RSI：67.4，离超买阈值70还有一步之遥"
       ],
-      "autoslide_ms": 108871
+      "autoslide_ms": 102001
     },
     {
       "type": "key_points",
-      "headline": "本周多空对决",
+      "headline": "多空博弈",
       "points": [
         {
-          "title": "最强看多信号：基本面硬数据",
-          "body": "基准目标价160美元，基于45倍远期市销率×85.46亿美元营收预期；上季EPS 0.33美元超预期17.9%；全年营收指引上调至76.5-76.6亿美元，同比增速71%。",
+          "title": "盈利超预期打破偏见",
+          "body": "每股盈利0.33美元，超预期17%；营收增速84.7%，AIP平台商业渗透超华尔街模型。",
           "tag": "bull"
         },
         {
-          "title": "最强看空信号：估值透支与背离",
-          "body": "市销率71.83倍，价格156.54美元已突破布林带上轨149.2美元，但成交量萎缩，RSI 67.4逼近超买区。",
+          "title": "技术形态多头突破",
+          "body": "收盘价156.54突破布林上轨149.2，RSI 67.4未超买，守住149.2有望上看前高207.52。",
+          "tag": "bull"
+        },
+        {
+          "title": "高估值风险",
+          "body": "市值3753亿，按40倍EV/Revenue目标价186美元（上行19%），悲观目标价84美元（下行46%）。",
           "tag": "bear"
         },
         {
-          "title": "短期风险：买预期卖事实",
-          "body": "下周年报大会预期高度一致，若利好仅重复已知增长，可能引发获利盘回调；缩量阳线是警示灯。",
-          "tag": "neutral"
+          "title": "量价背离警示",
+          "body": "价格新高但成交量萎缩，追高意愿减弱；下周股东大会若无大单或成利好出尽转折点。",
+          "tag": "bear"
         }
       ],
-      "autoslide_ms": 192385
+      "autoslide_ms": 176276
+    },
+    {
+      "type": "narrative_gap",
+      "headline": "商业增长被低估",
+      "market_consensus": "PLTR商业增长不可持续，高增长仅靠政府合同",
+      "reality": "EPS0.33超预期17.9%，营收增速84.7%，毛利率84.1%",
+      "gap": "市场低估增长可持续性",
+      "gap_direction": "undervalued",
+      "implication": "估值修复空间大，基准目标价186.4美元",
+      "autoslide_ms": 97747
     },
     {
       "type": "news",
-      "headline": "本周新闻整体偏中性",
+      "headline": "本周新闻偏多，情绪风险已被定价",
       "news_items": [
         {
-          "title": "摩根士丹利上调PLTR至增持，目标价180美元",
-          "category": "analyst",
+          "title": "市场打破PLTR增长不可持续偏见",
+          "category": "earnings",
           "impact": "positive",
-          "note": "机构态度的重要修正"
+          "note": "市场开始打破对PLTR商业增长不可持续的偏见"
         },
         {
-          "title": "美国国防部签署9.2亿美元机密合约续约",
-          "category": "other",
-          "impact": "positive",
-          "note": "政F合作根基牢固"
-        },
-        {
-          "title": "文艺复兴科技大幅减持PLTR，比例达二成",
-          "category": "other",
-          "impact": "negative",
-          "note": "短线高位分歧加剧"
-        },
-        {
-          "title": "机构目标价更新：杰富瑞195美元，高盛141美元",
+          "title": "分析师评级分歧，机构打架",
           "category": "analyst",
           "impact": "neutral",
-          "note": "两派分歧，没有一致性预期"
+          "note": "机构在打架，散户在高潮，这是典型的情绪顶标志"
+        },
+        {
+          "title": "戴尔AI服务器订单猛增，PLTR受益",
+          "category": "product",
+          "impact": "positive",
+          "note": "这轮上涨的成交量在收缩，价格涨量不跟，是背离信号"
+        },
+        {
+          "title": "基准目标价186.4美元，下行空间大",
+          "category": "analyst",
+          "impact": "negative",
+          "note": "当前股价上行空间仅19%，下行空间高达46%"
         }
       ],
-      "analyst_summary": "摩根士丹利上调，但文艺复兴减持，市场定价逻辑转向看现在",
-      "autoslide_ms": 88581
+      "analyst_summary": "Renaissance减持，摩根士丹利重申增持至186美元",
+      "autoslide_ms": 108436
     },
     {
       "type": "financials",
-      "headline": "财务面完美，但估值已充分反映",
+      "headline": "盈利质量S级，但估值已吞噬未来",
       "metrics": [
         {
           "label": "营收增速",
@@ -94,109 +117,88 @@
         {
           "label": "毛利率",
           "value": "84.1%",
-          "trend": "flat"
-        },
-        {
-          "label": "净利率",
-          "value": "46.2%",
-          "trend": "flat"
-        },
-        {
-          "label": "Forward PE",
-          "value": "72x (P/S)",
-          "trend": "flat"
-        },
-        {
-          "label": "自由现金流",
-          "value": "连续8季为正，利润率持续改善",
           "trend": "up"
         },
         {
-          "label": "ROE",
-          "value": "无数据",
-          "trend": "flat"
+          "label": "自由现金流",
+          "value": "利润率35%以上",
+          "trend": "up"
         }
       ],
-      "callout": "若增速从84.7%降至50%，股价或跌向112美元",
-      "autoslide_ms": 96371
+      "callout": "当前3750亿美元市值，已经提前定价了未来两年的高速增长。安全边际极薄。",
+      "autoslide_ms": 128182
     },
     {
       "type": "risk",
       "headline": "高",
       "risks": [
         {
-          "title": "估值严重透支",
-          "body": "PLTR当前的市销率高达七十一点八三倍。市场已经把未来好几个季度的超高速增长，提前定价了。一旦增速边际放缓，股价就可能向悲观目标价一百一十二点三美元靠拢。",
+          "title": "年度大会预期落空",
+          "body": "如果管理层拿不出大型订单或长期指引平平，利好出尽的抛售可能在一天内蒸发5%-8%市值。",
           "severity": "high"
         },
         {
-          "title": "销售模式规模化瓶颈",
-          "body": "核心销售极其依赖少数精英，可能只有七名销售在驱动核心业务。如果AI代理人不能真正颠覆重人力的销售模式，营收增速迟早会撞上人力扩张的天花板。",
+          "title": "估值极度透支",
+          "body": "当前市值3753亿美元，Forward PS 49倍。悲观情景下内部估值仅84美元，下行风险46%。",
           "severity": "high"
         },
         {
-          "title": "短期情绪与资金博弈",
-          "body": "价格突破一百四十九点二的布林带上轨，但成交量萎缩，是缩量上涨，短期动能衰竭的信号。一旦消息符合预期而非大幅超越，获利盘可能砸盘。",
+          "title": "量价背离",
+          "body": "价格猛涨但成交量收缩，追高资金犹豫，价格可能回踩149美元。",
           "severity": "medium"
         }
       ],
-      "autoslide_ms": 139849
+      "autoslide_ms": 100552
     },
     {
       "type": "catalyst",
-      "headline": "三大催化剂：两正一负",
+      "headline": "催化剂决定方向",
       "catalysts": [
         {
-          "event": "年度股东大会+演示日",
+          "event": "年度股东大会加投资者日",
           "direction": "positive",
-          "timing": "2026年6月2-3日",
-          "impact": "medium"
+          "timing": "六月三号",
+          "impact": "large"
         },
         {
-          "event": "七月底财报季",
-          "direction": "positive",
-          "timing": "2026年7月底",
-          "impact": "medium"
-        },
-        {
-          "event": "'买预期卖事实'回调",
+          "event": "年度股东大会加投资者日",
           "direction": "negative",
-          "timing": "股东大会/演示日后",
+          "timing": "六月三号",
           "impact": "large"
         }
       ],
-      "autoslide_ms": 121914
+      "autoslide_ms": 101276
     },
     {
       "type": "outlook",
-      "headline": "中性偏谨慎，不追高，等回调",
+      "headline": "短期区间震荡（1-4周），总判断：谨慎参与",
       "subtitle": "中性",
       "base_range": {
-        "low": "$145",
-        "high": "$165",
+        "low": 149,
+        "high": 186,
         "timeframe": "1-4周"
       },
       "scenario_bear": {
-        "condition": "若营收增速跌破60%",
-        "target": "$112.3"
+        "condition": "预期落空，利好出尽",
+        "target": 84
       },
       "scenario_base": {
-        "condition": "营收增速维持70%以上且美国商业收入加速",
-        "target": "$160"
+        "condition": "基于40倍Forward EV/Revenue对2027年收入推导",
+        "target": 186
       },
       "scenario_bull": {
-        "condition": "营收增速加速至100%以上",
-        "target": "$215.7"
+        "condition": "管理层兑现市场期待，给出超预期商业指引",
+        "target": 241
       },
-      "autoslide_ms": 107602
+      "autoslide_ms": 83066
     },
     {
       "type": "summary",
-      "headline": "等待回调，拥抱真相",
+      "headline": "情绪与估值的拔河赛，等方向明确了再出手",
       "verdict": "neutral",
-      "action": "等待回调至145-150区间，放量企稳考虑，仓位不超8%",
+      "action": "总仓位控制在百分之五以内，不要追高",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 31878
+      "autoslide_ms": 25718
     }
   ]
 }

@@ -154,12 +154,13 @@ class MessagingHarnessService:
 
     def _save_candidate(self, candidate: Candidate) -> None:
         texts = {
-            "analysis_fundamental.txt": candidate.fundamental_analysis,
-            "analysis_technical.txt":   candidate.technical_analysis,
-            "analysis_narrative.txt":   candidate.narrative_analysis,
-            "analysis_synthesis.txt":   candidate.synthesis,
-            "narration.txt":            candidate.narration,
-            "narration_tts.txt":        candidate.narration_tts,
+            "analysis_fundamental.txt":  candidate.fundamental_analysis,
+            "analysis_technical.txt":    candidate.technical_analysis,
+            "analysis_narrative.txt":    candidate.narrative_analysis,
+            "analysis_synthesis.txt":    candidate.synthesis,
+            "narration.txt":             candidate.narration,
+            "narration_tts.txt":         candidate.narration_tts,
+            "narration_tts_emotion.txt": candidate.narration_tts_emotion,
         }
         for filename, text in texts.items():
             (self._out_dir / filename).write_text(text, encoding="utf-8")

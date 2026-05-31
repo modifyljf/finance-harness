@@ -1,7 +1,7 @@
 {
-  "old_thesis": "2026 年股价已下跌 25%-30%，AI 竞争压力加大，以债务驱动的 $25B 回购增加财务风险，且 Q1 CY2026 营收增速放缓至 8%。",
-  "new_thesis": "管理层上调 FY2030 营收目标至 $63B（11% CAGR），Agentforce ARR 爆发式增长至 $2.9B，债务回购支撑股价，当前远期 P/E 仅 12.3 倍，分析师目标价 $257.03 意味着 34.5% 上行空间。",
-  "what_changed": "最近一季度（2026-04-30）EPS超预期24.0%；管理层给出3条前瞻指引，显示业务走向；公司类型已确认为GrowthSoftware，估值方法已切换至Forward PE + PEG + EV/FCF",
+  "old_thesis": "2026年股价下跌25-30%，受AI竞争担忧和市场对软件股的抛售影响；CRMV龙头面临HubSpot等低价替代品的挑战",
+  "new_thesis": "DCF估值显示内在价值中位数约为334.5美元，当前股价191.1美元有约75%的上行空间；EPS预计年增长10%，ROE达27.9%，AI产品Agentforce ARR增长超200%",
+  "what_changed": "最近一季度（2026-04-30）EPS超预期24.0%；管理层给出5条前瞻指引，显示业务走向；公司类型已确认为GrowthSoftware，估值方法已切换至Forward PE + PEG + EV/FCF",
   "why_now": "股价仍低于分析师共识目标价33.7%，下次财报（2026-09-02）是预期差验证的关键节点。",
   "direction": "strong_beat",
   "eps_surprise_pct": 24.0,

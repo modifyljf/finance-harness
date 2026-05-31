@@ -1,34 +1,54 @@
 {
   "events": [
     {
-      "event": "下次财报",
+      "event": "下一财报",
       "date": "2026-09-02",
       "date_confidence": "high",
-      "date_source": "Investing.com 和公司公告",
+      "date_source": "Investing.com及官方公告",
       "impact": "high",
       "direction": "neutral",
-      "bull_case": "业绩超预期推动股价上涨5-10%",
-      "bear_case": "业绩不及预期导致股价下跌5-10%"
+      "bull_case": "超预期EPS及营收指引，股价可能上涨5-10%",
+      "bear_case": "不及预期或下调指引，股价可能下跌5-10%"
     },
     {
-      "event": "Architect Dreamin'大会",
-      "date": "2026-06-11",
+      "event": "BofA全球TMT会议",
+      "date": "2026-06-02",
       "date_confidence": "high",
-      "date_source": "搜索结果中明确给出日期",
+      "date_source": "Salesforce投资者关系网站",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "新产品发布提振市场信心",
-      "bear_case": "缺乏亮点导致股价无反应"
+      "bull_case": "管理层提供乐观展望，股价上涨2-5%",
+      "bear_case": "缺乏新催化剂或保守评论，股价下跌2-3%"
     },
     {
-      "event": "Portugal Dreamin'大会",
-      "date": "2026-06-19",
+      "event": "Evercore全球TMT会议",
+      "date": "2026-06-03",
       "date_confidence": "high",
-      "date_source": "搜索结果中明确给出日期",
+      "date_source": "Salesforce投资者关系网站",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "社区活动增强客户粘性",
-      "bear_case": "活动影响有限"
+      "bull_case": "积极业务更新，股价上涨2-5%",
+      "bear_case": "平淡陈述，股价小幅波动"
+    },
+    {
+      "event": "Mizuho科技会议",
+      "date": "2026-06-09",
+      "date_confidence": "high",
+      "date_source": "Salesforce投资者关系网站",
+      "impact": "medium",
+      "direction": "neutral",
+      "bull_case": "AI CRM进展受关注，股价上涨3-5%",
+      "bear_case": "竞争压力提及，股价下跌2-4%"
+    },
+    {
+      "event": "Dreamforce 2026",
+      "date": null,
+      "date_confidence": "medium",
+      "date_source": "官方宣布9月但具体日期未定",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "重大产品发布或合作，股价长期上涨10%+",
+      "bear_case": "低于预期，股价短期回调3-5%"
     }
   ]
 }

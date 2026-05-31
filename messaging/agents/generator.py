@@ -116,6 +116,7 @@ _POS_LAST = (
 
 
 def _make_tts_narration(narration: str) -> str:
+    """Strip slide markers → clean TTS text (used for autoslide timing calculation)."""
     text = re.sub(r'\[幻灯片: \w+\]\n?', '', narration)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
@@ -940,6 +941,36 @@ class GeneratorAgent(BaseAgent):
 
     # ── Entry points ───────────────────────────────────────────────────────────
 
+    def _add_emotion_tags(self, plan: dict, narration_tts: str) -> str:
+        """
+        Add fish.audio emotion tags to the clean TTS narration.
+        Returns emotion-tagged version for fish.audio — saved as narration_tts_emotion.txt.
+        narration_tts.txt (clean, no tags) is preserved for autoslide timing calculation.
+        Non-fatal: returns original text if tagging fails.
+        """
+        md = plan["market_snapshot"]
+        current_date = plan["current_date"]
+        print("[Generator] Adding fish.audio emotion tags...")
+        try:
+            prompt = self._load_prompt("emotion_tagger").format(
+                current_date=current_date,
+                ticker=md["ticker"],
+                company_name=md.get("company_name", md["ticker"]),
+                narration_tts=narration_tts,
+            )
+            system = (
+                "你是 fish.audio TTS 情绪标注专家。"
+                "请严格按照规则为口播稿添加情绪标记，输出完整标注后的文本，不要添加任何说明。"
+            )
+            result = self._chat(system, prompt, model=MODEL_CHAT)
+            if result and result.strip():
+                tag_count = result.count("(")
+                print(f"[Generator] Emotion tags added: {tag_count} tags inserted.")
+                return result
+        except Exception as exc:
+            print(f"[Generator] Emotion tagging failed (non-fatal): {exc}")
+        return narration_tts
+
     def run(self, plan: dict) -> Candidate:
         current_date = plan["current_date"]
         print(f"\n[Generator] Running 3 analysis agents in parallel (date={current_date})...")
@@ -959,6 +990,7 @@ class GeneratorAgent(BaseAgent):
         narration = self.generate_narration(plan, synthesis)
         slides = self.generate_slides(plan, narration)   # extracted from narration, not synthesis
         narration_tts = _make_tts_narration(narration)
+        narration_tts_emotion = self._add_emotion_tags(plan, narration_tts)
 
         return Candidate(
             fundamental_analysis=results["fundamental"],
@@ -967,6 +999,7 @@ class GeneratorAgent(BaseAgent):
             synthesis=synthesis,
             narration=narration,
             narration_tts=narration_tts,
+            narration_tts_emotion=narration_tts_emotion,
             slides=slides,
             attempt=0,
         )
@@ -988,6 +1021,7 @@ class GeneratorAgent(BaseAgent):
             slides = self.generate_slides(plan, narration)
 
         narration_tts = _make_tts_narration(narration)
+        narration_tts_emotion = self._add_emotion_tags(plan, narration_tts)
         return Candidate(
             fundamental_analysis=fundamental,
             technical_analysis=technical,
@@ -995,6 +1029,7 @@ class GeneratorAgent(BaseAgent):
             synthesis=synthesis,
             narration=narration,
             narration_tts=narration_tts,
+            narration_tts_emotion=narration_tts_emotion,
             slides=slides,
             attempt=candidate.attempt + 1,
         )

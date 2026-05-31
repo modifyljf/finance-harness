@@ -1,65 +1,65 @@
 {
   "company_type": "GrowthSoftware",
-  "business_model_type": "SaaS订阅制CRM及企业应用平台",
+  "business_model_type": "SaaS订阅制CRM平台",
   "valuation_methodology": "Forward PE + PEG + EV/FCF",
-  "methodology_rationale": "CRM是高利润、经常性收入的成长型软件企业，适用Forward PE反映盈利增长，PEG衡量估值合理性，EV/FCF验证现金流质量。",
+  "methodology_rationale": "Salesforce是成熟SaaS公司，盈利稳定且自由现金流强劲，适用Forward PE和PEG作为主要估值锚点，EV/FCF提供交叉验证。",
   "revenue_model": {
     "y1": {
       "period": "FY2028",
-      "revenue_est": 50583117900,
+      "revenue_est": 50583100000,
       "growth_pct": 9.8
     },
     "y2": {
       "period": "FY2029",
-      "revenue_est": 54882652921.5,
-      "growth_pct": 8.5
+      "revenue_est": 54629700000,
+      "growth_pct": 8.0
     },
     "y3": {
       "period": "FY2030",
-      "revenue_est": 59018851890.6,
-      "growth_pct": 7.5
+      "revenue_est": 58454000000,
+      "growth_pct": 7.0
     }
   },
   "margin_model": {
     "current_gross_margin_pct": 76.9,
     "target_operating_margin_pct": 25.0,
     "target_net_margin_pct": 20.0,
-    "margin_improvement_driver": "规模效应、销售效率提升及AI集成带来的运营杠杆"
+    "margin_improvement_driver": "通过AI提高销售效率、优化人员成本与自然运营杠杆，推动利润率温和扩张。"
   },
   "multiple_analysis": {
     "current_multiple": 12.35,
-    "fair_multiple": 16.0,
+    "fair_multiple": 15.0,
     "multiple_type": "Forward PE",
-    "sector_median_multiple": 18.0,
-    "multiple_premium_discount": "折价：市场对增速放缓过度担忧，AI货币化潜力尚未充分定价"
+    "sector_median_multiple": 20.0,
+    "multiple_premium_discount": "较行业溢价折价，因增速低于高增长SaaS公司，但高FCF收益率和稳定性提供下档支撑。"
   },
   "scenarios": {
     "bear": {
-      "target_price": 168.0,
-      "implied_upside_pct": -12.1,
+      "target_price": 174.0,
+      "implied_upside_pct": -8.95,
       "probability": 0.25,
-      "key_assumption": "FY2028 EPS仅$14.0，估值维持12x，反映宏观逆风和竞争加剧"
+      "key_assumption": "企业IT预算收缩，销售云增长停滞，利润率无改善"
     },
     "base": {
-      "target_price": 247.7,
-      "implied_upside_pct": 29.6,
+      "target_price": 232.2,
+      "implied_upside_pct": 21.5,
       "probability": 0.55,
-      "key_assumption": "FY2028 EPS符合共识$15.48，估值修复至16x，利润率温和扩张"
+      "key_assumption": "营收符合9.8%增长，经营利润率提升至25%"
     },
     "bull": {
-      "target_price": 306.0,
-      "implied_upside_pct": 60.1,
+      "target_price": 297.0,
+      "implied_upside_pct": 55.4,
       "probability": 0.2,
-      "key_assumption": "AI产品强力驱动增长，FY2028 EPS达$17.0，估值扩张至18x"
+      "key_assumption": "AI代理和数据云产品推动超预期增长，利润率提升至27%+"
     }
   },
-  "expected_value": 239.44,
-  "methodology_note": "基准情景采用FY2028共识EPS $15.48乘以公平倍数16倍（历史均值与增长调整），得出目标价$247.7。悲观/乐观分别基于EPS敏感度与倍数变动推导。",
-  "methodology_statement": "我们的基准目标价$247.7并非来自分析师共识，而是基于16倍Forward PE对FY2028 EPS $15.48推导得出。",
+  "expected_value": 230.61,
+  "methodology_note": "基于Forward PE估值：Bear假设EPS $14.5 (较共识低4%) × 12x = $174；Base: $15.48 × 15x = $232.2；Bull: $16.5 × 18x = $297。Base情景隐含PEG 1.53x，接近行业合理水平。EV/FCF交叉验证支持15～18x估值区间。",
+  "methodology_statement": "我们的基准目标价$232.2并非来自分析师共识，而是基于15倍Forward PE对FY2028 EPS $15.48推导得出。",
   "key_risks": [
-    "企业IT支出放缓，客户推迟采购",
-    "AI应用实际转化收入不及预期",
-    "SaaS赛道竞争加剧，利润率承压"
+    "宏观经济衰退延迟企业数字化支出",
+    "Microsoft Dynamics 365竞争加剧，市场份额流失",
+    "AI产品的货币化进程慢于预期"
   ],
-  "consensus_vs_internal": "内部基准目标价$247.7略低于分析师共识$255.5，因我们采用更保守的16倍PE（共识隐含约16.5倍），且EPS假设与共识一致，反映对估值修复节奏的审慎看法。"
+  "consensus_vs_internal": "内部基准目标价$232.2较分析师共识$255.55低9.2%，主要由于我们采用更保守的15倍Forward PE（隐含PEG约1.5x），而共识隐含约16.6倍PE，反映更乐观的AI增长预期。"
 }
