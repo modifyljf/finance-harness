@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T16:21:42.747282+00:00",
+  "generated_at": "2026-05-31T16:54:17.852231+00:00",
   "current_date": "2026-05-31",
   "input": {
     "ticker": "CRM",
@@ -188,6 +188,27 @@
     "roe": 16.9,
     "eps_trailing": 8.64,
     "eps_forward": 15.47853
+  },
+  "earnings_snapshot": {
+    "last_quarter": "2026-04-30",
+    "revenue": 11133000000,
+    "revenue_qoq_pct": -0.6,
+    "gross_profit": 8563000000,
+    "gross_margin_pct": 76.9,
+    "net_income": 2107000000,
+    "operating_cashflow": 6701000000,
+    "free_cashflow": 6556000000,
+    "eps_actual": null,
+    "eps_estimate": null,
+    "eps_surprise_pct": null,
+    "next_earnings_date": null
+  },
+  "analyst_estimates": {
+    "earnings_estimates": [],
+    "revenue_estimates": [],
+    "five_year_growth_pct": null,
+    "next_year_eps_growth_pct": null,
+    "next_year_rev_growth_pct": null
   },
   "analyst_snapshot": {
     "recommendation": "Buy",
@@ -429,19 +450,6 @@
         "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_6d0a432f-8457-4be2-9e17-09a54ee775ea",
         "category": "other",
         "why_relevant": "Flagged as relevant to the stock by keyword match.",
-        "matched_keywords": [
-          "salesforce"
-        ],
-        "relevance_score": 0.67,
-        "expert_quotes": []
-      },
-      {
-        "title": "Salesforce CEO delivers blunt message on AI agents",
-        "publisher": "Yahoo Entertainment",
-        "published_at": "2026-05-28 22:07",
-        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_ca388739-bdc3-4615-bc6d-d3f5ded89791",
-        "category": "insider",
-        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
         "matched_keywords": [
           "salesforce"
         ],

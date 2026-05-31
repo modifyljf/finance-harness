@@ -331,7 +331,7 @@
   .range-label { font-size: 0.48em; color: var(--c-muted); letter-spacing: 0.1em; margin-bottom: 4px; }
   .range-values { font-size: 1.1em; font-weight: 800; color: var(--c-text); }
 
-  .scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .scenarios { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 4px; }
   .scenario {
     border-radius: 10px; padding: 14px 16px;
   }
@@ -349,10 +349,12 @@
   }
   .scenario.bull .scenario-label { color: var(--c-green); }
   .scenario.bear .scenario-label { color: var(--c-red); }
+  .scenario.base .scenario-label { color: var(--c-accent); }
   .scenario-condition { font-size: 0.72em; color: var(--c-text); line-height: 1.5; margin-bottom: 6px; }
   .scenario-target { font-size: 0.7em; font-weight: 700; }
   .scenario.bull .scenario-target { color: var(--c-green); }
   .scenario.bear .scenario-target { color: var(--c-red); }
+  .scenario.base .scenario-target { color: var(--c-accent); }
 
   /* ── Summary ── */
   .summary-quote {
@@ -636,18 +638,29 @@
       <div class="range-values">{{ slide.base_range.low }} &nbsp;—&nbsp; {{ slide.base_range.high }}</div>
     </div>
     {% endif %}
-    {% if slide.scenario_bull and slide.scenario_bear %}
+    {% if slide.scenario_bull or slide.scenario_bear or slide.scenario_base %}
     <div class="scenarios">
-      <div class="scenario bull fragment fade-up">
-        <div class="scenario-label">▲ 看多条件</div>
-        <div class="scenario-condition">{{ slide.scenario_bull.condition }}</div>
-        <div class="scenario-target">目标 {{ slide.scenario_bull.target }}</div>
-      </div>
+      {% if slide.scenario_bear %}
       <div class="scenario bear fragment fade-up">
-        <div class="scenario-label">▼ 看空条件</div>
+        <div class="scenario-label">▼ 悲观</div>
         <div class="scenario-condition">{{ slide.scenario_bear.condition }}</div>
         <div class="scenario-target">风险 {{ slide.scenario_bear.target }}</div>
       </div>
+      {% endif %}
+      {% if slide.scenario_base %}
+      <div class="scenario base fragment fade-up">
+        <div class="scenario-label">◆ 基准</div>
+        <div class="scenario-condition">{{ slide.scenario_base.condition }}</div>
+        <div class="scenario-target">目标 {{ slide.scenario_base.target }}</div>
+      </div>
+      {% endif %}
+      {% if slide.scenario_bull %}
+      <div class="scenario bull fragment fade-up">
+        <div class="scenario-label">▲ 乐观</div>
+        <div class="scenario-condition">{{ slide.scenario_bull.condition }}</div>
+        <div class="scenario-target">目标 {{ slide.scenario_bull.target }}</div>
+      </div>
+      {% endif %}
     </div>
     {% elif slide.bullets %}
     <ul class="bullets" style="margin-top:8px">

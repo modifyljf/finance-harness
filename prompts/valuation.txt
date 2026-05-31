@@ -1,0 +1,132 @@
+你是顶级卖方研究分析师，今天是{current_date}。
+请为 {ticker}（{company_name}）构建一套内部估值模型，适用于任何行业和业务模式。
+
+## 公司基本信息
+- 行业：{sector} / {industry}
+- 当前股价：${current_price}
+- 市值：{market_cap_str}
+- 语言：{language}
+
+## 估值指标（当前）
+- Forward PE：{pe_forward}x
+- Trailing PE：{pe_trailing}x
+- PEG：{peg}
+- PS Ratio：{ps_ratio}
+- PB Ratio：{pb_ratio}
+- EV/EBITDA：{ev_ebitda}x
+
+## 历史财务指标
+- 营收增速（YoY）：{revenue_growth_yoy}%
+- 盈利增速（YoY）：{earnings_growth_yoy}%
+- 毛利率：{gross_margin}%
+- 营业利润率：{operating_margin}%
+- 净利率：{profit_margin}%
+- ROE：{roe}%
+- EPS（Trailing）：${eps_trailing}
+- EPS（Forward）：${eps_forward}
+- 自由现金流：{free_cashflow}
+
+## 最近季报数据（{last_quarter}）
+- 季度营收：{q_revenue}（QoQ {q_revenue_qoq}%）
+- 季度毛利率：{q_gross_margin}%
+- 季度净利润：{q_net_income}
+- EPS 实际/预期：{q_eps_actual} / {q_eps_estimate}（超预期 {q_eps_surprise}%）
+- 季度自由现金流：{q_fcf}
+- 下次财报日期：{next_earnings_date}
+
+## 分析师前向预测（EPS 共识）
+{eps_estimates}
+
+## 分析师前向预测（Revenue 共识）
+{rev_estimates}
+
+## 增长率预测
+- 5年复合增长率预测：{five_year_growth}%
+- 明年EPS增速预测：{next_year_eps_growth}%
+- 明年营收增速预测：{next_year_rev_growth}%
+
+## 分析师目标价共识
+- 平均目标价：${analyst_target_mean}（上行空间：{analyst_upside}%）
+- 区间：${analyst_target_low} ~ ${analyst_target_high}（{analyst_count}位分析师）
+
+---
+
+## 建模要求
+
+### 第一步：识别业务模式
+根据行业和财务特征，判断最适合的估值框架：
+- SaaS/订阅制：优先 EV/Revenue + Forward PE + Rule of 40
+- 硬件/半导体：EV/EBITDA + 周期性调整PE
+- 金融/银行：P/B + ROE-driven Gordon Growth
+- 消费/零售：EV/EBITDA + 同店增长分析
+- 能源/资源：EV/EBITDA + NAV
+- 医药/生物：DCF（管线调整） + P/Sales
+- 成长亏损股：EV/Revenue + 盈亏平衡时间线
+
+### 第二步：构建3年收入模型
+基于分析师共识预测 + 历史趋势 + 业务逻辑，推导：
+- Year 1（下财年）：营收、增速
+- Year 2：营收、增速
+- Year 3：营收、增速（无共识数据时用历史趋势外推）
+
+### 第三步：利润率路径
+基于当前毛利率/营业利润率，结合行业经验，给出未来3年的利润率改善路径。
+
+### 第四步：推导内在价值（三情景）
+用选定方法计算：
+- 悲观（Bear）：增长低于预期，利润率压缩
+- 基准（Base）：符合分析师共识，利润率温和改善
+- 乐观（Bull）：超预期增长，运营杠杆充分释放
+
+每个情景必须写明：目标价、相对当前价格的涨跌幅、核心假设（1句话）。
+
+### 第五步：与分析师共识对比
+说明内部模型的基准目标价与分析师共识（${analyst_target_mean}）的差异及原因。
+
+---
+
+## 输出格式（严格JSON，不要任何额外文字）
+
+{{
+  "business_model_type": "业务模式类型（如：SaaS订阅制、半导体、消费零售等）",
+  "valuation_methodology": "主要估值方法（如：Forward PE + EV/Revenue）",
+  "methodology_rationale": "为什么选择这种方法（1-2句）",
+  "revenue_model": {{
+    "y1": {{"period": "FY估计年份", "revenue_est": 数字, "growth_pct": 数字}},
+    "y2": {{"period": "FY估计年份", "revenue_est": 数字, "growth_pct": 数字}},
+    "y3": {{"period": "FY估计年份", "revenue_est": 数字, "growth_pct": 数字}}
+  }},
+  "margin_model": {{
+    "current_gross_margin_pct": 数字,
+    "target_operating_margin_pct": 数字,
+    "target_net_margin_pct": 数字,
+    "margin_improvement_driver": "利润率改善核心驱动（1句）"
+  }},
+  "multiple_analysis": {{
+    "current_multiple": 数字,
+    "fair_multiple": 数字,
+    "multiple_type": "PE或EV/Revenue等",
+    "sector_median_multiple": 数字,
+    "multiple_premium_discount": "溢价或折价及原因（1句）"
+  }},
+  "scenarios": {{
+    "bear": {{
+      "target_price": 数字,
+      "implied_upside_pct": 数字,
+      "key_assumption": "核心假设（1句）"
+    }},
+    "base": {{
+      "target_price": 数字,
+      "implied_upside_pct": 数字,
+      "key_assumption": "核心假设（1句）"
+    }},
+    "bull": {{
+      "target_price": 数字,
+      "implied_upside_pct": 数字,
+      "key_assumption": "核心假设（1句）"
+    }}
+  }},
+  "methodology_note": "估值推导过程说明（2-3句，含具体数字和计算逻辑）",
+  "key_risks": ["风险1", "风险2", "风险3"],
+  "consensus_vs_internal": "内部基准目标价与分析师共识的对比及差异原因（1-2句）"
+}}

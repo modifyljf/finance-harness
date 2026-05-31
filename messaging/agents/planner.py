@@ -486,6 +486,204 @@ def _fetch_market_data(ticker: str, t: yf.Ticker) -> dict:
     }
 
 
+# ── Earnings Snapshot ─────────────────────────────────────────────────────────
+
+def _fetch_earnings_snapshot(t: yf.Ticker) -> dict:
+    """Fetch most recent quarterly earnings data from yfinance. Non-fatal on any error."""
+    snap: dict = {
+        "last_quarter":      None,
+        "revenue":           None,
+        "revenue_qoq_pct":   None,
+        "gross_profit":      None,
+        "gross_margin_pct":  None,
+        "net_income":        None,
+        "operating_cashflow": None,
+        "free_cashflow":     None,
+        "eps_actual":        None,
+        "eps_estimate":      None,
+        "eps_surprise_pct":  None,
+        "next_earnings_date": None,
+    }
+
+    def _safe_int(val):
+        try:
+            f = float(val)
+            return None if f != f else int(f)
+        except Exception:
+            return None
+
+    def _safe_float(val, decimals: int = 2):
+        try:
+            f = float(val)
+            return None if f != f else round(f, decimals)
+        except Exception:
+            return None
+
+    def _find_row(df, keywords: list[str]) -> str | None:
+        for name in df.index:
+            name_l = name.lower()
+            if all(kw in name_l for kw in keywords):
+                return name
+        return None
+
+    # Quarterly income statement
+    try:
+        qi = t.quarterly_income_stmt
+        if qi is not None and not qi.empty:
+            col0 = qi.columns[0]
+            snap["last_quarter"] = str(col0.date()) if hasattr(col0, "date") else str(col0)[:10]
+
+            row = _find_row(qi, ["total", "revenue"])
+            if row:
+                snap["revenue"] = _safe_int(qi.loc[row, col0])
+                if len(qi.columns) >= 2:
+                    prev = _safe_int(qi.loc[row, qi.columns[1]])
+                    if snap["revenue"] and prev:
+                        snap["revenue_qoq_pct"] = round((snap["revenue"] - prev) / abs(prev) * 100, 1)
+
+            row = _find_row(qi, ["gross", "profit"])
+            if row:
+                snap["gross_profit"] = _safe_int(qi.loc[row, col0])
+                if snap["revenue"] and snap["gross_profit"]:
+                    snap["gross_margin_pct"] = round(snap["gross_profit"] / snap["revenue"] * 100, 1)
+
+            row = _find_row(qi, ["net", "income"])
+            if row:
+                snap["net_income"] = _safe_int(qi.loc[row, col0])
+    except Exception as exc:
+        print(f"[Planner] quarterly_income_stmt failed (non-fatal): {exc}")
+
+    # Quarterly cash flow
+    try:
+        qc = t.quarterly_cashflow
+        if qc is not None and not qc.empty:
+            col0 = qc.columns[0]
+
+            row = _find_row(qc, ["operating"])
+            if row:
+                snap["operating_cashflow"] = _safe_int(qc.loc[row, col0])
+
+            row = _find_row(qc, ["free"])
+            if row:
+                snap["free_cashflow"] = _safe_int(qc.loc[row, col0])
+            elif snap["operating_cashflow"] is not None:
+                capex_row = _find_row(qc, ["capital", "expenditure"])
+                if capex_row:
+                    capex = _safe_int(qc.loc[capex_row, col0])
+                    if capex is not None:
+                        snap["free_cashflow"] = snap["operating_cashflow"] + capex
+    except Exception as exc:
+        print(f"[Planner] quarterly_cashflow failed (non-fatal): {exc}")
+
+    # EPS actual vs estimate + next earnings date
+    try:
+        ed = t.earnings_dates
+        if ed is not None and not ed.empty:
+            today = date.today()
+            ed = ed.copy()
+            ed.index = [i.date() if hasattr(i, "date") else i for i in ed.index]
+
+            future = ed[ed.index > today]
+            past   = ed[ed.index <= today]
+
+            if not future.empty:
+                snap["next_earnings_date"] = str(future.index.min())
+
+            if not past.empty:
+                row = past.iloc[0]
+                snap["eps_actual"]   = _safe_float(row.get("Reported EPS"))
+                snap["eps_estimate"] = _safe_float(row.get("EPS Estimate"))
+                if snap["eps_actual"] is not None and snap["eps_estimate"]:
+                    snap["eps_surprise_pct"] = round(
+                        (snap["eps_actual"] - snap["eps_estimate"]) / abs(snap["eps_estimate"]) * 100, 1
+                    )
+    except Exception as exc:
+        print(f"[Planner] earnings_dates failed (non-fatal): {exc}")
+
+    return snap
+
+
+# ── Analyst Forward Estimates ─────────────────────────────────────────────────
+
+def _fetch_analyst_estimates(t: yf.Ticker) -> dict:
+    """Fetch forward analyst EPS/Revenue estimates and growth rates. Non-fatal."""
+    result: dict = {
+        "earnings_estimates": [],
+        "revenue_estimates":  [],
+        "five_year_growth_pct":    None,
+        "next_year_eps_growth_pct": None,
+        "next_year_rev_growth_pct": None,
+    }
+
+    def _safe_val(val):
+        try:
+            f = float(val)
+            return None if f != f else f
+        except Exception:
+            return None
+
+    try:
+        ee = t.earnings_estimates
+        if ee is not None and not ee.empty:
+            for period in ee.index:
+                row = ee.loc[period]
+                result["earnings_estimates"].append({
+                    "period":         str(period),
+                    "avg_eps":        _safe_val(row.get("Avg")),
+                    "low_eps":        _safe_val(row.get("Low")),
+                    "high_eps":       _safe_val(row.get("High")),
+                    "analyst_count":  int(row.get("No. of Analysts", 0) or 0),
+                    "year_ago_eps":   _safe_val(row.get("Year Ago EPS")),
+                })
+    except Exception as exc:
+        print(f"[Planner] earnings_estimates failed (non-fatal): {exc}")
+
+    try:
+        re_ = t.revenue_estimates
+        if re_ is not None and not re_.empty:
+            for period in re_.index:
+                row = re_.loc[period]
+                avg_rev = _safe_val(row.get("Avg"))
+                yago    = _safe_val(row.get("Year Ago Revenue"))
+                growth  = round((avg_rev - yago) / abs(yago) * 100, 1) if avg_rev and yago else None
+                result["revenue_estimates"].append({
+                    "period":          str(period),
+                    "avg_revenue":     int(avg_rev) if avg_rev else None,
+                    "low_revenue":     int(_safe_val(row.get("Low")) or 0) or None,
+                    "high_revenue":    int(_safe_val(row.get("High")) or 0) or None,
+                    "analyst_count":   int(row.get("No. of Analysts", 0) or 0),
+                    "year_ago_revenue": int(yago) if yago else None,
+                    "implied_yoy_growth_pct": growth,
+                })
+    except Exception as exc:
+        print(f"[Planner] revenue_estimates failed (non-fatal): {exc}")
+
+    try:
+        ge = t.growth_estimates
+        if ge is not None and not ge.empty:
+            ticker_col = ge.columns[0]
+            def _g(label):
+                for idx in ge.index:
+                    if label.lower() in str(idx).lower():
+                        return _safe_val(ge.loc[idx, ticker_col])
+                return None
+            five_yr = _g("next 5 years")
+            if five_yr is not None:
+                result["five_year_growth_pct"] = round(five_yr * 100, 1)
+            next_yr_eps = _g("next year")
+            if next_yr_eps is not None:
+                result["next_year_eps_growth_pct"] = round(next_yr_eps * 100, 1)
+    except Exception as exc:
+        print(f"[Planner] growth_estimates failed (non-fatal): {exc}")
+
+    # Derive next-year revenue growth from estimates
+    annual = [e for e in result["revenue_estimates"] if e["period"] in ("+1Y", "1Y", "Next Year")]
+    if annual:
+        result["next_year_rev_growth_pct"] = annual[0].get("implied_yoy_growth_pct")
+
+    return result
+
+
 # ── Computed Signals ──────────────────────────────────────────────────────────
 
 def _build_computed_signals(
@@ -636,6 +834,33 @@ class PlannerAgent(BaseAgent):
         except Exception as exc:
             print(f"[Planner] expert_quotes skipped (non-fatal): {exc}")
 
+        # Quarterly earnings snapshot
+        earnings_snapshot = {}
+        try:
+            earnings_snapshot = _fetch_earnings_snapshot(t)
+            print(
+                f"[Planner] Earnings: Q={earnings_snapshot.get('last_quarter')} | "
+                f"Rev={earnings_snapshot.get('revenue')} | "
+                f"EPS actual={earnings_snapshot.get('eps_actual')} estimate={earnings_snapshot.get('eps_estimate')} "
+                f"surprise={earnings_snapshot.get('eps_surprise_pct')}% | "
+                f"Next={earnings_snapshot.get('next_earnings_date')}"
+            )
+        except Exception as exc:
+            print(f"[Planner] earnings_snapshot skipped (non-fatal): {exc}")
+
+        # Analyst forward estimates
+        analyst_estimates = {}
+        try:
+            analyst_estimates = _fetch_analyst_estimates(t)
+            print(
+                f"[Planner] Analyst estimates: "
+                f"{len(analyst_estimates.get('earnings_estimates', []))} EPS periods | "
+                f"{len(analyst_estimates.get('revenue_estimates', []))} Rev periods | "
+                f"5Y growth={analyst_estimates.get('five_year_growth_pct')}%"
+            )
+        except Exception as exc:
+            print(f"[Planner] analyst_estimates skipped (non-fatal): {exc}")
+
         ms   = raw["market_snapshot"]
         tech = raw["technical_indicators"]
 
@@ -664,6 +889,8 @@ class PlannerAgent(BaseAgent):
             "technical_indicators": tech,
             "valuation_snapshot":   raw["valuation_snapshot"],
             "financial_snapshot":   raw["financial_snapshot"],
+            "earnings_snapshot":    earnings_snapshot,
+            "analyst_estimates":    analyst_estimates,
             "analyst_snapshot":     raw["analyst_snapshot"],
             "news_evidence_pack": {
                 "lookback_days":  NEWS_LOOKBACK_DAYS,

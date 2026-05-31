@@ -271,11 +271,44 @@ class GeneratorAgent(BaseAgent):
         print("[Agent:Narrative] Done.")
         return result
 
+    @staticmethod
+    def _format_internal_valuation(iv: dict) -> str:
+        if not iv:
+            return "（本次运行未生成内部估值模型）"
+        sc = iv.get("scenarios", {})
+        bear = sc.get("bear", {})
+        base = sc.get("base", {})
+        bull = sc.get("bull", {})
+        rm = iv.get("revenue_model", {})
+        lines = [
+            f"业务模式：{iv.get('business_model_type', 'N/A')}",
+            f"估值方法：{iv.get('valuation_methodology', 'N/A')}",
+            f"方法依据：{iv.get('methodology_rationale', '')}",
+            "",
+            "收入模型（3年）：",
+        ]
+        for key in ("y1", "y2", "y3"):
+            yr = rm.get(key, {})
+            if yr:
+                lines.append(f"  {yr.get('period','')}: 营收 ${yr.get('revenue_est','N/A')}  增速 {yr.get('growth_pct','N/A')}%")
+        lines += [
+            "",
+            "三情景目标价：",
+            f"  悲观 Bear: ${bear.get('target_price','N/A')}  ({bear.get('implied_upside_pct','N/A')}%)  — {bear.get('key_assumption','')}",
+            f"  基准 Base: ${base.get('target_price','N/A')}  ({base.get('implied_upside_pct','N/A')}%)  — {base.get('key_assumption','')}",
+            f"  乐观 Bull: ${bull.get('target_price','N/A')}  ({bull.get('implied_upside_pct','N/A')}%)  — {bull.get('key_assumption','')}",
+            "",
+            f"推导逻辑：{iv.get('methodology_note', '')}",
+            f"与共识对比：{iv.get('consensus_vs_internal', '')}",
+        ]
+        return "\n".join(lines)
+
     def _synthesis(self, plan: dict, fundamental: str, technical: str, narrative: str) -> str:
         print("[Agent:Synthesis] Synthesizing all dimensions...")
         md = plan["market_snapshot"]
         inp = plan["input"]
         current_date = plan["current_date"]
+        iv_summary = self._format_internal_valuation(plan.get("internal_valuation", {}))
 
         prompt = self._load_prompt("synthesis").format(
             current_date=current_date,
@@ -285,6 +318,7 @@ class GeneratorAgent(BaseAgent):
             fundamental_analysis=fundamental,
             technical_analysis=technical,
             narrative_analysis=narrative,
+            internal_valuation_summary=iv_summary,
         )
         system = f"你是首席投资分析师，今天是{current_date}。请将多维度分析整合为一份权威、简洁、可操作的综合报告。"
         result = self._chat(system, prompt, model=MODEL_CHAT)
@@ -538,8 +572,9 @@ class GeneratorAgent(BaseAgent):
             '"headline":"口播中的方向判断（看多/中性/看空+时间维度）",'
             '"subtitle":"看多或中性或看空",'
             '"base_range":{"low":"$X（来自口播）","high":"$X（来自口播）","timeframe":"1-4周"},'
-            '"scenario_bull":{"condition":"口播中多头触发条件原句（30字以内）","target":"目标价$X（来自口播）"},'
-            '"scenario_bear":{"condition":"口播中空头破位条件原句（30字以内）","target":"风险价位$X（来自口播）"}}'
+            '"scenario_bear":{"condition":"口播中空头破位条件原句（30字以内）","target":"风险价位$X（来自口播内部估值悲观情景）"},'
+            '"scenario_base":{"condition":"口播中基准假设原句（30字以内）","target":"基准目标价$X（来自口播内部估值基准情景）"},'
+            '"scenario_bull":{"condition":"口播中多头触发条件原句（30字以内）","target":"目标价$X（来自口播内部估值乐观情景）"}}'
         ),
         "summary": (
             '{"type":"summary",'

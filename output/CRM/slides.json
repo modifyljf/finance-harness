@@ -1,93 +1,110 @@
 {
-  "title": "一百美元的CRM被当成垃圾？",
+  "title": "CRM上周买盘被套，大鲸鱼疯狂进场？",
   "ticker": "CRM",
   "slides": [
     {
       "type": "cover",
-      "headline": "一百美元的CRM被当成垃圾？",
+      "headline": "CRM上周买盘被套，大鲸鱼疯狂进场？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "微软砸百亿级订单给它，华尔街却在赌它崩盘",
-      "autoslide_ms": 30530
+      "hook": "买盘被套，大鲸鱼却疯狂进场！",
+      "autoslide_ms": 23733
     },
     {
       "type": "market_overview",
       "headline": "$191.1  +8.47%  ·  Forward PE 12.35x  ·  目标价空间 +33.7%",
-      "callout": "估值增速剪刀差创五年最大，成交额放大41%",
-      "autoslide_ms": 71733
+      "callout": "市盈率12.3倍，PEG 0.93，极端低估，花两元买十元资产",
+      "autoslide_ms": 63218
     },
     {
       "type": "price_action",
-      "headline": "价格突破关键均线粘合区，RSI中性，技术形态偏多",
+      "headline": "短期偏多，但属于弱突破",
       "signal": "bullish",
       "bullets": [
-        "支撑位：一百七十九到一百八十的均线区",
-        "阻力位：两百美元整数关口",
-        "连续上涨，成交量也在扩大，这是资金进场的信号。价格已经顶到了布林带上轨一百九十一点三四附近，突破一触即发。",
-        "RSI六十点五，还在中性区间，说明行情没到顶，还有空间。"
+        "支撑位：MA50 $180.68，五月二十八号最低价 $176.17",
+        "阻力位：布林带上轨 $191.30，整数关口 $200",
+        "价格从177跌到176后，5月29日暴涨近15美元至191，穿透MA20和MA50，量能放大，但区间位置仅24%，在五十二周低点附近挣扎，是底部反弹",
+        "RSI 60.5，既不超买也不超卖，中性偏多"
       ],
-      "autoslide_ms": 75552
+      "autoslide_ms": 86146
     },
     {
       "type": "key_points",
-      "headline": "多空博弈拆解",
+      "headline": "多空激烈交锋",
       "points": [
         {
-          "title": "戴维斯双击",
-          "body": "CRM远期市盈率12.35倍，盈利增速52.2%，市盈增长比0.93。5月29日收盘价191.1突破20日均线179和50日均线180，RSI 60.5。认知差被增量资金捕捉。",
+          "title": "盈利增长与估值脱节",
+          "body": "CRM远期市盈率十二点三五倍，PEG零点九三，盈利增速百分之五十二，营收增速百分之十三。被低估的优质资产。",
           "tag": "bull"
         },
         {
-          "title": "空头底牌",
-          "body": "最大风险是AI变现叙事再次证伪；Agentforce如无落地营收数据，质疑将变抛售。宏观风险：高贝塔成长股，企业削减IT预算；价格从165.84反弹，距276.8高点仅24.3%，空头视为技术性回抽。",
+          "title": "现金流铜墙铁壁",
+          "body": "毛利率百分之七十七点六，订阅制提供铁票仓，巨额现金既能回购又能押注AI。",
+          "tag": "bull"
+        },
+        {
+          "title": "AI变现疑云",
+          "body": "空头仓位百分之八点九，如果下季财报听不到营收回响，恐惧将瞬间引爆抛售。",
+          "tag": "bear"
+        },
+        {
+          "title": "技术陷阱防假突破",
+          "body": "价格一百九十一点一美元，RSI六十点五。一旦放量跌破五十日线，上涨结构崩盘。",
           "tag": "bear"
         }
       ],
-      "autoslide_ms": 128356
+      "autoslide_ms": 115769
     },
     {
       "type": "news",
-      "headline": "这周围绕它最关键的几条新闻和评级变化",
+      "headline": "本周新闻将决定谁来主导",
       "news_items": [
         {
-          "title": "财报后AI叙事继续撕裂",
-          "category": "earnings",
+          "title": "CRM与英伟达扩大合作，Agentforce接入GPU加速",
+          "category": "product",
           "impact": "neutral",
-          "note": "做空比例飙到48%，EPS同比增长52.2%，多空拉锯。"
+          "note": "强化AI叙事，但没给收入指引，市场反应平淡。"
         },
         {
-          "title": "银湖资本下调评级至中性，摩根大通坚持超配",
+          "title": "Needham重申买入评级，目标价255美元",
           "category": "analyst",
-          "impact": "neutral",
-          "note": "银湖资本下调至中性，目标价190；摩根大通超配，目标价245。完全对立。"
+          "impact": "positive",
+          "note": "华尔街最乐观的预测，认为估值错配，但需财报实锤兑现。"
         },
         {
-          "title": "信用违约互换显示违约概率下降",
+          "title": "摩根士丹利维持持有，目标价200美元",
+          "category": "analyst",
+          "impact": "negative",
+          "note": "担心AI变现慢，核心增长放缓，分歧明显。"
+        },
+        {
+          "title": "空头仓位8.9%未减，大型基金加仓做空",
           "category": "other",
-          "impact": "positive",
-          "note": "CRM五年期违约概率从3%降至1.8%，机构资金增加风险敞口。"
+          "impact": "negative",
+          "note": "有人赌财报失望，技术假突破，信号不能忽视。"
+        },
+        {
+          "title": "CEO称AI代理是下一个Salesforce",
+          "category": "product",
+          "impact": "neutral",
+          "note": "画饼还是真功夫？市场要看到客户订单才买账。"
         }
       ],
-      "analyst_summary": "银湖资本下调至中性，摩根大通坚持超配，完全对立。",
-      "autoslide_ms": 74827
+      "analyst_summary": "Needham重申买入，目标价255；摩根士丹利维持持有，目标价200。",
+      "autoslide_ms": 73385
     },
     {
       "type": "financials",
-      "headline": "估值合理，有30-50%修复空间",
+      "headline": "基本面很强，强到和估值不在一个频道上",
       "metrics": [
         {
           "label": "营收增速",
-          "value": "口播未提及",
+          "value": "+13%",
           "trend": "flat"
         },
         {
           "label": "毛利率",
-          "value": "维持高水平",
+          "value": "77.6%",
           "trend": "flat"
-        },
-        {
-          "label": "净利率",
-          "value": "15%（从10.1%升至15%）",
-          "trend": "up"
         },
         {
           "label": "Forward PE",
@@ -96,74 +113,99 @@
         },
         {
           "label": "自由现金流",
-          "value": "106亿（比净利润高37.7%）",
+          "value": "巨额自由现金流在手",
           "trend": "up"
-        },
-        {
-          "label": "ROE",
-          "value": "口播未提及",
-          "trend": "flat"
         }
       ],
-      "callout": "盈利增速52.2%，PEG仅0.93，便宜得发指。",
-      "autoslide_ms": 107443
+      "callout": "预期市盈率仅12.35倍，PEG 0.93，盈利增速52%是营收增速4倍",
+      "autoslide_ms": 111784
     },
     {
       "type": "risk",
-      "headline": "",
-      "autoslide_ms": 30000
+      "headline": "高",
+      "risks": [
+        {
+          "title": "AI变现证伪",
+          "body": "市场给CRM十二点三倍市盈率，不是因为它便宜，是因为大家根本不信Agentforce能赚钱。如果传统业务增速继续放缓，AI收入补不上窟窿，乐观叙事会瞬间崩塌。",
+          "severity": "high"
+        },
+        {
+          "title": "技术面假突破",
+          "body": "这波突破放量站上五十天均线，但空头持仓还有百分之八点九。价格冲到布林带上轨，技术性回调压力已摆在眼前。若无法站稳一百八十点六八上方，就是假突破。",
+          "severity": "high"
+        }
+      ],
+      "autoslide_ms": 84791
     },
     {
       "type": "catalyst",
-      "headline": "下周进入关键催化周",
+      "headline": "关键催化剂",
       "catalysts": [
         {
-          "event": "财报季盈利预期上调及大摩上调评级",
+          "event": "AI Agentforce实质落地",
           "direction": "positive",
-          "timing": "七月第二周",
+          "timing": "下一季度财报前后",
           "impact": "large"
         },
         {
-          "event": "七月中旬企业软件峰会AI质疑",
-          "direction": "negative",
-          "timing": "七月中旬",
+          "event": "降息周期",
+          "direction": "positive",
+          "timing": "今年九月份",
           "impact": "medium"
         },
         {
-          "event": "八月底财报节点AI营收占比预期",
-          "direction": "negative",
-          "timing": "八月底",
+          "event": "股票回购",
+          "direction": "positive",
+          "timing": "持续",
           "impact": "medium"
+        },
+        {
+          "event": "AI变现不及预期",
+          "direction": "negative",
+          "timing": "下一季度财报季",
+          "impact": "large"
+        },
+        {
+          "event": "技术性假突破",
+          "direction": "negative",
+          "timing": "未来一至两天",
+          "impact": "medium"
+        },
+        {
+          "event": "宏观突发",
+          "direction": "negative",
+          "timing": "无法预测",
+          "impact": "large"
         }
       ],
-      "autoslide_ms": 72102
+      "autoslide_ms": 87226
     },
     {
       "type": "outlook",
-      "headline": "短期中性偏多，中期看业绩验证",
-      "subtitle": "中性偏多",
+      "headline": "CRM关键分叉口，中性观望1-4周",
+      "subtitle": "中性",
       "base_range": {
-        "low": "$185",
-        "high": "$200",
+        "low": "$170",
+        "high": "$192",
         "timeframe": "1-4周"
       },
       "scenario_bull": {
-        "condition": "放量突破190站稳，趋势确认，可入场",
-        "target": "$200"
+        "condition": "等待AI代理变现的实质性消息",
+        "target": "$192"
       },
       "scenario_bear": {
-        "condition": "反弹至200附近，成交量萎缩无法突破，可试空",
-        "target": "$182"
+        "condition": "股价再次跌破$176",
+        "target": "$170"
       },
-      "autoslide_ms": 95660
+      "autoslide_ms": 88957
     },
     {
       "type": "summary",
-      "headline": "12倍PE+52%盈利增速，戴维斯双击起点",
-      "verdict": "bullish",
-      "action": "建议三成仓分批建仓，止损设在177.5美元",
+      "headline": "时机比方向更重要",
+      "verdict": "neutral",
+      "action": "等待价格回踩182-185支撑区，总仓位控制在10%以内",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 27711
+      "autoslide_ms": 34052
     }
   ]
 }

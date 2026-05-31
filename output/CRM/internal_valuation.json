@@ -1,0 +1,59 @@
+{
+  "business_model_type": "SaaS订阅制",
+  "valuation_methodology": "Forward PE + EV/Revenue（辅助）",
+  "methodology_rationale": "CRM为纯SaaS订阅模式，收入高度可预测，市场通常给予高增长SaaS公司Forward PE估值，辅以EV/Revenue验证倍数合理性。",
+  "revenue_model": {
+    "y1": {
+      "period": "FY2027（截至2027-01-31）",
+      "revenue_est": 47460,
+      "growth_pct": 13.0
+    },
+    "y2": {
+      "period": "FY2028（截至2028-01-31）",
+      "revenue_est": 52206,
+      "growth_pct": 10.0
+    },
+    "y3": {
+      "period": "FY2029（截至2029-01-31）",
+      "revenue_est": 56383,
+      "growth_pct": 8.0
+    }
+  },
+  "margin_model": {
+    "current_gross_margin_pct": 76.9,
+    "target_operating_margin_pct": 30.0,
+    "target_net_margin_pct": 25.0,
+    "margin_improvement_driver": "订阅收入持续增长摊薄固定成本，同时产品交叉销售提升客单价，运营杠杆逐渐释放。"
+  },
+  "multiple_analysis": {
+    "current_multiple": 12.35,
+    "fair_multiple": 18.0,
+    "multiple_type": "Forward PE",
+    "sector_median_multiple": 15.0,
+    "multiple_premium_discount": "公平倍数18倍，相较行业中性15倍溢价20%，反映CRM全球领先的客户关系管理平台地位及云生态粘性。"
+  },
+  "scenarios": {
+    "bear": {
+      "target_price": 96.0,
+      "implied_upside_pct": -49.8,
+      "key_assumption": "营收增速降至8%，营业利润率萎缩至20%，Forward PE压缩至12倍。"
+    },
+    "base": {
+      "target_price": 239.0,
+      "implied_upside_pct": 25.1,
+      "key_assumption": "营收维持10-13%增速，营业利润率温和提升至24%，Forward PE回升至18倍。"
+    },
+    "bull": {
+      "target_price": 330.0,
+      "implied_upside_pct": 72.7,
+      "key_assumption": "AI功能拉动增收，营收连续增长15%，营业利润率跃升至30%，Forward PE扩张至22倍。"
+    }
+  },
+  "methodology_note": "以FY2028年调整后EPS为估值基准：基准情景下GAAP净利104.4亿，稀释股数78.65亿，EPS 13.28美元，赋予18倍目标Forward PE得239美元目标价。熊市假设EPS 8.0美元、12倍PE得96美元；牛市假设EPS 15.0美元、22倍PE得330美元。",
+  "key_risks": [
+    "宏观经济疲软导致企业削减软件开支",
+    "AI转型不及预期，面临微软Dynamics等激烈竞争",
+    "高债务环境下大型并购整合风险"
+  ],
+  "consensus_vs_internal": "内部基准目标价239美元，低于分析师共识均值255.5美元，主因我们基于更保守的营收增速（10%）与利润率路径，而市场可能隐含了更快的AI货币化预期。"
+}
