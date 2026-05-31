@@ -8,7 +8,7 @@ import os
 from openai import OpenAI
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-MODEL_FAST = "deepseek-chat"  # DeepSeek-V3: fast and cheap for evaluation
+MODEL_FAST = "deepseek-v4-flash"  # fast and cheap for evaluation
 
 REQUIRED_SLIDE_TYPES = {"cover", "market_overview", "price_action", "key_points", "outlook", "summary"}
 
@@ -137,7 +137,7 @@ def run(plan: dict, generation_result: dict) -> dict:
             "hard_errors": hard_errors,
         }
 
-    print("[Evaluator] Running LLM quality check (deepseek-chat)...")
+    print("[Evaluator] Running LLM quality check (deepseek-v4-flash)...")
     report = llm_judge(
         client,
         plan,
