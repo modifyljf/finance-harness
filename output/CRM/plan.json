@@ -1,0 +1,648 @@
+{
+  "generated_at": "2026-05-31T15:45:56.555546+00:00",
+  "current_date": "2026-05-31",
+  "input": {
+    "ticker": "CRM",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "CRM",
+    "company_name": "Salesforce, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "short_description": "Salesforce, Inc. provides customer relationship management technology services that connect companies and customers together in the United States, Europe, and the Asia Pacific. The company offers Agentforce, which enables customers to build, deploy, and manage enterprise-grade, autonomous AI agents at scale, enabling humans and agents to work together; Agentforce Sales, an integrated platform that",
+    "current_price": 191.1,
+    "prev_close": 176.17,
+    "price_change": 14.93,
+    "price_change_pct": 8.47,
+    "market_cap": 156510912512,
+    "market_cap_str": "$156.51B",
+    "volume": 33907040,
+    "avg_volume": 13634031,
+    "beta": 1.139,
+    "52w_high": 276.8,
+    "52w_low": 163.52,
+    "52w_range_position_pct": 24.3,
+    "short_interest": 8.9,
+    "institutional_ownership_pct": 94.2
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 182.14
+      },
+      {
+        "date": "2026-04-20",
+        "close": 186.27
+      },
+      {
+        "date": "2026-04-21",
+        "close": 187.11
+      },
+      {
+        "date": "2026-04-22",
+        "close": 189.8
+      },
+      {
+        "date": "2026-04-23",
+        "close": 173.3
+      },
+      {
+        "date": "2026-04-24",
+        "close": 178.16
+      },
+      {
+        "date": "2026-04-27",
+        "close": 180.18
+      },
+      {
+        "date": "2026-04-28",
+        "close": 181.32
+      },
+      {
+        "date": "2026-04-29",
+        "close": 181.22
+      },
+      {
+        "date": "2026-04-30",
+        "close": 176.53
+      },
+      {
+        "date": "2026-05-01",
+        "close": 183.82
+      },
+      {
+        "date": "2026-05-04",
+        "close": 185.48
+      },
+      {
+        "date": "2026-05-05",
+        "close": 186.99
+      },
+      {
+        "date": "2026-05-06",
+        "close": 181.19
+      },
+      {
+        "date": "2026-05-07",
+        "close": 186.34
+      },
+      {
+        "date": "2026-05-08",
+        "close": 181.82
+      },
+      {
+        "date": "2026-05-11",
+        "close": 177.49
+      },
+      {
+        "date": "2026-05-12",
+        "close": 171.31
+      },
+      {
+        "date": "2026-05-13",
+        "close": 165.84
+      },
+      {
+        "date": "2026-05-14",
+        "close": 167.58
+      },
+      {
+        "date": "2026-05-15",
+        "close": 173.51
+      },
+      {
+        "date": "2026-05-18",
+        "close": 179.48
+      },
+      {
+        "date": "2026-05-19",
+        "close": 179.42
+      },
+      {
+        "date": "2026-05-20",
+        "close": 180.1
+      },
+      {
+        "date": "2026-05-21",
+        "close": 176.31
+      },
+      {
+        "date": "2026-05-22",
+        "close": 180.07
+      },
+      {
+        "date": "2026-05-26",
+        "close": 179.08
+      },
+      {
+        "date": "2026-05-27",
+        "close": 177.51
+      },
+      {
+        "date": "2026-05-28",
+        "close": 176.17
+      },
+      {
+        "date": "2026-05-29",
+        "close": 191.1
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 60.5,
+    "rsi_signal": "neutral",
+    "ma20": 179.03,
+    "ma50": 180.68,
+    "bollinger": {
+      "upper": 191.34,
+      "middle": 179.03,
+      "lower": 166.72
+    },
+    "volume_trend": "expanding",
+    "ma_signal": "mixed",
+    "price_vs_ma20_pct": 6.7,
+    "price_vs_ma50_pct": 5.8
+  },
+  "valuation_snapshot": {
+    "pe_trailing": 22.12,
+    "pe_forward": 12.35,
+    "peg": 0.93,
+    "ps_ratio": 3.65,
+    "pb_ratio": 4.57,
+    "ev_ebitda": 14.52
+  },
+  "financial_snapshot": {
+    "revenue": 42829000704,
+    "revenue_growth_yoy": 13.3,
+    "earnings_growth_yoy": 52.2,
+    "gross_margin": 77.6,
+    "operating_margin": 21.8,
+    "profit_margin": 18.7,
+    "free_cashflow": 16552999936,
+    "roe": 16.9,
+    "eps_trailing": 8.64,
+    "eps_forward": 15.47853
+  },
+  "analyst_snapshot": {
+    "recommendation": "Buy",
+    "target_mean": 255.54654,
+    "target_high": 475.0,
+    "target_low": 160.0,
+    "analyst_count": 52,
+    "upside_pct": 33.7
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "CRM Stock Is Down More Than 30% This Year, But Marc Benioff Says Salesforce's Blowout $11.1 Billion Quarter May Be A 'Sign'",
+        "publisher": "Benzinga",
+        "published_at": "2026-05-31 11:32",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "CRM"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce Inc. (CRM) Adds TTEC Holdings as Agentforce Partner; TD Cowen Remains Bullish",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 16:39",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "CRM"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Northland Trims Salesforce (CRM) Valuation Following Earnings Report",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 01:38",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "CRM"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce (CRM) Dropped Nearly 20% Due to AI Disruption Concerns",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-26 12:43",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_9d60e103-f58d-4ff4-8c45-eadef49ba0e6",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "CRM"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce AI Push Deepens CVS Health Ties As Valuation Discount Widens",
+        "publisher": "Simply Wall St.",
+        "published_at": "2026-05-31 14:02",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce Stock Continues to Struggle to Gain Traction. Is It Time to Fish for the Stock or Cut Bait?",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-31 08:15",
+        "url": "",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Jim Cramer on Salesforce: “There’s a Lot to Consider Here”",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 15:08",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce waves bye-bye to UI in 'headless' embrace",
+        "publisher": "Theregister.com",
+        "published_at": "2026-05-28 00:20",
+        "url": "https://www.theregister.com/saas/2026/05/28/salesforce-waves-bye-bye-to-ui-in-headless-embrace/5247587",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce Has an AI Vaporware Problem",
+        "publisher": "Gizmodo.com",
+        "published_at": "2026-05-25 09:00",
+        "url": "https://gizmodo.com/salesforce-has-an-ai-vaporware-problem-2000762993",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "The SaaS-pocalypse can wait, Salesforce still has customers where it wants them",
+        "publisher": "Theregister.com",
+        "published_at": "2026-05-26 10:00",
+        "url": "https://www.theregister.com/saas/2026/05/26/the-saas-pocalypse-can-wait-salesforce-still-has-customers-where-it-wants-them/5245228",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "As AI slashes white-collar jobs, Salesforce CEO Marc Benioff says there’s one department still hiring: sales",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 15:36",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_cb95903c-1195-4f13-8684-c314a14f1c2a",
+        "category": "insider",
+        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "'It's gonna be awesome': Salesforce CEO Marc Benioff has high hopes for using AI in its products, says 'it's impossible to describe what we're gonna be able to do for customers'",
+        "publisher": "TechRadar",
+        "published_at": "2026-05-28 02:25",
+        "url": "https://www.techradar.com/pro/its-gonna-be-awesome-salesforce-ceo-marc-benioff-has-high-hopes-for-using-ai-in-its-products-says-its-impossible-to-describe-what-were-gonna-be-able-to-do-for-customers",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce Q1 Earnings Call Highlights",
+        "publisher": "MarketBeat",
+        "published_at": "2026-05-27 23:04",
+        "url": "https://www.marketbeat.com/instant-alerts/salesforce-q1-earnings-call-highlights-2026-05-27/?utm_source=yahoofinance&amp;utm_medium=yahoofinance",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce billionaire CEO Marc Benioff just spent $27 billion to fight the SaaSpocalypse",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 11:37",
+        "url": "https://finance.yahoo.com/markets/stocks/article/salesforce-billionaire-ceo-marc-benioff-just-spent-27-billion-to-fight-the-saaspocalypse-113744238.html",
+        "category": "insider",
+        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Analyst warns Salesforce has an AI problem",
+        "publisher": "TheStreet",
+        "published_at": "2026-05-29 02:33",
+        "url": "https://www.thestreet.com/investing/stocks/analyst-warns-salesforce-has-an-ai-problem",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce Q1 FY2027 earnings beat, guidance disappoints",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 11:41",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_931e8433-2c57-419f-b3a2-adacc8f0858a",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce faces a vital Agentforce test in upcoming earnings",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-26 17:17",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_84707a9d-fd89-4901-92a9-471d5ce399aa",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce touts Agentforce growth as other segments lag",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 15:51",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_6d0a432f-8457-4be2-9e17-09a54ee775ea",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce CEO delivers blunt message on AI agents",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-28 22:07",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_ca388739-bdc3-4615-bc6d-d3f5ded89791",
+        "category": "insider",
+        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "These 3 Software Stocks Are Buying Back Shares Hand Over Fist",
+        "publisher": "MarketBeat",
+        "published_at": "2026-05-30 14:10",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": [
+      {
+        "source": "Citigroup",
+        "quote": "Citigroup changed rating from Neutral to Neutral",
+        "stance": "neutral",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Canaccord Genuity",
+        "quote": "Canaccord Genuity changed rating from Buy to Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Bernstein",
+        "quote": "Bernstein changed rating from Underperform to Underperform",
+        "stance": "bearish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "TD Cowen",
+        "quote": "TD Cowen changed rating from Buy to Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Macquarie",
+        "quote": "Macquarie changed rating from Neutral to Neutral",
+        "stance": "neutral",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Barclays",
+        "quote": "Barclays changed rating from Overweight to Overweight",
+        "stance": "bullish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Wells Fargo",
+        "quote": "Wells Fargo changed rating from Equal-Weight to Equal-Weight",
+        "stance": "neutral",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Citizens",
+        "quote": "Citizens changed rating from Market Outperform to Market Outperform",
+        "stance": "neutral",
+        "context": "reit on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "Keybanc",
+        "quote": "Keybanc changed rating from Overweight to Overweight",
+        "stance": "bullish",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      },
+      {
+        "source": "DA Davidson",
+        "quote": "DA Davidson changed rating from Neutral to Neutral",
+        "stance": "neutral",
+        "context": "main on 2026-05-28",
+        "date": "2026-05-28"
+      }
+    ]
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-31",
+    "technical_sentiment_score": 51.1,
+    "momentum_state": "neutral",
+    "valuation_pressure": "low",
+    "news_intensity": "medium",
+    "risk_flags": [],
+    "signal_basis": [
+      "RSI 60.5 (neutral)",
+      "MA signal: mixed",
+      "Volume trend: expanding",
+      "52W range position: 24.3%",
+      "Analyst upside: 33.7%",
+      "News intensity: medium (4 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}

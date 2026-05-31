@@ -1,0 +1,170 @@
+{
+  "title": "花一年半利润抢“无人替代”股？",
+  "ticker": "NOW",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "花一年半利润抢“无人替代”股？",
+      "subtitle": "本周深度分析·2026-05-31",
+      "hook": "你会花一年半的利润去抢一只“没人能替代”的股票吗？",
+      "autoslide_ms": 19015
+    },
+    {
+      "type": "market_overview",
+      "headline": "$124.37  +14.38%  ·  Forward PE 24.74x  ·  目标价空间 +14.6%",
+      "callout": "市盈率溢价行业超60%，距支撑108美元尚有15美元下跌空间",
+      "autoslide_ms": 65675
+    },
+    {
+      "type": "price_action",
+      "headline": "短期偏空，中期需要确认",
+      "signal": "bearish",
+      "bullets": [
+        "支撑位：$97.38（布林带中轨）和$108.73（前期成交密集区）",
+        "阻力位：$130（上方整数关口）",
+        "趋势描述：突破有余，趋势不足",
+        "RSI数值：73.6，进入严重超买区"
+      ],
+      "autoslide_ms": 82798
+    },
+    {
+      "type": "key_points",
+      "headline": "多空分歧顶点",
+      "points": [
+        {
+          "title": "基本面与AI叙事共振",
+          "body": "公司22.1%营收增速，配合76.6%毛利率，多头认为只要六月业务更新证明AI产品拉动收入，124.37只是新估值体系起点。",
+          "tag": "bull"
+        },
+        {
+          "title": "价格与价值残酷脱节",
+          "body": "RSI 73.6严重超买，十个交易日涨近31%，远期市盈率24.74倍已灌满预期，一旦不及预期将多杀多，向108.73甚至更低俯冲。",
+          "tag": "bear"
+        }
+      ],
+      "autoslide_ms": 137508
+    },
+    {
+      "type": "news",
+      "headline": "ServiceNow AI战略引爆股价，本周偏多信号",
+      "news_items": [
+        {
+          "title": "ServiceNow AI战略引爆股价，市值突破1200亿美元",
+          "category": "product",
+          "impact": "positive",
+          "note": "涨幅是买预期，不是卖事实"
+        },
+        {
+          "title": "摩根士丹利上调评级至增持，高盛维持卖出",
+          "category": "analyst",
+          "impact": "neutral",
+          "note": "摩根士丹利看236美元，高盛看85美元，观点对立"
+        },
+        {
+          "title": "年度用户大会确认6月20日，将发布AI原生工作流平台重大更新",
+          "category": "product",
+          "impact": "neutral",
+          "note": "若AI收入超预期则突破200美元，低于预期则踩踏"
+        }
+      ],
+      "analyst_summary": "摩根士丹利上调至增持目标236美元，高盛维持卖出目标85美元",
+      "autoslide_ms": 75639
+    },
+    {
+      "type": "financials",
+      "headline": "财务面非常健康",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "+22.1%",
+          "trend": "up"
+        },
+        {
+          "label": "毛利率",
+          "value": "76.6%",
+          "trend": "up"
+        },
+        {
+          "label": "Forward PE",
+          "value": "24.74x",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "经营性现金流持续亮眼，每个季度都在创造真金白银",
+          "trend": "up"
+        }
+      ],
+      "callout": "毛利率76.6%，营收增速22.1%，Forward PE 24.74倍，财务面健康但估值合理",
+      "autoslide_ms": 94030
+    },
+    {
+      "type": "risk",
+      "headline": "高",
+      "risks": [
+        {
+          "title": "估值和超买形成双杀",
+          "body": "远期市盈率24.7倍，PEG1.21，已提前消化盈利跳升预期；RSI 73.6，股价远甩布林带上轨，技术上严重超买。",
+          "severity": "high"
+        },
+        {
+          "title": "AI叙事可能变脸",
+          "body": "单日暴涨14%抢跑六月业务更新，若数据未大幅跑赢市场极高预期，买预期卖事实行情立即上演，股价摔得很重。",
+          "severity": "high"
+        },
+        {
+          "title": "板块估值收缩风险",
+          "body": "若市场不再为高增长SaaS支付溢价，即使NOW的AI故事再独立也无法免疫，极高的企业价值倍数会变成最大压力源。",
+          "severity": "high"
+        }
+      ],
+      "autoslide_ms": 80081
+    },
+    {
+      "type": "catalyst",
+      "headline": "催化剂：正向与负向",
+      "catalysts": [
+        {
+          "event": "六月中下旬业务更新会",
+          "direction": "positive",
+          "timing": "六月中下旬",
+          "impact": "medium"
+        },
+        {
+          "event": "被博弈的预期抢跑",
+          "direction": "negative",
+          "timing": "六月中下旬",
+          "impact": "medium"
+        }
+      ],
+      "autoslide_ms": 73544
+    },
+    {
+      "type": "outlook",
+      "headline": "三维共振指向观望区。短期不能冲动",
+      "subtitle": "中性偏谨慎",
+      "base_range": {
+        "low": "$108",
+        "high": "$130",
+        "timeframe": "1-4周"
+      },
+      "scenario_bull": {
+        "condition": "回调108-114缩量或六月AI超预期放量站稳130",
+        "target": "$146"
+      },
+      "scenario_bear": {
+        "condition": "噪音触发（利率反弹/大盘回调/财报不及预期）",
+        "target": "$108"
+      },
+      "autoslide_ms": 66856
+    },
+    {
+      "type": "summary",
+      "headline": "短期高点，最佳策略是观望",
+      "verdict": "bearish",
+      "action": "两成以下或空仓，等待回调至108-114美元区间入场",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
+      "autoslide_ms": 44015
+    }
+  ]
+}

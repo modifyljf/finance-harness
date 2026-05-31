@@ -1,0 +1,580 @@
+{
+  "generated_at": "2026-05-31T15:29:15.276619+00:00",
+  "current_date": "2026-05-31",
+  "input": {
+    "ticker": "NOW",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 9,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "NOW",
+    "company_name": "ServiceNow, Inc.",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "short_description": "ServiceNow, Inc. provides cloud-based solution for digital workflows in the North America, Europe, the Middle East and Africa, Asia Pacific, and internationally. The company provides asset management, integrated risk management, IT service management, Operational Technology management, Security Operations, strategic portfolio management, IT operations management products; customer service manageme",
+    "current_price": 124.37,
+    "prev_close": 108.73,
+    "price_change": 15.64,
+    "price_change_pct": 14.38,
+    "market_cap": 128263782400,
+    "market_cap_str": "$128.26B",
+    "volume": 67031644,
+    "avg_volume": 24993941,
+    "beta": 0.819,
+    "52w_high": 211.478,
+    "52w_low": 81.24,
+    "52w_range_position_pct": 33.1,
+    "short_interest": 5.6,
+    "institutional_ownership_pct": 88.4
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 96.66
+      },
+      {
+        "date": "2026-04-20",
+        "close": 99.72
+      },
+      {
+        "date": "2026-04-21",
+        "close": 100.14
+      },
+      {
+        "date": "2026-04-22",
+        "close": 103.07
+      },
+      {
+        "date": "2026-04-23",
+        "close": 84.78
+      },
+      {
+        "date": "2026-04-24",
+        "close": 90.17
+      },
+      {
+        "date": "2026-04-27",
+        "close": 90.45
+      },
+      {
+        "date": "2026-04-28",
+        "close": 90.49
+      },
+      {
+        "date": "2026-04-29",
+        "close": 88.89
+      },
+      {
+        "date": "2026-04-30",
+        "close": 88.31
+      },
+      {
+        "date": "2026-05-01",
+        "close": 91.16
+      },
+      {
+        "date": "2026-05-04",
+        "close": 91.97
+      },
+      {
+        "date": "2026-05-05",
+        "close": 92.01
+      },
+      {
+        "date": "2026-05-06",
+        "close": 89.05
+      },
+      {
+        "date": "2026-05-07",
+        "close": 93.59
+      },
+      {
+        "date": "2026-05-08",
+        "close": 91.18
+      },
+      {
+        "date": "2026-05-11",
+        "close": 91.49
+      },
+      {
+        "date": "2026-05-12",
+        "close": 89.0
+      },
+      {
+        "date": "2026-05-13",
+        "close": 87.05
+      },
+      {
+        "date": "2026-05-14",
+        "close": 90.5
+      },
+      {
+        "date": "2026-05-15",
+        "close": 95.07
+      },
+      {
+        "date": "2026-05-18",
+        "close": 103.42
+      },
+      {
+        "date": "2026-05-19",
+        "close": 101.83
+      },
+      {
+        "date": "2026-05-20",
+        "close": 103.3
+      },
+      {
+        "date": "2026-05-21",
+        "close": 99.69
+      },
+      {
+        "date": "2026-05-22",
+        "close": 102.13
+      },
+      {
+        "date": "2026-05-26",
+        "close": 99.92
+      },
+      {
+        "date": "2026-05-27",
+        "close": 102.12
+      },
+      {
+        "date": "2026-05-28",
+        "close": 108.73
+      },
+      {
+        "date": "2026-05-29",
+        "close": 124.37
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 73.6,
+    "rsi_signal": "overbought",
+    "ma20": 97.38,
+    "ma50": 97.64,
+    "bollinger": {
+      "upper": 114.63,
+      "middle": 97.38,
+      "lower": 80.12
+    },
+    "volume_trend": "expanding",
+    "ma_signal": "mixed",
+    "price_vs_ma20_pct": 27.7,
+    "price_vs_ma50_pct": 27.4
+  },
+  "valuation_snapshot": {
+    "pe_trailing": 74.03,
+    "pe_forward": 24.74,
+    "peg": 1.21,
+    "ps_ratio": 9.19,
+    "pb_ratio": 10.94,
+    "ev_ebitda": 43.46
+  },
+  "financial_snapshot": {
+    "revenue": 13959999488,
+    "revenue_growth_yoy": 22.1,
+    "earnings_growth_yoy": 2.3,
+    "gross_margin": 76.6,
+    "operating_margin": 13.3,
+    "profit_margin": 12.6,
+    "free_cashflow": 5108125184,
+    "roe": 16.1,
+    "eps_trailing": 1.68,
+    "eps_forward": 5.02669
+  },
+  "analyst_snapshot": {
+    "recommendation": "Strong Buy",
+    "target_mean": 142.49931,
+    "target_high": 236.0,
+    "target_low": 85.0,
+    "analyst_count": 44,
+    "upside_pct": 14.6
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "ServiceNow AI Control Tower Ambitions Test Post SaaSpocalypse Narrative",
+        "publisher": "Simply Wall St.",
+        "published_at": "2026-05-31 11:04",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Jim Cramer on ServiceNow: “I Don’t Think That It’s Going to Have a Huge Year”",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 15:08",
+        "url": "",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Anthropic’s Claude Says ServiceNow (NOW) Among The Best AI Stocks to Buy",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 13:04",
+        "url": "",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Forget SaaS: Why AI Agents Could Make ServiceNow and Palantir Technologies the Next Trillion-Dollar Platforms",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-30 08:05",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "ServiceNow (NOW) Climbs 14% Ahead of Business Updates",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 06:00",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "ServiceNow (NOW) Stock Trades Up, Here Is Why",
+        "publisher": "StockStory",
+        "published_at": "2026-05-29 23:44",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "The Pentagon Knew Enemies Could Track Troops’ Phones for Years. Now They Are",
+        "publisher": "Wired",
+        "published_at": "2026-05-28 16:59",
+        "url": "https://www.wired.com/story/the-pentagon-knew-enemies-could-track-troops-phones-for-years-now-they-are/",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Gemini for Google Home can now use your cameras to trigger automations",
+        "publisher": "The Verge",
+        "published_at": "2026-05-28 11:17",
+        "url": "https://www.theverge.com/tech/938771/google-home-gemini-ai-camera-automations",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Crypto Security Pioneer: ‘I Now Consider All of DeFi Unsafe’",
+        "publisher": "Gizmodo.com",
+        "published_at": "2026-05-28 17:10",
+        "url": "https://gizmodo.com/crypto-security-pioneer-i-now-consider-all-of-defi-unsafe-2000764097",
+        "category": "regulation",
+        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "TP-Link Says Screw It, We’re Doing Wi-Fi 8 Now",
+        "publisher": "Gizmodo.com",
+        "published_at": "2026-05-29 20:25",
+        "url": "https://gizmodo.com/tp-link-says-screw-it-were-doing-wi-fi-8-now-2000765221",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Alienware Fixed the One Problem With the Area-51, and Now I’m Afraid I Love It",
+        "publisher": "Gizmodo.com",
+        "published_at": "2026-05-26 15:00",
+        "url": "https://gizmodo.com/alienware-16-alien-51-2026-review-oled-screen-fixes-previous-gaming-laptop-problem-2000762742",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Endless yellow corridors started as an internet meme - now it's a Hollywood horror film",
+        "publisher": "BBC News",
+        "published_at": "2026-05-29 16:03",
+        "url": "https://www.bbc.com/news/articles/cdxpdnwx5n5o",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "The Frikkin Lasers Contest Starts Now",
+        "publisher": "Hackaday",
+        "published_at": "2026-05-28 17:00",
+        "url": "https://hackaday.com/2026/05/28/the-frikkin-lasers-contest-starts-now/",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Motorola slid affiliate codes into your Amazon orders, now states this was 'unintended'",
+        "publisher": "Android Central",
+        "published_at": "2026-05-27 18:04",
+        "url": "https://www.androidcentral.com/phones/motorola/motorola-affiliate-codes-your-amazon-orders-states-this-was-unintended",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "These are the best Motorola Razr Fold screen protectors right now",
+        "publisher": "Android Central",
+        "published_at": "2026-05-30 10:26",
+        "url": "https://www.androidcentral.com/accessories/cases-screen-protectors/best-motorola-razr-fold-screen-protectors",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Disney World's \"Carousel of Progress\" now to include progress",
+        "publisher": "Boing Boing",
+        "published_at": "2026-05-29 17:04",
+        "url": "https://boingboing.net/2026/05/29/disney-worlds-carousel-of-progress-now-to-include-progress.html",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Buy, Hold, or Sell: Is This Cloud Automation Juggernaut a Steal Following Its Massive Valuation Reset?",
+        "publisher": "24/7 Wall St.",
+        "published_at": "2026-05-29 19:41",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      },
+      {
+        "title": "Nvidia, Microsoft, and Arm are all teasing Nvidia’s new N1X laptop processors",
+        "publisher": "The Verge",
+        "published_at": "2026-05-29 23:03",
+        "url": "https://www.theverge.com/news/940275/nvidia-n1x-laptop-processor-arm-microsoft-teaser",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      },
+      {
+        "title": "Apple’s latest MacBook Air is $200 off in both sizes for Memorial Day",
+        "publisher": "The Verge",
+        "published_at": "2026-05-24 14:56",
+        "url": "https://www.theverge.com/gadgets/936610/apple-macbook-air-m5-memorial-day-2026-deal-sale",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      },
+      {
+        "title": "Valve raises Steam Deck prices by more than $200",
+        "publisher": "The Verge",
+        "published_at": "2026-05-27 17:33",
+        "url": "https://www.theverge.com/games/938340/valve-steam-deck-price-increase",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "NOW"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": []
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-31",
+    "technical_sentiment_score": 45.3,
+    "momentum_state": "neutral",
+    "valuation_pressure": "high",
+    "news_intensity": "high",
+    "risk_flags": [
+      "RSI overbought (73.6) — momentum reversal risk",
+      "Elevated valuation multiples — multiple compression risk"
+    ],
+    "signal_basis": [
+      "RSI 73.6 (overbought)",
+      "MA signal: mixed",
+      "Volume trend: expanding",
+      "52W range position: 33.1%",
+      "Analyst upside: 14.6%",
+      "News intensity: high (16 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}
