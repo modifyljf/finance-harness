@@ -2,33 +2,33 @@
   "events": [
     {
       "event": "年度股东大会",
-      "date": "2026-06-02",
+      "date": "2026-06-03",
       "date_confidence": "high",
-      "date_source": "官方日历",
+      "date_source": "SEC官方文件",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "若管理层给出乐观指引，股价可能上涨5-10%",
-      "bear_case": "若股东提案或管理层态度偏鹰，股价可能下跌3-5%"
+      "bull_case": "管理层公布超预期战略或订单，股价可能上涨5%-10%",
+      "bear_case": "管理层展望保守，股价可能下跌3%-5%"
     },
     {
-      "event": "分析师/股东演示日",
+      "event": "投资者日",
       "date": "2026-06-03",
       "date_confidence": "medium",
-      "date_source": "市场日历",
-      "impact": "medium",
+      "date_source": "市场传闻/分析师推测",
+      "impact": "high",
       "direction": "neutral",
-      "bull_case": "若展示强劲的商业进展，股价可能上涨5-8%",
-      "bear_case": "若缺乏超预期内容，股价可能下跌2-4%"
+      "bull_case": "公布长期增长目标或AI平台突破，股价可能上涨10%-15%",
+      "bear_case": "缺乏实质性利好，股价可能回调5%-8%"
     },
     {
-      "event": "Q2 2026财报发布",
+      "event": "下次财报",
       "date": "2026-08-03",
       "date_confidence": "high",
-      "date_source": "历史规律推断与未确认公告",
+      "date_source": "历史规律推断（官方未确认）",
       "impact": "high",
-      "direction": "positive",
-      "bull_case": "若营收增速超预期且上调指引，股价可能上涨10-15%",
-      "bear_case": "若营收增速放缓或指引保守，股价可能下跌8-12%"
+      "direction": "neutral",
+      "bull_case": "营收超预期或业绩指引上调，股价可能上涨15%-20%",
+      "bear_case": "营收不及预期或指引下调，股价可能下跌10%-15%"
     }
   ]
 }

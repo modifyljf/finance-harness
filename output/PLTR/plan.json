@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T20:37:00.378110+00:00",
+  "generated_at": "2026-05-31T21:40:32.995082+00:00",
   "current_date": "2026-05-31",
   "input": {
     "ticker": "PLTR",
@@ -603,6 +603,16 @@
       ]
     },
     {
+      "type": "why_now",
+      "approx_seconds": 60,
+      "goal": "Explain why NOW is the right time to pay attention — what changed, old thesis vs new reality, expectation gap.",
+      "required_inputs": [
+        "expectation_gap",
+        "why_now",
+        "fact_check_report"
+      ]
+    },
+    {
       "type": "price_action",
       "approx_seconds": 70,
       "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
@@ -618,6 +628,15 @@
       "required_inputs": [
         "computed_signals",
         "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "narrative_gap",
+      "approx_seconds": 60,
+      "goal": "Reveal the gap between market consensus and reality — what market believes vs what data shows, and what it means.",
+      "required_inputs": [
+        "narrative_gap",
+        "internal_valuation"
       ]
     },
     {

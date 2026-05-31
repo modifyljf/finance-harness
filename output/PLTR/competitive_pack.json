@@ -7,7 +7,7 @@
       "revenue_growth_yoy": 33.5,
       "gross_margin": 67.1,
       "ytd_performance_pct": 24.3,
-      "vs_target_note": "营收增速远低于PLTR，毛利率也较低，但PE更高，市场给予云数据平台较高溢价。"
+      "vs_target_note": "PLTR增速更高且毛利率更优，但PE低于SNOW，估值相对折价。"
     },
     {
       "ticker": "AI",
@@ -16,35 +16,26 @@
       "revenue_growth_yoy": -46.1,
       "gross_margin": 43.5,
       "ytd_performance_pct": -59.5,
-      "vs_target_note": "营收负增长且亏损，毛利率和增长质量均远逊于PLTR，估值无参考意义。"
+      "vs_target_note": "C3.ai营收负增长且亏损严重，与PLTR的增速和盈利差距巨大。"
     },
     {
-      "ticker": "MSFT",
-      "company_name": "Microsoft Corporation",
-      "pe_forward": 23.3,
-      "revenue_growth_yoy": 18.3,
-      "gross_margin": 68.3,
-      "ytd_performance_pct": -1.4,
-      "vs_target_note": "规模庞大、盈利稳定，PE远低于PLTR，但营收增速仅为PLTR的五分之一，市场给予PLTR高增长溢价。"
-    },
-    {
-      "ticker": "ORCL",
-      "company_name": "Oracle Corporation",
-      "pe_forward": 28.1,
-      "revenue_growth_yoy": 21.7,
-      "gross_margin": 67.1,
-      "ytd_performance_pct": 37.8,
-      "vs_target_note": "PE估值较低，营收增速不及PLTR的一半，但凭借云转型获得市场青睐，YTD表现优于PLTR。"
+      "ticker": "DDOG",
+      "company_name": "Datadog, Inc.",
+      "pe_forward": 86.9,
+      "revenue_growth_yoy": 32.2,
+      "gross_margin": 79.9,
+      "ytd_performance_pct": 109.8,
+      "vs_target_note": "PLTR增速和毛利率均高于DDOG，但PE更低，存在明显折价。"
     }
   ],
-  "valuation_position": "偏高",
+  "valuation_position": "偏低",
   "moat_rating": "medium",
-  "moat_description": "Palantir在政府和大企业数据分析领域拥有深厚的客户关系和定制化平台壁垒，但其市场份额仅0.54%，面临来自Alphabet、Microsoft等科技巨头的激烈竞争。",
+  "moat_description": "Palantir凭借其政府客户的高粘性合同和独特的数据集成平台构建护城河，但市场规模较小且面临科技巨头竞争。",
   "key_threats": [
-    "大型云厂商（如Microsoft、Alphabet）在AI和数据平台领域的集成竞争",
-    "AI初创公司（如OpenAI）可能提供更易用、更低成本的分析解决方案"
+    "对政府合同的过度依赖可能带来收入波动和增长瓶颈",
+    "来自Alphabet、Microsoft等巨头的AI平台竞争压力"
   ],
-  "relative_valuation_summary": "PLTR的75.47倍远期PE远高于MSFT（23.3倍）和ORCL（28.1倍），但低于SNOW（97.9倍）。考虑到PLTR 84.7%的营收增速远高于同行均值，市场给予其显著的高增长溢价。若增速能维持，当前估值合理；若放缓，则面临较大压缩风险。",
-  "competitive_advantage": "Palantir拥有独特的端到端数据集成和分析平台（Foundry、Apollo），在政府合同领域具有强粘性；其AI平台（AIP）将大模型与企业数据深度结合，形成差异化能力。",
-  "market_share_note": "根据Q1 2026数据，PLTR在数据平台市场的份额为0.54%，远低于Alphabet（43.47%）和Microsoft，属于利基市场参与者。"
+  "relative_valuation_summary": "基于84.7%的营收增速和84.1%的毛利率，PLTR的75.47倍远期PE显著低于SNOW（97.9x）和DDOG（86.9x），PEG仅0.89远低于同行均值2.8，估值明显折价。若按同行平均PEG（约2.7）计算，合理PE约228倍，股价有大幅上行空间。",
+  "competitive_advantage": "Palantir在政府及大型企业客户的深度数据融合和AI决策能力上具有不可替代性，且其AIP平台实现快速增长，形成差异化竞争壁垒。",
+  "market_share_note": "根据Q1 2026数据，PLTR在相关市场份额仅约0.54%，远低于Alphabet（43.47%）和Microsoft等巨头。"
 }
