@@ -1,0 +1,136 @@
+{
+  "product_segments": [],
+  "management_guidance": [
+    {
+      "metric": "FY2027 全年营收",
+      "value": "$45.8 - $46.2 billion",
+      "direction": "首次",
+      "context": "在 Q4 FY2026 财报电话会中提出"
+    },
+    {
+      "metric": "FY2027 调整后每股收益",
+      "value": "$14.09",
+      "direction": "上调",
+      "context": "在 Q1 CY2026 财报后上调"
+    },
+    {
+      "metric": "FY2030 营收目标",
+      "value": "$63 billion",
+      "direction": "上调",
+      "context": "在 Q4 FY2026 财报电话会中提出，对应 11% CAGR"
+    }
+  ],
+  "competitive_position": {
+    "market_share": "全球 CRM 市场份额约 20.7% - 21.7%",
+    "key_competitors": [
+      "Microsoft Dynamics",
+      "SAP",
+      "Oracle"
+    ],
+    "moat": "全球 CRM 市场领导者，市场份额超过前四竞争对手之和",
+    "threats": "AI 竞争和宏观压力导致股价 2026 年下跌约 25% - 30%"
+  },
+  "key_facts": [
+    {
+      "fact": "FY2026 全年营收 $41.5B，同比增长 10%",
+      "metric_type": "Revenue",
+      "source": "FY2026 10-K 及 Q4 FY2026 财报电话会",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q4 FY2026 营收 $11.2B，同比增长 12%",
+      "metric_type": "Revenue",
+      "source": "Q4 FY2026 财报电话会",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Agentforce 和 Data 360 年度经常性收入（ARR）达到 $2.9B，同比增长超过 200%",
+      "metric_type": "ARR",
+      "source": "Q4 FY2026 财报电话会及 SEC 10-K",
+      "confidence": "high",
+      "caveat": "ARR 为已签约经常性收入，非确认收入"
+    },
+    {
+      "fact": "Q1 CY2026 营收 $9.83B，同比增长 8%",
+      "metric_type": "Revenue",
+      "source": "Q1 CY2026 财报摘要（Yahoo）",
+      "confidence": "medium",
+      "caveat": "CY 代表日历年度，可能与财年 Q1 数据不同"
+    },
+    {
+      "fact": "FY2026 运营现金流 $6.5B（Q1 CY2026）",
+      "metric_type": "Other",
+      "source": "Q1 CY2026 财报摘要（Yahoo）",
+      "confidence": "medium",
+      "caveat": null
+    },
+    {
+      "fact": "2026 年 3 月通过发行高级债券和定期贷款融资 $25B 用于加速股票回购",
+      "metric_type": "Other",
+      "source": "Tikr 文章",
+      "confidence": "high",
+      "caveat": "债务融资用于回购，可能增加财务杠杆"
+    }
+  ],
+  "analyst_thesis": {
+    "bull_case": "管理层上调 FY2030 营收目标至 $63B（11% CAGR），Agentforce ARR 爆发式增长至 $2.9B，债务回购支撑股价，当前远期 P/E 仅 12.3 倍，分析师目标价 $257.03 意味着 34.5% 上行空间。",
+    "bear_case": "2026 年股价已下跌 25%-30%，AI 竞争压力加大，以债务驱动的 $25B 回购增加财务风险，且 Q1 CY2026 营收增速放缓至 8%。",
+    "key_institutions": [
+      {
+        "firm": "共识分析师",
+        "rating": "HOLD",
+        "target": "$257.03",
+        "thesis": "75% 分析师仍持正面看法，但年初至今跌幅反映 AI 担忧"
+      }
+    ]
+  },
+  "data_quality": {
+    "segment_data_available": false,
+    "guidance_found": true,
+    "sources_count": 12,
+    "confidence": "high",
+    "notes": "产品线收入拆分数据缺失；EDGAR 提供季度总营收，但无细分；Tavily 包含丰富电话会和指引信息；CY 与 FY 期间存在混淆，已注明来源和注意事项。"
+  },
+  "_edgar_quarterly_revenue": [
+    {
+      "period_end": "2026-04-30",
+      "fiscal_period": "Q1",
+      "revenue": 11133000000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2026-01-31",
+      "fiscal_period": "FY",
+      "revenue": 41525000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2025-10-31",
+      "fiscal_period": "Q3",
+      "revenue": 30324000000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-07-31",
+      "fiscal_period": "Q2",
+      "revenue": 20065000000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-04-30",
+      "fiscal_period": "Q1",
+      "revenue": 9829000000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-01-31",
+      "fiscal_period": "FY",
+      "revenue": 37895000000,
+      "form": "10-K"
+    }
+  ],
+  "_edgar_cik": "0001108524",
+  "_tavily_query_count": 5
+}

@@ -1,0 +1,65 @@
+{
+  "company_type": "HyperGrowth",
+  "business_model_type": "AI驱动的大数据分析与决策平台，采取政府及商业客户订阅制收入模式",
+  "valuation_methodology": "EV/Revenue + Revenue Growth + FCF Margin",
+  "methodology_rationale": "Palantir处于超高速增长阶段，当前Forward PE极高，盈利扩张速度尚不足以支撑传统PE估值，采用EV/Revenue结合营收增速和自由现金流利润率更适合衡量其成长性。",
+  "revenue_model": {
+    "y1": {
+      "period": "FY2026",
+      "revenue_est": 7720200000,
+      "growth_pct": 72.5
+    },
+    "y2": {
+      "period": "FY2027",
+      "revenue_est": 11173878000,
+      "growth_pct": 44.7
+    },
+    "y3": {
+      "period": "FY2028",
+      "revenue_est": 14500000000,
+      "growth_pct": 29.8
+    }
+  },
+  "margin_model": {
+    "current_gross_margin_pct": 86.8,
+    "target_operating_margin_pct": 50.0,
+    "target_net_margin_pct": 45.0,
+    "margin_improvement_driver": "营收规模快速扩张摊薄研发及销售费用，经营杠杆逐步释放，推动利润率持续提升。"
+  },
+  "multiple_analysis": {
+    "current_multiple": 43.9,
+    "fair_multiple": 45.0,
+    "multiple_type": "EV/Revenue (NTM)",
+    "sector_median_multiple": 18.0,
+    "multiple_premium_discount": "因AI需求爆发与超高收入增速，较行业中枢享有显著估值溢价。"
+  },
+  "scenarios": {
+    "bear": {
+      "target_price": 112.3,
+      "implied_upside_pct": -28.3,
+      "probability": 0.25,
+      "key_assumption": "收入增速放缓至预期以下，EV/Revenue压缩至35倍，NTM营收降至76.9亿美元。"
+    },
+    "base": {
+      "target_price": 160.0,
+      "implied_upside_pct": 2.5,
+      "probability": 0.55,
+      "key_assumption": "收入符合分析师共识，NTM营收85.46亿美元，估值倍数稳定在45倍。"
+    },
+    "bull": {
+      "target_price": 215.7,
+      "implied_upside_pct": 37.8,
+      "probability": 0.2,
+      "key_assumption": "收入超预期强劲，NTM营收升至94亿美元，市场赋予更高增长溢价，倍数扩大至55倍。"
+    }
+  },
+  "expected_value": 159.2,
+  "methodology_note": "采用EV/Revenue(NTM)估值框架：基准情景下，预测未来12个月营收为85.46亿美元（根据2026剩余三季及2027Q1共识估算），赋予与当前市场情绪匹配的45倍估值，得到企业价值3846亿美元，除以总股本23.97亿股，得出目标价160美元。悲观情景预期营收承压、估值收缩；乐观情景反映AI需求超预期。概率加权期望股价为159.2美元。",
+  "methodology_statement": "我们的基准目标价$160并非来自分析师共识，而是基于45倍EV/Revenue(NTM)对12个月远期营收$85.46亿推导得出。",
+  "key_risks": [
+    "高估值下业绩不达预期可能引发剧烈回调",
+    "政府合同占比高，面临政策与预算不确定性",
+    "AI平台竞争加剧，新进入者或分流客户"
+  ],
+  "consensus_vs_internal": "内部基准目标价$160低于分析师共识均价$183.73，差异主要源自我们采用的45倍EV/Revenue较市场情绪所隐含的50倍以上更为审慎，反映了对高估值可持续性的保守假设。"
+}

@@ -412,6 +412,10 @@ def _fetch_market_data(ticker: str, t: yf.Ticker) -> dict:
     ps_ratio          = info.get("priceToSalesTrailing12Months")
     pb_ratio          = info.get("priceToBook")
     ev_ebitda         = info.get("enterpriseToEbitda")
+    enterprise_value  = info.get("enterpriseValue")
+    ev_revenue        = info.get("enterpriseToRevenue")
+    total_debt        = info.get("totalDebt")
+    total_cash        = info.get("totalCash")
     revenue           = info.get("totalRevenue")
     revenue_growth    = info.get("revenueGrowth")
     earnings_growth   = info.get("earningsGrowth")
@@ -461,7 +465,9 @@ def _fetch_market_data(ticker: str, t: yf.Ticker) -> dict:
             "peg":         round(peg,         2) if peg         else None,
             "ps_ratio":    round(ps_ratio,    2) if ps_ratio    else None,
             "pb_ratio":    round(pb_ratio,    2) if pb_ratio    else None,
-            "ev_ebitda":   round(ev_ebitda,   2) if ev_ebitda   else None,
+            "ev_ebitda":        round(ev_ebitda,    2) if ev_ebitda    else None,
+            "enterprise_value": enterprise_value,
+            "ev_revenue":       round(ev_revenue,   2) if ev_revenue   else None,
         },
         "financial_snapshot": {
             "revenue":             revenue,
@@ -474,6 +480,8 @@ def _fetch_market_data(ticker: str, t: yf.Ticker) -> dict:
             "roe":                 round(roe * 100, 1) if roe else None,
             "eps_trailing":        info.get("trailingEps"),
             "eps_forward":         info.get("forwardEps"),
+            "total_debt":          total_debt,
+            "total_cash":          total_cash,
         },
         "analyst_snapshot": {
             "recommendation": recommendation,
@@ -622,62 +630,65 @@ def _fetch_analyst_estimates(t: yf.Ticker) -> dict:
         except Exception:
             return None
 
+    # yfinance >= 1.0: earnings_estimate (singular), columns: avg/low/high/yearAgoEps/numberOfAnalysts/growth
     try:
-        ee = t.earnings_estimates
+        ee = t.earnings_estimate
         if ee is not None and not ee.empty:
             for period in ee.index:
                 row = ee.loc[period]
                 result["earnings_estimates"].append({
-                    "period":         str(period),
-                    "avg_eps":        _safe_val(row.get("Avg")),
-                    "low_eps":        _safe_val(row.get("Low")),
-                    "high_eps":       _safe_val(row.get("High")),
-                    "analyst_count":  int(row.get("No. of Analysts", 0) or 0),
-                    "year_ago_eps":   _safe_val(row.get("Year Ago EPS")),
+                    "period":        str(period),
+                    "avg_eps":       _safe_val(row.get("avg")),
+                    "low_eps":       _safe_val(row.get("low")),
+                    "high_eps":      _safe_val(row.get("high")),
+                    "analyst_count": int(row.get("numberOfAnalysts") or 0),
+                    "year_ago_eps":  _safe_val(row.get("yearAgoEps")),
+                    "growth_pct":    round(_safe_val(row.get("growth")) * 100, 1) if _safe_val(row.get("growth")) else None,
                 })
     except Exception as exc:
-        print(f"[Planner] earnings_estimates failed (non-fatal): {exc}")
+        print(f"[Planner] earnings_estimate failed (non-fatal): {exc}")
 
+    # yfinance >= 1.0: revenue_estimate (singular), columns: avg/low/high/yearAgoRevenue/growth
     try:
-        re_ = t.revenue_estimates
+        re_ = t.revenue_estimate
         if re_ is not None and not re_.empty:
             for period in re_.index:
                 row = re_.loc[period]
-                avg_rev = _safe_val(row.get("Avg"))
-                yago    = _safe_val(row.get("Year Ago Revenue"))
-                growth  = round((avg_rev - yago) / abs(yago) * 100, 1) if avg_rev and yago else None
+                avg_rev = _safe_val(row.get("avg"))
+                yago    = _safe_val(row.get("yearAgoRevenue"))
+                growth  = _safe_val(row.get("growth"))
                 result["revenue_estimates"].append({
-                    "period":          str(period),
-                    "avg_revenue":     int(avg_rev) if avg_rev else None,
-                    "low_revenue":     int(_safe_val(row.get("Low")) or 0) or None,
-                    "high_revenue":    int(_safe_val(row.get("High")) or 0) or None,
-                    "analyst_count":   int(row.get("No. of Analysts", 0) or 0),
-                    "year_ago_revenue": int(yago) if yago else None,
-                    "implied_yoy_growth_pct": growth,
+                    "period":                 str(period),
+                    "avg_revenue":            int(avg_rev) if avg_rev else None,
+                    "low_revenue":            int(_safe_val(row.get("low")) or 0) or None,
+                    "high_revenue":           int(_safe_val(row.get("high")) or 0) or None,
+                    "analyst_count":          int(row.get("numberOfAnalysts") or 0),
+                    "year_ago_revenue":       int(yago) if yago else None,
+                    "implied_yoy_growth_pct": round(growth * 100, 1) if growth else None,
                 })
     except Exception as exc:
-        print(f"[Planner] revenue_estimates failed (non-fatal): {exc}")
+        print(f"[Planner] revenue_estimate failed (non-fatal): {exc}")
 
+    # yfinance >= 1.0: growth_estimates, columns: stockTrend/indexTrend, index: 0q/+1q/0y/+1y/LTG
     try:
         ge = t.growth_estimates
         if ge is not None and not ge.empty:
-            ticker_col = ge.columns[0]
-            def _g(label):
-                for idx in ge.index:
-                    if label.lower() in str(idx).lower():
-                        return _safe_val(ge.loc[idx, ticker_col])
+            col = "stockTrend" if "stockTrend" in ge.columns else ge.columns[0]
+            def _g(period_key):
+                if period_key in ge.index:
+                    return _safe_val(ge.loc[period_key, col])
                 return None
-            five_yr = _g("next 5 years")
-            if five_yr is not None:
-                result["five_year_growth_pct"] = round(five_yr * 100, 1)
-            next_yr_eps = _g("next year")
-            if next_yr_eps is not None:
-                result["next_year_eps_growth_pct"] = round(next_yr_eps * 100, 1)
+            ltg = _g("LTG")
+            if ltg is not None:
+                result["five_year_growth_pct"] = round(ltg * 100, 1)
+            next_yr = _g("+1y")
+            if next_yr is not None:
+                result["next_year_eps_growth_pct"] = round(next_yr * 100, 1)
     except Exception as exc:
         print(f"[Planner] growth_estimates failed (non-fatal): {exc}")
 
     # Derive next-year revenue growth from estimates
-    annual = [e for e in result["revenue_estimates"] if e["period"] in ("+1Y", "1Y", "Next Year")]
+    annual = [e for e in result["revenue_estimates"] if e["period"].lower() in ("+1y", "1y", "next year")]
     if annual:
         result["next_year_rev_growth_pct"] = annual[0].get("implied_yoy_growth_pct")
 
@@ -773,8 +784,10 @@ def _build_slide_outline(duration_minutes: int) -> list[dict]:
     outline = [
         {"type": "cover",          "approx_seconds": 20, "goal": "Introduce the ticker and the central question of the video.",               "required_inputs": ["market_snapshot.ticker", "market_snapshot.company_name", "market_snapshot.current_price"]},
         {"type": "market_overview","approx_seconds": 60, "goal": "Summarize current price, market cap, valuation and recent price movement.", "required_inputs": ["market_snapshot", "valuation_snapshot"]},
+        {"type": "why_now",       "approx_seconds": 60, "goal": "Explain why NOW is the right time to pay attention — what changed, old thesis vs new reality, expectation gap.", "required_inputs": ["expectation_gap", "why_now", "fact_check_report"]},
         {"type": "price_action",   "approx_seconds": 70, "goal": "Explain recent price behavior using the 30-day chart and technical indicators.", "required_inputs": ["price_history", "technical_indicators"]},
         {"type": "key_points",     "approx_seconds": 90, "goal": "Present the strongest bullish and bearish evidence this week.",              "required_inputs": ["computed_signals", "news_evidence_pack"]},
+        {"type": "narrative_gap", "approx_seconds": 60, "goal": "Reveal the gap between market consensus and reality — what market believes vs what data shows, and what it means.", "required_inputs": ["narrative_gap", "internal_valuation"]},
         {"type": "news",           "approx_seconds": 60, "goal": "Present this week's key news headlines and analyst rating changes with attribution.", "required_inputs": ["news_evidence_pack.items", "news_evidence_pack.expert_quotes"]},
     ]
     if duration_minutes >= 6:

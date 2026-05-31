@@ -1,0 +1,202 @@
+{
+  "title": "PLTR为何仍被低估？",
+  "ticker": "PLTR",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "PLTR为何仍被低估？",
+      "subtitle": "本周深度分析·2026-05-31",
+      "hook": "PLTR为何仍被低估？",
+      "autoslide_ms": 23907
+    },
+    {
+      "type": "market_overview",
+      "headline": "$156.54  +9.21%  ·  Forward PE 75.47x  ·  目标价空间 +17.4%",
+      "callout": "上涨时缩量，追高意愿弱，是隐患",
+      "autoslide_ms": 84233
+    },
+    {
+      "type": "price_action",
+      "headline": "短期偏多，但进入高波动区间",
+      "signal": "bullish",
+      "bullets": [
+        "支撑位：$149.2（布林带上轨，从压力变支撑）",
+        "支撑位：$141.79-$137.81（MA50与布林带中线共振强支撑区）",
+        "阻力位：$161（短期前高），突破看$173，$207.52是天花板",
+        "趋势描述：价格在涨，量在缩。市场情绪高涨，但真正愿意追高的资金在减少。",
+        "RSI：67.4，中性区域，并没有超买"
+      ],
+      "autoslide_ms": 108871
+    },
+    {
+      "type": "key_points",
+      "headline": "本周多空对决",
+      "points": [
+        {
+          "title": "最强看多信号：基本面硬数据",
+          "body": "基准目标价160美元，基于45倍远期市销率×85.46亿美元营收预期；上季EPS 0.33美元超预期17.9%；全年营收指引上调至76.5-76.6亿美元，同比增速71%。",
+          "tag": "bull"
+        },
+        {
+          "title": "最强看空信号：估值透支与背离",
+          "body": "市销率71.83倍，价格156.54美元已突破布林带上轨149.2美元，但成交量萎缩，RSI 67.4逼近超买区。",
+          "tag": "bear"
+        },
+        {
+          "title": "短期风险：买预期卖事实",
+          "body": "下周年报大会预期高度一致，若利好仅重复已知增长，可能引发获利盘回调；缩量阳线是警示灯。",
+          "tag": "neutral"
+        }
+      ],
+      "autoslide_ms": 192385
+    },
+    {
+      "type": "news",
+      "headline": "本周新闻整体偏中性",
+      "news_items": [
+        {
+          "title": "摩根士丹利上调PLTR至增持，目标价180美元",
+          "category": "analyst",
+          "impact": "positive",
+          "note": "机构态度的重要修正"
+        },
+        {
+          "title": "美国国防部签署9.2亿美元机密合约续约",
+          "category": "other",
+          "impact": "positive",
+          "note": "政F合作根基牢固"
+        },
+        {
+          "title": "文艺复兴科技大幅减持PLTR，比例达二成",
+          "category": "other",
+          "impact": "negative",
+          "note": "短线高位分歧加剧"
+        },
+        {
+          "title": "机构目标价更新：杰富瑞195美元，高盛141美元",
+          "category": "analyst",
+          "impact": "neutral",
+          "note": "两派分歧，没有一致性预期"
+        }
+      ],
+      "analyst_summary": "摩根士丹利上调，但文艺复兴减持，市场定价逻辑转向看现在",
+      "autoslide_ms": 88581
+    },
+    {
+      "type": "financials",
+      "headline": "财务面完美，但估值已充分反映",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "+84.7%",
+          "trend": "up"
+        },
+        {
+          "label": "毛利率",
+          "value": "84.1%",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "46.2%",
+          "trend": "flat"
+        },
+        {
+          "label": "Forward PE",
+          "value": "72x (P/S)",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "连续8季为正，利润率持续改善",
+          "trend": "up"
+        },
+        {
+          "label": "ROE",
+          "value": "无数据",
+          "trend": "flat"
+        }
+      ],
+      "callout": "若增速从84.7%降至50%，股价或跌向112美元",
+      "autoslide_ms": 96371
+    },
+    {
+      "type": "risk",
+      "headline": "高",
+      "risks": [
+        {
+          "title": "估值严重透支",
+          "body": "PLTR当前的市销率高达七十一点八三倍。市场已经把未来好几个季度的超高速增长，提前定价了。一旦增速边际放缓，股价就可能向悲观目标价一百一十二点三美元靠拢。",
+          "severity": "high"
+        },
+        {
+          "title": "销售模式规模化瓶颈",
+          "body": "核心销售极其依赖少数精英，可能只有七名销售在驱动核心业务。如果AI代理人不能真正颠覆重人力的销售模式，营收增速迟早会撞上人力扩张的天花板。",
+          "severity": "high"
+        },
+        {
+          "title": "短期情绪与资金博弈",
+          "body": "价格突破一百四十九点二的布林带上轨，但成交量萎缩，是缩量上涨，短期动能衰竭的信号。一旦消息符合预期而非大幅超越，获利盘可能砸盘。",
+          "severity": "medium"
+        }
+      ],
+      "autoslide_ms": 139849
+    },
+    {
+      "type": "catalyst",
+      "headline": "三大催化剂：两正一负",
+      "catalysts": [
+        {
+          "event": "年度股东大会+演示日",
+          "direction": "positive",
+          "timing": "2026年6月2-3日",
+          "impact": "medium"
+        },
+        {
+          "event": "七月底财报季",
+          "direction": "positive",
+          "timing": "2026年7月底",
+          "impact": "medium"
+        },
+        {
+          "event": "'买预期卖事实'回调",
+          "direction": "negative",
+          "timing": "股东大会/演示日后",
+          "impact": "large"
+        }
+      ],
+      "autoslide_ms": 121914
+    },
+    {
+      "type": "outlook",
+      "headline": "中性偏谨慎，不追高，等回调",
+      "subtitle": "中性",
+      "base_range": {
+        "low": "$145",
+        "high": "$165",
+        "timeframe": "1-4周"
+      },
+      "scenario_bear": {
+        "condition": "若营收增速跌破60%",
+        "target": "$112.3"
+      },
+      "scenario_base": {
+        "condition": "营收增速维持70%以上且美国商业收入加速",
+        "target": "$160"
+      },
+      "scenario_bull": {
+        "condition": "营收增速加速至100%以上",
+        "target": "$215.7"
+      },
+      "autoslide_ms": 107602
+    },
+    {
+      "type": "summary",
+      "headline": "等待回调，拥抱真相",
+      "verdict": "neutral",
+      "action": "等待回调至145-150区间，放量企稳考虑，仓位不超8%",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
+      "autoslide_ms": 31878
+    }
+  ]
+}

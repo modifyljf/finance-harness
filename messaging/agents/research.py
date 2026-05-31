@@ -177,14 +177,23 @@ class ResearchAgent(BaseAgent):
         current_year = plan["current_date"][:4]
         prev_year    = str(int(current_year) - 1)
 
+        # Determine most recent fiscal quarter for transcript search
+        earn = plan.get("earnings_snapshot", {})
+        last_q = earn.get("last_quarter", "")
+        quarter_hint = last_q[:7] if last_q else current_year  # e.g. "2026-04"
+
         return [
             (
                 "segment_revenue",
                 f"{company} {ticker} revenue by segment product breakdown {current_year} {prev_year} annual report",
             ),
             (
+                "earnings_transcript",
+                f"{company} {ticker} earnings call transcript {quarter_hint} CEO CFO management key metrics ARR revenue guidance",
+            ),
+            (
                 "earnings_guidance",
-                f"{company} {ticker} earnings call transcript management guidance outlook {current_year}",
+                f"{company} {ticker} management guidance outlook full year {current_year} revenue EPS forecast",
             ),
             (
                 "competitive_position",

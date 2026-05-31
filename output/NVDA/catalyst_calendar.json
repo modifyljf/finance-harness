@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "event": "财报发布",
+      "date": "2026-08-26",
+      "date_confidence": "high",
+      "date_source": "公司官方公布/华尔街投行日历",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "若营收超预期（>91B），股价可能上涨10%+",
+      "bear_case": "若营收不及预期，股价可能下跌10%+"
+    }
+  ]
+}

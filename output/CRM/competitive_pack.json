@@ -1,0 +1,50 @@
+{
+  "peers": [
+    {
+      "ticker": "ORCL",
+      "company_name": "Oracle Corporation",
+      "pe_forward": 28.1,
+      "revenue_growth_yoy": 21.7,
+      "gross_margin": 67.1,
+      "ytd_performance_pct": 37.8,
+      "vs_target_note": "估值更高但增速更快，毛利率低于目标"
+    },
+    {
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corporation",
+      "pe_forward": 23.3,
+      "revenue_growth_yoy": 18.3,
+      "gross_margin": 68.3,
+      "ytd_performance_pct": -1.4,
+      "vs_target_note": "估值和增速均高于目标，但毛利率略低，规模与生态系统强大"
+    },
+    {
+      "ticker": "SAP",
+      "company_name": "SAP SE",
+      "pe_forward": 18.4,
+      "revenue_growth_yoy": 6.0,
+      "gross_margin": 73.7,
+      "ytd_performance_pct": -38.9,
+      "vs_target_note": "估值高于目标但增速显著偏慢，毛利率接近"
+    },
+    {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc.",
+      "pe_forward": 9.8,
+      "revenue_growth_yoy": 12.0,
+      "gross_margin": 89.4,
+      "ytd_performance_pct": -37.6,
+      "vs_target_note": "估值最低但毛利率最高，增速略低于目标"
+    }
+  ],
+  "valuation_position": "偏低",
+  "moat_rating": "strong",
+  "moat_description": "Salesforce以约22%的全球CRM市场份额保持行业第一，其深度整合的AI平台和庞大客户黏性形成核心壁垒。竞争对手如Microsoft虽具规模优势，但在CRM专注度上不及Salesforce。",
+  "key_threats": [
+    "Microsoft借助Azure生态与企业级应用（如Dynamics 365）持续渗透CRM市场",
+    "ServiceNow等新兴平台在特定垂直领域（IT服务管理）构成威胁"
+  ],
+  "relative_valuation_summary": "基于同行平均Forward PE 19.9和PEG 1.61，Salesforce当前PE 12.35显著折价；若参考增速调整，合理PE约为21（对应股价约$325），当前估值具有吸引力。",
+  "competitive_advantage": "Salesforce拥有最全面的CRM产品套件（销售、服务、营销、商务等），结合AI代理（Agentforce）和低代码平台，实现数据与流程高度统一。其全球最大的CRM生态和200万+付费客户构成强大网络效应。",
+  "market_share_note": "Salesforce约占2026年全球CRM市场22%的份额，是第二名微软的两倍以上。"
+}

@@ -33,7 +33,14 @@
 - 提取每个业务线的收入数字或占比（如材料中有）
 - 说明数据来源（哪个季度/年份）
 
-### 2. 管理层前瞻指引
+### 2. 财报电话会关键摘录（earnings_transcript 搜索结果优先）
+- 提取 CEO/CFO 的原话或关键数据引用
+- 特别标注：该数字是 ARR / Revenue / Bookings / Pipeline / Commitments / Interactions 中的哪一种
+- ARR（年度经常性收入）= 已签约且会重复续费的合同金额，不等于实际已确认收入
+- Bookings = 合同总值，不等于 ARR，也不等于 Revenue
+- Pipeline = 潜在商机，远不等于 Revenue
+
+### 3. 管理层前瞻指引
 - 提取管理层对下一季度/年度的收入、利润指引
 - 提取任何提到的增长目标或关键里程碑
 - 记录说话人和时间背景
@@ -76,6 +83,15 @@
     "moat": "核心竞争壁垒（1-2句）",
     "threats": "主要竞争威胁（1句）"
   }},
+  "key_facts": [
+    {{
+      "fact": "关键事实陈述（如：Agentforce ARR达到X亿美元）",
+      "metric_type": "ARR/Revenue/Bookings/Pipeline/Commitments/Interactions/Other",
+      "source": "数据来源（如：Q1 FY2026财报电话会/SEC 10-Q/新闻报道）",
+      "confidence": "high/medium/low",
+      "caveat": "注意事项（如：此数字为bookings而非recognized revenue）或null"
+    }}
+  ],
   "analyst_thesis": {{
     "bull_case": "最强看多逻辑（含数字，2-3句）",
     "bear_case": "最强看空逻辑（含数字，2-3句）",

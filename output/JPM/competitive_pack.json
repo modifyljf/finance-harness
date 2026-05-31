@@ -1,0 +1,50 @@
+{
+  "peers": [
+    {
+      "ticker": "BAC",
+      "company_name": "Bank of America Corporation",
+      "pe_forward": 10.2,
+      "revenue_growth_yoy": 8.1,
+      "gross_margin": null,
+      "ytd_performance_pct": 19.6,
+      "vs_target_note": "估值较低，但收入增速也较低，市场份额小于JPM"
+    },
+    {
+      "ticker": "C",
+      "company_name": "Citigroup Inc.",
+      "pe_forward": 10.0,
+      "revenue_growth_yoy": 15.9,
+      "gross_margin": null,
+      "ytd_performance_pct": 70.9,
+      "vs_target_note": "估值更低，但收入增速较高，YTD表现优异"
+    },
+    {
+      "ticker": "WFC",
+      "company_name": "Wells Fargo & Company",
+      "pe_forward": 9.8,
+      "revenue_growth_yoy": 5.7,
+      "gross_margin": null,
+      "ytd_performance_pct": 6.0,
+      "vs_target_note": "估值最低，但收入增速和YTD表现均较弱"
+    },
+    {
+      "ticker": "GS",
+      "company_name": "The Goldman Sachs Group, Inc.",
+      "pe_forward": 15.7,
+      "revenue_growth_yoy": 14.5,
+      "gross_margin": 82.3,
+      "ytd_performance_pct": 73.5,
+      "vs_target_note": "估值更高，收入增速略高，但业务模式偏投行，与JPM差异较大"
+    }
+  ],
+  "valuation_position": "偏高",
+  "moat_rating": "strong",
+  "moat_description": "JPMorgan Chase凭借最大的市场份额、多元化的业务结构和强大的品牌效应构成护城河。其领先的数字银行平台和广泛的客户基础进一步巩固了竞争地位。",
+  "key_threats": [
+    "来自Bank of America和Citigroup的市场份额争夺，以及它们更快的收入增长",
+    "科技公司和金融科技初创企业可能侵蚀传统银行业务"
+  ],
+  "relative_valuation_summary": "JPM的12.71倍远期PE高于传统同行均值（约10倍），但低于高盛（15.7倍）。考虑到其市场领导地位和12.7%的收入增速，该溢价是合理的。合理估值区间约为11-13倍PE，当前处于区间上沿。",
+  "competitive_advantage": "JPMorgan Chase拥有美国银行业最大的市场份额（27.31%），远超第二名Bank of America（18.25%）。其综合金融服务能力和全球业务布局提供了稳定的收入来源和较强的抗风险能力。",
+  "market_share_note": "根据Q1 2026数据，JPM市场份额为27.31%，显著领先于BAC（18.36%）和C等竞争对手。"
+}

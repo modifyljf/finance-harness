@@ -1,0 +1,218 @@
+{
+  "title": "摩根大通快涨不动了？",
+  "ticker": "JPM",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "摩根大通快涨不动了？",
+      "subtitle": "本周深度分析·2026-05-31",
+      "hook": "这可能是今年最大的定价错位",
+      "autoslide_ms": 25450
+    },
+    {
+      "type": "market_overview",
+      "headline": "$299.31  +0.87%  ·  Forward PE 12.71x  ·  目标价空间 +14.3%",
+      "callout": "2.33倍市净率 vs 16.5% ROE，市场错误定价",
+      "autoslide_ms": 90139
+    },
+    {
+      "type": "price_action",
+      "headline": "技术面正在告诉你：别追高，等回踩。",
+      "signal": "neutral",
+      "bullets": [
+        "支撑位：$293.15（布林带下轨），以及293到296区域。",
+        "阻力位：$303.27（MA20），$306.74（4月高点），$313.39（布林带上轨）。",
+        "趋势：从5月22号冲到306块7毛4之后，连续五天回调，一路滑到296块7毛3。今天是连续第二天反弹，收在299块3毛1。仍然在震荡箱体里。",
+        "RSI：14天RSI报45.8，中性偏弱，不远超卖，更不超买。"
+      ],
+      "autoslide_ms": 122668
+    },
+    {
+      "type": "key_points",
+      "headline": "多空对决",
+      "points": [
+        {
+          "title": "估值修复空间25%",
+          "body": "市净率2.33倍，内部估值合理水平2.6倍，乘以每股净资产144.08美元得目标价375美元，现价299，修复空间25%。",
+          "tag": "bull"
+        },
+        {
+          "title": "管理层信心与强劲业绩",
+          "body": "戴蒙手中200亿美元并购资金；一季度固定收益营收增21%，营收增速12.7%，盈利增速17.2%，每股收益5.94远超预期5.51。",
+          "tag": "bull"
+        },
+        {
+          "title": "监管与宏观风险",
+          "body": "监管资本新规若更严厉，回购分红锁死；宏观衰退致信贷恶化，悲观目标价280美元；技术面跌破293美元触发卖盘。",
+          "tag": "bear"
+        },
+        {
+          "title": "操作策略",
+          "body": "低吸：回踩293-296区域企稳；右侧：放量站稳303；目标：短期306-313，中期342，长期375；止损激进293下方，保守280。",
+          "tag": "neutral"
+        }
+      ],
+      "autoslide_ms": 184160
+    },
+    {
+      "type": "news",
+      "headline": "财报和并购催化剂形成合力，监管噪音压制冲动",
+      "news_items": [
+        {
+          "title": "财报超预期：营收增速12.7%，EPS 5.94美元",
+          "category": "earnings",
+          "impact": "positive",
+          "note": "市场错估了交易韧性，这个数据直接撕开估值折价的口子。"
+        },
+        {
+          "title": "管理层确认全年净利息收入指引1030亿美元",
+          "category": "earnings",
+          "impact": "positive",
+          "note": "这排除了利率见顶的恐慌，盈利锚点稳定。"
+        },
+        {
+          "title": "CEO戴蒙公开表示手握200亿美元并购资金",
+          "category": "other",
+          "impact": "positive",
+          "note": "这是管理层信心的最强信号，市场开始定价“行业整合者”溢价。"
+        },
+        {
+          "title": "监管资本新规悬而未决",
+          "category": "regulation",
+          "impact": "negative",
+          "note": "分歧在于新规对资本回报的抑制程度，倾向认为最终方案不会更严。"
+        },
+        {
+          "title": "技术面RSI 45.8，股价在布林带下轨震荡",
+          "category": "other",
+          "impact": "neutral",
+          "note": "股价在布林带下轨293美元上方震荡，这里是基本面买家的低吸区域。"
+        }
+      ],
+      "analyst_summary": "巴克莱维持增持目标价350美元，瑞银下调至中性目标价310美元",
+      "autoslide_ms": 75356
+    },
+    {
+      "type": "financials",
+      "headline": "财务数据支撑估值，市场定价犯错",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "总营收538亿超预期2.6%",
+          "trend": "up"
+        },
+        {
+          "label": "毛利率",
+          "value": "未提及",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "未提及",
+          "trend": "flat"
+        },
+        {
+          "label": "Forward PE",
+          "value": "未提及",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "顶级生成能力",
+          "trend": "up"
+        },
+        {
+          "label": "ROE",
+          "value": "未提及",
+          "trend": "flat"
+        }
+      ],
+      "callout": "市净率2.33倍远低于内部基准2.6倍，目标价375美金隐含超20%上行",
+      "autoslide_ms": 120211
+    },
+    {
+      "type": "risk",
+      "headline": "高",
+      "risks": [
+        {
+          "title": "监管资本新规风险",
+          "body": "如果最终方案比预期严苛，银行资本负担会立刻加重，直接约束回购规模，也限制分红增长的弹性，资产扩张速度被迫放缓，ROE承压，市净率倍数打折，目标价375美元悬了。",
+          "severity": "high"
+        },
+        {
+          "title": "宏观衰退致信贷成本恶化",
+          "body": "衰退深度超出共识时，企业债和消费贷违约率急剧跳升，信用成本增加侵蚀季度利润，悲观情景下目标价280美元附近。",
+          "severity": "high"
+        },
+        {
+          "title": "技术面破位风险",
+          "body": "股价299.31美元在20日线和50日线下方，RSI 45.8中性偏弱，布林带下轨293.15美元失守将触发技术性抛盘和踩踏，放大基本面不确定感。",
+          "severity": "high"
+        }
+      ],
+      "autoslide_ms": 122110
+    },
+    {
+      "type": "catalyst",
+      "headline": "等待三大催化剂变盘",
+      "catalysts": [
+        {
+          "event": "二季度财报发布日",
+          "direction": "positive",
+          "timing": "7月14日",
+          "impact": "large"
+        },
+        {
+          "event": "两百亿并购资金落地",
+          "direction": "positive",
+          "timing": "未来三到六周内",
+          "impact": "large"
+        },
+        {
+          "event": "监管资本新规出台",
+          "direction": "negative",
+          "timing": "未来三到六周内",
+          "impact": "large"
+        },
+        {
+          "event": "宏观衰退信贷违约潮",
+          "direction": "negative",
+          "timing": "未来三到六周内",
+          "impact": "large"
+        }
+      ],
+      "autoslide_ms": 99646
+    },
+    {
+      "type": "outlook",
+      "headline": "短期谨慎，中长期看多",
+      "subtitle": "中性偏多",
+      "base_range": {
+        "low": "$293.15",
+        "high": "$313.39",
+        "timeframe": "1-4周"
+      },
+      "scenario_bear": {
+        "condition": "技术面跌破293，将打开下行空间到280",
+        "target": "$280"
+      },
+      "scenario_base": {
+        "condition": "基于2.6倍市净率对每股净资产144.08美元推导",
+        "target": "$375"
+      },
+      "scenario_bull": {
+        "condition": "七月财报验证净利息收入指引或CEO两百亿并购资金落地",
+        "target": "$375"
+      },
+      "autoslide_ms": 92747
+    },
+    {
+      "type": "summary",
+      "headline": "JPM基准目标价375，认知差带来25%上行空间",
+      "verdict": "bullish",
+      "action": "仓位不超过总仓位1-2成，回调293-295低吸",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
+      "autoslide_ms": 50088
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "event": "2026年第二季度财报",
+      "date": "2026-07-14",
+      "date_confidence": "high",
+      "date_source": "官方公告（JPMorgan Chase官网及财经网站确认）",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "若业绩超预期，股价可能上涨2-5%",
+      "bear_case": "若业绩不及预期，股价可能下跌3-6%"
+    },
+    {
+      "event": "2026年第四季度财报",
+      "date": "2027-01-14",
+      "date_confidence": "high",
+      "date_source": "官方公告（JPMorgan Chase官网）",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "若全年业绩强劲，股价可能上涨3-6%",
+      "bear_case": "若业绩疲软，股价可能下跌4-7%"
+    },
+    {
+      "event": "2027年投资者日",
+      "date": null,
+      "date_confidence": "medium",
+      "date_source": "公司公告（预计2027年第一季度）",
+      "impact": "medium",
+      "direction": "neutral",
+      "bull_case": "若宣布积极战略或回购计划，股价可能上涨2-4%",
+      "bear_case": "若指引保守或负面，股价可能下跌2-3%"
+    }
+  ]
+}

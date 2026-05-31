@@ -1,0 +1,65 @@
+{
+  "company_type": "Financial",
+  "business_model_type": "多元化银行金融服务",
+  "valuation_methodology": "P/B + ROE + NIM",
+  "methodology_rationale": "银行估值核心在于净资产收益率（ROE）和市净率（P/B），市盈率（PE）对金融企业意义有限。",
+  "revenue_model": {
+    "y1": {
+      "period": "2026E",
+      "revenue_est": 196732984450,
+      "growth_pct": 7.8
+    },
+    "y2": {
+      "period": "2027E",
+      "revenue_est": 204499978100,
+      "growth_pct": 4.0
+    },
+    "y3": {
+      "period": "2028E",
+      "revenue_est": 211657477300,
+      "growth_pct": 3.5
+    }
+  },
+  "margin_model": {
+    "current_gross_margin_pct": null,
+    "target_operating_margin_pct": 44.0,
+    "target_net_margin_pct": 34.0,
+    "margin_improvement_driver": "费用控制与净息差小幅改善驱动利润率温和提升。"
+  },
+  "multiple_analysis": {
+    "current_multiple": 2.33,
+    "fair_multiple": 2.6,
+    "multiple_type": "P/B",
+    "sector_median_multiple": 1.5,
+    "multiple_premium_discount": "受益于高于行业平均的ROE，JPM享有明显市净率溢价。"
+  },
+  "scenarios": {
+    "bear": {
+      "target_price": 280.0,
+      "implied_upside_pct": -6.5,
+      "probability": 0.2,
+      "key_assumption": "经济衰退导致信贷损失超预期，ROE回落至13%，P/B压缩至2.0倍。"
+    },
+    "base": {
+      "target_price": 374.61,
+      "implied_upside_pct": 25.2,
+      "probability": 0.6,
+      "key_assumption": "盈利符合共识，ROE维持16.5%，P/B扩张至2.6倍。"
+    },
+    "bull": {
+      "target_price": 435.0,
+      "implied_upside_pct": 45.3,
+      "probability": 0.2,
+      "key_assumption": "净息差超预期扩大，运营杠杆释放，ROE升至18%，P/B升至2.9倍。"
+    }
+  },
+  "expected_value": 367.77,
+  "methodology_note": "基准情景下，预测2026年底每股净资产（BVPS）为144.08美元（基于EPS 22.31美元，30%派息率），乘以合理P/B 2.6倍得出目标价375美元。悲观和乐观情景分别调整BVPS及P/B倍数。",
+  "methodology_statement": "我们的基准目标价$375并非来自分析师共识，而是基于2.6倍市净率对2026年底每股净资产$144.08推导得出。",
+  "key_risks": [
+    "经济衰退导致信贷成本大幅上升",
+    "利率下行周期中净息差承压",
+    "监管环境变化增加合规成本与资本要求"
+  ],
+  "consensus_vs_internal": "内部基准目标价375美元高于分析师共识342美元，差异在于我们预期JPM的ROE韧性与资本回报改善将推动市净率从当前2.33倍扩张至2.6倍，而共识隐含的P/B约为2.5倍。"
+}

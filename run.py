@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 AI Stock Review Video Harness
-Usage: python3 run.py --ticker NVDA --duration 9 --language zh-CN
-Usage: source .venv/bin/activate && python run.py --ticker NVDA --duration 9 --language zh-CN
+Usage: python3 run.py --ticker NVDA --duration 12 --language zh-CN
+Usage: source .venv/bin/activate && python run.py --ticker NVDA --duration 12 --language zh-CN
 """
 import argparse
 import webbrowser
@@ -20,7 +20,7 @@ OUTPUT_DIR = Path(__file__).parent / "output"
 def main() -> None:
     parser = argparse.ArgumentParser(description="AI Stock Review Video Harness")
     parser.add_argument("--ticker",   required=True,  help="Stock ticker (e.g. NVDA)")
-    parser.add_argument("--duration", type=int, default=9, help="Video duration in minutes (default: 9)")
+    parser.add_argument("--duration", type=int, default=12, help="Video duration in minutes (default: 12)")
     parser.add_argument("--language", default="zh-CN", help="Output language (default: zh-CN)")
     parser.add_argument("--market",   default="US",    help="Market (default: US)")
     parser.add_argument("--style",    default="professional", help="Style (default: professional)")

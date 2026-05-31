@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<title>认知裂痕，谁错了？</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --c-bg:        #080d14;
+    --c-surface:   #111827;
+    --c-surface2:  #1a2235;
+    --c-border:    #1f2d40;
+    --c-accent:    #3b82f6;
+    --c-accent-lo: rgba(59,130,246,0.12);
+    --c-green:     #10b981;
+    --c-red:       #f43f5e;
+    --c-gold:      #f59e0b;
+    --c-purple:    #8b5cf6;
+    --c-text:      #f1f5f9;
+    --c-muted:     #64748b;
+    --c-muted2:    #94a3b8;
+  }
+
+  .reveal {
+    background: var(--c-bg);
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', Arial, sans-serif;
+  }
+  .reveal::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #1a2540 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.45;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .reveal .slides { z-index: 1; }
+  .reveal .slides section { text-align: left; height: 100%; }
+
+  /* ── Footer ── */
+  .slide-footer {
+    position: absolute;
+    bottom: 16px; left: 60px; right: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.42em;
+    color: var(--c-muted);
+    border-top: 1px solid var(--c-border);
+    padding-top: 7px;
+    letter-spacing: 0.08em;
+  }
+  .footer-ticker { font-weight: 800; color: var(--c-accent); letter-spacing: 0.18em; }
+
+  /* ── Common layout ── */
+  .slide-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 60px 52px;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.46em;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 13px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: fit-content;
+    background: var(--c-accent-lo);
+    color: var(--c-accent);
+    border: 1px solid rgba(59,130,246,0.25);
+  }
+  .tag.red    { background: rgba(244,63,94,0.1);  color: var(--c-red);    border-color: rgba(244,63,94,0.28); }
+  .tag.gold   { background: rgba(245,158,11,0.1); color: var(--c-gold);   border-color: rgba(245,158,11,0.28); }
+  .tag.green  { background: rgba(16,185,129,0.1); color: var(--c-green);  border-color: rgba(16,185,129,0.28); }
+  .tag.purple { background: rgba(139,92,246,0.1); color: var(--c-purple); border-color: rgba(139,92,246,0.28); }
+
+  .slide-headline {
+    font-size: 1.45em;
+    font-weight: 800;
+    color: var(--c-text);
+    line-height: 1.25;
+    margin: 0 0 12px;
+  }
+
+  /* ── Cover ── */
+  .cover-wrap { display: flex; height: 100%; box-sizing: border-box; }
+  .cover-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 40px 50px 60px;
+  }
+  .cover-right {
+    width: 268px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: 36px 48px 36px 0;
+  }
+  .cover-eyebrow {
+    font-size: 0.5em;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--c-accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cover-headline {
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--c-text);
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+  .cover-divider {
+    width: 44px; height: 3px;
+    background: linear-gradient(90deg, var(--c-accent), transparent);
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+  .cover-company { font-size: 0.7em; color: var(--c-muted2); margin-bottom: 14px; }
+  .cover-hook {
+    font-size: 0.72em;
+    color: var(--c-gold);
+    line-height: 1.55;
+    padding: 10px 14px;
+    border-left: 3px solid var(--c-gold);
+    background: rgba(245,158,11,0.07);
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* price widget */
+  .price-widget {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .pw-label { font-size: 0.46em; color: var(--c-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 7px; }
+  .pw-price { font-size: 1.85em; font-weight: 900; color: var(--c-text); line-height: 1; margin-bottom: 7px; }
+  .pw-change {
+    display: inline-block; font-size: 0.7em; font-weight: 700;
+    padding: 3px 12px; border-radius: 12px;
+  }
+  .pw-change.up   { background: rgba(16,185,129,0.15); color: var(--c-green); }
+  .pw-change.down { background: rgba(244,63,94,0.15);  color: var(--c-red); }
+
+  .cover-info-card {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-radius: 10px; padding: 11px 16px;
+    text-align: center; font-size: 0.5em; color: var(--c-muted2);
+  }
+  .cover-info-card strong {
+    display: block; font-size: 1.3em; font-weight: 700;
+    color: var(--c-text); margin-bottom: 2px;
+  }
+
+  /* ── Callout box (market_overview, financials) ── */
+  .callout-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 13px 16px;
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.22);
+    border-radius: 8px;
+  }
+  .callout-icon { font-size: 1em; color: var(--c-accent); flex-shrink: 0; margin-top: 1px; }
+  .callout-text { font-size: 0.78em; color: var(--c-text); line-height: 1.55; }
+
+  /* ── Stats grid ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
+  .stat-card {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-border); border-radius: 10px; padding: 12px 14px;
+  }
+  .stat-card.a { border-left-color: var(--c-accent); }
+  .stat-card.g { border-left-color: var(--c-green);  }
+  .stat-card.r { border-left-color: var(--c-red);    }
+  .stat-card.o { border-left-color: var(--c-gold);   }
+  .stat-label { font-size: 0.46em; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+  .stat-value { font-size: 1.08em; font-weight: 700; color: var(--c-text); }
+  .stat-value.up   { color: var(--c-green); }
+  .stat-value.down { color: var(--c-red); }
+
+  /* ── Chart ── */
+  .chart-wrap {
+    width: 100%; height: 240px; position: relative; margin-top: 10px;
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-radius: 10px; padding: 8px 12px 6px; box-sizing: border-box;
+  }
+
+  /* ── Direction badge (price_action, outlook) ── */
+  .direction-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 20px; border-radius: 22px; font-weight: 800;
+    font-size: 0.78em; margin-bottom: 12px; letter-spacing: 0.05em;
+  }
+  .direction-badge.bullish { background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.38); color: var(--c-green); }
+  .direction-badge.bearish { background: rgba(244,63,94,0.14);  border: 1px solid rgba(244,63,94,0.38);  color: var(--c-red); }
+  .direction-badge.neutral { background: rgba(245,158,11,0.14); border: 1px solid rgba(245,158,11,0.38); color: var(--c-gold); }
+
+  /* ── Bullets ── */
+  .bullets { list-style: none; margin: 0; padding: 0; }
+  .bullets li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 9px 0; border-bottom: 1px solid var(--c-border);
+    font-size: 0.78em; color: var(--c-text); line-height: 1.55;
+  }
+  .bullets li:last-child { border-bottom: none; }
+  .bullet-num {
+    min-width: 21px; height: 21px; border-radius: 50%;
+    background: var(--c-accent-lo); border: 1px solid rgba(59,130,246,0.3);
+    color: var(--c-accent); font-size: 0.8em; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .bullet-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--c-accent); margin-top: 7px; flex-shrink: 0;
+  }
+  .bullet-dot.r { background: var(--c-red); }
+  .bullet-dot.g { background: var(--c-green); }
+  .bullet-dot.o { background: var(--c-gold); }
+
+  /* ── Key Points (title + body) ── */
+  .kp-list { list-style: none; margin: 0; padding: 0; }
+  .kp-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 0; border-bottom: 1px solid var(--c-border);
+  }
+  .kp-item:last-child { border-bottom: none; }
+  .kp-tag-dot {
+    min-width: 8px; height: 8px; border-radius: 50%;
+    margin-top: 8px; flex-shrink: 0;
+  }
+  .kp-tag-dot.bull { background: var(--c-green); }
+  .kp-tag-dot.bear { background: var(--c-red); }
+  .kp-tag-dot.neutral { background: var(--c-gold); }
+  .kp-content { flex: 1; }
+  .kp-title { font-size: 0.82em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
+  .kp-body  { font-size: 0.72em; color: var(--c-muted2); line-height: 1.5; }
+  .kp-badge {
+    font-size: 0.52em; font-weight: 700; padding: 2px 8px;
+    border-radius: 10px; flex-shrink: 0; margin-top: 4px; align-self: flex-start;
+  }
+  .kp-badge.bull { background: rgba(16,185,129,0.15); color: var(--c-green); }
+  .kp-badge.bear { background: rgba(244,63,94,0.15);  color: var(--c-red); }
+  .kp-badge.neutral { background: rgba(245,158,11,0.15); color: var(--c-gold); }
+
+  /* ── Metrics grid (financials) ── */
+  .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; margin-top: 10px; }
+  .metric-card {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-radius: 8px; padding: 11px 13px;
+  }
+  .metric-label { font-size: 0.48em; color: var(--c-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px; }
+  .metric-value { font-size: 0.98em; font-weight: 700; color: var(--c-text); }
+  .metric-value.up   { color: var(--c-green); }
+  .metric-value.down { color: var(--c-red); }
+  .metric-trend { font-size: 0.75em; margin-right: 3px; }
+
+  /* ── Risk cards with severity ── */
+  .card-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .risk-card-v2 {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.16);
+    border-left: 3px solid var(--c-red); border-radius: 8px; padding: 10px 14px;
+  }
+  .risk-severity {
+    font-size: 0.52em; font-weight: 800; padding: 2px 8px; border-radius: 8px;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .risk-severity.high   { background: rgba(244,63,94,0.2);  color: var(--c-red); }
+  .risk-severity.medium { background: rgba(245,158,11,0.2); color: var(--c-gold); }
+  .risk-severity.low    { background: rgba(16,185,129,0.2); color: var(--c-green); }
+  .risk-content { flex: 1; }
+  .risk-title { font-size: 0.78em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
+  .risk-body  { font-size: 0.68em; color: var(--c-muted2); line-height: 1.5; }
+
+  /* ── Catalyst cards ── */
+  .catalyst-card-v2 {
+    display: flex; align-items: flex-start; gap: 10px;
+    border-radius: 8px; padding: 10px 14px;
+  }
+  .catalyst-card-v2.positive {
+    background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.18);
+    border-left: 3px solid var(--c-green);
+  }
+  .catalyst-card-v2.negative {
+    background: rgba(244,63,94,0.06); border: 1px solid rgba(244,63,94,0.18);
+    border-left: 3px solid var(--c-red);
+  }
+  .cat-icon { font-size: 0.9em; flex-shrink: 0; margin-top: 2px; }
+  .cat-icon.pos { color: var(--c-green); }
+  .cat-icon.neg { color: var(--c-red); }
+  .cat-content { flex: 1; }
+  .cat-event { font-size: 0.78em; font-weight: 700; color: var(--c-text); margin-bottom: 3px; }
+  .cat-meta  { font-size: 0.62em; color: var(--c-muted2); }
+  .cat-impact {
+    font-size: 0.52em; font-weight: 700; padding: 2px 8px; border-radius: 8px;
+    flex-shrink: 0; margin-top: 3px; align-self: flex-start;
+  }
+  .cat-impact.large  { background: rgba(244,63,94,0.15); color: var(--c-red); }
+  .cat-impact.medium { background: rgba(245,158,11,0.15); color: var(--c-gold); }
+  .cat-impact.small  { background: rgba(16,185,129,0.12); color: var(--c-green); }
+
+  /* ── Outlook: range + scenarios ── */
+  .range-box {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-radius: 10px; padding: 10px 24px; margin-bottom: 14px;
+  }
+  .range-label { font-size: 0.48em; color: var(--c-muted); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .range-values { font-size: 1.1em; font-weight: 800; color: var(--c-text); }
+
+  .scenarios { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .scenario {
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .scenario.bull {
+    background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.22);
+    border-top: 3px solid var(--c-green);
+  }
+  .scenario.bear {
+    background: rgba(244,63,94,0.07); border: 1px solid rgba(244,63,94,0.22);
+    border-top: 3px solid var(--c-red);
+  }
+  .scenario-label {
+    font-size: 0.5em; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .scenario.bull .scenario-label { color: var(--c-green); }
+  .scenario.bear .scenario-label { color: var(--c-red); }
+  .scenario.base .scenario-label { color: var(--c-accent); }
+  .scenario-condition { font-size: 0.72em; color: var(--c-text); line-height: 1.5; margin-bottom: 6px; }
+  .scenario-target { font-size: 0.7em; font-weight: 700; }
+  .scenario.bull .scenario-target { color: var(--c-green); }
+  .scenario.bear .scenario-target { color: var(--c-red); }
+  .scenario.base .scenario-target { color: var(--c-accent); }
+
+  /* ── Summary ── */
+  .summary-quote {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-left: 4px solid var(--c-accent); border-radius: 10px;
+    padding: 20px 24px 20px 26px; margin-top: 12px; position: relative;
+  }
+  .summary-quote::before {
+    content: '"'; position: absolute; top: -10px; left: 16px;
+    font-size: 3em; color: var(--c-accent); opacity: 0.22;
+    font-family: Georgia, serif; line-height: 1;
+  }
+  .summary-text { font-size: 1em; font-weight: 600; color: var(--c-text); line-height: 1.65; }
+
+  .verdict-row { display: flex; gap: 10px; margin-top: 12px; align-items: center; }
+  .verdict-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 18px; border-radius: 20px; font-weight: 800; font-size: 0.72em;
+  }
+  .verdict-badge.bullish { background: rgba(16,185,129,0.14); border: 1px solid rgba(16,185,129,0.38); color: var(--c-green); }
+  .verdict-badge.bearish { background: rgba(244,63,94,0.14);  border: 1px solid rgba(244,63,94,0.38);  color: var(--c-red); }
+  .verdict-badge.neutral { background: rgba(245,158,11,0.14); border: 1px solid rgba(245,158,11,0.38); color: var(--c-gold); }
+
+  .action-box {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-top: 10px; padding: 11px 14px;
+    background: rgba(59,130,246,0.07); border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 8px;
+  }
+  .action-label { font-size: 0.5em; font-weight: 700; color: var(--c-accent); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; margin-top: 2px; }
+  .action-text  { font-size: 0.74em; color: var(--c-text); line-height: 1.55; }
+
+  .disclaimer {
+    font-size: 0.44em; color: var(--c-muted); margin-top: 14px;
+    line-height: 1.6; padding: 8px 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--c-border); border-radius: 6px;
+  }
+
+  /* Reveal overrides */
+  .reveal .progress { color: var(--c-accent); height: 3px; }
+  .reveal .controls button { color: var(--c-accent); }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+
+
+
+
+<section data-autoslide="32965">
+  <div class="cover-wrap">
+    <div class="cover-left">
+      <div class="cover-eyebrow">NVDA &nbsp;·&nbsp; 本周深度分析</div>
+      <div class="cover-headline">认知裂痕，谁错了？</div>
+      <div class="cover-divider"></div>
+      <div class="cover-company">NVIDIA Corporation&nbsp;&nbsp;·&nbsp;&nbsp;本周深度分析·2026-05-31</div>
+      
+      <div class="cover-hook">大空头伯里本周再发AI末日论，英伟达应声下探</div>
+      
+    </div>
+    <div class="cover-right">
+      <div class="price-widget">
+        <div class="pw-label">当前价格</div>
+        <div class="pw-price">$211.14</div>
+        <div class="pw-change down">-1.45%</div>
+      </div>
+      <div class="cover-info-card"><strong>$5.11T</strong>市值</div>
+      <div class="cover-info-card"><strong>Fwd PE 16.68</strong>预期市盈率</div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-ticker">NVDA</span>
+    <span>股票深度点评</span>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="71189">
+  <div class="slide-inner">
+    <div class="tag">市场概览</div>
+    <div class="slide-headline">$211.14  -1.45%  ·  Forward PE 16.68x  ·  目标价空间 +40.6%</div>
+    <div class="stats-grid">
+      <div class="stat-card a"><div class="stat-label">当前价格</div><div class="stat-value">$211.14</div></div>
+      <div class="stat-card r">
+        <div class="stat-label">日涨跌幅</div>
+        <div class="stat-value down">-1.45%</div>
+      </div>
+      <div class="stat-card o"><div class="stat-label">市值</div><div class="stat-value">$5.11T</div></div>
+      <div class="stat-card a"><div class="stat-label">预期市盈率 (Fwd PE)</div><div class="stat-value">16.68</div></div>
+      <div class="stat-card g"><div class="stat-label">分析师目标价</div><div class="stat-value">296.81033</div></div>
+      <div class="stat-card o"><div class="stat-label">Beta</div><div class="stat-value">2.244</div></div>
+    </div>
+    
+    <div class="callout-box fragment fade-up">
+      <div class="callout-icon">◈</div>
+      <div class="callout-text">PEG仅0.65，极度低估的AI芯片龙头</div>
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>市场数据</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="117044">
+  <div class="slide-inner">
+    <div class="tag gold">价格走势</div>
+    <div class="slide-headline">偏空震荡</div>
+    
+    
+    <div class="direction-badge bearish">
+      ▼
+      技术偏空
+    </div>
+    
+    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+    
+    <ul class="bullets" style="margin-top:8px">
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>支撑位：第一层五十日均线$199.35，第二层布林带下轨$196.2</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：二十日均线$215.46，布林带上轨$234.71</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>趋势描述：高位震荡后的缓慢阴跌，冲高回落形态，失守20日均线</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>RSI 49.4，中性偏低，没有超卖，说明下跌还有空间</span></li>
+      
+    </ul>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>技术分析 · 30日走势</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="170298">
+  <div class="slide-inner">
+    <div class="tag green">核心要点</div>
+    <div class="slide-headline">多空对决</div>
+    
+    <ul class="kp-list">
+      
+      
+      <li class="kp-item fragment fade-up">
+        <div class="kp-tag-dot bull"></div>
+        <div class="kp-content">
+          <div class="kp-title">增长与估值错配</div>
+          <div class="kp-body">复合增速214.5%，预期市盈率16.68倍，PEG 0.65，罕见的增长与估值错配。</div>
+        </div>
+        <div class="kp-badge bull">多</div>
+      </li>
+      
+      
+      <li class="kp-item fragment fade-up">
+        <div class="kp-tag-dot bull"></div>
+        <div class="kp-content">
+          <div class="kp-title">护城河飞轮效应</div>
+          <div class="kp-body">CUDA生态转换成本高，净利率63%，ROE 114.3%，共识目标价296.81美元，上行40.6%。</div>
+        </div>
+        <div class="kp-badge bull">多</div>
+      </li>
+      
+      
+      <li class="kp-item fragment fade-up">
+        <div class="kp-tag-dot bear"></div>
+        <div class="kp-content">
+          <div class="kp-title">增速二阶导放缓</div>
+          <div class="kp-body">若营收环比失速或降价，PEG低于0.7逻辑瓦解，触发向20倍市盈率下方的估值修正。</div>
+        </div>
+        <div class="kp-badge bear">空</div>
+      </li>
+      
+      
+      <li class="kp-item fragment fade-up">
+        <div class="kp-tag-dot bear"></div>
+        <div class="kp-content">
+          <div class="kp-title">地缘政治黑天鹅</div>
+          <div class="kp-body">台湾芯片供应链任何合规意外，会对营收造成实质性截流。</div>
+        </div>
+        <div class="kp-badge bear">空</div>
+      </li>
+      
+    </ul>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>核心逻辑</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="98747">
+  <div class="slide-inner">
+    <div class="tag gold">本周新闻</div>
+    <div class="slide-headline">本周NVDA的关键新闻和评级变化</div>
+    
+    <div class="card-list" style="margin-top:8px">
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-green)">
+          ▲
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">高盛重申买入评级，目标价上调至300美元</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">Blackwell架构提前量产引爆下半年营收预期</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+          ▼
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">摩根士丹利下调评级至持有</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">当前股价已充分反映好消息</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+          ▼
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">美联储降息预期推迟，美债收益率超4.5%</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">对高估值科技股直接利空，但NVDA远期市盈率16倍安全垫厚</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">macro</div>
+        
+      </div>
+      
+      
+      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
+        background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.2);border-left:3px solid var(--c-red)
+        ">
+        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
+          color:var(--c-red)">
+          ▼
+        </div>
+        <div style="flex:1">
+          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">台积电三星3nm产能过剩引担忧</div>
+          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">市场担忧芯片需求见顶，但AI需求依然爆发，供给端短期调整</div>
+        </div>
+        
+        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
+          background:rgba(59,130,246,0.12);color:var(--c-accent)">product</div>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="callout-box fragment fade-up" style="margin-top:10px">
+      <div class="callout-icon">◈</div>
+      <div class="callout-text">机构观点：净变化偏多，7家上调4家下调，目标价中位数280美元</div>
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>本周资讯</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="121298">
+  <div class="slide-inner">
+    <div class="tag">财务分析</div>
+    <div class="slide-headline">估值根本就没反映基本面的真实质量</div>
+    
+    <div class="metrics-grid">
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">营收增速</div>
+        <div class="metric-value ">
+          +85.2%
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">净利率</div>
+        <div class="metric-value ">
+          63%
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">Forward PE</div>
+        <div class="metric-value ">
+          16.7x
+        </div>
+      </div>
+      
+      
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">自由现金流</div>
+        <div class="metric-value ">
+          过去四个季度累计超过五百亿美元
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    <div class="callout-box fragment fade-up" style="margin-top:12px">
+      <div class="callout-icon">◈</div>
+      <div class="callout-text">净利润率百分之六十三，每赚一百块钱，六十三块是纯利</div>
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>财务健康度</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="111421">
+  <div class="slide-inner">
+    <div class="tag red">风险提示</div>
+    <div class="slide-headline">高</div>
+    
+    <div class="card-list">
+      
+      
+      <div class="risk-card-v2 fragment fade-up">
+        <div class="risk-severity high">高</div>
+        <div class="risk-content">
+          <div class="risk-title">增速二阶导放缓</div>
+          <div class="risk-body">营收增速85.2%，盈利增速214.5%，PEG 0.65极度低估。若环比营收意外失速两三个百分点，市盈率从16倍向20倍以下修正，股价剧烈重估。</div>
+        </div>
+      </div>
+      
+      
+      <div class="risk-card-v2 fragment fade-up">
+        <div class="risk-severity high">高</div>
+        <div class="risk-content">
+          <div class="risk-title">地缘政治黑天鹅</div>
+          <div class="risk-body">芯片经日本走私触及合规红线，若引发更严出口管制，大中华区每年200-300亿美元营收受影响，财务模型现深可见骨伤口。</div>
+        </div>
+      </div>
+      
+      
+      <div class="risk-card-v2 fragment fade-up">
+        <div class="risk-severity medium">中</div>
+        <div class="risk-content">
+          <div class="risk-title">技术面情绪负反馈</div>
+          <div class="risk-body">50日均线199.35美元是多方最后防线，一旦跌穿，算法交易和止损单涌出，引发踩踏式下跌。</div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>下行风险</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="120211">
+  <div class="slide-inner">
+    <div class="tag gold">催化剂</div>
+    <div class="slide-headline">催化剂箭在弦上</div>
+    
+    <div class="card-list">
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">GTC大会预热演讲</div>
+          <div class="cat-meta">下周</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">云厂商资本开支季度更新</div>
+          <div class="cat-meta">六月中旬</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">财报前瞻</div>
+          <div class="cat-meta">七月初</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 negative fragment fade-up">
+        <div class="cat-icon neg">▼</div>
+        <div class="cat-content">
+          <div class="cat-event">出口管制听证会</div>
+          <div class="cat-meta">两周后</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 negative fragment fade-up">
+        <div class="cat-icon neg">▼</div>
+        <div class="cat-content">
+          <div class="cat-event">技术面跌破205</div>
+          <div class="cat-meta">下周</div>
+        </div>
+        <div class="cat-impact medium">中</div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>近期催化剂</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="109160">
+  <div class="slide-inner">
+    <div class="tag purple">未来展望</div>
+    <div class="slide-headline">长线强烈看多，短期震荡整固后向上突破</div>
+    
+    
+    
+    <div class="direction-badge bullish">
+      ▲ 看多
+    </div>
+    
+    
+    <div class="range-box">
+      <div class="range-label">基础区间 · 1-4周</div>
+      <div class="range-values">$195 &nbsp;—&nbsp; $225</div>
+    </div>
+    
+    
+    <div class="scenarios">
+      
+      <div class="scenario bear fragment fade-up">
+        <div class="scenario-label">▼ 悲观</div>
+        <div class="scenario-condition">跌破195</div>
+        <div class="scenario-target">风险 $180</div>
+      </div>
+      
+      
+      <div class="scenario base fragment fade-up">
+        <div class="scenario-label">◆ 基准</div>
+        <div class="scenario-condition">营收增速保持80%以上，Blackwell需求未放缓</div>
+        <div class="scenario-target">目标 $253</div>
+      </div>
+      
+      
+      <div class="scenario bull fragment fade-up">
+        <div class="scenario-label">▲ 乐观</div>
+        <div class="scenario-condition">营收增速超90%</div>
+        <div class="scenario-target">目标 $400</div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>后市展望</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="32965">
+  <div class="slide-inner">
+    <div class="tag">总结</div>
+    <div class="slide-headline">本期结论</div>
+    <div class="summary-quote">
+      <div class="summary-text">NVDA被严重低估，PEG仅0.65</div>
+    </div>
+    
+    <div class="verdict-row">
+      
+      
+      <div class="verdict-badge bullish">
+        ▲ 看多
+      </div>
+      
+      
+      <div class="action-box fragment fade-up" style="flex:1">
+        <div class="action-label">操作框架</div>
+        <div class="action-text">建议百分之五十仓位作为核心配置</div>
+      </div>
+      
+    </div>
+    
+    <div class="disclaimer">⚠ 投资有风险，以上内容仅供参考，不构成任何投资建议。</div>
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">NVDA</span><span>免责声明</span></div>
+</section>
+
+
+
+
+
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+Reveal.initialize({
+  hash: false, progress: true, controls: true, center: false,
+  transition: 'slide', transitionSpeed: 'default',
+  autoSlide: 0, loop: false, width: 1280, height: 720,
+  slideNumber: 'c/t', fragments: true,
+  keyboard: true,
+});
+
+// Auto-fit: shrink slide-inner font until content stops overflowing
+(function () {
+  function fitSlide(section) {
+    var inner = section.querySelector('.slide-inner');
+    if (!inner) return;
+    var minEm = 0.72; // never go below 72% of base
+    var step   = 0.04;
+    var cur    = 1.0;
+    inner.style.fontSize = cur + 'em';
+    while (inner.scrollHeight > inner.clientHeight + 4 && cur > minEm) {
+      cur = Math.round((cur - step) * 100) / 100;
+      inner.style.fontSize = cur + 'em';
+    }
+  }
+  Reveal.on('ready', function () {
+    document.querySelectorAll('.reveal .slides section').forEach(fitSlide);
+  });
+  Reveal.on('slidechanged', function (e) {
+    if (e.currentSlide) fitSlide(e.currentSlide);
+  });
+})();
+
+// OBS-compatible auto-advance + fragment auto-reveal
+// No focus/visibility dependency — works in CEF / OBS Browser Source
+(function () {
+  var sections = document.querySelectorAll('.reveal .slides section');
+  var timings = [];
+  sections.forEach(function (s) {
+    timings.push(parseInt(s.getAttribute('data-autoslide') || '5000', 10));
+  });
+  if (!timings.length) return;
+
+  var idx       = 0;
+  var slideTimer = null;
+  var fragTimers = [];
+  var advancing  = false; // prevent slidechanged from double-scheduling
+
+  // Reveal all .fragment elements in a slide with fade-up stagger
+  function revealFragments(slideEl) {
+    fragTimers.forEach(clearTimeout);
+    fragTimers = [];
+    var frags = slideEl ? slideEl.querySelectorAll('.fragment') : [];
+    frags.forEach(function (f, i) {
+      fragTimers.push(setTimeout(function () {
+        f.classList.add('visible', 'current-fragment');
+      }, (i + 1) * 400));
+    });
+  }
+
+  function scheduleAdvance() {
+    clearTimeout(slideTimer);
+    if (idx >= timings.length - 1) return;
+    slideTimer = setTimeout(function () {
+      advancing = true;
+      idx++;
+      Reveal.slide(idx);
+      advancing = false;
+      revealFragments(sections[idx]);
+      scheduleAdvance();
+    }, timings[idx]);
+  }
+
+  Reveal.on('ready', function () {
+    revealFragments(sections[0]);
+    scheduleAdvance();
+  });
+
+  // Manual navigation resets everything cleanly
+  Reveal.on('slidechanged', function (e) {
+    if (advancing) return;
+    idx = e.indexh;
+    revealFragments(sections[idx]);
+    scheduleAdvance();
+  });
+})();
+
+(function () {
+  var labels = ["2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29"];
+  var values = [201.68, 202.06, 199.88, 202.5, 199.64, 208.27, 216.61, 213.17, 209.25, 199.57, 198.45, 198.48, 196.5, 207.83, 211.5, 215.2, 219.44, 220.78, 225.83, 235.74, 225.32, 222.32, 220.61, 223.47, 219.51, 215.33, 214.86, 212.6, 214.25, 211.14];
+  var ma20   = 215.46;
+  var ma50   = 199.35;
+
+  if (!labels || !labels.length) return;
+  var canvas = document.getElementById('priceChart');
+  if (!canvas) return;
+
+  var first = values[0], last = values[values.length - 1];
+  var lineColor = last >= first ? '#10b981' : '#f43f5e';
+  var fillColor = last >= first ? 'rgba(16,185,129,0.07)' : 'rgba(244,63,94,0.07)';
+
+  var datasets = [{
+    label: '收盘价', data: values,
+    borderColor: lineColor, backgroundColor: fillColor,
+    borderWidth: 2.5, pointRadius: 0, pointHoverRadius: 5,
+    fill: true, tension: 0.35, order: 1,
+  }];
+  if (ma20 !== null) datasets.push({
+    label: 'MA20', data: Array(labels.length).fill(ma20),
+    borderColor: '#f59e0b', borderWidth: 1.3, borderDash: [6,4],
+    pointRadius: 0, fill: false, tension: 0, order: 2,
+  });
+  if (ma50 !== null) datasets.push({
+    label: 'MA50', data: Array(labels.length).fill(ma50),
+    borderColor: '#8b5cf6', borderWidth: 1.3, borderDash: [4,3],
+    pointRadius: 0, fill: false, tension: 0, order: 3,
+  });
+
+  new Chart(canvas, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        legend: {
+          display: true, position: 'top', align: 'end',
+          labels: { color: '#64748b', font: { size: 10 }, boxWidth: 20, padding: 10, usePointStyle: true, pointStyleWidth: 14 }
+        },
+        tooltip: {
+          backgroundColor: '#1a2235', borderColor: '#1f2d40', borderWidth: 1,
+          titleColor: '#94a3b8', bodyColor: '#f1f5f9', padding: 10,
+          callbacks: { label: ctx => ' ' + ctx.dataset.label + ': $' + ctx.parsed.y.toFixed(2) }
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#64748b', maxTicksLimit: 7, font: { size: 10 } }, grid: { color: 'rgba(31,45,64,0.9)' }, border: { color: '#1f2d40' } },
+        y: { position: 'right', ticks: { color: '#64748b', font: { size: 10 }, callback: v => '$' + v.toFixed(0) }, grid: { color: 'rgba(31,45,64,0.9)' }, border: { color: '#1f2d40' } }
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

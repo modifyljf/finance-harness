@@ -25,6 +25,22 @@ _SLIDE_INSTRUCTIONS: dict[str, str] = {
         "- 结尾固定接：'这周到底发生了什么？我们一条一条拆。'\n"
         "- Hook结束后，再用2-3句点出股价和核心矛盾"
     ),
+    "why_now": (
+        "这是视频最重要的一段，必须回答三个问题：\n"
+        "1. 【旧叙事】市场过去相信什么？（具体说出市场的错误假设）\n"
+        "2. 【新现实】最近发生了什么改变了这个假设？（引用具体数字：EPS超预期幅度、营收变化）\n"
+        "3. 【为什么是现在】不是三个月前，不是三个月后，就是现在——什么事件或数据让这个时间窗口特别重要？\n"
+        "必须有具体数字支撑，不能只说'公司很便宜'或'增长很快'\n"
+        "结尾用一句话总结Why Now：'因为市场还在看旧X，而现实已经进入新X时代'"
+    ),
+    "narrative_gap": (
+        "这段要揭示市场定价与现实之间的核心缺口：\n"
+        "1. 【市场共识】市场当前用什么假设给这只股票定价？（要具体，不能说'看好/看空'）\n"
+        "2. 【现实数据】数据实际显示什么？与市场假设有何不同？\n"
+        "3. 【缺口量化】这个认知差距有多大？（用估值差、EPS差、目标价差等量化）\n"
+        "4. 【投资含义】如果市场修正这个认知，股价会怎样？引用内部估值的Bear/Base/Bull目标价\n"
+        "禁止写成'公司好不好'的价值分析，必须聚焦在'市场哪里看错了'"
+    ),
     "market_overview": (
         "- 从宏观或行业背景切入，1-2句定性\n"
         "- 用具体数字说话（价格、涨跌幅、市值、PE），不要形容词堆砌\n"
@@ -164,6 +180,54 @@ class GeneratorAgent(BaseAgent):
             lines.append(f"【数据质量】置信度={dq.get('confidence','N/A')} | {dq.get('notes','')}")
         return "\n".join(lines) if lines else "（深度研究未返回有效数据）"
 
+    @staticmethod
+    def _format_expectation_gap(eg: dict) -> str:
+        if not eg:
+            return "（预期差数据未生成）"
+        lines = [
+            f"最近财报（{eg.get('last_quarter','N/A')}）：",
+            f"  EPS实际=${eg.get('eps_actual','N/A')} vs 预期=${eg.get('eps_estimate','N/A')} → 超预期{eg.get('eps_surprise_pct',0):+.1f}%",
+        ]
+        if eg.get("revenue_surprise_pct") is not None:
+            lines.append(f"  营收超预期{eg.get('revenue_surprise_pct',0):+.1f}%")
+        lines += [
+            f"  结论分类：{eg.get('direction','unknown')}",
+            f"  股价 vs 分析师共识目标价：{eg.get('consensus_gap_pct',0):+.1f}%",
+            f"  下次财报：{eg.get('next_earnings_date','未知')}",
+            "",
+            f"预期差叙事：{eg.get('gap_narrative','')}",
+        ]
+        return "\n".join(lines)
+
+    @staticmethod
+    def _format_authoritative_numbers(auth: dict) -> str:
+        """Format authoritative_numbers as a hard constraint block for LLM prompts."""
+        if not auth:
+            return ""
+        rsi = auth.get("rsi_14")
+        rsi_sig = auth.get("rsi_signal", "unknown")
+        total_rev = auth.get("total_annual_revenue_str", "N/A")
+        company_type   = auth.get("company_type", "")
+        primary_metric = auth.get("primary_valuation_metric", "Forward PE")
+        prohibited     = auth.get("prohibited_metric_note", "")
+        lines = [
+            "## ⚠️ 权威数字与估值约束（API直接获取，必须严格遵守，违反即视为错误）",
+            f"- 公司类型：{company_type}",
+            f"- 主要估值指标：{primary_metric}（必须以此为核心锚点）",
+            f"- 禁止：{prohibited}" if prohibited else "",
+            f"- 市值：{auth.get('market_cap_str')}（= 股价 × 流通股，使用此数字）",
+            f"- 全年总营收：{total_rev}（任何产品线/ARR不得超过此数，超过必定混淆了Bookings/Pipeline）",
+            f"- RSI(14)：{rsi} → 信号：{rsi_sig}（超买阈值=70，超卖阈值=30，禁止将RSI {rsi}描述为超买）",
+            f"- Forward PE：{auth.get('forward_pe')}x | Forward EPS：${auth.get('forward_eps')}（仅供参考，主要指标见上）",
+            f"- 当前价格：${auth.get('current_price')} | MA20：${auth.get('ma20')} | MA50：${auth.get('ma50')} | 布林带上轨：${auth.get('bb_upper')}",
+            f"- 内部估值目标价（必须引用推导，禁止凭空给出数字）：",
+            f"  悲观 ${auth.get('valuation_bear_price')} / 基准 ${auth.get('valuation_base_price')} / 乐观 ${auth.get('valuation_bull_price')}",
+            f"  推导：{auth.get('valuation_base_derivation', '')}",
+            f"  口播句：{auth.get('valuation_methodology_statement', '')}",
+        ]
+        lines = [l for l in lines if l]  # remove empty lines
+        return "\n".join(lines)
+
     def _fundamental(self, plan: dict) -> str:
         print("[Agent:Fundamental] Analyzing...")
         md = plan["market_snapshot"]
@@ -173,6 +237,7 @@ class GeneratorAgent(BaseAgent):
         inp = plan["input"]
         current_date = plan["current_date"]
         research_summary = self._format_research_pack(plan.get("research_pack", {}))
+        auth_block = self._format_authoritative_numbers(plan.get("authoritative_numbers", {}))
 
         prompt = self._load_prompt("fundamental").format(
             current_date=current_date,
@@ -206,6 +271,7 @@ class GeneratorAgent(BaseAgent):
             analyst_count=analyst.get("analyst_count", "N/A"),
             upside_pct=analyst.get("upside_pct", "N/A"),
             research_summary=research_summary,
+            authoritative_numbers=auth_block,
         )
         system = f"你是专业的基本面分析师。今天是{current_date}，分析必须基于提供的实时数据，禁止引用训练数据中的具体历史日期。"
         result = self._stream(system, prompt)
@@ -253,6 +319,43 @@ class GeneratorAgent(BaseAgent):
         print("[Agent:Technical] Done.")
         return result
 
+    @staticmethod
+    def _format_competitive_pack(cp: dict) -> str:
+        if not cp:
+            return "（本次运行未生成竞争分析）"
+        lines = [
+            f"估值位置：{cp.get('valuation_position', 'N/A')}",
+            f"护城河：{cp.get('moat_rating', 'N/A')} — {cp.get('moat_description', '')}",
+            f"核心优势：{cp.get('competitive_advantage', '')}",
+            f"主要威胁：{', '.join(cp.get('key_threats', []))}",
+            f"相对估值：{cp.get('relative_valuation_summary', '')}",
+            "",
+            "竞争对手对比：",
+        ]
+        for p in cp.get("peers", []):
+            lines.append(
+                f"  {p.get('ticker')} {p.get('company_name','')}: "
+                f"PE={p.get('pe_forward','N/A')}x | 营收增速={p.get('revenue_growth_yoy','N/A')}% | "
+                f"毛利率={p.get('gross_margin','N/A')}% | YTD={p.get('ytd_performance_pct','N/A')}%"
+                f" — {p.get('vs_target_note','')}"
+            )
+        return "\n".join(lines)
+
+    @staticmethod
+    def _format_catalyst_calendar(events: list) -> str:
+        if not events:
+            return "（本次运行未生成催化剂日历）"
+        lines = []
+        for e in events:
+            conf = e.get("date_confidence", "low")
+            conf_icon = "✓" if conf == "high" else "~" if conf == "medium" else "?"
+            lines.append(
+                f"  [{conf_icon}] {e.get('event','')}: {e.get('date','日期未知')} "
+                f"[来源:{e.get('date_source','')}] 影响={e.get('impact','N/A')}"
+            )
+            lines.append(f"      多头: {e.get('bull_case','')} | 空头: {e.get('bear_case','')}")
+        return "\n".join(lines)
+
     def _narrative(self, plan: dict) -> str:
         print("[Agent:Narrative] Analyzing...")
         md = plan["market_snapshot"]
@@ -265,6 +368,8 @@ class GeneratorAgent(BaseAgent):
 
         news_lines = _format_news(news_pack.get("items", []))
         expert_quotes_str = _format_expert_quotes(news_pack.get("expert_quotes", []))
+        competitive_summary = self._format_competitive_pack(plan.get("competitive_pack", {}))
+        catalyst_summary = self._format_catalyst_calendar(plan.get("catalyst_calendar", []))
 
         week_start = (date.fromisoformat(current_date) - timedelta(days=7)).isoformat()
         _momentum_zh = {"strong": "强势", "neutral": "中性", "weak": "弱势"}
@@ -295,6 +400,8 @@ class GeneratorAgent(BaseAgent):
             short_description=md.get("short_description", ""),
             weekly_news=news_lines,
             expert_quotes=expert_quotes_str,
+            competitive_summary=competitive_summary,
+            catalyst_calendar=catalyst_summary,
         )
         system = (
             f"你是专业的市场叙事与情绪分析师，专注周度市场分析。今天是{current_date}，"
@@ -324,14 +431,17 @@ class GeneratorAgent(BaseAgent):
             yr = rm.get(key, {})
             if yr:
                 lines.append(f"  {yr.get('period','')}: 营收 ${yr.get('revenue_est','N/A')}  增速 {yr.get('growth_pct','N/A')}%")
+        ev = iv.get("expected_value")
         lines += [
             "",
-            "三情景目标价：",
-            f"  悲观 Bear: ${bear.get('target_price','N/A')}  ({bear.get('implied_upside_pct','N/A')}%)  — {bear.get('key_assumption','')}",
-            f"  基准 Base: ${base.get('target_price','N/A')}  ({base.get('implied_upside_pct','N/A')}%)  — {base.get('key_assumption','')}",
-            f"  乐观 Bull: ${bull.get('target_price','N/A')}  ({bull.get('implied_upside_pct','N/A')}%)  — {bull.get('key_assumption','')}",
+            "三情景目标价（含概率权重）：",
+            f"  悲观 Bear: ${bear.get('target_price','N/A')}  ({bear.get('implied_upside_pct','N/A')}%)  概率={bear.get('probability','N/A')}  — {bear.get('key_assumption','')}",
+            f"  基准 Base: ${base.get('target_price','N/A')}  ({base.get('implied_upside_pct','N/A')}%)  概率={base.get('probability','N/A')}  — {base.get('key_assumption','')}",
+            f"  乐观 Bull: ${bull.get('target_price','N/A')}  ({bull.get('implied_upside_pct','N/A')}%)  概率={bull.get('probability','N/A')}  — {bull.get('key_assumption','')}",
+            f"  ★ 期望价值（Expected Value）= ${ev}" if ev else "",
             "",
             f"推导逻辑：{iv.get('methodology_note', '')}",
+            f"口播用句：{iv.get('methodology_statement', '')}",
             f"与共识对比：{iv.get('consensus_vs_internal', '')}",
         ]
         return "\n".join(lines)
@@ -341,7 +451,9 @@ class GeneratorAgent(BaseAgent):
         md = plan["market_snapshot"]
         inp = plan["input"]
         current_date = plan["current_date"]
-        iv_summary = self._format_internal_valuation(plan.get("internal_valuation", {}))
+        iv_summary  = self._format_internal_valuation(plan.get("internal_valuation", {}))
+        auth_block  = self._format_authoritative_numbers(plan.get("authoritative_numbers", {}))
+        eg_summary  = self._format_expectation_gap(plan.get("expectation_gap", {}))
 
         prompt = self._load_prompt("synthesis").format(
             current_date=current_date,
@@ -352,6 +464,8 @@ class GeneratorAgent(BaseAgent):
             technical_analysis=technical,
             narrative_analysis=narrative,
             internal_valuation_summary=iv_summary,
+            expectation_gap_summary=eg_summary,
+            authoritative_numbers=auth_block,
         )
         system = f"你是首席投资分析师，今天是{current_date}。请将多维度分析整合为一份权威、简洁、可操作的综合报告。"
         result = self._chat(system, prompt, model=MODEL_CHAT)
@@ -435,6 +549,7 @@ class GeneratorAgent(BaseAgent):
             pos_rule = _POS_MIDDLE
 
         fact_anchor = self._build_fact_anchor(plan, slide_type)
+        auth_block  = self._format_authoritative_numbers(plan.get("authoritative_numbers", {}))
 
         user_msg = self._load_prompt("narration_slide").format(
             current_date=current_date,
@@ -451,6 +566,7 @@ class GeneratorAgent(BaseAgent):
             total_slides=total_slides,
             position_rule=pos_rule,
             fact_anchor=fact_anchor,
+            authoritative_numbers=auth_block,
         )
         system = (
             f"你是中文YouTube顶级财经主播，今天是{current_date}。"
@@ -458,9 +574,16 @@ class GeneratorAgent(BaseAgent):
             "禁止引用训练数据中的具体历史日期。"
             f"【字数铁律】本段输出必须在{min_chars}到{max_chars}字之间，超出即视为失败，严禁超出上限。"
         )
-        if slide_type in ("cover", "key_points", "risk"):
-            return self._stream(system, user_msg, model=MODEL_REASONER)
-        return self._chat(system, user_msg, model=MODEL_CHAT)
+        for attempt in range(3):
+            if slide_type in ("cover", "key_points", "risk"):
+                result = self._stream(system, user_msg, model=MODEL_REASONER)
+            else:
+                result = self._chat(system, user_msg, model=MODEL_CHAT)
+            if result and result.strip():
+                return result
+            print(f"[Narration:{slide_type}] Empty response (attempt {attempt + 1}/3), retrying...")
+        print(f"[Narration:{slide_type}] Failed after 3 attempts, returning placeholder.")
+        return f"（{slide_type} 段落生成失败，请重新运行）"
 
     def _smooth_narration(self, plan: dict, narration: str) -> str:
         md = plan["market_snapshot"]
@@ -541,6 +664,23 @@ class GeneratorAgent(BaseAgent):
             '"headline":"吸引眼球的问句或悬念标题（15字以内，来自口播Hook）",'
             '"subtitle":"本周深度分析·{current_date}",'
             '"hook":"口播开场最核心的一句冲突或悬念（25字以内）"}'
+        ),
+        "why_now": (
+            '{"type":"why_now",'
+            '"headline":"为什么是现在（10字以内，点出时间窗口的核心原因）",'
+            '"old_thesis":"市场过去相信什么（旧叙事，30字以内）",'
+            '"new_reality":"数据实际显示什么（新现实，含具体数字，35字以内）",'
+            '"what_changed":"最近发生了什么变化（具体事件或数据，30字以内）",'
+            '"why_now_statement":"为什么现在是关键时刻（1句话结论，25字以内）"}'
+        ),
+        "narrative_gap": (
+            '{"type":"narrative_gap",'
+            '"headline":"市场在哪里看错了（10字以内）",'
+            '"market_consensus":"市场当前的定价假设（30字以内，具体描述）",'
+            '"reality":"数据实际显示的情况（含具体数字，35字以内）",'
+            '"gap":"核心缺口描述（20字以内，含方向：低估/高估/误判）",'
+            '"gap_direction":"undervalued或overvalued或mispriced",'
+            '"implication":"投资含义（含价格方向和幅度，30字以内）"}'
         ),
         "market_overview": (
             '{"type":"market_overview",'

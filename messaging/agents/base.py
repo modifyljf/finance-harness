@@ -1,4 +1,5 @@
 import os
+import time
 from pathlib import Path
 
 from openai import OpenAI
@@ -22,24 +23,34 @@ class BaseAgent:
     def _load_prompt(self, name: str) -> str:
         return (PROMPTS_DIR / f"{name}.txt").read_text(encoding="utf-8")
 
-    def _stream(self, system: str, user: str, model: str = MODEL_REASONER) -> str:
-        stream = self.client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": user},
-            ],
-            max_tokens=8000,
-            stream=True,
-        )
-        parts = []
-        for chunk in stream:
-            delta = chunk.choices[0].delta if chunk.choices else None
-            if delta and delta.content:
-                parts.append(delta.content)
-        return "".join(parts)
+    def _stream(self, system: str, user: str, model: str = MODEL_REASONER, _retry: int = 3) -> str:
+        for attempt in range(_retry):
+            try:
+                stream = self.client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": system},
+                        {"role": "user", "content": user},
+                    ],
+                    max_tokens=8000,
+                    stream=True,
+                )
+                parts = []
+                for chunk in stream:
+                    delta = chunk.choices[0].delta if chunk.choices else None
+                    if delta and delta.content:
+                        parts.append(delta.content)
+                result = "".join(parts)
+                if result.strip():
+                    return result
+                print(f"[Base] _stream empty response (attempt {attempt+1}/{_retry})")
+            except Exception as exc:
+                print(f"[Base] _stream error (attempt {attempt+1}/{_retry}): {type(exc).__name__}: {exc}")
+                if attempt < _retry - 1:
+                    time.sleep(2 ** attempt)  # 1s, 2s backoff
+        return ""
 
-    def _chat(self, system: str, user: str, json_mode: bool = False, model: str = MODEL_CHAT) -> str:
+    def _chat(self, system: str, user: str, json_mode: bool = False, model: str = MODEL_CHAT, _retry: int = 3) -> str:
         kwargs = dict(
             model=model,
             messages=[
@@ -50,5 +61,15 @@ class BaseAgent:
         )
         if json_mode:
             kwargs["response_format"] = {"type": "json_object"}
-        response = self.client.chat.completions.create(**kwargs)
-        return response.choices[0].message.content
+        for attempt in range(_retry):
+            try:
+                response = self.client.chat.completions.create(**kwargs)
+                content = response.choices[0].message.content
+                if content and content.strip():
+                    return content
+                print(f"[Base] _chat empty response (attempt {attempt+1}/{_retry})")
+            except Exception as exc:
+                print(f"[Base] _chat error (attempt {attempt+1}/{_retry}): {type(exc).__name__}: {exc}")
+                if attempt < _retry - 1:
+                    time.sleep(2 ** attempt)
+        return ""

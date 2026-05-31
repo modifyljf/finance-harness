@@ -53,15 +53,28 @@
 
 ## 建模要求
 
-### 第一步：识别业务模式
-根据行业和财务特征，判断最适合的估值框架：
-- SaaS/订阅制：优先 EV/Revenue + Forward PE + Rule of 40
-- 硬件/半导体：EV/EBITDA + 周期性调整PE
-- 金融/银行：P/B + ROE-driven Gordon Growth
-- 消费/零售：EV/EBITDA + 同店增长分析
-- 能源/资源：EV/EBITDA + NAV
-- 医药/生物：DCF（管线调整） + P/Sales
-- 成长亏损股：EV/Revenue + 盈亏平衡时间线
+### 第一步：公司类型分类（必须先完成此步，后续方法论基于此）
+
+从以下类型中选择一个最匹配的，并输出到 company_type 字段：
+
+| company_type | 典型公司 | 主要估值指标 | 禁用指标 |
+|---|---|---|---|
+| GrowthSoftware | Salesforce, ServiceNow | Forward PE + PEG + EV/FCF | TTM PE |
+| HyperGrowth | Palantir, Snowflake | EV/Revenue + Revenue Growth + FCF Margin | PE（通常为负或无意义）|
+| Semiconductor | NVDA, AMD, AVGO | Forward PE + EV/EBITDA + Revenue Growth | PS Ratio |
+| PlatformTech | Google, Meta, Apple | Forward PE + EV/EBITDA + FCF Yield | PEG |
+| MatureCashCow | Microsoft, Oracle | Forward PE + FCF Yield + Dividend | HyperGrowth指标 |
+| Financial | JPM, BAC, GS | P/B + ROE + NIM | PE没有意义 |
+| Insurance | BRK, ALL | P/B + Combined Ratio | PE |
+| REIT | AMT, PLD | P/FFO + Dividend Yield + NOI | PE |
+| Energy | XOM, CVX | EV/EBITDA + FCF Yield + Reserve Life | PE |
+| Biotech | MRNA, BIIB | EV/Revenue + Pipeline Value + Cash Runway | PE（通常亏损）|
+| Consumer | SBUX, NKE | Forward PE + EV/EBITDA + SSS Growth | EV/Revenue |
+
+重要规则：
+- 所有公司一律使用 **Forward PE**，禁止使用 Trailing PE 作为主要估值锚点
+- HyperGrowth / Biotech 等公司 PE 无意义，改用 EV/Revenue 或 EV/Sales
+- 每个情景的目标价必须写出完整推导：倍数 × 指标 = 目标价
 
 ### 第二步：构建3年收入模型
 基于分析师共识预测 + 历史趋势 + 业务逻辑，推导：
@@ -72,13 +85,21 @@
 ### 第三步：利润率路径
 基于当前毛利率/营业利润率，结合行业经验，给出未来3年的利润率改善路径。
 
-### 第四步：推导内在价值（三情景）
-用选定方法计算：
-- 悲观（Bear）：增长低于预期，利润率压缩
-- 基准（Base）：符合分析师共识，利润率温和改善
-- 乐观（Bull）：超预期增长，运营杠杆充分释放
+### 第四步：推导内在价值（三情景 + 概率权重）
+用选定方法计算三情景目标价，并为每个情景分配概率权重（三者之和必须等于1.0）：
 
-每个情景必须写明：目标价、相对当前价格的涨跌幅、核心假设（1句话）。
+- 悲观（Bear）：增长低于预期，利润率压缩。概率建议 20-35%
+- 基准（Base）：符合分析师共识，利润率温和改善。概率建议 40-60%
+- 乐观（Bull）：超预期增长，运营杠杆充分释放。概率建议 15-30%
+
+每个情景必须写明：目标价、相对当前价格的涨跌幅、概率权重、核心假设（1句话）。
+
+计算期望价值（Expected Value）= Bear × P(Bear) + Base × P(Base) + Bull × P(Bull)
+
+概率权重依据：
+- 最近一次财报超预期幅度（超预期越大，Bull概率越高）
+- 技术面趋势（强势 → Bull概率上调）
+- 宏观环境（利率、估值压力）
 
 ### 第五步：与分析师共识对比
 说明内部模型的基准目标价与分析师共识（${analyst_target_mean}）的差异及原因。
@@ -88,8 +109,9 @@
 ## 输出格式（严格JSON，不要任何额外文字）
 
 {{
-  "business_model_type": "业务模式类型（如：SaaS订阅制、半导体、消费零售等）",
-  "valuation_methodology": "主要估值方法（如：Forward PE + EV/Revenue）",
+  "company_type": "从分类表中选择的类型（如：GrowthSoftware / HyperGrowth / Semiconductor等）",
+  "business_model_type": "业务模式描述（如：SaaS订阅制、AI平台、半导体芯片等）",
+  "valuation_methodology": "主要估值方法（基于company_type选择，如：Forward PE + PEG + EV/FCF）",
   "methodology_rationale": "为什么选择这种方法（1-2句）",
   "revenue_model": {{
     "y1": {{"period": "FY估计年份", "revenue_est": 数字, "growth_pct": 数字}},
@@ -113,20 +135,25 @@
     "bear": {{
       "target_price": 数字,
       "implied_upside_pct": 数字,
+      "probability": 0到1的小数（如0.25）,
       "key_assumption": "核心假设（1句）"
     }},
     "base": {{
       "target_price": 数字,
       "implied_upside_pct": 数字,
+      "probability": 0到1的小数（如0.55）,
       "key_assumption": "核心假设（1句）"
     }},
     "bull": {{
       "target_price": 数字,
       "implied_upside_pct": 数字,
+      "probability": 0到1的小数（如0.20）,
       "key_assumption": "核心假设（1句）"
     }}
   }},
+  "expected_value": 数字（= bear×P(bear) + base×P(base) + bull×P(bull)，精确到小数点后两位）,
   "methodology_note": "估值推导过程说明（2-3句，含具体数字和计算逻辑）",
+  "methodology_statement": "一句话说明目标价来源，供口播直接引用。格式：'我们的基准目标价$XXX并非来自分析师共识，而是基于Xx倍Forward PE对FY20XX EPS $XX推导得出。'",
   "key_risks": ["风险1", "风险2", "风险3"],
   "consensus_vs_internal": "内部基准目标价与分析师共识的对比及差异原因（1-2句）"
 }}

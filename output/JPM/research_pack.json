@@ -1,0 +1,160 @@
+{
+  "product_segments": [
+    {
+      "name": "Markets & Securities Services",
+      "revenue": "$13.0 billion",
+      "growth_pct": 19,
+      "period": "Q1 2026",
+      "source": "JPMorgan Chase & Co. Earnings Release - First Quarter 2026 Results"
+    },
+    {
+      "name": "Markets",
+      "revenue": "$11.6 billion",
+      "growth_pct": 20,
+      "period": "Q1 2026",
+      "source": "JPMorgan Chase & Co. Earnings Release - First Quarter 2026 Results"
+    },
+    {
+      "name": "Fixed Income Markets",
+      "revenue": "$7.1 billion",
+      "growth_pct": 21,
+      "period": "Q1 2026",
+      "source": "JPMorgan Chase & Co. Earnings Release - First Quarter 2026 Results"
+    }
+  ],
+  "management_guidance": [
+    {
+      "metric": "Net Interest Income (ex markets)",
+      "value": "$95 billion",
+      "direction": "维持",
+      "context": "Full-year 2026 guidance maintained in Q1 2026 earnings call"
+    },
+    {
+      "metric": "Total Net Interest Income",
+      "value": "$103 billion",
+      "direction": "维持",
+      "context": "Full-year 2026 guidance maintained in Q1 2026 earnings call"
+    },
+    {
+      "metric": "Adjusted expense",
+      "value": "$105 billion",
+      "direction": "维持",
+      "context": "Full-year 2026 adjusted expense outlook (not a promise but an outcome of business results)"
+    }
+  ],
+  "competitive_position": {
+    "market_share": null,
+    "key_competitors": [
+      "Bank of America",
+      "Citigroup",
+      "Wells Fargo",
+      "Goldman Sachs",
+      "Morgan Stanley"
+    ],
+    "moat": "Diversified business model, strong deposit base, leading global investment banking franchise",
+    "threats": "Regulatory capital proposals, cyber risk, competition from other large banks and fintech"
+  },
+  "key_facts": [
+    {
+      "fact": "Q1 2026 net income of $16.5 billion",
+      "metric_type": "Other",
+      "source": "Perplexity / JPMorgan Chase & Co. Earnings Release Q1 2026",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q1 2026 EPS of $5.94, beating estimate of $5.49",
+      "metric_type": "Other",
+      "source": "Perplexity / JPMorgan Chase & Co. Earnings Release Q1 2026",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q1 2026 revenue of $50.5 billion, up 10% YoY",
+      "metric_type": "Revenue",
+      "source": "JPMorgan Chase & Co. Q1 FY2026 earnings call transcript",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Full-year 2026 EPS expected to exceed $5.49 (based on consensus or management view)",
+      "metric_type": "Other",
+      "source": "RoboForex article citing forecast",
+      "confidence": "medium",
+      "caveat": "Not explicitly stated as official guidance; may be consensus estimate"
+    },
+    {
+      "fact": "2025 full-year managed revenue $185.6 billion, NII $95.5 billion",
+      "metric_type": "Revenue",
+      "source": "A 2026 Deep Dive into JPMorgan Chase & Co. (JPM)",
+      "confidence": "medium",
+      "caveat": "Managed revenue vs GAAP revenue; 2025 FY"
+    },
+    {
+      "fact": "Net profit margin 20.66%, ROE 17.54%, ROA 1.30% (trailing twelve months)",
+      "metric_type": "Other",
+      "source": "MarketBeat competitors analysis",
+      "confidence": "medium",
+      "caveat": "As of early 2026"
+    },
+    {
+      "fact": "Card loan growth expectations of 6% or slightly more unchanged",
+      "metric_type": "Other",
+      "source": "Alpha-Sense Q1 2026 earnings analysis",
+      "confidence": "high",
+      "caveat": "Guidance from Company Update"
+    }
+  ],
+  "analyst_thesis": {
+    "bull_case": "JPMorgan's dominant position, strong deposit base, and diversified business model support long-term value creation. Stock appreciated ~29.4% since March 2025, reflecting robust earnings and upward NII guidance. EPS upside (Q1 beat by 8.2%) and positive financial trajectory for 2025-2026.",
+    "bear_case": "Regulatory capital proposals and cyber risks remain key uncertainties. Some investment firms reducing holdings, indicating divided outlook. Credit costs and competition could pressure margins. Net profit margin of 20.66% may be challenged if NII growth slows.",
+    "key_institutions": []
+  },
+  "data_quality": {
+    "segment_data_available": true,
+    "guidance_found": true,
+    "sources_count": 18,
+    "confidence": "medium",
+    "notes": "Business segment revenue data limited to Markets subsegments for Q1 2026; full segment breakdown not available from materials. Guidance from earnings call transcript and analyst reports consistent. Some numbers from third-party sources may vary by methodology."
+  },
+  "_edgar_quarterly_revenue": [
+    {
+      "period_end": "2025-12-31",
+      "fiscal_period": "FY",
+      "revenue": 182447000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2024-12-31",
+      "fiscal_period": "FY",
+      "revenue": 177556000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2023-12-31",
+      "fiscal_period": "FY",
+      "revenue": 158104000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2022-12-31",
+      "fiscal_period": "FY",
+      "revenue": 128695000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2021-12-31",
+      "fiscal_period": "FY",
+      "revenue": 121649000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2020-12-31",
+      "fiscal_period": "FY",
+      "revenue": 119543000000,
+      "form": "10-K"
+    }
+  ],
+  "_edgar_cik": "0000019617",
+  "_tavily_query_count": 5
+}

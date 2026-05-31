@@ -1,0 +1,60 @@
+{
+  "business_model_type": "半导体（AI加速器、GPU）",
+  "valuation_methodology": "Forward PE + PEG辅助验证",
+  "methodology_rationale": "NVIDIA盈利能力强劲且清晰，市场定价以盈利为核心，Forward PE能直接反映高增长预期；同时PEG仅0.65显示估值相对于增长仍属合理偏低。",
+  "revenue_model": {
+    "y1": {
+      "period": "FY2028E",
+      "revenue_est": 547672763019,
+      "growth_pct": 39.9
+    },
+    "y2": {
+      "period": "FY2029E",
+      "revenue_est": 711974591925,
+      "growth_pct": 30.0
+    },
+    "y3": {
+      "period": "FY2030E",
+      "revenue_est": 889968239906,
+      "growth_pct": 25.0
+    }
+  },
+  "margin_model": {
+    "current_gross_margin_pct": 74.9,
+    "target_operating_margin_pct": 68.0,
+    "target_net_margin_pct": 65.0,
+    "margin_improvement_driver": "Blackwell/Rubin平台放量推动产品均价提升，运营杠杆随着营收规模翻倍进一步释放。"
+  },
+  "multiple_analysis": {
+    "current_multiple": 16.68,
+    "fair_multiple": 20.0,
+    "multiple_type": "Forward PE",
+    "sector_median_multiple": 18.0,
+    "multiple_premium_discount": "溢价源于NVIDIA在AI训练/推理市场的准垄断地位，以及未来数年持续的超高增长预期，行业同行难以比拟。"
+  },
+  "scenarios": {
+    "bear": {
+      "target_price": 144.75,
+      "implied_upside_pct": -31.45,
+      "key_assumption": "AI需求周期性放缓导致FY2028 EPS仅达分析师最低预测$9.65，多重估值压缩至15倍。"
+    },
+    "base": {
+      "target_price": 253.15,
+      "implied_upside_pct": 19.9,
+      "key_assumption": "FY2028 EPS实现共识均值$12.6575，给予20倍Forward PE（因PEG 0.65显示估值仍有提升空间）。"
+    },
+    "bull": {
+      "target_price": 400.0,
+      "implied_upside_pct": 89.45,
+      "key_assumption": "Blackwell需求爆发，FY2028 EPS达到分析师最高预测$16.00，市场情绪高涨推高PE至25倍。"
+    }
+  },
+  "methodology_note": "基准情景直接采用分析师+1y EPS共识$12.6575，结合当前隐含增长率（PEG倒数约25%）判断20倍Forward PE为合理定价，较当前16.68倍有18上升空间。悲观与乐观则基于分析师高低位预测给出区间边界。",
+  "methodology_statement": "我们的基准目标价$253并非来自分析师一致性目标价，而是基于20倍Forward PE对FY2028 EPS $12.6575推导得出。",
+  "key_risks": [
+    "AI/数据中心资本开支增速放缓，导致GPU需求低于预期",
+    "云计算巨头自研AI芯片替代风险",
+    "美国对华出口管制进一步升级，影响收入"
+  ],
+  "consensus_vs_internal": "内部基准$253低于分析师共识均值$296.81，主因我们采用较保守的20倍PE（共识隐含约23.5倍），反映我们对2028年后增速维持高位持谨慎态度，而较多卖方分析师可能给予了更高终值溢价。"
+}

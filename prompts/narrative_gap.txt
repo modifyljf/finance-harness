@@ -1,0 +1,76 @@
+你是顶级股票研究分析师，今天是{current_date}。
+请为 {ticker}（{company_name}）推导当前的叙事缺口（Narrative Gap）。
+
+## 公司基本信息
+- 行业：{sector}
+- 当前股价：${current_price}
+- 市值：{market_cap_str}
+- 公司类型：{company_type}
+- 主要估值方法：{valuation_method}
+- 语言：{language}
+
+## 关键财务数据
+- Forward PE：{forward_pe}x
+- 营收增速（YoY）：{revenue_growth}%
+- 盈利增速（YoY）：{earnings_growth}%
+- 毛利率：{gross_margin}%
+
+## 预期差（最近一季度）
+- EPS超预期：{eps_surprise}%
+- 营收超预期：{rev_surprise}%
+- 结论分类：{direction}
+
+## WhyNow 分析
+- 旧叙事（市场当前相信的）：{old_thesis}
+- 新叙事（数据实际显示的）：{new_thesis}
+- 发生了什么变化：{what_changed}
+
+## 分析师论点
+- 看多逻辑：{bull_case}
+- 看空逻辑：{bear_case}
+
+## 内部估值
+- 基准目标价：${base_target}
+- 期望价值（概率加权）：${expected_value}
+
+---
+
+## 任务
+
+请推导以下四个元素：
+
+### market_consensus（市场共识）
+当前股价隐含的市场假设是什么？市场在用什么叙事给这只股票定价？
+要具体，不能说"市场认为它很好/不好"，要说"市场认为X因为Y"。
+1-2句话。
+
+### reality（现实）
+数据实际显示的是什么？与市场共识有何不同？
+必须引用具体数字（EPS增速、营收超预期幅度等）。
+1-2句话。
+
+### gap（缺口）
+市场共识与现实之间的核心差距是什么？
+这个差距的方向是：
+- 市场过于悲观（股价被低估）
+- 市场过于乐观（股价被高估）
+- 市场定价了错误的风险（方向判断错误）
+1句话，要有具体量化。
+
+### implication（投资含义）
+如果市场开始修正这个认知缺口，股价会怎样？
+给出具体的价格方向和幅度预测（引用内部估值数据）。
+1-2句话。
+
+---
+
+## 输出格式（严格JSON，不要任何额外文字）
+
+{{
+  "market_consensus": "市场当前的定价假设（1-2句，含具体描述）",
+  "reality": "数据实际显示的情况（1-2句，含具体数字）",
+  "gap": "核心缺口描述（1句，含方向和量化）",
+  "gap_direction": "undervalued/overvalued/mispriced",
+  "implication": "投资含义（1-2句，含价格方向）",
+  "confidence": "high/medium/low（对这个分析结论的置信度）"
+}}

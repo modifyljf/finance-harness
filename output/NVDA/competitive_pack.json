@@ -1,0 +1,50 @@
+{
+  "peers": [
+    {
+      "ticker": "AMD",
+      "company_name": "Advanced Micro Devices, Inc.",
+      "pe_forward": 39.7,
+      "revenue_growth_yoy": 37.8,
+      "gross_margin": 53.1,
+      "ytd_performance_pct": 366.1,
+      "vs_target_note": "PE较高但增速仅NVDA一半，毛利率低21个百分点"
+    },
+    {
+      "ticker": "INTC",
+      "company_name": "Intel Corporation",
+      "pe_forward": 74.5,
+      "revenue_growth_yoy": 7.2,
+      "gross_margin": 37.2,
+      "ytd_performance_pct": 486.6,
+      "vs_target_note": "PE极高但增速极低，毛利率不足NVDA一半"
+    },
+    {
+      "ticker": "QCOM",
+      "company_name": "QUALCOMM Incorporated",
+      "pe_forward": 23.6,
+      "revenue_growth_yoy": -3.5,
+      "gross_margin": 54.8,
+      "ytd_performance_pct": 76.9,
+      "vs_target_note": "PE略高但收入负增长，毛利率相差近20个百分点"
+    },
+    {
+      "ticker": "AVGO",
+      "company_name": "Broadcom Inc.",
+      "pe_forward": 24.2,
+      "revenue_growth_yoy": 29.5,
+      "gross_margin": 76.7,
+      "ytd_performance_pct": 86.1,
+      "vs_target_note": "PE较高且毛利率略优，但增速仅NVDA的三分之一"
+    }
+  ],
+  "valuation_position": "偏低",
+  "moat_rating": "strong",
+  "moat_description": "凭借CUDA生态和持续迭代的硬件架构，在AI训练/推理市场占据主导地位，份额超过85%。竞争对手难以短期内复制其软硬件协同优化能力。",
+  "key_threats": [
+    "AMD MI系列GPU在部分场景性能逼近，可能蚕食高端市场份额",
+    "大型云厂商自研AI芯片（如Google TPU、AWS Trainium）降低对NVDA的依赖"
+  ],
+  "relative_valuation_summary": "NVDA当前PE仅16.68，远低于增速和市场份额所对应的合理水平。若参考AMD的PEG（1.24），NVDA合理PE应超过30倍，当前明显低估。",
+  "competitive_advantage": "最强优势在于CUDA开发者生态和持续的硬件创新（如Blackwell架构），形成了极高的转换成本。竞争对手在软件生态和全栈优化方面仍存在显著差距。",
+  "market_share_note": "在AI芯片市场占据约85%份额，在离散GPU市场拥有超过94%份额（2025年Q2数据）。"
+}

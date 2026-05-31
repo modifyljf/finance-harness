@@ -1,0 +1,679 @@
+{
+  "generated_at": "2026-05-31T20:37:00.378110+00:00",
+  "current_date": "2026-05-31",
+  "input": {
+    "ticker": "PLTR",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 12,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "PLTR",
+    "company_name": "Palantir Technologies Inc.",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "short_description": "Palantir Technologies Inc. builds and deploys software platforms for the intelligence community to assist in counterterrorism investigations and operations in the United States, the United Kingdom, and internationally. It provides Palantir Gotham integrates with other platforms for defense offerings which enables users to see, understand, and act in the modern battlespace; operations centers to th",
+    "current_price": 156.54,
+    "prev_close": 143.34,
+    "price_change": 13.2,
+    "price_change_pct": 9.21,
+    "market_cap": 375275192320,
+    "market_cap_str": "$375.28B",
+    "volume": 92196609,
+    "avg_volume": 46836280,
+    "beta": 1.521,
+    "52w_high": 207.52,
+    "52w_low": 118.93,
+    "52w_range_position_pct": 42.5,
+    "short_interest": 3.3,
+    "institutional_ownership_pct": 62.3
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 146.39
+      },
+      {
+        "date": "2026-04-20",
+        "close": 145.89
+      },
+      {
+        "date": "2026-04-21",
+        "close": 145.97
+      },
+      {
+        "date": "2026-04-22",
+        "close": 152.62
+      },
+      {
+        "date": "2026-04-23",
+        "close": 141.57
+      },
+      {
+        "date": "2026-04-24",
+        "close": 143.09
+      },
+      {
+        "date": "2026-04-27",
+        "close": 143.1
+      },
+      {
+        "date": "2026-04-28",
+        "close": 141.18
+      },
+      {
+        "date": "2026-04-29",
+        "close": 137.97
+      },
+      {
+        "date": "2026-04-30",
+        "close": 139.11
+      },
+      {
+        "date": "2026-05-01",
+        "close": 144.07
+      },
+      {
+        "date": "2026-05-04",
+        "close": 146.03
+      },
+      {
+        "date": "2026-05-05",
+        "close": 135.91
+      },
+      {
+        "date": "2026-05-06",
+        "close": 133.79
+      },
+      {
+        "date": "2026-05-07",
+        "close": 137.05
+      },
+      {
+        "date": "2026-05-08",
+        "close": 137.8
+      },
+      {
+        "date": "2026-05-11",
+        "close": 136.89
+      },
+      {
+        "date": "2026-05-12",
+        "close": 136.0
+      },
+      {
+        "date": "2026-05-13",
+        "close": 130.05
+      },
+      {
+        "date": "2026-05-14",
+        "close": 133.73
+      },
+      {
+        "date": "2026-05-15",
+        "close": 133.99
+      },
+      {
+        "date": "2026-05-18",
+        "close": 135.14
+      },
+      {
+        "date": "2026-05-19",
+        "close": 135.26
+      },
+      {
+        "date": "2026-05-20",
+        "close": 137.15
+      },
+      {
+        "date": "2026-05-21",
+        "close": 137.41
+      },
+      {
+        "date": "2026-05-22",
+        "close": 136.88
+      },
+      {
+        "date": "2026-05-26",
+        "close": 136.6
+      },
+      {
+        "date": "2026-05-27",
+        "close": 132.51
+      },
+      {
+        "date": "2026-05-28",
+        "close": 143.34
+      },
+      {
+        "date": "2026-05-29",
+        "close": 156.54
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 67.4,
+    "rsi_signal": "neutral",
+    "ma20": 137.81,
+    "ma50": 141.79,
+    "bollinger": {
+      "upper": 149.2,
+      "middle": 137.81,
+      "lower": 126.42
+    },
+    "volume_trend": "shrinking",
+    "ma_signal": "mixed",
+    "price_vs_ma20_pct": 13.6,
+    "price_vs_ma50_pct": 10.4
+  },
+  "valuation_snapshot": {
+    "pe_trailing": 175.89,
+    "pe_forward": 75.47,
+    "peg": 2.24,
+    "ps_ratio": 71.83,
+    "pb_ratio": 44.41,
+    "ev_ebitda": 182.12,
+    "enterprise_value": 367567405056,
+    "ev_revenue": 70.36
+  },
+  "financial_snapshot": {
+    "revenue": 5224174080,
+    "revenue_growth_yoy": 84.7,
+    "earnings_growth_yoy": 325.0,
+    "gross_margin": 84.1,
+    "operating_margin": 46.2,
+    "profit_margin": 43.7,
+    "free_cashflow": 1752997120,
+    "roe": 32.6,
+    "eps_trailing": 0.89,
+    "eps_forward": 2.07428,
+    "total_debt": 211976992,
+    "total_cash": 8026413056
+  },
+  "earnings_snapshot": {
+    "last_quarter": "2026-03-31",
+    "revenue": 1632583000,
+    "revenue_qoq_pct": 16.0,
+    "gross_profit": 1416785000,
+    "gross_margin_pct": 86.8,
+    "net_income": 870527000,
+    "operating_cashflow": 899165000,
+    "free_cashflow": 891764000,
+    "eps_actual": 0.33,
+    "eps_estimate": 0.28,
+    "eps_surprise_pct": 17.9,
+    "next_earnings_date": "2026-08-03"
+  },
+  "analyst_estimates": {
+    "earnings_estimates": [
+      {
+        "period": "0q",
+        "avg_eps": 0.34491,
+        "low_eps": 0.32,
+        "high_eps": 0.4,
+        "analyst_count": 23,
+        "year_ago_eps": 0.16,
+        "growth_pct": 115.6
+      },
+      {
+        "period": "+1q",
+        "avg_eps": 0.36991,
+        "low_eps": 0.32,
+        "high_eps": 0.44,
+        "analyst_count": 23,
+        "year_ago_eps": 0.21,
+        "growth_pct": 76.1
+      },
+      {
+        "period": "0y",
+        "avg_eps": 1.46358,
+        "low_eps": 1.29,
+        "high_eps": 1.7,
+        "analyst_count": 28,
+        "year_ago_eps": 0.75,
+        "growth_pct": 95.1
+      },
+      {
+        "period": "+1y",
+        "avg_eps": 2.07428,
+        "low_eps": 1.59,
+        "high_eps": 2.72,
+        "analyst_count": 28,
+        "year_ago_eps": 1.46358,
+        "growth_pct": 41.7
+      }
+    ],
+    "revenue_estimates": [
+      {
+        "period": "0q",
+        "avg_revenue": 1810141360,
+        "low_revenue": 1790000000,
+        "high_revenue": 1876913390,
+        "analyst_count": 24,
+        "year_ago_revenue": 1003697000,
+        "implied_yoy_growth_pct": 80.3
+      },
+      {
+        "period": "+1q",
+        "avg_revenue": 1997919510,
+        "low_revenue": 1913369000,
+        "high_revenue": 2100000000,
+        "analyst_count": 23,
+        "year_ago_revenue": 1181092000,
+        "implied_yoy_growth_pct": 69.2
+      },
+      {
+        "period": "0y",
+        "avg_revenue": 7720200600,
+        "low_revenue": 7650000000,
+        "high_revenue": 8047583000,
+        "analyst_count": 28,
+        "year_ago_revenue": 4475446000,
+        "implied_yoy_growth_pct": 72.5
+      },
+      {
+        "period": "+1y",
+        "avg_revenue": 11173877550,
+        "low_revenue": 10255040000,
+        "high_revenue": 14358018000,
+        "analyst_count": 30,
+        "year_ago_revenue": 7720200600,
+        "implied_yoy_growth_pct": 44.7
+      }
+    ],
+    "five_year_growth_pct": null,
+    "next_year_eps_growth_pct": 41.7,
+    "next_year_rev_growth_pct": 44.7
+  },
+  "analyst_snapshot": {
+    "recommendation": "Buy",
+    "target_mean": 183.7289,
+    "target_high": 255.0,
+    "target_low": 70.0,
+    "analyst_count": 27,
+    "upside_pct": 17.4
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "Why is Palantir Technologies Inc. (PLTR) One of the Stocks to Buy for The Long Term?",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 16:40",
+        "url": "",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir Technologies Inc. (PLTR): Renaissance Technologies Continues Trimming Stake",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-30 15:51",
+        "url": "",
+        "category": "regulation",
+        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Why Is Palantir Technologies (PLTR) Stock Soaring Today",
+        "publisher": "StockStory",
+        "published_at": "2026-05-29 22:24",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "PLTR Stock Alert: Why Palantir Is Getting a Boost from Dell Earnings",
+        "publisher": "Barchart.com",
+        "published_at": "2026-05-29 20:44",
+        "url": "https://www.barchart.com/story/news/2207954/pltr-stock-alert-why-palantir-is-getting-a-boost-from-dell-earnings",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir (PLTR) Ranks Among Best Revenue Growth Stocks to Buy",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-25 18:08",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-pltr-ranks-among-best-180857511.html",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir’s AI Surge Meets Market Correction. Buy the PLTR Stock Dip Now.",
+        "publisher": "Barchart.com",
+        "published_at": "2026-05-24 18:45",
+        "url": "https://www.barchart.com/story/news/2109778/palantirs-ai-surge-meets-market-correction-buy-the-pltr-stock-dip-now",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir Might Soon Take Over the Intelligence Agencies. Here’s What It Means for PLTR Stock",
+        "publisher": "Barchart.com",
+        "published_at": "2026-05-27 18:20",
+        "url": "https://www.barchart.com/story/news/2158567/palantir-might-soon-take-over-the-intelligence-agencies-heres-what-it-means-for-pltr-stock",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir stock today rallies after Snowflake earnings spark fresh AI optimism - here's why Wall Street is bullish and PLTR stock price targets revealed",
+        "publisher": "The Times of India",
+        "published_at": "2026-05-29 17:57",
+        "url": "https://economictimes.indiatimes.com/news/international/us/palantir-stock-today-rallies-after-snowflake-earnings-spark-fresh-ai-optimism-heres-why-wall-street-is-bullish-and-pltr-stock-price-targets-revealed/articleshow/131395585.cms",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Dell blockbuster orders trigger Palantir stock surge",
+        "publisher": "TheStreet",
+        "published_at": "2026-05-30 22:33",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Forget SaaS: Why AI Agents Could Make ServiceNow and Palantir Technologies the Next Trillion-Dollar Platforms",
+        "publisher": "Motley Fool",
+        "published_at": "2026-05-30 08:05",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir Vatican AI Clash Puts Defense Focus And Investor Risks In Focus",
+        "publisher": "Simply Wall St.",
+        "published_at": "2026-05-30 04:18",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Dell, Rocket Lab, Palantir, and More Stocks That Explain the Market Today",
+        "publisher": "Barrons.com",
+        "published_at": "2026-05-29 21:19",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir challenges core enterprise software rule with 3 harsh words",
+        "publisher": "TheStreet",
+        "published_at": "2026-05-26 17:07",
+        "url": "https://www.thestreet.com/investing/palantir-challenges-a-core-rule-of-enterprise-software",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Forget Palantir Technologies: This Cash-Flow Fintech Pioneer Under $30 Is a Considerably Better Buy",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-26 13:30",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_7fd3ea9d-cc33-4c18-a066-ad1dbd95e119",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir CEO: “Only Seven of Our Salespeople Actually Even Really Sell”",
+        "publisher": "24/7 Wall St.",
+        "published_at": "2026-05-27 19:30",
+        "url": "https://247wallst.com/investing/2026/05/27/palantir-ceo-only-seven-of-our-salespeople-actually-even-really-sell/",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "PLTY Promises Income From Palantir’s Wild Ride, But the 70 Percent Yield Hides a Capital Erosion Problem",
+        "publisher": "24/7 Wall St.",
+        "published_at": "2026-05-28 10:34",
+        "url": "https://247wallst.com/investing/2026/05/28/plty-promises-income-from-palantirs-wild-ride-but-the-70-percent-yield-hides-a-capital-erosion-problem/",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir's 'unlimited access' to patient data — we examine the US tech giant's controversial £330 million contract with the NHS",
+        "publisher": "TechRadar",
+        "published_at": "2026-05-29 15:39",
+        "url": "https://www.techradar.com/vpn/vpn-privacy-security/palantirs-unlimited-access-to-patient-data-we-examine-the-us-tech-giants-controversial-gbp330-million-contract-with-the-nhs",
+        "category": "regulation",
+        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Norway’s $2.3tn fund backs a human-rights review at Palantir",
+        "publisher": "The Next Web",
+        "published_at": "2026-05-29 09:35",
+        "url": "https://thenextweb.com/news/norway-fund-palantir-human-rights-vote/",
+        "category": "regulation",
+        "why_relevant": "May introduce regulatory risk, export restrictions, or compliance costs.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Palantir Stock in 2026: Buy Opportunity or High-Risk AI Valuation Play?",
+        "publisher": "Ibtimes.com.au",
+        "published_at": "2026-05-29 14:28",
+        "url": "https://www.ibtimes.com.au/palantir-2026-stock-surge-ai-growth-market-challenges-1869719",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Billionaire Peter Thiel moves out of U.S. citing harsh concerns",
+        "publisher": "TheStreet",
+        "published_at": "2026-05-30 14:30",
+        "url": "",
+        "category": "macro",
+        "why_relevant": "May affect sector risk appetite, valuation multiples, or macro conditions.",
+        "matched_keywords": [
+          "PLTR"
+        ],
+        "relevance_score": 0.33,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": []
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-31",
+    "technical_sentiment_score": 52.6,
+    "momentum_state": "neutral",
+    "valuation_pressure": "high",
+    "news_intensity": "high",
+    "risk_flags": [
+      "High volatility (Beta 1.5)",
+      "Elevated valuation multiples — multiple compression risk"
+    ],
+    "signal_basis": [
+      "RSI 67.4 (neutral)",
+      "MA signal: mixed",
+      "Volume trend: shrinking",
+      "52W range position: 42.5%",
+      "Analyst upside: 17.4%",
+      "News intensity: high (8 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}

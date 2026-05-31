@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "event": "下次财报",
+      "date": "2026-09-02",
+      "date_confidence": "high",
+      "date_source": "Investing.com 和公司公告",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "业绩超预期推动股价上涨5-10%",
+      "bear_case": "业绩不及预期导致股价下跌5-10%"
+    },
+    {
+      "event": "Architect Dreamin'大会",
+      "date": "2026-06-11",
+      "date_confidence": "high",
+      "date_source": "搜索结果中明确给出日期",
+      "impact": "medium",
+      "direction": "neutral",
+      "bull_case": "新产品发布提振市场信心",
+      "bear_case": "缺乏亮点导致股价无反应"
+    },
+    {
+      "event": "Portugal Dreamin'大会",
+      "date": "2026-06-19",
+      "date_confidence": "high",
+      "date_source": "搜索结果中明确给出日期",
+      "impact": "medium",
+      "direction": "neutral",
+      "bull_case": "社区活动增强客户粘性",
+      "bear_case": "活动影响有限"
+    }
+  ]
+}

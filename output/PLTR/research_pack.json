@@ -1,0 +1,158 @@
+{
+  "product_segments": [
+    {
+      "name": "Commercial",
+      "revenue": "$2,073.8M (46.32% of total)",
+      "growth_pct": null,
+      "period": "FY2025",
+      "source": "Bullfincher segment breakdown & SEC 10-K FY2025"
+    },
+    {
+      "name": "Government",
+      "revenue": "$2,401.6M (53.68% of total)",
+      "growth_pct": null,
+      "period": "FY2025",
+      "source": "Bullfincher segment breakdown & SEC 10-K FY2025"
+    }
+  ],
+  "management_guidance": [
+    {
+      "metric": "Full-year 2026 revenue",
+      "value": "$7.65–$7.66 billion",
+      "direction": "上调",
+      "context": "基于Q1 2026强劲业绩，管理层将全年营收指引从之前水平上调至71%同比增长"
+    },
+    {
+      "metric": "Full-year 2026 U.S. commercial revenue",
+      "value": "at least $3.224 billion",
+      "direction": "上调",
+      "context": "反映至少120%同比增长"
+    },
+    {
+      "metric": "Full-year 2026 adjusted operating income",
+      "value": "$4.44–$4.45 billion",
+      "direction": "上调",
+      "context": "管理层在Q1电话会上给出此指引"
+    }
+  ],
+  "competitive_position": {
+    "market_share": "未提供具体市场份额数字",
+    "key_competitors": [
+      "Salesforce",
+      "Adobe",
+      "Google (Alphabet)"
+    ],
+    "moat": "独特的AIP平台带来大额合同和高客户留存，以及深厚的政府客户关系",
+    "threats": "高估值（P/E > 230）和依赖政府合同带来风险，同时面临大型软件及AI公司的激烈竞争"
+  },
+  "key_facts": [
+    {
+      "fact": "Q1 2026 revenue $1,632.6 million, up 85% YoY",
+      "metric_type": "Revenue",
+      "source": "SEC 10-Q Q1 2026 & earnings release",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q1 2026 U.S. revenue growth of 104% YoY",
+      "metric_type": "Revenue",
+      "source": "Palantir IR news release",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Full-year 2026 revenue guidance raised to $7.656 billion (71% YoY growth)",
+      "metric_type": "Revenue",
+      "source": "Earnings transcript and 8-K filing",
+      "confidence": "high",
+      "caveat": "This is guidance, not actual revenue"
+    },
+    {
+      "fact": "U.S. commercial revenue guidance for FY2026 at least $3.224 billion (120% YoY growth)",
+      "metric_type": "Revenue",
+      "source": "Earnings transcript and 8-K filing",
+      "confidence": "high",
+      "caveat": "Guidance for U.S. commercial segment"
+    },
+    {
+      "fact": "Remaining performance obligations (RPO) of $4.5 billion as of March 31, 2026, with 39% expected to be recognized as revenue within 12 months",
+      "metric_type": "Other",
+      "source": "SEC 10-Q Q1 2026",
+      "confidence": "high",
+      "caveat": "RPO is not recognized revenue; represents future contractual obligations"
+    },
+    {
+      "fact": "Rule of 40 score reached 145% in Q1 2026",
+      "metric_type": "Other",
+      "source": "Earnings transcript and news release",
+      "confidence": "high",
+      "caveat": "Metric combines revenue growth and operating margin"
+    },
+    {
+      "fact": "Q1 2026 operating margin of 46% (GAAP income from operations / revenue)",
+      "metric_type": "Other",
+      "source": "SEC 10-Q Q1 2026",
+      "confidence": "high",
+      "caveat": "GAAP operating margin"
+    },
+    {
+      "fact": "Adjusted operating income guidance for FY2026: $4.44–$4.45 billion",
+      "metric_type": "Other",
+      "source": "Earnings transcript (Stock Analysis)",
+      "confidence": "high",
+      "caveat": "Adjusted (non-GAAP) measure"
+    }
+  ],
+  "analyst_thesis": {
+    "bull_case": "Palantir实现了85%的营收同比增长，U.S. commercial revenue指引增长120%，且营业利润率高达46%，现金流强劲。规则40得分145%显示极致效率，长期可能成为AI基础设施核心平台。",
+    "bear_case": "估值极高（市销率超70倍，P/E > 230），政府合同占比高且增长有不确定性，面临Salesforce、Adobe等大型对手竞争。对冲基金经理Michael Burry持有大量空头仓位，表明市场对增长可持续性的疑虑。",
+    "key_institutions": []
+  },
+  "data_quality": {
+    "segment_data_available": true,
+    "guidance_found": true,
+    "sources_count": 8,
+    "confidence": "high",
+    "notes": "EDGAR提供了准确的季度收入数据；Tavily搜索结果包含财报、电话会摘要和分析师评论；产品分部数据基于2025年年度数据，2026年Q1未公布分部收入。"
+  },
+  "_edgar_quarterly_revenue": [
+    {
+      "period_end": "2026-03-31",
+      "fiscal_period": "Q1",
+      "revenue": 1632583000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-12-31",
+      "fiscal_period": "FY",
+      "revenue": 4475446000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2025-09-30",
+      "fiscal_period": "Q3",
+      "revenue": 3068644000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-06-30",
+      "fiscal_period": "Q2",
+      "revenue": 1887552000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2025-03-31",
+      "fiscal_period": "Q1",
+      "revenue": 883855000,
+      "form": "10-Q"
+    },
+    {
+      "period_end": "2024-12-31",
+      "fiscal_period": "FY",
+      "revenue": 2865507000,
+      "form": "10-K"
+    }
+  ],
+  "_edgar_cik": "0001321655",
+  "_tavily_query_count": 5
+}

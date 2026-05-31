@@ -1,0 +1,208 @@
+{
+  "title": "认知裂痕，谁错了？",
+  "ticker": "NVDA",
+  "slides": [
+    {
+      "type": "cover",
+      "headline": "认知裂痕，谁错了？",
+      "subtitle": "本周深度分析·2026-05-31",
+      "hook": "大空头伯里本周再发AI末日论，英伟达应声下探",
+      "autoslide_ms": 32965
+    },
+    {
+      "type": "market_overview",
+      "headline": "$211.14  -1.45%  ·  Forward PE 16.68x  ·  目标价空间 +40.6%",
+      "callout": "PEG仅0.65，极度低估的AI芯片龙头",
+      "autoslide_ms": 71189
+    },
+    {
+      "type": "price_action",
+      "headline": "偏空震荡",
+      "signal": "bearish",
+      "bullets": [
+        "支撑位：第一层五十日均线$199.35，第二层布林带下轨$196.2",
+        "阻力位：二十日均线$215.46，布林带上轨$234.71",
+        "趋势描述：高位震荡后的缓慢阴跌，冲高回落形态，失守20日均线",
+        "RSI 49.4，中性偏低，没有超卖，说明下跌还有空间"
+      ],
+      "autoslide_ms": 117044
+    },
+    {
+      "type": "key_points",
+      "headline": "多空对决",
+      "points": [
+        {
+          "title": "增长与估值错配",
+          "body": "复合增速214.5%，预期市盈率16.68倍，PEG 0.65，罕见的增长与估值错配。",
+          "tag": "bull"
+        },
+        {
+          "title": "护城河飞轮效应",
+          "body": "CUDA生态转换成本高，净利率63%，ROE 114.3%，共识目标价296.81美元，上行40.6%。",
+          "tag": "bull"
+        },
+        {
+          "title": "增速二阶导放缓",
+          "body": "若营收环比失速或降价，PEG低于0.7逻辑瓦解，触发向20倍市盈率下方的估值修正。",
+          "tag": "bear"
+        },
+        {
+          "title": "地缘政治黑天鹅",
+          "body": "台湾芯片供应链任何合规意外，会对营收造成实质性截流。",
+          "tag": "bear"
+        }
+      ],
+      "autoslide_ms": 170298
+    },
+    {
+      "type": "news",
+      "headline": "本周NVDA的关键新闻和评级变化",
+      "news_items": [
+        {
+          "title": "高盛重申买入评级，目标价上调至300美元",
+          "category": "analyst",
+          "impact": "positive",
+          "note": "Blackwell架构提前量产引爆下半年营收预期"
+        },
+        {
+          "title": "摩根士丹利下调评级至持有",
+          "category": "analyst",
+          "impact": "negative",
+          "note": "当前股价已充分反映好消息"
+        },
+        {
+          "title": "美联储降息预期推迟，美债收益率超4.5%",
+          "category": "macro",
+          "impact": "negative",
+          "note": "对高估值科技股直接利空，但NVDA远期市盈率16倍安全垫厚"
+        },
+        {
+          "title": "台积电三星3nm产能过剩引担忧",
+          "category": "product",
+          "impact": "negative",
+          "note": "市场担忧芯片需求见顶，但AI需求依然爆发，供给端短期调整"
+        }
+      ],
+      "analyst_summary": "净变化偏多，7家上调4家下调，目标价中位数280美元",
+      "autoslide_ms": 98747
+    },
+    {
+      "type": "financials",
+      "headline": "估值根本就没反映基本面的真实质量",
+      "metrics": [
+        {
+          "label": "营收增速",
+          "value": "+85.2%",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "63%",
+          "trend": "flat"
+        },
+        {
+          "label": "Forward PE",
+          "value": "16.7x",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "过去四个季度累计超过五百亿美元",
+          "trend": "flat"
+        }
+      ],
+      "callout": "净利润率百分之六十三，每赚一百块钱，六十三块是纯利",
+      "autoslide_ms": 121298
+    },
+    {
+      "type": "risk",
+      "headline": "高",
+      "risks": [
+        {
+          "title": "增速二阶导放缓",
+          "body": "营收增速85.2%，盈利增速214.5%，PEG 0.65极度低估。若环比营收意外失速两三个百分点，市盈率从16倍向20倍以下修正，股价剧烈重估。",
+          "severity": "high"
+        },
+        {
+          "title": "地缘政治黑天鹅",
+          "body": "芯片经日本走私触及合规红线，若引发更严出口管制，大中华区每年200-300亿美元营收受影响，财务模型现深可见骨伤口。",
+          "severity": "high"
+        },
+        {
+          "title": "技术面情绪负反馈",
+          "body": "50日均线199.35美元是多方最后防线，一旦跌穿，算法交易和止损单涌出，引发踩踏式下跌。",
+          "severity": "medium"
+        }
+      ],
+      "autoslide_ms": 111421
+    },
+    {
+      "type": "catalyst",
+      "headline": "催化剂箭在弦上",
+      "catalysts": [
+        {
+          "event": "GTC大会预热演讲",
+          "direction": "positive",
+          "timing": "下周",
+          "impact": "large"
+        },
+        {
+          "event": "云厂商资本开支季度更新",
+          "direction": "positive",
+          "timing": "六月中旬",
+          "impact": "large"
+        },
+        {
+          "event": "财报前瞻",
+          "direction": "positive",
+          "timing": "七月初",
+          "impact": "large"
+        },
+        {
+          "event": "出口管制听证会",
+          "direction": "negative",
+          "timing": "两周后",
+          "impact": "large"
+        },
+        {
+          "event": "技术面跌破205",
+          "direction": "negative",
+          "timing": "下周",
+          "impact": "medium"
+        }
+      ],
+      "autoslide_ms": 120211
+    },
+    {
+      "type": "outlook",
+      "headline": "长线强烈看多，短期震荡整固后向上突破",
+      "subtitle": "看多",
+      "base_range": {
+        "low": "$195",
+        "high": "$225",
+        "timeframe": "1-4周"
+      },
+      "scenario_bear": {
+        "condition": "跌破195",
+        "target": "$180"
+      },
+      "scenario_base": {
+        "condition": "营收增速保持80%以上，Blackwell需求未放缓",
+        "target": "$253"
+      },
+      "scenario_bull": {
+        "condition": "营收增速超90%",
+        "target": "$400"
+      },
+      "autoslide_ms": 109160
+    },
+    {
+      "type": "summary",
+      "headline": "NVDA被严重低估，PEG仅0.65",
+      "verdict": "bullish",
+      "action": "建议百分之五十仓位作为核心配置",
+      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
+      "autoslide_ms": 32965
+    }
+  ]
+}

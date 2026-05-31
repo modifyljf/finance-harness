@@ -1,0 +1,158 @@
+{
+  "product_segments": [
+    {
+      "name": "Data Center",
+      "revenue": "$62.31B (Q4 FY2026); $193.74B (FY2026)",
+      "growth_pct": 73.2,
+      "period": "Q4 FY2026",
+      "source": "Q4 FY2026 earnings call transcript; Macrotrends"
+    },
+    {
+      "name": "Gaming",
+      "revenue": "$16.04B (FY2026)",
+      "growth_pct": 41.34,
+      "period": "FY2026",
+      "source": "Macrotrends segment revenue data"
+    },
+    {
+      "name": "Automotive",
+      "revenue": "$2.35B (FY2026)",
+      "growth_pct": 38.67,
+      "period": "FY2026",
+      "source": "Macrotrends segment revenue data"
+    },
+    {
+      "name": "Networking",
+      "revenue": "$10.98B (Q4 FY2026)",
+      "growth_pct": 263.0,
+      "period": "Q4 FY2026",
+      "source": "Yahoo Finance article (Q4 FY2026 results)"
+    }
+  ],
+  "management_guidance": [
+    {
+      "metric": "Q1 FY2027 Revenue",
+      "value": "~$78B",
+      "direction": "首次",
+      "context": "Guidance for Q1 FY2027, excludes China Data Center compute revenue (Q4 FY2026 earnings call)"
+    },
+    {
+      "metric": "FY2027 Full Year OpEx Growth",
+      "value": "Increase in the upper 40% range",
+      "direction": "首次",
+      "context": "Higher R&D and AI productivity tool usage (Q1 FY2027 earnings transcript)"
+    },
+    {
+      "metric": "FY2027 Tax Rate",
+      "value": "16%-18% GAAP and non-GAAP",
+      "direction": "下调",
+      "context": "Down from previous 17%-19% guidance due to geographic mix changes (Q1 FY2027 earnings transcript)"
+    },
+    {
+      "metric": "Annual AI Infrastructure Build by End of Decade",
+      "value": "$3 to $4 trillion",
+      "direction": "维持",
+      "context": "Management estimate of market opportunity (Q3 FY2026 earnings call transcript)"
+    }
+  ],
+  "competitive_position": {
+    "market_share": "86% of AI accelerator market in 2025, unchanged from 2024; broader range 85%-92%",
+    "key_competitors": [
+      "AMD",
+      "Intel",
+      "Qualcomm",
+      "Broadcom"
+    ],
+    "moat": "Dominant position in AI accelerators, full-stack design, annual product cadence, and strong performance leadership.",
+    "threats": "Big tech rivals entering AI chip territory and competitive pressure from AMD and Intel."
+  },
+  "key_facts": [
+    {
+      "fact": "Q4 FY2026 record revenue of $68.13B, up 73% YoY; Data Center revenue $62.31B, up 75% YoY; Networking revenue $10.98B, up 263% YoY.",
+      "metric_type": "Revenue",
+      "source": "NVIDIA Q4 FY2026 earnings release",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "FY2026 annual revenue $215.9B, up 65% YoY; GAAP gross margin 71.1%; operating income $130.4B; diluted EPS $4.90.",
+      "metric_type": "Revenue",
+      "source": "NVIDIA FY2026 Annual Report",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q1 FY2027 (quarter ending April 30, 2026) revenue $81.615B, up 85.23% YoY.",
+      "metric_type": "Revenue",
+      "source": "Macrotrends (NVIDIA revenue data)",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Institutional ownership: 65.3% of NVIDIA shares held by institutional investors; 3.9% by insiders.",
+      "metric_type": "Other",
+      "source": "MarketBeat competitive analysis",
+      "confidence": "medium",
+      "caveat": "Data as of 2026"
+    }
+  ],
+  "analyst_thesis": {
+    "bull_case": "NVIDIA dominates AI/Data Center market with 86% share, strong free cash flow, and Q1 FY2027 revenue growing 85% YoY to $81.6B. Consensus price targets $275-$325 imply 30-54% upside from $211.14.",
+    "bear_case": "Competition from AMD, Intel, and big tech may erode market share; growth is slowing relative to earlier surge; geopolitical risks and potential margin compression.",
+    "key_institutions": [
+      {
+        "firm": "24/7 Wall St.",
+        "rating": "N/A",
+        "target": "$235.01",
+        "thesis": "Implies ~8% gain from current price based on Q4 FY2026 results."
+      }
+    ]
+  },
+  "data_quality": {
+    "segment_data_available": true,
+    "guidance_found": true,
+    "sources_count": 8,
+    "confidence": "high",
+    "notes": "Segment revenue data from Macrotrends and earnings call; guidance from Q4 FY2026 and Q1 FY2027 transcripts; competitive data from multiple articles."
+  },
+  "_edgar_quarterly_revenue": [
+    {
+      "period_end": "2022-01-30",
+      "fiscal_period": "FY",
+      "revenue": 26914000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2021-01-31",
+      "fiscal_period": "FY",
+      "revenue": 16675000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2020-01-26",
+      "fiscal_period": "FY",
+      "revenue": 10918000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2019-10-27",
+      "fiscal_period": "FY",
+      "revenue": 3014000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2019-07-28",
+      "fiscal_period": "FY",
+      "revenue": 2579000000,
+      "form": "10-K"
+    },
+    {
+      "period_end": "2019-04-28",
+      "fiscal_period": "FY",
+      "revenue": 2220000000,
+      "form": "10-K"
+    }
+  ],
+  "_edgar_cik": "0001045810",
+  "_tavily_query_count": 4
+}

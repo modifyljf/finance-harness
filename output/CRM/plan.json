@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-31T16:57:48.334330+00:00",
+  "generated_at": "2026-05-31T21:31:56.460300+00:00",
   "current_date": "2026-05-31",
   "input": {
     "ticker": "CRM",
     "market": "US",
     "language": "zh-CN",
-    "duration_minutes": 9,
+    "duration_minutes": 12,
     "style": "professional"
   },
   "market_snapshot": {
@@ -175,7 +175,9 @@
     "peg": 0.93,
     "ps_ratio": 3.65,
     "pb_ratio": 4.57,
-    "ev_ebitda": 14.52
+    "ev_ebitda": 14.52,
+    "enterprise_value": 187221901312,
+    "ev_revenue": 4.37
   },
   "financial_snapshot": {
     "revenue": 42829000704,
@@ -187,7 +189,9 @@
     "free_cashflow": 16552999936,
     "roe": 16.9,
     "eps_trailing": 8.64,
-    "eps_forward": 15.47853
+    "eps_forward": 15.47853,
+    "total_debt": 42547998720,
+    "total_cash": 11836999680
   },
   "earnings_snapshot": {
     "last_quarter": "2026-04-30",
@@ -198,17 +202,91 @@
     "net_income": 2107000000,
     "operating_cashflow": 6701000000,
     "free_cashflow": 6556000000,
-    "eps_actual": null,
-    "eps_estimate": null,
-    "eps_surprise_pct": null,
-    "next_earnings_date": null
+    "eps_actual": 3.88,
+    "eps_estimate": 3.13,
+    "eps_surprise_pct": 24.0,
+    "next_earnings_date": "2026-09-02"
   },
   "analyst_estimates": {
-    "earnings_estimates": [],
-    "revenue_estimates": [],
+    "earnings_estimates": [
+      {
+        "period": "0q",
+        "avg_eps": 3.26912,
+        "low_eps": 3.23,
+        "high_eps": 3.44306,
+        "analyst_count": 40,
+        "year_ago_eps": 2.91,
+        "growth_pct": 12.3
+      },
+      {
+        "period": "+1q",
+        "avg_eps": 3.3517,
+        "low_eps": 3.0,
+        "high_eps": 3.98,
+        "analyst_count": 40,
+        "year_ago_eps": 3.25,
+        "growth_pct": 3.1
+      },
+      {
+        "period": "0y",
+        "avg_eps": 14.16468,
+        "low_eps": 13.72714,
+        "high_eps": 15.28,
+        "analyst_count": 42,
+        "year_ago_eps": 12.52,
+        "growth_pct": 13.1
+      },
+      {
+        "period": "+1y",
+        "avg_eps": 15.47853,
+        "low_eps": 14.33,
+        "high_eps": 17.78,
+        "analyst_count": 51,
+        "year_ago_eps": 14.16468,
+        "growth_pct": 9.3
+      }
+    ],
+    "revenue_estimates": [
+      {
+        "period": "0q",
+        "avg_revenue": 11307006880,
+        "low_revenue": 10919000000,
+        "high_revenue": 11398032000,
+        "analyst_count": 37,
+        "year_ago_revenue": 10236000000,
+        "implied_yoy_growth_pct": 10.5
+      },
+      {
+        "period": "+1q",
+        "avg_revenue": 11380252100,
+        "low_revenue": 10916000000,
+        "high_revenue": 11579683000,
+        "analyst_count": 36,
+        "year_ago_revenue": 10259000000,
+        "implied_yoy_growth_pct": 10.9
+      },
+      {
+        "period": "0y",
+        "avg_revenue": 46082899370,
+        "low_revenue": 45188000000,
+        "high_revenue": 46430790000,
+        "analyst_count": 49,
+        "year_ago_revenue": 41525000000,
+        "implied_yoy_growth_pct": 11.0
+      },
+      {
+        "period": "+1y",
+        "avg_revenue": 50583117900,
+        "low_revenue": 49431900000,
+        "high_revenue": 53752000000,
+        "analyst_count": 51,
+        "year_ago_revenue": 46082899370,
+        "implied_yoy_growth_pct": 9.8
+      }
+    ],
     "five_year_growth_pct": null,
-    "next_year_eps_growth_pct": null,
-    "next_year_rev_growth_pct": null
+    "next_year_eps_growth_pct": 9.3,
+    "next_year_rev_growth_pct": 9.8
   },
   "analyst_snapshot": {
     "recommendation": "Buy",
@@ -272,6 +350,19 @@
           "CRM"
         ],
         "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "Salesforce CEO Marc Benioff Just Declared War On Traditional SaaS",
+        "publisher": "Benzinga",
+        "published_at": "2026-05-31 16:32",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "salesforce"
+        ],
+        "relevance_score": 0.67,
         "expert_quotes": []
       },
       {
@@ -580,6 +671,16 @@
       ]
     },
     {
+      "type": "why_now",
+      "approx_seconds": 60,
+      "goal": "Explain why NOW is the right time to pay attention — what changed, old thesis vs new reality, expectation gap.",
+      "required_inputs": [
+        "expectation_gap",
+        "why_now",
+        "fact_check_report"
+      ]
+    },
+    {
       "type": "price_action",
       "approx_seconds": 70,
       "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
@@ -595,6 +696,15 @@
       "required_inputs": [
         "computed_signals",
         "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "narrative_gap",
+      "approx_seconds": 60,
+      "goal": "Reveal the gap between market consensus and reality — what market believes vs what data shows, and what it means.",
+      "required_inputs": [
+        "narrative_gap",
+        "internal_valuation"
       ]
     },
     {

@@ -1,0 +1,47 @@
+你是顶级行业分析师，今天是{current_date}。
+请对 {ticker}（{company_name}）进行竞争格局分析。
+
+## 分析对象
+- 行业：{sector} / {industry}
+- 语言：{language}
+
+## 目标公司数据
+{target_snapshot}
+
+## 竞争对手数据（yfinance实时获取）
+{peer_snapshots}
+
+## 竞争格局搜索结果（Tavily）
+{tavily_competitive}
+
+---
+
+## 分析任务
+
+1. **估值对比**：目标公司的PE/PS/增速与竞争对手相比处于什么位置？是溢价还是折价？为什么？
+2. **增长质量对比**：收入增速、毛利率与同行相比如何？
+3. **市场定位**：目标公司在行业中的护城河是什么？竞争对手在哪些维度构成威胁？
+4. **相对估值**：基于同行估值，目标公司的合理估值区间是什么？
+
+## 输出格式（严格JSON）
+
+{{
+  "peers": [
+    {{
+      "ticker": "代码",
+      "company_name": "公司名",
+      "pe_forward": 数字或null,
+      "revenue_growth_yoy": 数字或null,
+      "gross_margin": 数字或null,
+      "ytd_performance_pct": 数字或null,
+      "vs_target_note": "与目标公司的关键差异（1句话）"
+    }}
+  ],
+  "valuation_position": "目标公司估值在同行中的位置（最低/偏低/中位/偏高/最高）",
+  "moat_rating": "护城河强度（strong/medium/weak）",
+  "moat_description": "核心竞争壁垒描述（2句）",
+  "key_threats": ["威胁1", "威胁2"],
+  "relative_valuation_summary": "基于同行估值的相对估值结论（2-3句，含具体数字）",
+  "competitive_advantage": "目标公司最强的差异化优势（2句）",
+  "market_share_note": "市场份额情况（如有数据则引用，否则填'暂无可靠数据'）"
+}}

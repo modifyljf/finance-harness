@@ -1,0 +1,630 @@
+{
+  "generated_at": "2026-05-31T18:13:48.885559+00:00",
+  "current_date": "2026-05-31",
+  "input": {
+    "ticker": "NVDA",
+    "market": "US",
+    "language": "zh-CN",
+    "duration_minutes": 12,
+    "style": "professional"
+  },
+  "market_snapshot": {
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "short_description": "NVIDIA Corporation operates as a data center scale AI infrastructure company. The company operates through two segments, Compute & Networking, and Graphics segments. The Compute & Networking segment provides data center accelerated computing and networking platforms and artificial intelligence solutions and software, and automotive platforms and autonomous and electric vehicle solutions, including",
+    "current_price": 211.14,
+    "prev_close": 214.25,
+    "price_change": -3.11,
+    "price_change_pct": -1.45,
+    "market_cap": 5114022068224,
+    "market_cap_str": "$5.11T",
+    "volume": 289410623,
+    "avg_volume": 166355890,
+    "beta": 2.244,
+    "52w_high": 236.54,
+    "52w_low": 135.4,
+    "52w_range_position_pct": 74.9,
+    "short_interest": 1.3,
+    "institutional_ownership_pct": 70.8
+  },
+  "price_history": {
+    "period": "30d",
+    "items": [
+      {
+        "date": "2026-04-17",
+        "close": 201.68
+      },
+      {
+        "date": "2026-04-20",
+        "close": 202.06
+      },
+      {
+        "date": "2026-04-21",
+        "close": 199.88
+      },
+      {
+        "date": "2026-04-22",
+        "close": 202.5
+      },
+      {
+        "date": "2026-04-23",
+        "close": 199.64
+      },
+      {
+        "date": "2026-04-24",
+        "close": 208.27
+      },
+      {
+        "date": "2026-04-27",
+        "close": 216.61
+      },
+      {
+        "date": "2026-04-28",
+        "close": 213.17
+      },
+      {
+        "date": "2026-04-29",
+        "close": 209.25
+      },
+      {
+        "date": "2026-04-30",
+        "close": 199.57
+      },
+      {
+        "date": "2026-05-01",
+        "close": 198.45
+      },
+      {
+        "date": "2026-05-04",
+        "close": 198.48
+      },
+      {
+        "date": "2026-05-05",
+        "close": 196.5
+      },
+      {
+        "date": "2026-05-06",
+        "close": 207.83
+      },
+      {
+        "date": "2026-05-07",
+        "close": 211.5
+      },
+      {
+        "date": "2026-05-08",
+        "close": 215.2
+      },
+      {
+        "date": "2026-05-11",
+        "close": 219.44
+      },
+      {
+        "date": "2026-05-12",
+        "close": 220.78
+      },
+      {
+        "date": "2026-05-13",
+        "close": 225.83
+      },
+      {
+        "date": "2026-05-14",
+        "close": 235.74
+      },
+      {
+        "date": "2026-05-15",
+        "close": 225.32
+      },
+      {
+        "date": "2026-05-18",
+        "close": 222.32
+      },
+      {
+        "date": "2026-05-19",
+        "close": 220.61
+      },
+      {
+        "date": "2026-05-20",
+        "close": 223.47
+      },
+      {
+        "date": "2026-05-21",
+        "close": 219.51
+      },
+      {
+        "date": "2026-05-22",
+        "close": 215.33
+      },
+      {
+        "date": "2026-05-26",
+        "close": 214.86
+      },
+      {
+        "date": "2026-05-27",
+        "close": 212.6
+      },
+      {
+        "date": "2026-05-28",
+        "close": 214.25
+      },
+      {
+        "date": "2026-05-29",
+        "close": 211.14
+      }
+    ]
+  },
+  "technical_indicators": {
+    "rsi_14": 49.4,
+    "rsi_signal": "neutral",
+    "ma20": 215.46,
+    "ma50": 199.35,
+    "bollinger": {
+      "upper": 234.71,
+      "middle": 215.46,
+      "lower": 196.2
+    },
+    "volume_trend": "stable",
+    "ma_signal": "mixed",
+    "price_vs_ma20_pct": -2.0,
+    "price_vs_ma50_pct": 5.9
+  },
+  "valuation_snapshot": {
+    "pe_trailing": 32.38,
+    "pe_forward": 16.68,
+    "peg": 0.65,
+    "ps_ratio": 20.17,
+    "pb_ratio": 32.62,
+    "ev_ebitda": 30.63
+  },
+  "financial_snapshot": {
+    "revenue": 253491003392,
+    "revenue_growth_yoy": 85.2,
+    "earnings_growth_yoy": 214.5,
+    "gross_margin": 74.1,
+    "operating_margin": 65.6,
+    "profit_margin": 63.0,
+    "free_cashflow": 46335873024,
+    "roe": 114.3,
+    "eps_trailing": 6.52,
+    "eps_forward": 12.6575
+  },
+  "earnings_snapshot": {
+    "last_quarter": "2026-04-30",
+    "revenue": 81615000000,
+    "revenue_qoq_pct": 19.8,
+    "gross_profit": 61157000000,
+    "gross_margin_pct": 74.9,
+    "net_income": 58321000000,
+    "operating_cashflow": 50344000000,
+    "free_cashflow": 48587000000,
+    "eps_actual": 1.87,
+    "eps_estimate": 1.77,
+    "eps_surprise_pct": 5.6,
+    "next_earnings_date": "2026-08-26"
+  },
+  "analyst_estimates": {
+    "earnings_estimates": [
+      {
+        "period": "0q",
+        "avg_eps": 2.07925,
+        "low_eps": 2.03128,
+        "high_eps": 2.2,
+        "analyst_count": 40,
+        "year_ago_eps": 1.05,
+        "growth_pct": 98.0
+      },
+      {
+        "period": "+1q",
+        "avg_eps": 2.3463,
+        "low_eps": 2.13,
+        "high_eps": 2.63,
+        "analyst_count": 39,
+        "year_ago_eps": 1.3,
+        "growth_pct": 80.5
+      },
+      {
+        "period": "0y",
+        "avg_eps": 8.9427,
+        "low_eps": 8.2,
+        "high_eps": 9.79,
+        "analyst_count": 47,
+        "year_ago_eps": 4.77,
+        "growth_pct": 87.5
+      },
+      {
+        "period": "+1y",
+        "avg_eps": 12.6575,
+        "low_eps": 9.65,
+        "high_eps": 16.0,
+        "analyst_count": 48,
+        "year_ago_eps": 8.9427,
+        "growth_pct": 41.5
+      }
+    ],
+    "revenue_estimates": [
+      {
+        "period": "0q",
+        "avg_revenue": 91728642100,
+        "low_revenue": 90302000000,
+        "high_revenue": 96655000000,
+        "analyst_count": 41,
+        "year_ago_revenue": 46743000000,
+        "implied_yoy_growth_pct": 96.2
+      },
+      {
+        "period": "+1q",
+        "avg_revenue": 102903290940,
+        "low_revenue": 91996000000,
+        "high_revenue": 110657391000,
+        "analyst_count": 39,
+        "year_ago_revenue": 57006000000,
+        "implied_yoy_growth_pct": 80.5
+      },
+      {
+        "period": "0y",
+        "avg_revenue": 391486764200,
+        "low_revenue": 357215000000,
+        "high_revenue": 415524773220,
+        "analyst_count": 49,
+        "year_ago_revenue": 215938000000,
+        "implied_yoy_growth_pct": 81.3
+      },
+      {
+        "period": "+1y",
+        "avg_revenue": 547672763019,
+        "low_revenue": 416398000000,
+        "high_revenue": 710010000000,
+        "analyst_count": 54,
+        "year_ago_revenue": 391486764200,
+        "implied_yoy_growth_pct": 39.9
+      }
+    ],
+    "five_year_growth_pct": null,
+    "next_year_eps_growth_pct": 41.5,
+    "next_year_rev_growth_pct": 39.9
+  },
+  "analyst_snapshot": {
+    "recommendation": "Strong Buy",
+    "target_mean": 296.81033,
+    "target_high": 500.0,
+    "target_low": 180.0,
+    "analyst_count": 58,
+    "upside_pct": 40.6
+  },
+  "news_evidence_pack": {
+    "lookback_days": 7,
+    "max_items": 20,
+    "items": [
+      {
+        "title": "This is Why NVIDIA Corporation (NVDA) Is a Buzzing AI Semiconductor Stock to Buy",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-27 21:50",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvidia-corporation-nvda-buzzing-215035145.html",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "NVDA"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "NVIDIA (NVDA): The Best High Growth Stock to Buy and Hold for the Next Decade",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-25 23:50",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_8d928951-312d-4d45-b84b-cd49ebc49e14",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "NVDA"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
+        "title": "NVIDIA Infineon Power Partnership Puts Data Center Story In New Focus",
+        "publisher": "Simply Wall St.",
+        "published_at": "2026-05-31 17:03",
+        "url": "",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Nvidia, Microsoft, and Arm are all teasing Nvidia’s new N1X laptop processors",
+        "publisher": "The Verge",
+        "published_at": "2026-05-29 23:03",
+        "url": "https://www.theverge.com/news/940275/nvidia-n1x-laptop-processor-arm-microsoft-teaser",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Nvidia Retires Its GeForce Control Panel App After 20 Years",
+        "publisher": "Slashdot.org",
+        "published_at": "2026-05-26 17:00",
+        "url": "https://tech.slashdot.org/story/26/05/26/1635257/nvidia-retires-its-geforce-control-panel-app-after-20-years",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "'Big Short' investor Michael Burry sounds the alarm on Nvidia stock and AI 'tokenmaxxing'",
+        "publisher": "Business Insider",
+        "published_at": "2026-05-26 12:58",
+        "url": "https://www.businessinsider.com/big-short-michael-burry-nvidia-stock-price-crash-ai-tokenmaxxing-2026-5",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Nvidia's Jensen Huang says CEOs who blame AI for layoffs are giving a 'lazy' excuse",
+        "publisher": "Business Insider",
+        "published_at": "2026-05-25 10:03",
+        "url": "https://www.businessinsider.com/nvidia-ceo-jensen-huang-ai-job-cuts-losses-lazy-narrative-2026-5",
+        "category": "insider",
+        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "At Computex, Nvidia and Taiwan's expanding role in AI infrastructure set to take centre stage",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-29 07:55",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_2c79737b-3bf6-4e94-9d69-26158862d60d",
+        "category": "other",
+        "why_relevant": "Flagged as relevant to the stock by keyword match.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "NVIDIA drops the Control Panel for Windows 11 after 20 years of faithful service and goes all in on its newer app",
+        "publisher": "Windows Central",
+        "published_at": "2026-05-28 17:38",
+        "url": "https://www.windowscentral.com/gaming/pc-gaming/nvidia-drops-the-control-panel-for-windows-11-after-20-years-of-faithful-service-and-goes-all-in-on-its-newer-app",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "The First GPU Out of China Can’t Compete Against Nvidia… Yet",
+        "publisher": "Gizmodo.com",
+        "published_at": "2026-05-26 16:30",
+        "url": "https://gizmodo.com/first-gpu-out-of-china-cant-compete-against-nvidia-yet-2000763441",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "An $80 Billion Reason to Buy Nvidia Stock Now",
+        "publisher": "Barchart.com",
+        "published_at": "2026-05-27 14:11",
+        "url": "https://www.barchart.com/story/news/2153514/an-80-billion-reason-to-buy-nvidia-stock-now",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "Nvidia CEO Jensen Huang admits he criticizes everything his 42,000-plus employees show him: ‘You can’t go a day without some criticism’",
+        "publisher": "Yahoo Entertainment",
+        "published_at": "2026-05-26 14:52",
+        "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_3e34da69-da76-446a-8323-6b0efffbecdc",
+        "category": "insider",
+        "why_relevant": "May signal management confidence, corporate strategy, or capital allocation.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "(g+) Technology: Taiwan Said to Suspect Nvidia Chips Smuggled to China Via Japan",
+        "publisher": "Golem.de",
+        "published_at": "2026-05-27 13:50",
+        "url": "https://www.golem.de/sonstiges/zustimmung/auswahl.html?from=https%3A%2F%2Fwww.golem.de%2Fnews%2Ftechnology-taiwan-said-to-suspect-nvidia-chips-smuggled-to-china-via-japan-2605-209095.html&referer=https%3A%2F%2Ft.co%2Ff1f263a83d",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "New details on Apple-Google AI deal revealed, including Nvidia chips: report",
+        "publisher": "9to5Mac",
+        "published_at": "2026-05-28 13:44",
+        "url": "https://9to5mac.com/2026/05/28/new-details-on-apple-google-ai-deal-revealed-including-nvidia-chips-report/",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "\"A new era of PC\": Microsoft and NVIDIA tease major announcement experts predict to be the fabled N1X chip",
+        "publisher": "Windows Central",
+        "published_at": "2026-05-29 18:02",
+        "url": "https://www.windowscentral.com/hardware/surface/a-new-era-of-pc-microsoft-and-nvidia-tease-major-announcement-experts-predict-to-be-the-fabled-n1x-chip",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
+        "title": "AMD's FSR is helping my 7-year-old Nvidia GPU crush Forza Horizon 6",
+        "publisher": "XDA Developers",
+        "published_at": "2026-05-27 16:00",
+        "url": "https://www.xda-developers.com/amd-fsr-helps-my-7-year-old-nvidia-gpu-run-forza-horizon-6-without-dlss/",
+        "category": "product",
+        "why_relevant": "May affect product demand, competitive positioning, or revenue outlook.",
+        "matched_keywords": [
+          "nvidia"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      }
+    ],
+    "expert_quotes": [
+      {
+        "source": "Tigress Financial",
+        "quote": "Tigress Financial changed rating from Strong Buy to Strong Buy",
+        "stance": "bullish",
+        "context": "main on 2026-05-27",
+        "date": "2026-05-27"
+      }
+    ]
+  },
+  "computed_signals": {
+    "as_of_date": "2026-05-31",
+    "technical_sentiment_score": 74.6,
+    "momentum_state": "neutral",
+    "valuation_pressure": "medium",
+    "news_intensity": "medium",
+    "risk_flags": [
+      "High volatility (Beta 2.2)"
+    ],
+    "signal_basis": [
+      "RSI 49.4 (neutral)",
+      "MA signal: mixed",
+      "Volume trend: stable",
+      "52W range position: 74.9%",
+      "Analyst upside: 40.6%",
+      "News intensity: medium (2 high-relevance items)"
+    ]
+  },
+  "slide_outline": [
+    {
+      "type": "cover",
+      "approx_seconds": 20,
+      "goal": "Introduce the ticker and the central question of the video.",
+      "required_inputs": [
+        "market_snapshot.ticker",
+        "market_snapshot.company_name",
+        "market_snapshot.current_price"
+      ]
+    },
+    {
+      "type": "market_overview",
+      "approx_seconds": 60,
+      "goal": "Summarize current price, market cap, valuation and recent price movement.",
+      "required_inputs": [
+        "market_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "price_action",
+      "approx_seconds": 70,
+      "goal": "Explain recent price behavior using the 30-day chart and technical indicators.",
+      "required_inputs": [
+        "price_history",
+        "technical_indicators"
+      ]
+    },
+    {
+      "type": "key_points",
+      "approx_seconds": 90,
+      "goal": "Present the strongest bullish and bearish evidence this week.",
+      "required_inputs": [
+        "computed_signals",
+        "news_evidence_pack"
+      ]
+    },
+    {
+      "type": "news",
+      "approx_seconds": 60,
+      "goal": "Present this week's key news headlines and analyst rating changes with attribution.",
+      "required_inputs": [
+        "news_evidence_pack.items",
+        "news_evidence_pack.expert_quotes"
+      ]
+    },
+    {
+      "type": "financials",
+      "approx_seconds": 80,
+      "goal": "Explain whether fundamentals support the current valuation.",
+      "required_inputs": [
+        "financial_snapshot",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "risk",
+      "approx_seconds": 70,
+      "goal": "Identify the main downside risks and uncertainty factors.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "valuation_snapshot"
+      ]
+    },
+    {
+      "type": "catalyst",
+      "approx_seconds": 70,
+      "goal": "Identify near-term events or narratives that may move the stock.",
+      "required_inputs": [
+        "news_evidence_pack",
+        "analyst_snapshot"
+      ]
+    },
+    {
+      "type": "outlook",
+      "approx_seconds": 80,
+      "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",
+      "required_inputs": [
+        "technical_indicators",
+        "financial_snapshot",
+        "computed_signals"
+      ]
+    },
+    {
+      "type": "summary",
+      "approx_seconds": 40,
+      "goal": "Summarize the key watchpoints and include the required disclaimer.",
+      "required_inputs": [
+        "computed_signals.risk_flags",
+        "computed_signals.signal_basis"
+      ]
+    }
+  ]
+}

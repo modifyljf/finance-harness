@@ -6,7 +6,10 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from messaging.agents.catalyst import CatalystAgent
+from messaging.agents.competitive import CompetitiveAgent
 from messaging.agents.evaluator import EvaluatorAgent
+from messaging.agents.factcheck import FactCheckAgent
 from messaging.agents.generator import GeneratorAgent
 from messaging.agents.planner import PlannerAgent
 from messaging.agents.renderer import RendererAgent
@@ -23,12 +26,15 @@ _BASE_OUTPUT = Path(__file__).parent.parent.parent / "output"
 class MessagingHarnessService:
 
     def __init__(self):
-        self._planner = PlannerAgent()
-        self._research = ResearchAgent()
-        self._valuation = ValuationAgent()
-        self._generator = GeneratorAgent()
-        self._evaluator = EvaluatorAgent()
-        self._renderer = RendererAgent()
+        self._planner     = PlannerAgent()
+        self._research    = ResearchAgent()
+        self._competitive = CompetitiveAgent()
+        self._catalyst    = CatalystAgent()
+        self._valuation   = ValuationAgent()
+        self._factcheck   = FactCheckAgent()
+        self._generator   = GeneratorAgent()
+        self._evaluator   = EvaluatorAgent()
+        self._renderer    = RendererAgent()
 
     def execute(self, ctx: RunContext) -> RenderedMessage:
         # Each run gets its own folder: output/{TICKER}/
@@ -46,10 +52,31 @@ class MessagingHarnessService:
         plan["research_pack"] = research_pack
         self._save_json(research_pack, "research_pack.json")
 
-        # Stage 1.6: Internal Valuation Model
+        # Stage 1.6: Competitive Analysis
+        competitive_pack = self._competitive.run(plan)
+        plan["competitive_pack"] = competitive_pack
+        self._save_json(competitive_pack, "competitive_pack.json")
+
+        # Stage 1.7: Verified Catalyst Calendar
+        catalyst_calendar = self._catalyst.run(plan)
+        plan["catalyst_calendar"] = catalyst_calendar
+        self._save_json({"events": catalyst_calendar}, "catalyst_calendar.json")
+
+        # Stage 1.8: Internal Valuation Model
         internal_valuation = self._valuation.run(plan)
         plan["internal_valuation"] = internal_valuation
         self._save_json(internal_valuation, "internal_valuation.json")
+
+        # Stage 1.9: Fact Check — authoritative numbers + expectation gap + validation
+        fact_check = self._factcheck.run(plan)
+        plan["authoritative_numbers"] = fact_check["authoritative_numbers"]
+        plan["expectation_gap"]       = fact_check.get("expectation_gap", {})
+        plan["why_now"]               = fact_check.get("why_now", {})
+        plan["narrative_gap"]         = fact_check.get("narrative_gap", {})
+        plan["fact_check_report"]     = fact_check
+        self._save_json(fact_check, "fact_check_report.json")
+        self._save_json(fact_check.get("why_now", {}), "why_now.json")
+        self._save_json(fact_check.get("narrative_gap", {}), "narrative_gap.json")
 
         # Stage 2: Generate
         candidate = self._generator.run(plan)

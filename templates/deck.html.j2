@@ -619,6 +619,72 @@
   <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>近期催化剂</span></div>
 </section>
 
+{# ── Why Now ── #}
+{% elif slide.type == 'why_now' %}
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+  <div class="slide-inner">
+    <div class="tag purple">为什么是现在</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    {% if slide.old_thesis or slide.new_reality %}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-red)">
+        <div class="metric-label" style="color:var(--c-red)">▼ 市场旧叙事</div>
+        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.old_thesis or '' }}</div>
+      </div>
+      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-green)">
+        <div class="metric-label" style="color:var(--c-green)">▲ 数据新现实</div>
+        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.new_reality or '' }}</div>
+      </div>
+    </div>
+    {% endif %}
+    {% if slide.what_changed %}
+    <div class="callout-box fragment fade-up" style="margin-top:10px">
+      <div class="callout-icon">⚡</div>
+      <div class="callout-text">发生了什么变化：{{ slide.what_changed }}</div>
+    </div>
+    {% endif %}
+    {% if slide.why_now_statement %}
+    <div style="margin-top:10px;padding:10px 14px;background:rgba(139,92,246,0.12);border-radius:8px;font-size:0.82em;font-weight:700;color:#a78bfa" class="fragment fade-up">
+      ★ {{ slide.why_now_statement }}
+    </div>
+    {% endif %}
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>Why Now</span></div>
+</section>
+
+{# ── Narrative Gap ── #}
+{% elif slide.type == 'narrative_gap' %}
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+  <div class="slide-inner">
+    <div class="tag red">叙事缺口</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">市场相信</div>
+        <div style="font-size:0.78em;line-height:1.5;margin-top:6px;color:var(--c-muted)">{{ slide.market_consensus or '' }}</div>
+      </div>
+      <div class="metric-card fragment fade-up">
+        <div class="metric-label">数据显示</div>
+        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.reality or '' }}</div>
+      </div>
+    </div>
+    {% if slide.gap %}
+    {% set gdir = slide.gap_direction | default('mispriced') %}
+    {% set gap_color = '#22c55e' if gdir == 'undervalued' else '#ef4444' if gdir == 'overvalued' else '#f59e0b' %}
+    <div class="callout-box fragment fade-up" style="margin-top:10px;border-color:{{ gap_color }}20">
+      <div class="callout-icon" style="color:{{ gap_color }}">◈</div>
+      <div class="callout-text">核心缺口：{{ slide.gap }}</div>
+    </div>
+    {% endif %}
+    {% if slide.implication %}
+    <div style="margin-top:8px;font-size:0.76em;color:var(--c-accent);font-weight:600" class="fragment fade-up">
+      → 投资含义：{{ slide.implication }}
+    </div>
+    {% endif %}
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>Narrative Gap</span></div>
+</section>
+
 {# ── Outlook ── #}
 {% elif slide.type == 'outlook' %}
 <section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
