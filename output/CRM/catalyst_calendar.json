@@ -1,44 +1,54 @@
 {
   "events": [
     {
-      "event": "Q2 FY27 财报",
-      "date": "2026-09-02",
-      "date_confidence": "high",
-      "date_source": "Investing.com 和任务给定",
-      "impact": "high",
-      "direction": "neutral",
-      "bull_case": "EPS超预期或上调指引，股价可能上涨3-5%",
-      "bear_case": "营收或EPS不及预期，股价可能下跌3-5%"
-    },
-    {
-      "event": "BofA 科技会议",
+      "event": "BofA科技会议",
       "date": "2026-06-02",
       "date_confidence": "high",
-      "date_source": "Salesforce投资者关系页面",
+      "date_source": "官方网站",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "管理层发布乐观AI CRM战略，股价上涨1-2%",
-      "bear_case": "重申保守展望，股价下跌1-2%"
+      "bull_case": "管理层积极展望，股价或涨1-3%",
+      "bear_case": "负面言论导致股价下跌1-2%"
     },
     {
-      "event": "Evercore TMT 会议",
+      "event": "Evercore TMT会议",
       "date": "2026-06-03",
       "date_confidence": "high",
-      "date_source": "Salesforce投资者关系页面",
+      "date_source": "官方网站",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "会议传递强劲客户需求信号，股价上涨1-2%",
-      "bear_case": "竞争加剧担忧，股价下跌1-2%"
+      "bull_case": "新战略亮点提振信心，股价涨2%",
+      "bear_case": "需求担忧打压股价，跌1%"
     },
     {
-      "event": "Mizuho 科技会议",
+      "event": "Mizuho科技会议",
       "date": "2026-06-09",
       "date_confidence": "high",
-      "date_source": "Salesforce投资者关系页面",
+      "date_source": "官方网站",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "新产品或合作伙伴消息推动股价上涨1-2%",
-      "bear_case": "支出谨慎预期拖累股价下跌1-2%"
+      "bull_case": "AI进展超预期，股价涨2-3%",
+      "bear_case": "盈利预警引发抛售，跌2%"
+    },
+    {
+      "event": "Dreamforce开发者大会",
+      "date": "2026-06-11",
+      "date_confidence": "low",
+      "date_source": "行业博客",
+      "impact": "medium",
+      "direction": "positive",
+      "bull_case": "新产品发布推动股价涨3-5%",
+      "bear_case": "创新不及预期，股价跌1-2%"
+    },
+    {
+      "event": "下次财报发布",
+      "date": "2026-09-02",
+      "date_confidence": "high",
+      "date_source": "分析师预测/官方指引",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "营收超预期5%以上，股价涨5-8%",
+      "bear_case": "业绩指引下调，股价跌5-10%"
     }
   ]
 }
