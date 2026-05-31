@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"/>
-<title>市场怎么会给这样的定价？</title>
+<title>CRM要完蛋了吗？</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css"/>
@@ -279,6 +279,10 @@
 
   /* ── Risk cards with severity ── */
   .card-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .risk-card {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-accent); border-radius: 8px; padding: 10px 14px;
+  }
   .risk-card-v2 {
     display: flex; align-items: flex-start; gap: 10px;
     background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.16);
@@ -406,15 +410,15 @@
 
 
 
-<section data-autoslide="28443">
+<section data-autoslide="23907">
   <div class="cover-wrap">
     <div class="cover-left">
       <div class="cover-eyebrow">CRM &nbsp;·&nbsp; 本周深度分析</div>
-      <div class="cover-headline">市场怎么会给这样的定价？</div>
+      <div class="cover-headline">CRM要完蛋了吗？</div>
       <div class="cover-divider"></div>
       <div class="cover-company">Salesforce, Inc.&nbsp;&nbsp;·&nbsp;&nbsp;本周深度分析·2026-05-31</div>
       
-      <div class="cover-hook">股价191，市盈率12倍，盈利增速52%</div>
+      <div class="cover-hook">AI风暴真能把它连根拔起？</div>
       
     </div>
     <div class="cover-right">
@@ -440,7 +444,7 @@
 
 
 
-<section data-autoslide="89588">
+<section data-autoslide="108175">
   <div class="slide-inner">
     <div class="tag">市场概览</div>
     <div class="slide-headline">$191.1  +8.47%  ·  Forward PE 12.35x  ·  目标价空间 +33.7%</div>
@@ -458,7 +462,7 @@
     
     <div class="callout-box fragment fade-up">
       <div class="callout-icon">◈</div>
-      <div class="callout-text">Forward PEG仅0.93低于1，盈利增速52.2%</div>
+      <div class="callout-text">利润增速是营收增速的四倍，市场错误定价待修正</div>
     </div>
     
   </div>
@@ -472,35 +476,39 @@
 
 
 
-<section data-autoslide="74733">
+<section data-autoslide="86508">
   <div class="slide-inner">
-    <div class="tag purple">为什么是现在</div>
-    <div class="slide-headline">TMT大会验证窗口</div>
-    
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
-      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-red)">
-        <div class="metric-label" style="color:var(--c-red)">▼ 市场旧叙事</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">CRM是AI颠覆牺牲品，传统SaaS衰退，Agentforce没人信</div>
+    <div class="tag gold">AI 赢家 vs 输家</div>
+    <div class="slide-headline">AI让CRM赢还是输？</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+      <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.25);border-radius:10px;padding:14px 16px">
+        <div style="font-size:0.48em;font-weight:800;color:var(--c-green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">▲ AI 赢家论据</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-green)">盈利增速52.2%，远超营收增速13.3%；最新财报EPS实际3.88美元，比预期高三成</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-green)">Forward PE 12.35倍，PEG 0.93，估值折价</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-green)">股价放量站上MA20和MA50，守住191美元关口，短期趋势修复</div>
+        
       </div>
-      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-green)">
-        <div class="metric-label" style="color:var(--c-green)">▲ 数据新现实</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">EPS 3.88超预期24%，盈利飙升52.2%，Agentforce ARR增长超200%</div>
+      <div style="background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.25);border-radius:10px;padding:14px 16px">
+        <div style="font-size:0.48em;font-weight:800;color:var(--c-red);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">▼ AI 输家论据</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-red)">担忧SaaSpocalypse，核心CRM业务增长只有个位数，客户可能转向更便宜AI工具</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-red)">Agentforce概念好但管理层未给出具体客户采纳数字或业绩指引，若6月初路演不能兑现预期，情绪反弹退潮</div>
+        
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-red)">借债250亿美元回购，财务杠杆高；若宏观走弱高利息侵蚀净利润，悲观情景目标价174美元</div>
+        
       </div>
     </div>
     
-    
-    <div class="callout-box fragment fade-up" style="margin-top:10px">
-      <div class="callout-icon">⚡</div>
-      <div class="callout-text">发生了什么变化：4月30日财报EPS超预期24%，盈利飙升52.2%</div>
-    </div>
-    
-    
-    <div style="margin-top:10px;padding:10px 14px;background:rgba(139,92,246,0.12);border-radius:8px;font-size:0.82em;font-weight:700;color:#a78bfa" class="fragment fade-up">
-      ★ TMT大会验证Agentforce商业化，极端悲观逻辑崩塌
+    <div style="margin-top:12px;text-align:center;font-size:0.8em;color:var(--c-gold);font-style:italic;font-weight:600" class="fragment fade-up">
+      ？最终市场会站哪边？
     </div>
     
   </div>
-  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>Why Now</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>AI 赢家 vs 输家</span></div>
 </section>
 
 
@@ -510,33 +518,35 @@
 
 
 
-<section data-autoslide="86588">
+<section data-autoslide="121023">
   <div class="slide-inner">
-    <div class="tag gold">价格走势</div>
-    <div class="slide-headline">短期偏多，但追高需谨慎。最佳买点是在回踩幺七九到幺八零美元区间时确认支撑。</div>
-    
-    
-    <div class="direction-badge bullish">
-      ▲
-      技术偏多
+    <div class="tag green">看多逻辑</div>
+    <div class="slide-headline">坚决做多CRM</div>
+    <div class="card-list" style="margin-top:12px">
+      
+      <div class="risk-card fragment fade-up" style="border-left-color:var(--c-green)">
+        <div class="risk-title" style="color:var(--c-green)">▲ 盈利质量估值错配</div>
+        <div class="risk-body">财报EPS3.88美元超预期24%，Forward PE 12.35，PEG 0.93，盈利增速52%远超营收13%，运营杠杆显现。</div>
+      </div>
+      
+      <div class="risk-card fragment fade-up" style="border-left-color:var(--c-green)">
+        <div class="risk-title" style="color:var(--c-green)">▲ 护城河被严重低估</div>
+        <div class="risk-body">毛利率77.6%，企业客户迁移成本极高，Agentforce运行在CRM底座，加宽护城河。</div>
+      </div>
+      
+      <div class="risk-card fragment fade-up" style="border-left-color:var(--c-green)">
+        <div class="risk-title" style="color:var(--c-green)">▲ 催化剂就在眼前</div>
+        <div class="risk-body">六月初管理层密集路演，Agentforce数据将公布，空仓比例8.9%，有望引发行情突破200美元。</div>
+      </div>
+      
     </div>
     
-    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
-    
-    <ul class="bullets" style="margin-top:8px">
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>支撑位：MA20在$179.03，MA50在$180.68，形成共振支撑区。</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：布林带上轨$191.34，这是短期天花板。</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>趋势描述：五月二十九号一根放量大阳线，直接从$176.17拉到$191.1，涨幅超过8%，一口气突破MA20和MA50，几乎顶到布林带上轨。但前面两周一直在MA20和MA50之间震荡，均线交织，方向不明。</span></li>
-      
-      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>RSI数值+含义：RSI只有60.5，并未进入超买区，说明还有上涨空间。</span></li>
-      
-    </ul>
+    <div style="margin-top:10px;padding:10px 16px;background:rgba(16,185,129,0.1);border-radius:8px;font-size:0.8em;font-weight:700;color:var(--c-green)" class="fragment fade-up">
+      ★ 低估值下的盈利能力高速增长周期
+    </div>
     
   </div>
-  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>技术分析 · 30日走势</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>看多逻辑</span></div>
 </section>
 
 
@@ -546,67 +556,35 @@
 
 
 
-<section data-autoslide="202733">
+<section data-autoslide="151276">
   <div class="slide-inner">
-    <div class="tag green">核心要点</div>
-    <div class="slide-headline">多空博弈核心证据</div>
+    <div class="tag red">看空逻辑</div>
+    <div class="slide-headline">三大看空理由</div>
+    <div class="card-list" style="margin-top:12px">
+      
+      <div class="risk-card fragment fade-up">
+        <div class="risk-title">▼ 估值失真风险</div>
+        <div class="risk-body">Forward PE 12.35倍，EPS增长52%靠裁员，再裁10%涉7000人，收入增长10-11%历史新低，PE可能压缩到个位数</div>
+      </div>
+      
+      <div class="risk-card fragment fade-up">
+        <div class="risk-title">▼ 竞争威胁加速</div>
+        <div class="risk-body">微软Dynamics 365和AI Copilot，定价30美元/用户，比CRM贵三倍但功能碾压，5亿Office用户</div>
+      </div>
+      
+      <div class="risk-card fragment fade-up">
+        <div class="risk-title">▼ 下行催化剂明确</div>
+        <div class="risk-body">空头仓位8.9%，悲观目标价174，收入增速放缓到8%，测试173支撑</div>
+      </div>
+      
+    </div>
     
-    <ul class="kp-list">
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bear"></div>
-        <div class="kp-content">
-          <div class="kp-title">AI颠覆叙事风险</div>
-          <div class="kp-body">市场担心微软等巨头集成优势挤压生存空间，Forward PE仅12.35倍，按零增长资产定价。</div>
-        </div>
-        <div class="kp-badge bear">空</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bear"></div>
-        <div class="kp-content">
-          <div class="kp-title">技术面回调信号</div>
-          <div class="kp-body">周五收盘191.1美元顶在布林带上轨191.34美元，成交量放大，RSI 60.5，可能回踩179美元二十日均线。</div>
-        </div>
-        <div class="kp-badge bear">空</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bull"></div>
-        <div class="kp-content">
-          <div class="kp-title">估值与增速极端错配</div>
-          <div class="kp-body">盈利增速52.2%，PEG仅0.93，内部模型目标价232.2美元，有21.5%上行空间。</div>
-        </div>
-        <div class="kp-badge bull">多</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bull"></div>
-        <div class="kp-content">
-          <div class="kp-title">AI商业化第二曲线</div>
-          <div class="kp-body">Agentforce年度经常性收入增长超200%，大客户案例落地，6月2日TMT大会是关键验证窗口。</div>
-        </div>
-        <div class="kp-badge bull">多</div>
-      </li>
-      
-      
-      <li class="kp-item fragment fade-up">
-        <div class="kp-tag-dot bull"></div>
-        <div class="kp-content">
-          <div class="kp-title">机构持仓集中</div>
-          <div class="kp-body">机构持仓占比94.2%，五家买入五家中性无卖出，分析师共识目标价255.55美元，高出现价33.7%。</div>
-        </div>
-        <div class="kp-badge bull">多</div>
-      </li>
-      
-    </ul>
+    <div style="margin-top:10px;padding:10px 16px;background:rgba(244,63,94,0.08);border-radius:8px;font-size:0.8em;font-weight:600;color:var(--c-red)" class="fragment fade-up">
+      ⚠ 做多止损173，别跟趋势对抗
+    </div>
     
   </div>
-  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>核心逻辑</span></div>
+  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>看空逻辑</span></div>
 </section>
 
 
@@ -616,170 +594,26 @@
 
 
 
-<section data-autoslide="71653">
-  <div class="slide-inner">
-    <div class="tag red">叙事缺口</div>
-    <div class="slide-headline">零增长定价？</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">市场相信</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px;color:var(--c-muted)">零增长资产逻辑，12倍Forward PE</div>
-      </div>
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">数据显示</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">EPS 3.88美元超预期24%，盈利增速52.2%，Agentforce ARR增超200%</div>
-      </div>
-    </div>
-    
-    
-    
-    <div class="callout-box fragment fade-up" style="margin-top:10px;border-color:#22c55e20">
-      <div class="callout-icon" style="color:#22c55e">◈</div>
-      <div class="callout-text">核心缺口：市场低估了盈利增长</div>
-    </div>
-    
-    
-    <div style="margin-top:8px;font-size:0.76em;color:var(--c-accent);font-weight:600" class="fragment fade-up">
-      → 投资含义：15倍PE基准目标价232.2美元，较现价上行21.5%
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>Narrative Gap</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="92037">
-  <div class="slide-inner">
-    <div class="tag gold">本周新闻</div>
-    <div class="slide-headline">本周CRM新闻信号明确偏多</div>
-    
-    <div class="card-list" style="margin-top:8px">
-      
-      
-      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
-        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
-        ">
-        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
-          color:var(--c-green)">
-          ▲
-        </div>
-        <div style="flex:1">
-          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">财报超预期，EPS高出24%</div>
-          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">EPS实际3.88美元，比预期高24%，盈利增速52.2%但估值零增长</div>
-        </div>
-        
-        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
-          background:rgba(59,130,246,0.12);color:var(--c-accent)">earnings</div>
-        
-      </div>
-      
-      
-      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
-        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
-        ">
-        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
-          color:var(--c-green)">
-          ▲
-        </div>
-        <div style="flex:1">
-          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">Agentforce ARR增长超200%</div>
-          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">Agentforce ARR增长超200%，是第二增长曲线，管理层上调全年指引</div>
-        </div>
-        
-        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
-          background:rgba(59,130,246,0.12);color:var(--c-accent)">product</div>
-        
-      </div>
-      
-      
-      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
-        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
-        ">
-        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
-          color:var(--c-green)">
-          ▲
-        </div>
-        <div style="flex:1">
-          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">分析师评级分裂，五家买入五家中性</div>
-          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">五家买入五家中性无下调，目标价255.55美元高于当前33%，多头主导</div>
-        </div>
-        
-        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
-          background:rgba(59,130,246,0.12);color:var(--c-accent)">analyst</div>
-        
-      </div>
-      
-      
-      <div class="fragment fade-up" style="display:flex;align-items:flex-start;gap:10px;padding:9px 14px;border-radius:8px;
-        background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-left:3px solid var(--c-green)
-        ">
-        <div style="font-size:0.75em;margin-top:2px;flex-shrink:0;
-          color:var(--c-green)">
-          ▲
-        </div>
-        <div style="flex:1">
-          <div style="font-size:0.8em;font-weight:700;color:var(--c-text);margin-bottom:3px">短期催化：6月2-3日高管会议</div>
-          <div style="font-size:0.68em;color:var(--c-muted2);line-height:1.5">高管会议验证Agentforce变现能力，Pipeline超预期将结束悲观叙事</div>
-        </div>
-        
-        <div style="font-size:0.5em;font-weight:700;padding:2px 8px;border-radius:8px;flex-shrink:0;align-self:flex-start;margin-top:3px;
-          background:rgba(59,130,246,0.12);color:var(--c-accent)">other</div>
-        
-      </div>
-      
-    </div>
-    
-    
-    <div class="callout-box fragment fade-up" style="margin-top:10px">
-      <div class="callout-icon">◈</div>
-      <div class="callout-text">机构观点：分析师共识目标价255.55美元，五家买入五家中性</div>
-    </div>
-    
-  </div>
-  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>本周资讯</span></div>
-</section>
-
-
-
-
-
-
-
-
-<section data-autoslide="90400">
+<section data-autoslide="91407">
   <div class="slide-inner">
     <div class="tag">财务分析</div>
-    <div class="slide-headline">增长、盈利、现金三箭齐发</div>
+    <div class="slide-headline">利润释放开始，市场错误定价</div>
     
     <div class="metrics-grid">
       
       
       <div class="metric-card fragment fade-up">
         <div class="metric-label">营收增速</div>
-        <div class="metric-value ">
-          +13%
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">毛利率</div>
-        <div class="metric-value ">
-          
+        <div class="metric-value up">
+          <span class="metric-trend">▲</span>+13.3%
         </div>
       </div>
       
       
       <div class="metric-card fragment fade-up">
         <div class="metric-label">净利率</div>
-        <div class="metric-value up">
-          <span class="metric-trend">▲</span>18.7%
+        <div class="metric-value ">
+          21.6%
         </div>
       </div>
       
@@ -787,23 +621,15 @@
       <div class="metric-card fragment fade-up">
         <div class="metric-label">Forward PE</div>
         <div class="metric-value ">
-          12x
+          12.35x
         </div>
       </div>
       
       
       <div class="metric-card fragment fade-up">
         <div class="metric-label">自由现金流</div>
-        <div class="metric-value ">
-          占营收比例超30%
-        </div>
-      </div>
-      
-      
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">ROE</div>
-        <div class="metric-value ">
-          
+        <div class="metric-value up">
+          <span class="metric-trend">▲</span>自由现金流利润率37%
         </div>
       </div>
       
@@ -812,7 +638,7 @@
     
     <div class="callout-box fragment fade-up" style="margin-top:12px">
       <div class="callout-icon">◈</div>
-      <div class="callout-text">Forward PE仅12倍，盈利增速52%，PEG 0.93，基本面严重低估。</div>
+      <div class="callout-text">EPS超预期24%，利润增速52.2%是营收增速13.3%的四倍</div>
     </div>
     
   </div>
@@ -826,28 +652,37 @@
 
 
 
-<section data-autoslide="100095">
+<section data-autoslide="114588">
   <div class="slide-inner">
     <div class="tag red">风险提示</div>
-    <div class="slide-headline">中等</div>
+    <div class="slide-headline">高</div>
     
     <div class="card-list">
       
       
       <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity medium">中</div>
+        <div class="risk-severity high">高</div>
         <div class="risk-content">
-          <div class="risk-title">指引不及预期情绪回摆</div>
-          <div class="risk-body">管理层给出的下季度指引偏保守，市场对传统业务增速放缓的担忧未打消。TMT会议若无法给出Agentforce清晰时间线，悲观叙事会放大。</div>
+          <div class="risk-title">AI叙事兑现不及预期</div>
+          <div class="risk-body">市场押注Agentforce成功，若路演拿不出客户采纳数据或指引含糊，股价可能跌回179-181美元支撑区，空头仓位8.9%等待证伪。</div>
         </div>
       </div>
       
       
       <div class="risk-card-v2 fragment fade-up">
-        <div class="risk-severity medium">中</div>
+        <div class="risk-severity high">高</div>
         <div class="risk-content">
-          <div class="risk-title">AI颠覆叙事压制估值</div>
-          <div class="risk-body">微软等巨头集成优势长期压制CRM估值倍数，市场不视CRM为AI赢家，估值修复可能被无限拉长。低估值是安全边际但不能忽视时间成本。</div>
+          <div class="risk-title">债务杠杆遇上宏观逆风</div>
+          <div class="risk-body">公司借250亿美元回购，利息支出大增。宏观放缓致企业削减IT预算，营收增速下滑，利润被收入减少和利息夹击，最差情景目标价174美元，下行9%。</div>
+        </div>
+      </div>
+      
+      
+      <div class="risk-card-v2 fragment fade-up">
+        <div class="risk-severity low">低</div>
+        <div class="risk-content">
+          <div class="risk-title">SaaSpocalypse叙事真实发生</div>
+          <div class="risk-body">AI原生工具可能替代CRM功能，导致428亿美元订阅收入结构性流失。概率虽低，但杀伤力极大，可能改变估值逻辑使12倍PE从低估变合理。</div>
         </div>
       </div>
       
@@ -864,10 +699,10 @@
 
 
 
-<section data-autoslide="94653">
+<section data-autoslide="99653">
   <div class="slide-inner">
     <div class="tag gold">催化剂</div>
-    <div class="slide-headline">近期催化剂</div>
+    <div class="slide-headline">三条核心催化剂</div>
     
     <div class="card-list">
       
@@ -876,8 +711,41 @@
       <div class="catalyst-card-v2 positive fragment fade-up">
         <div class="cat-icon pos">▲</div>
         <div class="cat-content">
-          <div class="cat-event">TMT会议展示Agentforce进展</div>
-          <div class="cat-meta">六月二号到三号</div>
+          <div class="cat-event">财报EPS超预期</div>
+          <div class="cat-meta">财报公布后</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">技术突破确认</div>
+          <div class="cat-meta">周五</div>
+        </div>
+        <div class="cat-impact medium">中</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">空头仓位高</div>
+          <div class="cat-meta">财报公布后</div>
+        </div>
+        <div class="cat-impact large">大</div>
+      </div>
+      
+      
+      
+      <div class="catalyst-card-v2 positive fragment fade-up">
+        <div class="cat-icon pos">▲</div>
+        <div class="cat-content">
+          <div class="cat-event">管理层路演（正向）</div>
+          <div class="cat-meta">6月1日至3日</div>
         </div>
         <div class="cat-impact large">大</div>
       </div>
@@ -887,21 +755,10 @@
       <div class="catalyst-card-v2 negative fragment fade-up">
         <div class="cat-icon neg">▼</div>
         <div class="cat-content">
-          <div class="cat-event">下季度指引风险</div>
-          <div class="cat-meta">下季度</div>
+          <div class="cat-event">管理层路演（负向）</div>
+          <div class="cat-meta">6月1日至3日</div>
         </div>
         <div class="cat-impact medium">中</div>
-      </div>
-      
-      
-      
-      <div class="catalyst-card-v2 negative fragment fade-up">
-        <div class="cat-icon neg">▼</div>
-        <div class="cat-content">
-          <div class="cat-event">AI颠覆叙事持续压制估值</div>
-          <div class="cat-meta">持久</div>
-        </div>
-        <div class="cat-impact small">小</div>
       </div>
       
     </div>
@@ -917,21 +774,57 @@
 
 
 
-<section data-autoslide="110878">
+<section data-autoslide="44015">
   <div class="slide-inner">
-    <div class="tag purple">未来展望</div>
-    <div class="slide-headline">看多，但不强推。低估值是最大安全垫，等催化剂引爆</div>
-    
+    <div class="tag gold">价格走势</div>
+    <div class="slide-headline">趋势偏多，突破后的确认阶段</div>
     
     
     <div class="direction-badge bullish">
-      ▲ 看多
+      ▲
+      技术偏多
+    </div>
+    
+    <div class="chart-wrap"><canvas id="priceChart"></canvas></div>
+    
+    <ul class="bullets" style="margin-top:8px">
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>支撑位：一百七十九点零三美元（MA20也是布林中轨）</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>阻力位：布林上轨一百九十一点三四美元</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>大阳线突破MA20和MA50，成交量放大</span></li>
+      
+      <li class="fragment fade-up"><span class="bullet-dot o"></span><span>RSI 14为60.5，中性偏强，无超买信号</span></li>
+      
+    </ul>
+    
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">CRM</span><span>技术分析 · 30日走势</span></div>
+</section>
+
+
+
+
+
+
+
+
+<section data-autoslide="131805">
+  <div class="slide-inner">
+    <div class="tag purple">未来展望</div>
+    <div class="slide-headline">偏多的，但不是无脑冲</div>
+    
+    
+    
+    <div class="direction-badge neutral">
+      ◆ 中性
     </div>
     
     
     <div class="range-box">
       <div class="range-label">基础区间 · 1-4周</div>
-      <div class="range-values">$179 &nbsp;—&nbsp; $192</div>
+      <div class="range-values">$174 &nbsp;—&nbsp; $340</div>
     </div>
     
     
@@ -939,22 +832,22 @@
       
       <div class="scenario bear fragment fade-up">
         <div class="scenario-label">▼ 悲观</div>
-        <div class="scenario-condition">TMT会议只画饼，拿不出具体pipeline数字</div>
-        <div class="scenario-target">风险 $179</div>
+        <div class="scenario-condition">宏观环境突然收紧，或管理层路演毫无亮点</div>
+        <div class="scenario-target">风险 $174</div>
       </div>
       
       
       <div class="scenario base fragment fade-up">
         <div class="scenario-label">◆ 基准</div>
-        <div class="scenario-condition">Agentforce商业化进展，非笼统AI故事</div>
-        <div class="scenario-target">目标 $232</div>
+        <div class="scenario-condition">股价稳住一百八十美元支撑位</div>
+        <div class="scenario-target">目标 $248</div>
       </div>
       
       
       <div class="scenario bull fragment fade-up">
         <div class="scenario-label">▲ 乐观</div>
-        <div class="scenario-condition">Agentforce在TMT会议拿出大客户案例</div>
-        <div class="scenario-target">目标 $297</div>
+        <div class="scenario-condition">管理层路演Agentforce客户采纳数据高于预期</div>
+        <div class="scenario-target">目标 $340</div>
       </div>
       
     </div>
@@ -970,12 +863,12 @@
 
 
 
-<section data-autoslide="26443">
+<section data-autoslide="86255">
   <div class="slide-inner">
     <div class="tag">总结</div>
     <div class="slide-headline">本期结论</div>
     <div class="summary-quote">
-      <div class="summary-text">CRM此刻，是市场给的定价错误。</div>
+      <div class="summary-text">技术面与基本面共振，Buy</div>
     </div>
     
     <div class="verdict-row">
@@ -988,7 +881,7 @@
       
       <div class="action-box fragment fade-up" style="flex:1">
         <div class="action-label">操作框架</div>
-        <div class="action-text">仓位建议总资金百分之五以内</div>
+        <div class="action-text">179美元附近分批建仓，止损173美元，卫星仓位2-5%</div>
       </div>
       
     </div>

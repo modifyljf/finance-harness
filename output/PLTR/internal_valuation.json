@@ -1,65 +1,65 @@
 {
   "company_type": "HyperGrowth",
-  "business_model_type": "AI驱动的数据分析与操作系统平台，服务于政府和商业客户",
+  "business_model_type": "AI驱动的数据分析平台，主要为政府与商业客户提供定制化软件解决方案",
   "valuation_methodology": "EV/Revenue + Revenue Growth + FCF Margin",
-  "methodology_rationale": "公司处于高速增长阶段，传统PE指标失效，EV/Revenue能更好捕捉收入增长潜力和市场估值水平。",
+  "methodology_rationale": "公司处于高速增长阶段，盈利波动大，传统PE估值失真，采用收入估值法更能反映其成长价值。",
   "revenue_model": {
     "y1": {
+      "period": "FY2026",
+      "revenue_est": 7720200600,
+      "growth_pct": 72.5
+    },
+    "y2": {
       "period": "FY2027",
       "revenue_est": 11173877550,
       "growth_pct": 44.7
     },
-    "y2": {
-      "period": "FY2028",
-      "revenue_est": 15084735000,
-      "growth_pct": 35.0
-    },
     "y3": {
-      "period": "FY2029",
-      "revenue_est": 19610155000,
+      "period": "FY2028",
+      "revenue_est": 14526040815,
       "growth_pct": 30.0
     }
   },
   "margin_model": {
-    "current_gross_margin_pct": 84.1,
-    "target_operating_margin_pct": 52.0,
+    "current_gross_margin_pct": 86.8,
+    "target_operating_margin_pct": 50.0,
     "target_net_margin_pct": 45.0,
-    "margin_improvement_driver": "规模效应和AI自动化持续降低运营费用占比，高毛利订阅收入占比提升。"
+    "margin_improvement_driver": "规模效应释放，高价值合同占比提升，研发与销售费用率持续摊薄。"
   },
   "multiple_analysis": {
-    "current_multiple": 39.5,
-    "fair_multiple": 35.0,
-    "multiple_type": "EV/Revenue (NTM)",
-    "sector_median_multiple": 12.0,
-    "multiple_premium_discount": "Palantir因其AI平台稀缺性和超高速增长享有显著溢价，预计随增速正常化逐步向行业中位数回归。"
+    "current_multiple": 33.59,
+    "fair_multiple": 38.0,
+    "multiple_type": "EV/Revenue",
+    "sector_median_multiple": 25.0,
+    "multiple_premium_discount": "作为AI大数据分析龙头，增长强劲且利润率优异，享有显著估值溢价。"
   },
   "scenarios": {
     "bear": {
-      "target_price": 84.0,
-      "implied_upside_pct": -46.3,
-      "probability": 0.2,
-      "key_assumption": "全球企业IT支出放缓，政府合同延迟，收入增速降至30%以下且估值倍数压缩至20x。"
+      "target_price": 86.92,
+      "implied_upside_pct": -44.47,
+      "probability": 0.25,
+      "key_assumption": "政府合同延迟及商业客户获客放缓，FY2027营收增速降至35%，EV/Revenue收缩至20x。"
     },
     "base": {
-      "target_price": 186.4,
-      "implied_upside_pct": 19.1,
+      "target_price": 177.12,
+      "implied_upside_pct": 13.14,
       "probability": 0.55,
-      "key_assumption": "收入增长符合分析师共识，利润率温和改善，市场维持40x EV/Revenue估值。"
+      "key_assumption": "符合分析师共识，FY2027营收增长44.7%，EV/Revenue维持38x合理溢价。"
     },
     "bull": {
-      "target_price": 241.2,
-      "implied_upside_pct": 54.1,
-      "probability": 0.25,
-      "key_assumption": "AI应用加速渗透，新客户获取超预期，收入超共识15%，估值倍数扩大至45x。"
+      "target_price": 260.62,
+      "implied_upside_pct": 66.47,
+      "probability": 0.2,
+      "key_assumption": "AI平台化部署全面加速，FY2027营收超预期增长60%至12.5B，市场给予50x EV/Revenue。"
     }
   },
-  "expected_value": 179.6,
-  "methodology_note": "基准情景将FY2027共识收入111.74亿美元乘以40倍EV/Revenue得到企业价值446.95亿美元，除以完全稀释股数23.98亿股得出目标价186.4美元。悲观和乐观情景分别调整收入和倍数假设。",
-  "methodology_statement": "我们的基准目标价$186并非来自分析师共识，而是基于40倍Forward EV/Revenue对FY2027收入$111.7亿推导得出。",
+  "expected_value": 171.25,
+  "methodology_note": "基于EV/Revenue法对FY2027预期营收估值。熊/基/牛情景分别应用20x/38x/50x倍数，乘以对应营收后除以总股本2,397M，三情景加权得出预期值$171.25。",
+  "methodology_statement": "我们的基准目标价$177.12并非来自分析师共识，而是基于38倍EV/Revenue对FY2027预期营收$11,174mn推导得出。",
   "key_risks": [
-    "AI投资热潮降温导致估值快速收缩",
-    "政府合同依赖度高，政策变化可能冲击收入",
-    "竞争加剧可能压制价格和市场份额"
+    "政府国防预算削减导致大额合同流失",
+    "商业市场竞争加剧，客户获取成本上升",
+    "高估值下增长放缓可能引发戴维斯双杀"
   ],
-  "consensus_vs_internal": "内部基准目标价$186.4略高于分析师共识$183.7，主要因为我们采用了更乐观的EV/Revenue倍数（40x vs 隐含约39.4x）并预期持续的运营杠杆改善。"
+  "consensus_vs_internal": "内部基准目标价$177.12略低于分析师共识$183.73，主要由于我们对可持续增速及估值倍数的假设更保守，认为当前高增长将随基数扩大自然减速。"
 }

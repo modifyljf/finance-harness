@@ -104,7 +104,11 @@ class EvaluatorAgent(BaseAgent):
             )
             content = response.choices[0].message.content if response.choices else None
             if content and content.strip():
-                return json.loads(content)
+                try:
+                    return json.loads(content)
+                except json.JSONDecodeError as exc:
+                    print(f"[Evaluator] JSON parse error (attempt {attempt + 1}/3): {exc}")
+                    continue
             print(f"[Evaluator] Empty response from LLM judge (attempt {attempt + 1}/3), retrying...")
         print("[Evaluator] LLM judge returned empty after 3 attempts, skipping eval.")
         return {"score": 80, "passed": True, "issues": [], "strengths": [], "retry_targets": [],

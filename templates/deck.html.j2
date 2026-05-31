@@ -279,6 +279,10 @@
 
   /* ── Risk cards with severity ── */
   .card-list { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .risk-card {
+    background: var(--c-surface); border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-accent); border-radius: 8px; padding: 10px 14px;
+  }
   .risk-card-v2 {
     display: flex; align-items: flex-start; gap: 10px;
     background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.16);
@@ -619,70 +623,79 @@
   <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>近期催化剂</span></div>
 </section>
 
-{# ── Why Now ── #}
-{% elif slide.type == 'why_now' %}
+{# ── AI Winner vs Loser ── #}
+{% elif slide.type == 'ai_winner_loser' %}
 <section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
-    <div class="tag purple">为什么是现在</div>
+    <div class="tag gold">AI 赢家 vs 输家</div>
     <div class="slide-headline">{{ slide.headline }}</div>
-    {% if slide.old_thesis or slide.new_reality %}
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
-      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-red)">
-        <div class="metric-label" style="color:var(--c-red)">▼ 市场旧叙事</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.old_thesis or '' }}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+      <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.25);border-radius:10px;padding:14px 16px">
+        <div style="font-size:0.48em;font-weight:800;color:var(--c-green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">▲ AI 赢家论据</div>
+        {% for pt in (slide.bull_points or []) %}
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-green)">{{ pt }}</div>
+        {% endfor %}
       </div>
-      <div class="metric-card fragment fade-up" style="border-left:3px solid var(--c-green)">
-        <div class="metric-label" style="color:var(--c-green)">▲ 数据新现实</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.new_reality or '' }}</div>
+      <div style="background:rgba(244,63,94,0.06);border:1px solid rgba(244,63,94,0.25);border-radius:10px;padding:14px 16px">
+        <div style="font-size:0.48em;font-weight:800;color:var(--c-red);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px">▼ AI 输家论据</div>
+        {% for pt in (slide.bear_points or []) %}
+        <div class="fragment fade-up" style="font-size:0.72em;color:var(--c-text);line-height:1.5;margin-bottom:5px;padding-left:8px;border-left:2px solid var(--c-red)">{{ pt }}</div>
+        {% endfor %}
       </div>
     </div>
-    {% endif %}
-    {% if slide.what_changed %}
-    <div class="callout-box fragment fade-up" style="margin-top:10px">
-      <div class="callout-icon">⚡</div>
-      <div class="callout-text">发生了什么变化：{{ slide.what_changed }}</div>
-    </div>
-    {% endif %}
-    {% if slide.why_now_statement %}
-    <div style="margin-top:10px;padding:10px 14px;background:rgba(139,92,246,0.12);border-radius:8px;font-size:0.82em;font-weight:700;color:#a78bfa" class="fragment fade-up">
-      ★ {{ slide.why_now_statement }}
+    {% if slide.open_question %}
+    <div style="margin-top:12px;text-align:center;font-size:0.8em;color:var(--c-gold);font-style:italic;font-weight:600" class="fragment fade-up">
+      ？{{ slide.open_question }}
     </div>
     {% endif %}
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>Why Now</span></div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>AI 赢家 vs 输家</span></div>
 </section>
 
-{# ── Narrative Gap ── #}
-{% elif slide.type == 'narrative_gap' %}
+{# ── Bull Case ── #}
+{% elif slide.type == 'bull_case' %}
 <section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
   <div class="slide-inner">
-    <div class="tag red">叙事缺口</div>
+    <div class="tag green">看多逻辑</div>
     <div class="slide-headline">{{ slide.headline }}</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">市场相信</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px;color:var(--c-muted)">{{ slide.market_consensus or '' }}</div>
+    <div class="card-list" style="margin-top:12px">
+      {% for pt in (slide.points or []) %}
+      <div class="risk-card fragment fade-up" style="border-left-color:var(--c-green)">
+        <div class="risk-title" style="color:var(--c-green)">▲ {{ pt.title }}</div>
+        <div class="risk-body">{{ pt.body }}</div>
       </div>
-      <div class="metric-card fragment fade-up">
-        <div class="metric-label">数据显示</div>
-        <div style="font-size:0.78em;line-height:1.5;margin-top:6px">{{ slide.reality or '' }}</div>
-      </div>
+      {% endfor %}
     </div>
-    {% if slide.gap %}
-    {% set gdir = slide.gap_direction | default('mispriced') %}
-    {% set gap_color = '#22c55e' if gdir == 'undervalued' else '#ef4444' if gdir == 'overvalued' else '#f59e0b' %}
-    <div class="callout-box fragment fade-up" style="margin-top:10px;border-color:{{ gap_color }}20">
-      <div class="callout-icon" style="color:{{ gap_color }}">◈</div>
-      <div class="callout-text">核心缺口：{{ slide.gap }}</div>
-    </div>
-    {% endif %}
-    {% if slide.implication %}
-    <div style="margin-top:8px;font-size:0.76em;color:var(--c-accent);font-weight:600" class="fragment fade-up">
-      → 投资含义：{{ slide.implication }}
+    {% if slide.verdict %}
+    <div style="margin-top:10px;padding:10px 16px;background:rgba(16,185,129,0.1);border-radius:8px;font-size:0.8em;font-weight:700;color:var(--c-green)" class="fragment fade-up">
+      ★ {{ slide.verdict }}
     </div>
     {% endif %}
   </div>
-  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>Narrative Gap</span></div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>看多逻辑</span></div>
+</section>
+
+{# ── Bear Case ── #}
+{% elif slide.type == 'bear_case' %}
+<section data-autoslide="{{ slide.autoslide_ms | default(30000) }}">
+  <div class="slide-inner">
+    <div class="tag red">看空逻辑</div>
+    <div class="slide-headline">{{ slide.headline }}</div>
+    <div class="card-list" style="margin-top:12px">
+      {% for pt in (slide.points or []) %}
+      <div class="risk-card fragment fade-up">
+        <div class="risk-title">▼ {{ pt.title }}</div>
+        <div class="risk-body">{{ pt.body }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if slide.verdict %}
+    <div style="margin-top:10px;padding:10px 16px;background:rgba(244,63,94,0.08);border-radius:8px;font-size:0.8em;font-weight:600;color:var(--c-red)" class="fragment fade-up">
+      ⚠ {{ slide.verdict }}
+    </div>
+    {% endif %}
+  </div>
+  <div class="slide-footer"><span class="footer-ticker">{{ ticker }}</span><span>看空逻辑</span></div>
 </section>
 
 {# ── Outlook ── #}

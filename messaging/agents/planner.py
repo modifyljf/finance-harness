@@ -782,26 +782,25 @@ def _build_computed_signals(
 
 def _build_slide_outline(duration_minutes: int) -> list[dict]:
     outline = [
-        {"type": "cover",          "approx_seconds": 20, "goal": "Introduce the ticker and the central question of the video.",               "required_inputs": ["market_snapshot.ticker", "market_snapshot.company_name", "market_snapshot.current_price"]},
-        {"type": "market_overview","approx_seconds": 60, "goal": "Summarize current price, market cap, valuation and recent price movement.", "required_inputs": ["market_snapshot", "valuation_snapshot"]},
-        {"type": "why_now",       "approx_seconds": 60, "goal": "Explain why NOW is the right time to pay attention — what changed, old thesis vs new reality, expectation gap.", "required_inputs": ["expectation_gap", "why_now", "fact_check_report"]},
-        {"type": "price_action",   "approx_seconds": 70, "goal": "Explain recent price behavior using the 30-day chart and technical indicators.", "required_inputs": ["price_history", "technical_indicators"]},
-        {"type": "key_points",     "approx_seconds": 90, "goal": "Present the strongest bullish and bearish evidence this week.",              "required_inputs": ["computed_signals", "news_evidence_pack"]},
-        {"type": "narrative_gap", "approx_seconds": 60, "goal": "Reveal the gap between market consensus and reality — what market believes vs what data shows, and what it means.", "required_inputs": ["narrative_gap", "internal_valuation"]},
-        {"type": "news",           "approx_seconds": 60, "goal": "Present this week's key news headlines and analyst rating changes with attribution.", "required_inputs": ["news_evidence_pack.items", "news_evidence_pack.expert_quotes"]},
+        {"type": "cover",            "approx_seconds": 20,  "goal": "One-line hook that states the central question or contradiction of the week.",                         "required_inputs": ["market_snapshot"]},
+        {"type": "market_overview",  "approx_seconds": 50,  "goal": "How is the market pricing this stock right now? Current price, key multiples, and the core anomaly.",   "required_inputs": ["market_snapshot", "valuation_snapshot", "authoritative_numbers"]},
+        {"type": "ai_winner_loser",  "approx_seconds": 70,  "goal": "Present BOTH sides of the AI debate objectively. Does this company WIN or LOSE from AI? Equal weight bull and bear. No conclusion yet.", "required_inputs": ["research_pack", "narrative_gap", "why_now"]},
+        {"type": "bull_case",        "approx_seconds": 80,  "goal": "Dedicated bull case: the 3 strongest reasons to be long. Each must have specific data, not just narrative.", "required_inputs": ["internal_valuation", "expectation_gap", "competitive_pack"]},
+        {"type": "bear_case",        "approx_seconds": 80,  "goal": "Dedicated bear case: the 3 strongest reasons to be short or avoid. Must be as rigorous as the bull case.", "required_inputs": ["research_pack", "fact_check_report", "competitive_pack"]},
     ]
     if duration_minutes >= 6:
         outline += [
-            {"type": "financials", "approx_seconds": 80, "goal": "Explain whether fundamentals support the current valuation.", "required_inputs": ["financial_snapshot", "valuation_snapshot"]},
-            {"type": "risk",       "approx_seconds": 70, "goal": "Identify the main downside risks and uncertainty factors.",   "required_inputs": ["computed_signals.risk_flags", "valuation_snapshot"]},
+            {"type": "financials",   "approx_seconds": 60,  "goal": "Verify the thesis with hard numbers: Revenue Growth, EPS Growth, FCF Margin, Net Margin, Buyback, Debt.", "required_inputs": ["financial_snapshot", "earnings_snapshot", "valuation_snapshot"]},
+            {"type": "risk",         "approx_seconds": 60,  "goal": "Top 3 risks with mechanism, probability, and impact magnitude. No soft risks.",                           "required_inputs": ["computed_signals.risk_flags", "valuation_snapshot"]},
         ]
     if duration_minutes >= 8:
         outline.append(
-            {"type": "catalyst",   "approx_seconds": 70, "goal": "Identify near-term events or narratives that may move the stock.", "required_inputs": ["news_evidence_pack", "analyst_snapshot"]},
+            {"type": "catalyst",     "approx_seconds": 60,  "goal": "Key upcoming events with verified dates, direction (bull/bear), and magnitude. Include news impact analysis.", "required_inputs": ["catalyst_calendar", "news_evidence_pack", "analyst_snapshot"]},
         )
     outline += [
-        {"type": "outlook", "approx_seconds": 80, "goal": "Frame possible scenarios without forcing a buy/sell conclusion.",        "required_inputs": ["technical_indicators", "financial_snapshot", "computed_signals"]},
-        {"type": "summary", "approx_seconds": 40, "goal": "Summarize the key watchpoints and include the required disclaimer.",     "required_inputs": ["computed_signals.risk_flags", "computed_signals.signal_basis"]},
+        {"type": "price_action",     "approx_seconds": 40,  "goal": "Concise technical summary: trend, support, resistance, RSI signal, and one-line verdict. Max 250 chars.", "required_inputs": ["price_history", "technical_indicators", "authoritative_numbers"]},
+        {"type": "outlook",          "approx_seconds": 70,  "goal": "Three scenarios with Bear/Base/Bull target prices and probabilities. Expected value calculation.",         "required_inputs": ["internal_valuation", "technical_indicators", "computed_signals"]},
+        {"type": "summary",          "approx_seconds": 50,  "goal": "Investment Thesis: What Must Go Right, What Could Go Wrong, Risk/Reward ratio, Position Sizing, Verdict.", "required_inputs": ["computed_signals.risk_flags", "internal_valuation"]},
     ]
     return outline
 

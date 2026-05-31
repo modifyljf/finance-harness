@@ -1,113 +1,97 @@
 {
-  "title": "增速84.7，市场说没未来？",
+  "title": "PLTR新高，聪明钱撤离？",
   "ticker": "PLTR",
   "slides": [
     {
       "type": "cover",
-      "headline": "增速84.7，市场说没未来？",
+      "headline": "PLTR新高，聪明钱撤离？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "375亿市值，营收增速84.7%，市场却说它没未来？",
-      "autoslide_ms": 28900
+      "hook": "PLTR创历史新高，聪明钱却在撤离？",
+      "autoslide_ms": 42124
     },
     {
       "type": "market_overview",
       "headline": "$156.54  +9.21%  ·  Forward PE 75.47x  ·  目标价空间 +17.4%",
-      "callout": "营收增速84.7%，盈利增速325%，RSI 67.4未超买",
-      "autoslide_ms": 94566
+      "callout": "上行空间仅剩约13%，风险回报比不诱人",
+      "autoslide_ms": 82059
     },
     {
       "type": "why_now",
-      "headline": "股东会窗口期",
-      "old_thesis": "商业增长不可持续，只靠政府合同",
-      "new_reality": "EPS 0.33美元，超预期17.9%；营收增速84.7%，毛利率84.1%",
-      "what_changed": "下周股东大会+投资者日，管理层或展示商业加速证据",
-      "why_now_statement": "市场还在看旧剧本，现实已进入AI平台时代",
-      "autoslide_ms": 78617
+      "headline": "6月3日投资者日",
+      "old_thesis": "高增长不可持续，84.7%增速是疫情红利",
+      "new_reality": "EPS 0.33美元超预期17.9%，营收指引76.6亿美元，增速71%",
+      "what_changed": "最新财报EPS超预期，营收指引上调",
+      "why_now_statement": "市场看旧增长下滑，现实已进入AI变现时代",
+      "autoslide_ms": 81798
     },
     {
       "type": "price_action",
-      "headline": "短期偏多，但追高风险极大",
+      "headline": "短期偏多，但内部存在严重分歧",
       "signal": "bullish",
       "bullets": [
-        "支撑位：$149.2（布林带上轨）",
-        "阻力位：$207.52（52周前高）",
-        "典型突破型走势，中期趋势转多，但量价背离",
-        "RSI：67.4，离超买阈值70还有一步之遥"
+        "支撑位：$149.2（第一道防线）",
+        "阻力位：$160.0（心理关口）",
+        "价升量缩，是典型的多头动能衰竭信号",
+        "RSI 67.4，中性区间，还没到超买"
       ],
-      "autoslide_ms": 102001
+      "autoslide_ms": 112784
     },
     {
       "type": "key_points",
-      "headline": "多空博弈",
+      "headline": "多空亮底牌",
       "points": [
         {
-          "title": "盈利超预期打破偏见",
-          "body": "每股盈利0.33美元，超预期17%；营收增速84.7%，AIP平台商业渗透超华尔街模型。",
+          "title": "AI订单与业绩超预期",
+          "body": "AI基建订单叙事溢出，叠加EPS超预期17.9%，营收指引上调至$76.6亿，净利率43.7%，Rule of 40达145。",
           "tag": "bull"
         },
         {
-          "title": "技术形态多头突破",
-          "body": "收盘价156.54突破布林上轨149.2，RSI 67.4未超买，守住149.2有望上看前高207.52。",
-          "tag": "bull"
-        },
-        {
-          "title": "高估值风险",
-          "body": "市值3753亿，按40倍EV/Revenue目标价186美元（上行19%），悲观目标价84美元（下行46%）。",
-          "tag": "bear"
-        },
-        {
-          "title": "量价背离警示",
-          "body": "价格新高但成交量萎缩，追高意愿减弱；下周股东大会若无大单或成利好出尽转折点。",
+          "title": "量价背离与机构派发",
+          "body": "缩量上涨刺穿布林上轨$149.2，RSI中性但能量跟不上；文艺复兴等机构悄然减持；价格逼近内部估值$177.12，安全边际稀薄。",
           "tag": "bear"
         }
       ],
-      "autoslide_ms": 176276
+      "autoslide_ms": 150907
     },
     {
       "type": "narrative_gap",
-      "headline": "商业增长被低估",
-      "market_consensus": "PLTR商业增长不可持续，高增长仅靠政府合同",
-      "reality": "EPS0.33超预期17.9%，营收增速84.7%，毛利率84.1%",
-      "gap": "市场低估增长可持续性",
+      "headline": "市场低估业绩持续性",
+      "market_consensus": "年增长84%可持续，71倍市销率定价",
+      "reality": "EPS0.33美元超预期17.9%，营收指引76.6亿增速71%",
+      "gap": "市场假设增速线性放缓，实际连续超预期",
       "gap_direction": "undervalued",
-      "implication": "估值修复空间大，基准目标价186.4美元",
-      "autoslide_ms": 97747
+      "implication": "股价156.54低于共识，上行空间17.4%",
+      "autoslide_ms": 87428
     },
     {
       "type": "news",
-      "headline": "本周新闻偏多，情绪风险已被定价",
+      "headline": "收缩量上涨情绪驱动，机构严重分歧",
       "news_items": [
         {
-          "title": "市场打破PLTR增长不可持续偏见",
-          "category": "earnings",
+          "title": "政府国防合同再下一城，拿下美国陆军4.5亿美元",
+          "category": "other",
           "impact": "positive",
-          "note": "市场开始打破对PLTR商业增长不可持续的偏见"
+          "note": "政府收入的粘性极高，这份合同将为FY26全年营收指引提供额外支撑。"
         },
         {
-          "title": "分析师评级分歧，机构打架",
-          "category": "analyst",
-          "impact": "neutral",
-          "note": "机构在打架，散户在高潮，这是典型的情绪顶标志"
-        },
-        {
-          "title": "戴尔AI服务器订单猛增，PLTR受益",
+          "title": "与AMD合作，优化大模型推理效率",
           "category": "product",
           "impact": "positive",
-          "note": "这轮上涨的成交量在收缩，价格涨量不跟，是背离信号"
+          "note": "成本降低，意味着客户规模可以再上一个台阶。"
         },
         {
-          "title": "基准目标价186.4美元，下行空间大",
+          "title": "分析师评级罕见分歧：Wedbush上调，DA下调",
           "category": "analyst",
-          "impact": "negative",
-          "note": "当前股价上行空间仅19%，下行空间高达46%"
+          "impact": "neutral",
+          "note": "内部估值一百七十七点一二，Wedbush看多二百一十，DA看空九十五，分歧大，方向看投资者日。"
         }
       ],
-      "analyst_summary": "Renaissance减持，摩根士丹利重申增持至186美元",
-      "autoslide_ms": 108436
+      "analyst_summary": "Wedbush目标价从一百八十上调至二百一十，DA Davidson评级从中性下调至卖出，目标价九十五。",
+      "autoslide_ms": 103182
     },
     {
       "type": "financials",
-      "headline": "盈利质量S级，但估值已吞噬未来",
+      "headline": "增长强劲盈利扎实但估值过高",
       "metrics": [
         {
           "label": "营收增速",
@@ -115,90 +99,90 @@
           "trend": "up"
         },
         {
-          "label": "毛利率",
-          "value": "84.1%",
+          "label": "净利率",
+          "value": "43.7%",
           "trend": "up"
         },
         {
+          "label": "Forward PE",
+          "value": "75x",
+          "trend": "flat"
+        },
+        {
           "label": "自由现金流",
-          "value": "利润率35%以上",
+          "value": "Rule of 145分（增速+自由现金流利润率）",
           "trend": "up"
         }
       ],
-      "callout": "当前3750亿美元市值，已经提前定价了未来两年的高速增长。安全边际极薄。",
-      "autoslide_ms": 128182
+      "callout": "当前价格离基准只差百分之十三的空间，安全边际极低。",
+      "autoslide_ms": 111784
     },
     {
       "type": "risk",
       "headline": "高",
       "risks": [
         {
-          "title": "年度大会预期落空",
-          "body": "如果管理层拿不出大型订单或长期指引平平，利好出尽的抛售可能在一天内蒸发5%-8%市值。",
+          "title": "估值极度前置",
+          "body": "现在股价已经定价了一切完美。一旦下季度指引稍微软一点，带来的不是温和回调，是剧烈的估值压缩。",
           "severity": "high"
         },
         {
-          "title": "估值极度透支",
-          "body": "当前市值3753亿美元，Forward PS 49倍。悲观情景下内部估值仅84美元，下行风险46%。",
+          "title": "聪明钱的背离",
+          "body": "股价创新高但成交量在萎缩，这不是资金驱动的趋势而是情绪驱动的空头回补。散户在冲机构在撤。",
           "severity": "high"
-        },
-        {
-          "title": "量价背离",
-          "body": "价格猛涨但成交量收缩，追高资金犹豫，价格可能回踩149美元。",
-          "severity": "medium"
         }
       ],
-      "autoslide_ms": 100552
+      "autoslide_ms": 102030
     },
     {
       "type": "catalyst",
-      "headline": "催化剂决定方向",
+      "headline": "六月三日股东大会+投资者日",
       "catalysts": [
         {
           "event": "年度股东大会加投资者日",
           "direction": "positive",
-          "timing": "六月三号",
+          "timing": "六月三日",
           "impact": "large"
         },
         {
           "event": "年度股东大会加投资者日",
           "direction": "negative",
-          "timing": "六月三号",
+          "timing": "六月三日",
           "impact": "large"
         }
       ],
-      "autoslide_ms": 101276
+      "autoslide_ms": 88400
     },
     {
       "type": "outlook",
-      "headline": "短期区间震荡（1-4周），总判断：谨慎参与",
+      "headline": "谨慎观望，等催化剂落地",
       "subtitle": "中性",
       "base_range": {
-        "low": 149,
-        "high": 186,
+        "low": "$149.2",
+        "high": "$160",
         "timeframe": "1-4周"
       },
       "scenario_bear": {
-        "condition": "预期落空，利好出尽",
-        "target": 84
+        "condition": "放量跌破一百四十一点七九（五十日均线），多头趋势终结",
+        "target": "$86.92"
       },
       "scenario_base": {
-        "condition": "基于40倍Forward EV/Revenue对2027年收入推导",
-        "target": 186
+        "condition": "2026年6月3日投资者日释放超预期利好，营收指引上调到80亿美元以上",
+        "target": "$177.12"
       },
       "scenario_bull": {
-        "condition": "管理层兑现市场期待，给出超预期商业指引",
-        "target": 241
+        "condition": "回踩一百四十九点二不破，成交量萎缩后再次放量，或直接放量突破一百六十",
+        "target": "$177.12"
       },
-      "autoslide_ms": 83066
+      "autoslide_ms": 95298
     },
     {
       "type": "summary",
-      "headline": "情绪与估值的拔河赛，等方向明确了再出手",
-      "verdict": "neutral",
-      "action": "总仓位控制在百分之五以内，不要追高",
+      "headline": "这是情绪推动的反弹，不是资金推动的趋势。",
+      "verdict": "bearish",
+      "action": "减仓至5%以下，等回踩149.2美元放量企稳。",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 25718
+      "autoslide_ms": 42385
     }
   ]
 }

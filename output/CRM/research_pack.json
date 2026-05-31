@@ -1,118 +1,113 @@
 {
   "product_segments": [
     {
-      "name": "Service Cloud",
-      "revenue": "$2.33 billion",
-      "growth_pct": 8,
-      "period": "Q3 FY2025",
-      "source": "Salesforce Spring 2025 PDF (University of Iowa)"
-    },
-    {
-      "name": "Sales Cloud",
-      "revenue": "$2.13 billion",
-      "growth_pct": 8,
-      "period": "Q3 FY2025",
-      "source": "Salesforce Spring 2025 PDF (University of Iowa)"
+      "name": "Subscription and Support",
+      "revenue": "$35.7 billion",
+      "growth_pct": null,
+      "period": "FY2026 (year ended January 31, 2026)",
+      "source": "Tavily segment_revenue summary"
     }
   ],
   "management_guidance": [
     {
-      "metric": "FY2026 Revenue",
-      "value": "$41.1 billion - $41.3 billion",
-      "direction": "维持",
-      "context": "2025年9月Q2 FY2026财报会议给出的全年指引"
-    },
-    {
-      "metric": "FY2026 Adjusted EPS",
-      "value": "$11.33 - $11.37",
-      "direction": "上调",
-      "context": "2025年9月Q2 FY2026财报会议，指引高于LSEG共识$11.31"
-    },
-    {
-      "metric": "Full-year 2026 Revenue",
+      "metric": "FY2027 (full-year) revenue",
       "value": "$46.05 billion",
-      "direction": "上调",
-      "context": "Tavily摘要提及，可能指CY2026或FY2027"
+      "direction": "首次",
+      "context": "Salesforce forecasts full-year 2026 (likely FY2027) revenue at $46.05 billion."
     },
     {
-      "metric": "Full-year 2026 Adjusted EPS",
+      "metric": "FY2027 adjusted EPS",
       "value": "$14.09",
-      "direction": "上调",
-      "context": "Tavily摘要提及，可能指CY2026或FY2027"
+      "direction": "首次",
+      "context": "Adjusted EPS guidance for the same period."
     },
     {
-      "metric": "FY30 Revenue Target",
+      "metric": "FY2030 revenue target",
       "value": "$63 billion",
       "direction": "上调",
-      "context": "Q4 FY2026财报电话会，管理层设定11% CAGR目标"
+      "context": "Management raised FY30 revenue target to $63 billion (11% CAGR)."
     }
   ],
   "competitive_position": {
-    "market_share": "20.7% of global CRM market in 2026",
+    "market_share": "Salesforce holds 20.7% of global CRM market in 2026.",
     "key_competitors": [
+      "Microsoft Dynamics",
       "HubSpot",
-      "Microsoft Dynamics 365",
       "Zoho CRM",
-      "Adobe Inc."
+      "Pipedrive",
+      "Adobe"
     ],
-    "moat": "综合云原生解决方案和强大的网络效应，为现代云时代构建的护城河",
-    "threats": "竞争对手在功能、定价和AI创新方面的追赶，以及宏观经济放缓影响企业软件支出"
+    "moat": "Immense scale, brand power, and superior network effects create a durable competitive moat.",
+    "threats": "Mounting competitive and regulatory pressures, with Microsoft Dynamics as the closest competitor at 12.9% market share."
   },
   "key_facts": [
     {
-      "fact": "Agentforce and Data 360年度经常性收入达到29亿美元，同比增长超过200%",
+      "fact": "FY2026 total revenue $41.5 billion, up 10% year-over-year.",
+      "metric_type": "Revenue",
+      "source": "Q4 FY2026 earnings press release / Yahoo Finance transcript",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q4 FY2026 revenue $11.2 billion, up 12% year-over-year.",
+      "metric_type": "Revenue",
+      "source": "Q4 FY2026 earnings press release",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Agentforce and Data 360 ARR surged to $2.9 billion, up over 200% year-over-year.",
       "metric_type": "ARR",
-      "source": "Q4 FY2026财报电话会及SEC 10-K",
+      "source": "Q4 FY2026 earnings call transcript (Yahoo Finance)",
       "confidence": "high",
-      "caveat": "包括Informatica Cloud的11亿美元ARR"
+      "caveat": "ARR, not recognized revenue."
     },
     {
-      "fact": "FY2026全年营收415.25亿美元，同比增长9.58%",
+      "fact": "Total RPO (Remaining Performance Obligations) $72 billion, up 14% year-over-year.",
+      "metric_type": "Commitments",
+      "source": "Q4 FY2026 earnings press release",
+      "confidence": "high",
+      "caveat": "RPO represents contracted but not yet recognized revenue."
+    },
+    {
+      "fact": "Q1 FY2027 (period ending April 30, 2026) revenue $11.133 billion from SEC 10-Q.",
       "metric_type": "Revenue",
-      "source": "SEC 10-K FY2026及Macrotrends",
+      "source": "SEC EDGAR XBRL",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "Q4 FY2026营收112亿美元，同比增长12%",
+      "fact": "Q1 CY2026 (calendar) adjusted EPS $3.88, beating estimates of $3.13.",
       "metric_type": "Revenue",
-      "source": "Yahoo Finance earnings transcript",
-      "confidence": "high",
-      "caveat": null
-    },
-    {
-      "fact": "2026年第一季度（截至2026年4月30日）营收111.33亿美元，同比增长13.27%，高于分析师预期的110.5亿美元",
-      "metric_type": "Revenue",
-      "source": "SEC 10-Q及Yahoo Finance新闻报道",
-      "confidence": "high",
-      "caveat": "该季度为FY2027 Q1"
-    },
-    {
-      "fact": "管理层将FY30营收目标上调至630亿美元，隐含11%的年复合增长率",
-      "metric_type": "Other",
-      "source": "Q4 FY2026财报电话会",
-      "confidence": "high",
-      "caveat": "此为未来长期目标，非当前财年指引"
+      "source": "Yahoo Finance article (Q1 CY2026 Highlights)",
+      "confidence": "medium",
+      "caveat": "Calendar quarter vs fiscal quarter may differ."
     }
   ],
   "analyst_thesis": {
-    "bull_case": "DCF估值显示内在价值中位数约为334.5美元，当前股价191.1美元有约75%的上行空间；EPS预计年增长10%，ROE达27.9%，AI产品Agentforce ARR增长超200%",
-    "bear_case": "2026年股价下跌25-30%，受AI竞争担忧和市场对软件股的抛售影响；CRMV龙头面临HubSpot等低价替代品的挑战",
+    "bull_case": "Analysts see a 30% rebound potential in 2026, driven by strong fundamentals, AI/agentic platforms like Agentforce, and record $25 billion debt-funded buyback. Revenue growth of 10% in FY2026 and raised FY30 target to $63B support long-term optimism.",
+    "bear_case": "Stock down 30% year-to-date in 2026 due to deceleration to 8.7% revenue growth, mounting competitive and regulatory pressures. The debt-funded buyback adds financial risk.",
     "key_institutions": [
       {
-        "firm": "A.L. Capital Advisory",
-        "rating": "买入",
-        "target": "$334.5 (midpoint of $195-$474 range)",
-        "thesis": "DCF模型显示显著安全边际，建议买入"
+        "firm": "Mizuho",
+        "rating": "Outperform",
+        "target": null,
+        "thesis": "Expects improved performance in 2026; viewed Q4 results as mixed."
+      },
+      {
+        "firm": "BMO Capital",
+        "rating": "Outperform",
+        "target": null,
+        "thesis": "Cited the company's strong Q4 results despite mixed view."
       }
     ]
   },
   "data_quality": {
     "segment_data_available": false,
     "guidance_found": true,
-    "sources_count": 11,
+    "sources_count": 6,
     "confidence": "high",
-    "notes": "EDGAR无XBRL细分收入数据，Tavily提供了Q1 CY2026和FY2026的详细业绩以及竞争格局信息"
+    "notes": "EDGAR provides only total revenue, no segment breakdown. Tavily search yields detailed financials and guidance from multiple sources, but some figures (e.g., market share) vary slightly across sources; most consistent values are used."
   },
   "_edgar_quarterly_revenue": [
     {
