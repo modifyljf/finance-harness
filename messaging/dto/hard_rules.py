@@ -16,7 +16,8 @@ EVAL_PASS_THRESHOLD = 80
 MAX_EVAL_RETRIES = 2
 
 REQUIRED_SLIDE_TYPES = frozenset({
-    "cover", "market_overview", "ai_winner_loser", "bull_case", "bear_case", "outlook", "summary"
+    "cover", "market_overview", "ai_winner_loser", "bull_case", "bear_case",
+    "narrative_score", "outlook", "summary"
 })
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"

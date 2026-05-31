@@ -7,7 +7,16 @@
       "revenue_growth_yoy": 21.7,
       "gross_margin": 67.1,
       "ytd_performance_pct": 37.8,
-      "vs_target_note": "Oracle的增长更快但毛利率较低，凭借数据库和云基础设施的整合优势构成威胁。"
+      "vs_target_note": "估值显著高于CRM，收入增速更快，但毛利率较低。"
+    },
+    {
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corporation",
+      "pe_forward": 23.3,
+      "revenue_growth_yoy": 18.3,
+      "gross_margin": 68.3,
+      "ytd_performance_pct": -1.4,
+      "vs_target_note": "估值较高，收入增速领先，拥有强大的规模与集成优势。"
     },
     {
       "ticker": "SAP",
@@ -16,35 +25,26 @@
       "revenue_growth_yoy": 6.0,
       "gross_margin": 73.7,
       "ytd_performance_pct": -38.9,
-      "vs_target_note": "SAP增速较低，但其ERP生态绑定客户，毛利率接近，估值高于Salesforce。"
+      "vs_target_note": "估值略高于CRM，但收入增长缓慢，毛利率接近。"
     },
     {
-      "ticker": "MSFT",
-      "company_name": "Microsoft Corporation",
-      "pe_forward": 23.3,
-      "revenue_growth_yog": 18.3,
-      "gross_margin": 68.3,
-      "ytd_performance_pct": -1.4,
-      "vs_target_note": "微软规模庞大，Dynamics 365集成Office与Azure，增速和估值均高于Salesforce。"
-    },
-    {
-      "ticker": "NOW",
-      "company_name": "ServiceNow, Inc.",
-      "pe_forward": 24.7,
-      "revenue_growth_yog": 22.1,
-      "gross_margin": 76.6,
-      "ytd_performance_pct": -38.5,
-      "vs_target_note": "ServiceNow在ITSM领域快速增长，毛利率接近，但营收体量较小，PE远高于Salesforce。"
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc.",
+      "pe_forward": 9.8,
+      "revenue_growth_yoy": 12.0,
+      "gross_margin": 89.4,
+      "ytd_performance_pct": -37.6,
+      "vs_target_note": "估值更低，毛利率最高，收入增速略低于CRM。"
     }
   ],
-  "valuation_position": "最低",
-  "moat_rating": "medium",
-  "moat_description": "Salesforce拥有全球最大的CRM市场份额（约22%），其深度集成的平台和AI代理生态形成转换成本。但竞争格局分散，微软、Oracle等巨头正通过一体化云服务侵蚀其领地。",
+  "valuation_position": "偏低",
+  "moat_rating": "strong",
+  "moat_description": "Salesforce拥有全球最大CRM生态系统和22%的市场份额，是第二名两倍以上。强大的品牌、客户关系及持续创新能力构成核心壁垒。",
   "key_threats": [
-    "微软Dynamics 365与Office/Azure深度整合，吸引现有企业客户迁移",
-    "ServiceNow在ITSM和自动化领域扩展，抢占了CRM关联市场"
+    "微软凭借Azure和Office 365集成能力威胁Salesforce的客户基础",
+    "Oracle和SAP在企业级客户领域的竞争"
   ],
-  "relative_valuation_summary": "Salesforce当前远期PE为12.35倍，远低于同行均值（中位数约23.5倍），市场可能对其13.3%的增速和毛利率持续性存疑。但考虑到其CRM龙头地位和高毛利，合理PE区间应在15-18倍，对应股价约232-279美元。",
-  "competitive_advantage": "Salesforce提供最全面的CRM一体化平台，融合AI Agent和数据云，拥有最大的第三方应用生态。其77.6%的毛利率在同行中最高，彰显定价权。",
-  "market_share_note": "据2026年数据，Salesforce占据全球CRM市场约22%份额，是第二名微软的两倍以上。"
+  "relative_valuation_summary": "基于同行PE（9.8-28.1，中位数约20.3），CRM的12.35倍PE明显低于平均水平。考虑到其13.3%的收入增速和77.6%的毛利率，合理PE区间应在15-20倍，对应股价约232-310美元。",
+  "competitive_advantage": "Salesforce的客户关系管理一体化平台及低代码开发能力（如Salesforce Platform）形成强大粘性。其AI助手Einstein和Data Cloud提升了数据处理优势，区别于竞争对手。",
+  "market_share_note": "2026财年Salesforce占全球CRM市场约22%，是第二名微软的两倍以上。"
 }

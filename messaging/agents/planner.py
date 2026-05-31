@@ -787,11 +787,12 @@ def _build_slide_outline(duration_minutes: int) -> list[dict]:
         {"type": "ai_winner_loser",  "approx_seconds": 70,  "goal": "Present BOTH sides of the AI debate objectively. Does this company WIN or LOSE from AI? Equal weight bull and bear. No conclusion yet.", "required_inputs": ["research_pack", "narrative_gap", "why_now"]},
         {"type": "bull_case",        "approx_seconds": 80,  "goal": "Dedicated bull case: the 3 strongest reasons to be long. Each must have specific data, not just narrative.", "required_inputs": ["internal_valuation", "expectation_gap", "competitive_pack"]},
         {"type": "bear_case",        "approx_seconds": 80,  "goal": "Dedicated bear case: the 3 strongest reasons to be short or avoid. Must be as rigorous as the bull case.", "required_inputs": ["research_pack", "fact_check_report", "competitive_pack"]},
+        {"type": "narrative_score",  "approx_seconds": 30,  "goal": "Score card: rate AI Narrative / Growth / Valuation / Execution / Risk each 1-10. Give Overall score. One sentence rationale per dimension.", "required_inputs": ["internal_valuation", "expectation_gap", "competitive_pack", "fact_check_report"]},
     ]
     if duration_minutes >= 6:
         outline += [
-            {"type": "financials",   "approx_seconds": 60,  "goal": "Verify the thesis with hard numbers: Revenue Growth, EPS Growth, FCF Margin, Net Margin, Buyback, Debt.", "required_inputs": ["financial_snapshot", "earnings_snapshot", "valuation_snapshot"]},
-            {"type": "risk",         "approx_seconds": 60,  "goal": "Top 3 risks with mechanism, probability, and impact magnitude. No soft risks.",                           "required_inputs": ["computed_signals.risk_flags", "valuation_snapshot"]},
+            {"type": "financials",   "approx_seconds": 60,  "goal": "Fixed 7-metric template: Revenue Growth, EPS Growth, FCF Margin, Net Margin, Buybacks, Debt, Guidance. No promotional language.", "required_inputs": ["financial_snapshot", "earnings_snapshot", "valuation_snapshot"]},
+            {"type": "risk",         "approx_seconds": 60,  "goal": "Top 3 risks each with: Risk / Probability(High/Medium/Low) / Impact(High/Medium/Low) / Mitigation.", "required_inputs": ["computed_signals.risk_flags", "valuation_snapshot"]},
         ]
     if duration_minutes >= 8:
         outline.append(

@@ -1,141 +1,151 @@
 {
   "product_segments": [
     {
-      "name": "总营收（2026财年，截至2026-01-31）",
-      "revenue": "415.25亿美元",
-      "growth_pct": 10,
+      "name": "Sales Cloud",
+      "revenue": "$9.03 billion",
+      "growth_pct": 8.48,
       "period": "FY2026",
-      "source": "Q4 FY2026 earnings release / SEC 10-K"
+      "source": "Backlinko Salesforce Statistics (2026 data)"
     },
     {
-      "name": "订阅和支持收入（2026财年）",
-      "revenue": "357亿美元",
-      "growth_pct": null,
+      "name": "Service Cloud",
+      "revenue": "$9.82 billion",
+      "growth_pct": 8.44,
       "period": "FY2026",
-      "source": "technologychecker.io"
+      "source": "Backlinko Salesforce Statistics (2026 data)"
     },
     {
-      "name": "Q1 FY2027总营收",
-      "revenue": "111.3亿美元",
-      "growth_pct": 13.3,
-      "period": "Q1 FY2027（截至2026-04-30）",
-      "source": "Yahoo Finance / SEC 10-Q"
+      "name": "Salesforce Platform and Other",
+      "revenue": "$8.88 billion",
+      "growth_pct": 22.56,
+      "period": "FY2026",
+      "source": "Backlinko Salesforce Statistics (2026 data)"
     },
     {
-      "name": "美洲地区收入（Q1 FY2027）",
-      "revenue": "72.33亿美元",
-      "growth_pct": 11.8,
-      "period": "Q1 FY2027",
-      "source": "Q1 FY2027 earnings transcript"
-    },
-    {
-      "name": "欧洲地区收入（Q1 FY2027）",
-      "revenue": "27.54亿美元",
-      "growth_pct": 17.8,
-      "period": "Q1 FY2027",
-      "source": "Q1 FY2027 earnings transcript"
-    },
-    {
-      "name": "亚太地区收入（Q1 FY2027）",
-      "revenue": "11.46亿美元",
-      "growth_pct": 12.0,
-      "period": "Q1 FY2027",
-      "source": "Q1 FY2027 earnings transcript"
+      "name": "Marketing and Commerce",
+      "revenue": "$5.28 billion",
+      "growth_pct": 7.51,
+      "period": "FY2025",
+      "source": "Backlinko Salesforce Statistics (2025 data)"
     }
   ],
   "management_guidance": [
     {
-      "metric": "FY2027全年营收指引",
-      "value": "460.5亿美元",
-      "direction": "新指引",
-      "context": "管理层预测2026全财年（FY2027）营收460.5亿美元"
-    },
-    {
-      "metric": "FY2027调整后EPS指引",
-      "value": "14.09美元",
-      "direction": "新指引",
-      "context": "管理层预测2026全财年（FY2027）调整后EPS 14.09美元"
-    },
-    {
-      "metric": "FY2030营收目标",
-      "value": "630亿美元",
+      "metric": "FY2026 revenue",
+      "value": "$41.1 billion - $41.3 billion",
       "direction": "上调",
-      "context": "管理层将FY30营收目标上调至630亿美元（11% CAGR）"
+      "context": "Q2 FY2026 earnings call, raised low end"
+    },
+    {
+      "metric": "FY2026 non-GAAP operating margin",
+      "value": "34.1%",
+      "direction": "上调",
+      "context": "Raised by 10 bps from prior guidance"
+    },
+    {
+      "metric": "FY2026 adjusted EPS",
+      "value": "$14.09",
+      "direction": "上调",
+      "context": "Full-year EPS forecast raised"
+    },
+    {
+      "metric": "FY2030 revenue target",
+      "value": "$63 billion",
+      "direction": "维持",
+      "context": "Reaffirmed on Q4 FY2026 earnings call"
+    },
+    {
+      "metric": "Q2 FY2027 revenue",
+      "value": "$11.27 billion - $11.35 billion",
+      "direction": "首次",
+      "context": "Q1 FY2027 earnings call guidance, ~10% constant currency growth"
+    },
+    {
+      "metric": "Q2 FY2027 cRPO growth",
+      "value": "~13% YoY (constant currency)",
+      "direction": "首次",
+      "context": "Q1 FY2027 earnings call guidance"
     }
   ],
   "competitive_position": {
-    "market_share": "20.7% of global CRM market (2026)；另一来源称23.8%",
+    "market_share": "20.7% of global CRM market in 2026 (per KoalaGains / technologychecker.io)",
     "key_competitors": [
-      "Microsoft Dynamics (12.9%)",
       "HubSpot",
+      "Microsoft Dynamics 365",
       "Zoho CRM",
-      "Pipedrive",
-      "Adobe"
+      "Adobe Inc."
     ],
-    "moat": "品牌、规模、网络效应及AI平台Agentforce",
-    "threats": "来自竞争对手的竞争压力、监管风险、营收增速放缓至8.7%"
+    "moat": "Comprehensive platform with strong integration ecosystem; used by >80% of Fortune 500 companies.",
+    "threats": "Competitors focus on cost, speed, and specific use cases, potentially eroding market share."
   },
   "key_facts": [
     {
-      "fact": "Agentforce和Data 360的ARR达到29亿美元，同比增长超过200%",
+      "fact": "Agentforce and Data 360 ARR reached $2.9 billion in FY2026, up more than 200% YoY, including $1.1 billion from Informatica Cloud.",
       "metric_type": "ARR",
-      "source": "Q4 FY2026 earnings call transcript",
+      "source": "FY2026 10-K / Q4 FY2026 earnings call transcript",
+      "confidence": "high",
+      "caveat": "ARR is annualized recurring revenue, not recognized revenue."
+    },
+    {
+      "fact": "FY2026 total revenue was $41.525 billion (per EDGAR XBRL), up 9.6% YoY from $37.895 billion in FY2025.",
+      "metric_type": "Revenue",
+      "source": "SEC 10-K filed 2026-01-31",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "总剩余履约义务（RPO）达到720亿美元，同比增长14%",
-      "metric_type": "Commitments",
-      "source": "Q4 FY2026 earnings release",
+      "fact": "Q1 FY2027 revenue (period ending 2026-04-30) was $11.133 billion, beating analyst estimates of $11.05 billion.",
+      "metric_type": "Revenue",
+      "source": "SEC 10-Q / Yahoo Finance earnings article",
       "confidence": "high",
-      "caveat": "RPO为剩余履约义务，非已确认收入"
+      "caveat": null
     },
     {
-      "fact": "当前剩余履约义务（cRPO）为336亿美元，同比增长13.5%（Q1 FY2027）",
-      "metric_type": "Commitments",
-      "source": "Q1 FY2027 earnings transcript",
-      "confidence": "high",
-      "caveat": "cRPO为已签约但未确认收入"
-    },
-    {
-      "fact": "Salesforce宣布250亿美元债务融资回购计划",
+      "fact": "Q1 FY2027 adjusted EPS was $3.88 vs consensus $3.13, a 24.1% beat.",
       "metric_type": "Other",
-      "source": "Yahoo Finance",
+      "source": "Yahoo Finance earnings article",
       "confidence": "high",
-      "caveat": "回购由债务融资"
+      "caveat": "Adjusted EPS is non-GAAP."
     },
     {
-      "fact": "股价2026年至今下跌超过30%，但过去一周反弹约3%",
+      "fact": "In March 2026, Salesforce funded a $25 billion accelerated share repurchase by issuing senior notes and a $6 billion term loan.",
       "metric_type": "Other",
-      "source": "TIKR blog",
+      "source": "Yahoo Finance debt deal article",
       "confidence": "high",
-      "caveat": "股价表现，非财务指标"
+      "caveat": "Debt financing for buyback."
+    },
+    {
+      "fact": "Salesforce guided FY30 revenue target of $63 billion (11% CAGR).",
+      "metric_type": "Other",
+      "source": "Q4 FY2026 earnings call transcript",
+      "confidence": "high",
+      "caveat": "Target, not guidance."
     }
   ],
   "analyst_thesis": {
-    "bull_case": "AI平台Agentforce推动ARR超过200%增长，250亿美元回购提供支撑，长期营收目标630亿美元，分析师预计30%反弹空间",
-    "bear_case": "营收增速放缓至8.7%，低于历史水平；微软Dynamics等竞争加剧；监管不确定性；股价年初至今下跌30%",
+    "bull_case": "Agentforce and Data 360 ARR surged to $2.9B (+200% YoY), indicating strong AI-driven growth. Management raised FY30 revenue target to $63B (11% CAGR). Analyst consensus target of $257.03 implies 34.5% upside from current price of $191.10.",
+    "bear_case": "Stock declined 25-30% YTD in 2026 amid AI concerns, with forward P/E of 12.3x reflecting skepticism. Debt-funded $25B buyback increases leverage, and 8.6% annual revenue growth forecast may not sustain premium multiple.",
     "key_institutions": [
       {
-        "firm": "Mizuho",
-        "rating": "Outperform",
-        "target": null,
-        "thesis": "预计2026年业绩改善"
+        "firm": "Analyst Consensus (simplywall.st, TIKR, etc.)",
+        "rating": "Hold (implied by target upside)",
+        "target": "$257.03",
+        "thesis": "34.5% upside potential based on analyst target price."
       },
       {
-        "firm": "BMO Capital",
-        "rating": "Outperform",
-        "target": null,
-        "thesis": "提及回购计划"
+        "firm": "Simply Wall St",
+        "rating": "N/A",
+        "target": "N/A",
+        "thesis": "Analysts expect 9.5% earnings and 8.6% revenue CAGR through 2026."
       }
     ]
   },
   "data_quality": {
-    "segment_data_available": false,
+    "segment_data_available": true,
     "guidance_found": true,
-    "sources_count": 8,
+    "sources_count": 9,
     "confidence": "medium",
-    "notes": "总营收及地区收入来自EDGAR和财报电话会，但产品线收入拆分不完整；市场份额有两组数据；部分指引可能对应不同财年"
+    "notes": "Most segment revenue data from third-party (Backlinko), not official segment reporting. EDGAR XBRL lacks segment detail. Guidance and key facts from earnings calls and SEC filings are high confidence."
   },
   "_edgar_quarterly_revenue": [
     {

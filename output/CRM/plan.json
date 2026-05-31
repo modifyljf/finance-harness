@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T22:54:41.574460+00:00",
+  "generated_at": "2026-05-31T23:24:29.711394+00:00",
   "current_date": "2026-05-31",
   "input": {
     "ticker": "CRM",
@@ -301,6 +301,19 @@
     "max_items": 20,
     "items": [
       {
+        "title": "Is Salesforce (CRM) the Best Undervalued Stock to Buy According to the Financial Media?",
+        "publisher": "Insider Monkey",
+        "published_at": "2026-05-31 23:00",
+        "url": "",
+        "category": "earnings",
+        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
+        "matched_keywords": [
+          "CRM"
+        ],
+        "relevance_score": 1.0,
+        "expert_quotes": []
+      },
+      {
         "title": "CRM Stock Is Down More Than 30% This Year, But Marc Benioff Says Salesforce's Blowout $11.1 Billion Quarter May Be A 'Sign'",
         "publisher": "Benzinga",
         "published_at": "2026-05-31 11:32",
@@ -546,19 +559,6 @@
         ],
         "relevance_score": 0.67,
         "expert_quotes": []
-      },
-      {
-        "title": "These 3 Software Stocks Are Buying Back Shares Hand Over Fist",
-        "publisher": "MarketBeat",
-        "published_at": "2026-05-30 14:10",
-        "url": "",
-        "category": "earnings",
-        "why_relevant": "May affect earnings expectations, guidance, or valuation multiples.",
-        "matched_keywords": [
-          "salesforce"
-        ],
-        "relevance_score": 0.33,
-        "expert_quotes": []
       }
     ],
     "expert_quotes": [
@@ -639,7 +639,7 @@
     "technical_sentiment_score": 51.1,
     "momentum_state": "neutral",
     "valuation_pressure": "low",
-    "news_intensity": "medium",
+    "news_intensity": "high",
     "risk_flags": [],
     "signal_basis": [
       "RSI 60.5 (neutral)",
@@ -647,7 +647,7 @@
       "Volume trend: expanding",
       "52W range position: 24.3%",
       "Analyst upside: 33.7%",
-      "News intensity: medium (4 high-relevance items)"
+      "News intensity: high (5 high-relevance items)"
     ]
   },
   "slide_outline": [
@@ -700,9 +700,20 @@
       ]
     },
     {
+      "type": "narrative_score",
+      "approx_seconds": 30,
+      "goal": "Score card: rate AI Narrative / Growth / Valuation / Execution / Risk each 1-10. Give Overall score. One sentence rationale per dimension.",
+      "required_inputs": [
+        "internal_valuation",
+        "expectation_gap",
+        "competitive_pack",
+        "fact_check_report"
+      ]
+    },
+    {
       "type": "financials",
       "approx_seconds": 60,
-      "goal": "Verify the thesis with hard numbers: Revenue Growth, EPS Growth, FCF Margin, Net Margin, Buyback, Debt.",
+      "goal": "Fixed 7-metric template: Revenue Growth, EPS Growth, FCF Margin, Net Margin, Buybacks, Debt, Guidance. No promotional language.",
       "required_inputs": [
         "financial_snapshot",
         "earnings_snapshot",
@@ -712,7 +723,7 @@
     {
       "type": "risk",
       "approx_seconds": 60,
-      "goal": "Top 3 risks with mechanism, probability, and impact magnitude. No soft risks.",
+      "goal": "Top 3 risks each with: Risk / Probability(High/Medium/Low) / Impact(High/Medium/Low) / Mitigation.",
       "required_inputs": [
         "computed_signals.risk_flags",
         "valuation_snapshot"

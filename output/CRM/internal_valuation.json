@@ -1,65 +1,65 @@
 {
   "company_type": "GrowthSoftware",
-  "business_model_type": "SaaS订阅制（CRM、平台与应用）",
+  "business_model_type": "SaaS订阅制（CRM及企业云平台）",
   "valuation_methodology": "Forward PE + PEG + EV/FCF",
-  "methodology_rationale": "SaaS公司高成长性，Forward PE能反映盈利增长前景，PEG综合考量增长率，EV/FCF补充现金流估值。",
+  "methodology_rationale": "CRM是成熟但仍有增长的软件公司，适用以盈利为核心的GrowthSoftware估值框架，重点关注Forward PE和PEG。",
   "revenue_model": {
     "y1": {
-      "period": "FY2027",
-      "revenue_est": 46082899370,
-      "growth_pct": 11.0
-    },
-    "y2": {
       "period": "FY2028",
-      "revenue_est": 50583117900,
+      "revenue_est": 50583000000,
       "growth_pct": 9.8
     },
-    "y3": {
+    "y2": {
       "period": "FY2029",
-      "revenue_est": 54629767332,
+      "revenue_est": 54630000000,
       "growth_pct": 8.0
+    },
+    "y3": {
+      "period": "FY2030",
+      "revenue_est": 58454000000,
+      "growth_pct": 7.0
     }
   },
   "margin_model": {
-    "current_gross_margin_pct": 77.6,
+    "current_gross_margin_pct": 76.9,
     "target_operating_margin_pct": 25.0,
-    "target_net_margin_pct": 21.0,
-    "margin_improvement_driver": "运营杠杆提升与高毛利订阅收入占比扩大推动利润率改善（Non-GAAP口径）"
+    "target_net_margin_pct": 20.0,
+    "margin_improvement_driver": "规模效应和成本控制推动营业杠杆，营业利润率从21.8%逐步提升至25%，净利率跟随改善。"
   },
   "multiple_analysis": {
     "current_multiple": 12.35,
-    "fair_multiple": 16.0,
+    "fair_multiple": 13.0,
     "multiple_type": "Forward PE",
-    "sector_median_multiple": 18.5,
-    "multiple_premium_discount": "较行业中位数折价约13.5%，因营收增速已放缓至10%附近，低于高成长软件同业。"
+    "sector_median_multiple": 15.0,
+    "multiple_premium_discount": "当前Forward PE 12.35x低于行业中位数15x，折价源于增速放缓，估值合理。"
   },
   "scenarios": {
     "bear": {
-      "target_price": 210.0,
-      "implied_upside_pct": 9.89,
-      "probability": 0.25,
-      "key_assumption": "宏观逆风致营收增速降至7%，EPS仅达$15.0，估值收缩至14x PE。"
+      "target_price": 140.0,
+      "implied_upside_pct": -26.7,
+      "probability": 0.2,
+      "key_assumption": "营收增速跌至6%，利润率收缩，EPS降至14美元，估值压缩至10x Forward PE。"
     },
     "base": {
-      "target_price": 247.68,
-      "implied_upside_pct": 29.6,
-      "probability": 0.55,
-      "key_assumption": "营收增速9.8%符合共识，EPS$15.48，合理PE 16x，反映订阅模式稳定性。"
+      "target_price": 201.0,
+      "implied_upside_pct": 5.2,
+      "probability": 0.5,
+      "key_assumption": "营收增速9.8%符合共识，EPS 15.48美元，给予13x Forward PE。"
     },
     "bull": {
-      "target_price": 297.0,
-      "implied_upside_pct": 55.41,
-      "probability": 0.2,
-      "key_assumption": "AI功能拉动超预期增长，营收增速升至12%，EPS$16.5，市场给予18x PE溢价。"
+      "target_price": 247.5,
+      "implied_upside_pct": 29.5,
+      "probability": 0.3,
+      "key_assumption": "营收超预期增长11%，运营杠杆推动EPS至16.5美元，市场给予15x Forward PE。"
     }
   },
-  "expected_value": 248.12,
-  "methodology_note": "基准目标价基于FY2028（NTM）分析师共识EPS $15.48乘16.0x Forward PE得出$247.68；16x PE源自历史区间中位及PEG回归（9.3% EPS增速对应合理PE~15x，给予小幅溢价）。EV/FCF交叉验证：当前P/FCF约9.5x，若FCF增速10%以上，支撑15x+ Forward PE。",
-  "methodology_statement": "我们的基准目标价$248并非来自分析师共识，而是基于16.0倍Forward PE对FY2028 EPS $15.48推导得出。",
+  "expected_value": 202.75,
+  "methodology_note": "基准情景基于FY2028共识EPS 15.48美元和13倍Forward PE，得出目标价201美元。该倍数略高于当前12.35x，反映盈利质量改善但增长放缓下的合理溢价。",
+  "methodology_statement": "我们的基准目标价$201并非来自分析师共识，而是基于13倍Forward PE对FY2028 EPS $15.48推导得出。",
   "key_risks": [
-    "企业IT预算收紧导致CRM新订单增速低于预期",
-    "Microsoft Dynamics 365等竞品加剧价格竞争",
-    "大型收购整合风险及股东回报摊薄"
+    "云支出放缓导致营收增速进一步下降",
+    "利润率改善不及预期，竞争加剧压缩定价",
+    "AI转型不确定性可能导致客户迁移"
   ],
-  "consensus_vs_internal": "内部基准目标价$247.68低于分析师共识平均$255.55约3%，主要因我们采用更保守的16.0倍PE，而共识隐含约16.5倍PE，反映我们对增速放缓后估值中枢下移的谨慎判断。"
+  "consensus_vs_internal": "内部基准目标价201美元低于分析师平均目标价255.55美元，主因我们采用更保守的Forward PE倍数（13x vs. 隐含约16.5x），反映了对增速放缓和估值压缩的预期。"
 }

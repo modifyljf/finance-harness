@@ -74,17 +74,32 @@ _SLIDE_INSTRUCTIONS: dict[str, str] = {
         "每条新闻格式：[事件] → [影响方向: Bullish/Bearish/Neutral] → [重要性: High/Medium/Low] → [1句解读]\n"
         "最后一句：本周新闻整体信号是偏多/偏空/中性"
     ),
+    "narrative_score": (
+        "用评分卡快速建立用户认知，固定格式：\n"
+        "每个维度：维度名 X/10 + 一句理由（不超过15字）\n"
+        "维度顺序：AI叙事 / 增长质量 / 估值吸引力 / 执行风险 / 整体风险\n"
+        "最后给出综合评分和1句总结\n"
+        "禁止：分数虚高，每项都给9-10分。评分必须有区分度，能反映真实风险。"
+    ),
     "financials": (
-        "- 用比喻让财务数字有画面感\n"
-        "- 触及盈利质量、增长可持续性、现金流三个维度\n"
-        "- 用对比说明（如：同期行业平均是X，它是Y）\n"
-        "- 结尾说明财务数据对估值的含义"
+        "固定7指标模板，逐一播报，不得省略：\n"
+        "1. 营收增速（YoY）：X% → 与行业均值比较\n"
+        "2. EPS增速（YoY）：X% → 说明质量（是否来自回购压缩股数）\n"
+        "3. 自由现金流利润率（FCF Margin）：X%\n"
+        "4. 净利率（Net Margin）：X%\n"
+        "5. 回购：金额 + 对EPS的贡献\n"
+        "6. 债务水平：总债务 vs 现金，净债务状况\n"
+        "7. 管理层指引：下季度/全年收入和EPS指引\n"
+        "禁止使用：'捡钱''财务数据告诉我们可以买入'等促销语言\n"
+        "改为：'财务数据显示当前估值与盈利能力之间存在明显错配'"
     ),
     "risk": (
-        "- 用'但是'或'然而'硬转折引入风险主题\n"
-        "- 每个风险说清楚：是什么 → 为什么 → 影响有多大\n"
-        "- 不要只列标题，要说影响机制和传导路径\n"
-        "- 结尾必须是：'知道了风险，才能管好仓位。'"
+        "固定结构，每个风险必须包含4个要素：\n"
+        "【风险】：是什么（具体，不能模糊）\n"
+        "【概率】：High/Medium/Low + 理由\n"
+        "【影响】：High/Medium/Low + 对股价的量化影响（如：可能下跌X%）\n"
+        "【缓解】：投资者如何管理这个风险（仓位控制/止损/对冲）\n"
+        "结尾：'知道了风险，才能管好仓位。'"
     ),
     "catalyst": (
         "催化剂 + 新闻影响分析合并页：\n"
@@ -94,21 +109,29 @@ _SLIDE_INSTRUCTIONS: dict[str, str] = {
         "每个催化剂必须有具体时间节点（high-confidence日期优先），禁止说'未来某时'"
     ),
     "outlook": (
-        "- 给出明确的短期区间（1-4周的价格区间上下限）\n"
-        "- 给出中期目标价（3-6个月）和触发条件\n"
-        "- 区分多头和空头各自的入场/出场逻辑\n"
-        "- 结尾一句话定性：看多/中性/谨慎"
+        "情景分析，三个情景必须都有明确的估值推导：\n"
+        "【Bear Case】概率X% | 目标价$X | 触发条件\n"
+        "  → 推导：Current PE/EV_Revenue X倍 压缩至 Yx倍 × FY20XX EPS/Revenue $Z = $目标价\n"
+        "【Base Case】概率X% | 目标价$X | 触发条件\n"
+        "  → 推导：给予 Yx倍 Forward PE/EV_Revenue × FY20XX EPS/Revenue $Z = $目标价\n"
+        "【Bull Case】概率X% | 目标价$X | 触发条件\n"
+        "  → 推导：AI转型验证后给予 Yx倍 × FY20XX EPS/Revenue $Z = $目标价\n"
+        "期望价值 = Bear×P(Bear) + Base×P(Base) + Bull×P(Bull)\n"
+        "禁止：只给目标价不说明PE倍数来源和EPS年份"
     ),
     "summary": (
-        "Investment Thesis 结构（机构研究报告风格）：\n"
-        "【What Must Go Right】这个论点成立需要什么前提？（1-2条具体条件）\n"
-        "【What Could Go Wrong】最可能打破论点的事是什么？（1-2条）\n"
-        "【Risk/Reward】用内部估值数据：Bear $X / Base $X / Bull $X，期望价值 $X\n"
-        "【Position Sizing】根据风险评级建议：\n"
-        "  - 高确定性：Core Position 5-10%\n"
-        "  - 中等确定性：Satellite Position 2-5%\n"
-        "  - 高风险高赔率：Speculative Position 1-2%\n"
-        "【Final Verdict】一句话：Buy/Accumulate/Hold/Avoid + 触发条件\n"
+        "Investment Thesis 固定结构（机构研究报告风格）：\n"
+        "【What Must Go Right】投资成立的2个核心前提（具体可验证的条件）\n"
+        "【What Could Go Wrong】最可能让投资失效的2件事\n"
+        "【What Changes My Mind】明确说出：如果X发生，我将撤销/调整这个观点\n"
+        "  示例：'如果营收增速跌破X%且Agentforce ARR增速低于X%，将撤销看多观点'\n"
+        "【Risk/Reward】上行空间 vs 下行空间 | 盈亏比（如：3:1）\n"
+        "【Position Sizing】三层体系：\n"
+        "  Core Position（高确定性）5-10%\n"
+        "  Satellite Position（成长股）2-5%\n"
+        "  Speculative Position（高风险高赔率）1-2%\n"
+        "  → 根据本股分析结果选择对应档位并说明理由\n"
+        "【Final Verdict】Accumulate / Hold / Watchlist / Avoid + 触发条件\n"
         "最后必须是免责声明：'投资有风险，以上内容仅供参考，不构成任何投资建议。'"
     ),
 }
@@ -686,6 +709,19 @@ class GeneratorAgent(BaseAgent):
             '"headline":"吸引眼球的问句或悬念标题（15字以内，来自口播Hook）",'
             '"subtitle":"本周深度分析·{current_date}",'
             '"hook":"口播开场最核心的一句冲突或悬念（25字以内）"}'
+        ),
+        "narrative_score": (
+            '{"type":"narrative_score",'
+            '"headline":"投资评分概览",'
+            '"scores":['
+            '{"dimension":"AI叙事","score":数字1到10,"rationale":"一句理由（15字以内）"},'
+            '{"dimension":"增长质量","score":数字1到10,"rationale":"一句理由（15字以内）"},'
+            '{"dimension":"估值吸引力","score":数字1到10,"rationale":"一句理由（15字以内）"},'
+            '{"dimension":"执行风险","score":数字1到10,"rationale":"一句理由（15字以内）"},'
+            '{"dimension":"整体风险","score":数字1到10,"rationale":"一句理由（15字以内）"}'
+            '],'
+            '"overall":数字1到10,'
+            '"verdict":"一句话综合判断（20字以内）"}'
         ),
         "ai_winner_loser": (
             '{"type":"ai_winner_loser",'

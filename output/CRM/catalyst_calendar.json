@@ -1,54 +1,24 @@
 {
   "events": [
     {
-      "event": "BofA科技会议",
-      "date": "2026-06-02",
-      "date_confidence": "high",
-      "date_source": "官方网站",
-      "impact": "medium",
-      "direction": "neutral",
-      "bull_case": "管理层积极展望，股价或涨1-3%",
-      "bear_case": "负面言论导致股价下跌1-2%"
-    },
-    {
-      "event": "Evercore TMT会议",
-      "date": "2026-06-03",
-      "date_confidence": "high",
-      "date_source": "官方网站",
-      "impact": "medium",
-      "direction": "neutral",
-      "bull_case": "新战略亮点提振信心，股价涨2%",
-      "bear_case": "需求担忧打压股价，跌1%"
-    },
-    {
-      "event": "Mizuho科技会议",
-      "date": "2026-06-09",
-      "date_confidence": "high",
-      "date_source": "官方网站",
-      "impact": "medium",
-      "direction": "neutral",
-      "bull_case": "AI进展超预期，股价涨2-3%",
-      "bear_case": "盈利预警引发抛售，跌2%"
-    },
-    {
-      "event": "Dreamforce开发者大会",
-      "date": "2026-06-11",
-      "date_confidence": "low",
-      "date_source": "行业博客",
-      "impact": "medium",
-      "direction": "positive",
-      "bull_case": "新产品发布推动股价涨3-5%",
-      "bear_case": "创新不及预期，股价跌1-2%"
-    },
-    {
-      "event": "下次财报发布",
+      "event": "第二季度财报",
       "date": "2026-09-02",
       "date_confidence": "high",
-      "date_source": "分析师预测/官方指引",
+      "date_source": "下次财报日期已知",
       "impact": "high",
       "direction": "neutral",
-      "bull_case": "营收超预期5%以上，股价涨5-8%",
-      "bear_case": "业绩指引下调，股价跌5-10%"
+      "bull_case": "营收超预期，增速提升，股价上涨5-10%",
+      "bear_case": "营收不及预期或下调指引，股价下跌5-10%"
+    },
+    {
+      "event": "Dreamforce会议",
+      "date": "2026-09",
+      "date_confidence": "medium",
+      "date_source": "搜索结果明确九月，但无具体日期",
+      "impact": "medium",
+      "direction": "positive",
+      "bull_case": "发布新产品或战略合作，股价上涨3-5%",
+      "bear_case": "会议平淡或用户反响不佳，股价无波动或小幅下跌"
     }
   ]
 }
