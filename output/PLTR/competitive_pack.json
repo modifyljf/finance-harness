@@ -7,16 +7,7 @@
       "revenue_growth_yoy": 33.5,
       "gross_margin": 67.1,
       "ytd_performance_pct": 24.3,
-      "vs_target_note": "PLTR增速更高且毛利率更优，但PE低于SNOW，估值相对折价。"
-    },
-    {
-      "ticker": "AI",
-      "company_name": "C3.ai, Inc.",
-      "pe_forward": -12.8,
-      "revenue_growth_yoy": -46.1,
-      "gross_margin": 43.5,
-      "ytd_performance_pct": -59.5,
-      "vs_target_note": "C3.ai营收负增长且亏损严重，与PLTR的增速和盈利差距巨大。"
+      "vs_target_note": "收入增速和毛利率远低于PLTR，估值更高"
     },
     {
       "ticker": "DDOG",
@@ -25,17 +16,35 @@
       "revenue_growth_yoy": 32.2,
       "gross_margin": 79.9,
       "ytd_performance_pct": 109.8,
-      "vs_target_note": "PLTR增速和毛利率均高于DDOG，但PE更低，存在明显折价。"
+      "vs_target_note": "增速接近但毛利率和市值低于PLTR"
+    },
+    {
+      "ticker": "CRWD",
+      "company_name": "CrowdStrike Holdings, Inc.",
+      "pe_forward": 118.5,
+      "revenue_growth_yoy": 23.3,
+      "gross_margin": 74.8,
+      "ytd_performance_pct": 55.1,
+      "vs_target_note": "增速较低但估值更高，市值约为PLTR一半"
+    },
+    {
+      "ticker": "AI",
+      "company_name": "C3.ai, Inc.",
+      "pe_forward": -12.8,
+      "revenue_growth_yoy": -46.1,
+      "gross_margin": 43.5,
+      "ytd_performance_pct": -59.5,
+      "vs_target_note": "负增长和负PE，完全无法与PLTR竞争"
     }
   ],
-  "valuation_position": "偏低",
+  "valuation_position": "偏高",
   "moat_rating": "medium",
-  "moat_description": "Palantir凭借其政府客户的高粘性合同和独特的数据集成平台构建护城河，但市场规模较小且面临科技巨头竞争。",
+  "moat_description": "Palantir拥有深厚的政府客户关系和专有的数据集成平台，形成了一定的转换成本。但面临来自大型科技公司（如微软、亚马逊）和同类AI公司的竞争。",
   "key_threats": [
-    "对政府合同的过度依赖可能带来收入波动和增长瓶颈",
-    "来自Alphabet、Microsoft等巨头的AI平台竞争压力"
+    "大型科技公司（如Microsoft、Amazon）的进入和市场份额争夺",
+    "政府合同依赖带来的收入波动性和政治风险"
   ],
-  "relative_valuation_summary": "基于84.7%的营收增速和84.1%的毛利率，PLTR的75.47倍远期PE显著低于SNOW（97.9x）和DDOG（86.9x），PEG仅0.89远低于同行均值2.8，估值明显折价。若按同行平均PEG（约2.7）计算，合理PE约228倍，股价有大幅上行空间。",
-  "competitive_advantage": "Palantir在政府及大型企业客户的深度数据融合和AI决策能力上具有不可替代性，且其AIP平台实现快速增长，形成差异化竞争壁垒。",
-  "market_share_note": "根据Q1 2026数据，PLTR在相关市场份额仅约0.54%，远低于Alphabet（43.47%）和Microsoft等巨头。"
+  "relative_valuation_summary": "PLTR的PE forward 75.47低于SNOW和CRWD，但其收入增速84.7%远超同行，导致PEG较低。若以DDOG的PEG 1.54为参考，PLTR的合理PE应为增速乘以1.54约130，当前PE偏低；但若以CRWD的PEG 6.03计算，合理PE高达510，当前明显低估。综合来看，PLTR高增长支撑高估值，但市场已给予溢价，短期需警惕回调。",
+  "competitive_advantage": "Palantir最大的优势在于其与政府和国防部门的长期合作关系，以及对敏感数据处理的深度技术积累。其AIP平台在安全合规和AI落地方面有独特壁垒。",
+  "market_share_note": "在软件基础设施市场中，PLTR市场份额约0.54%，远低于Alphabet的43.47%和微软，但专注于垂直领域。"
 }

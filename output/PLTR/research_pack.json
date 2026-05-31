@@ -2,138 +2,135 @@
   "product_segments": [
     {
       "name": "Government",
-      "revenue": "$2.77B (LTM ended March 31, 2026)",
+      "revenue": "$2.40B",
       "growth_pct": null,
-      "period": "LTM Q1 2026",
-      "source": "StockAnalysis.com revenue by segment table"
+      "period": "FY2025",
+      "source": "2025 FY PLTR 10-K via stockanalysis.com"
     },
     {
       "name": "Commercial",
-      "revenue": "$2.45B (LTM ended March 31, 2026)",
+      "revenue": "$2.07B",
       "growth_pct": null,
-      "period": "LTM Q1 2026",
-      "source": "StockAnalysis.com revenue by segment table"
-    },
-    {
-      "name": "U.S. Commercial",
-      "revenue": "Guidance for at least $3.224B in FY2026",
-      "growth_pct": 120,
-      "period": "FY2026 (projected)",
-      "source": "Q1 2026 earnings transcript / Stock Titan"
-    },
-    {
-      "name": "U.S. Government",
-      "revenue": "$687M in Q1 2026",
-      "growth_pct": 84,
-      "period": "Q1 2026",
-      "source": "Q1 2026 earnings transcript (Motley Fool)"
+      "period": "FY2025",
+      "source": "2025 FY PLTR 10-K via stockanalysis.com"
     }
   ],
   "management_guidance": [
     {
-      "metric": "Full-year 2026 revenue",
+      "metric": "FY2026 total revenue",
       "value": "$7.65B - $7.66B",
       "direction": "上调",
-      "context": "Raised from previous range of $7.18B, implies ~71% YoY growth"
+      "context": "从之前$7.18B上调，年增长约71%"
     },
     {
-      "metric": "U.S. Commercial revenue (FY2026)",
-      "value": "At least $3.224B",
+      "metric": "FY2026 U.S. commercial revenue",
+      "value": "至少 $3.224B",
       "direction": "上调",
-      "context": "Implies at least 120% YoY growth for that segment"
+      "context": "年增长至少120%"
     },
     {
       "metric": "GAAP profitability",
-      "value": "Every quarter",
-      "direction": "维持",
-      "context": "Reiterated commitment to GAAP net income profitability each quarter"
+      "value": "每季度盈利",
+      "direction": "确认",
+      "context": "公司重申每季度GAAP盈利"
     },
     {
-      "metric": "Rule of 40 score",
+      "metric": "Rule of 40 分数",
       "value": "145%",
-      "direction": null,
-      "context": "Q1 2026 achieved, mentioned as a key metric"
+      "direction": "维持",
+      "context": "Q1 2026 Rule of 40达到145%"
     }
   ],
   "competitive_position": {
-    "market_share": "Not specified in materials",
+    "market_share": "未在材料中明确给出市场份额数据",
     "key_competitors": [
-      "Meta Platforms",
-      "VeriSign",
-      "NVIDIA",
-      "Microsoft"
+      "其他软件/AI基础设施公司（如NVIDIA、Microsoft等，但未在材料中明确列出）"
     ],
-    "moat": "Mission-critical AI operating system for real-time decision making and workflow deployment, deeply integrated into government and enterprise operations.",
-    "threats": "High valuation and dependency on government contracts; meeting elevated market expectations for sustained hypergrowth."
+    "moat": "强大的人工智能平台（AIP）和关键任务操作系统，深度嵌入政府和企业工作流",
+    "threats": "高估值使股价对增长放缓敏感，且对政府合同存在一定依赖"
   },
   "key_facts": [
     {
-      "fact": "Q1 2026 revenue grew 85% year-over-year to $1.63B.",
+      "fact": "Q1 2026收入16.33亿美元，同比增长85%",
       "metric_type": "Revenue",
-      "source": "Q1 2026 earnings transcript / EDGAR 10-Q",
+      "source": "Q1 2026财报电话会（The Motley Fool）",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "Full-year 2026 revenue guidance raised to $7.65B-$7.66B, implying ~71% annual growth.",
+      "fact": "Q1 2026净利润8.7053亿美元",
       "metric_type": "Revenue",
-      "source": "Q1 2026 earnings call / Yahoo Finance",
+      "source": "Yahoo Finance文章",
       "confidence": "high",
-      "caveat": null
+      "caveat": "净利润数字，非收入指标"
     },
     {
-      "fact": "U.S. commercial revenue grew over 120% in Q1 2026; guidance for FY2026 U.S. commercial revenue at least $3.224B.",
-      "metric_type": "Revenue",
-      "source": "Q1 2026 earnings transcript / Stock Titan",
-      "confidence": "high",
-      "caveat": "Guidance is for full year, not ARR"
-    },
-    {
-      "fact": "Palantir achieved Rule of 40 score of 145%, comparing itself to NVIDIA and Microsoft.",
-      "metric_type": "Other",
-      "source": "Q1 2026 earnings press release / Yahoo Finance",
-      "confidence": "medium",
-      "caveat": "Rule of 40 is a metric combining revenue growth and profit margin"
-    },
-    {
-      "fact": "Remaining performance obligations (RPO) were $4.5B as of March 31, 2026.",
+      "fact": "截至2026年3月31日，剩余履约义务（RPO）为45亿美元",
       "metric_type": "Commitments",
-      "source": "Q1 2026 10-Q",
+      "source": "2026 Q1 10-Q",
       "confidence": "high",
-      "caveat": "RPO includes both recognized and unrecognized revenue from contracts"
+      "caveat": "RPO为尚未确认的收入合同，不等于bookings或ARR"
     },
     {
-      "fact": "Closed 206 deals worth at least $1 million, and 72 deals worth at least $5 million in Q1 2026.",
+      "fact": "FY2026收入指引上调至76.5-76.6亿美元，年增长约71%",
+      "metric_type": "Revenue",
+      "source": "Q1 2026财报电话会",
+      "confidence": "high",
+      "caveat": "指引，非实际业绩"
+    },
+    {
+      "fact": "2025年全年收入44.8亿美元，政府占比53.68%，商业占比46.32%",
+      "metric_type": "Revenue",
+      "source": "2025 FY 10-K",
+      "confidence": "high",
+      "caveat": null
+    },
+    {
+      "fact": "Q1 2026 U.S.收入同比增长104%",
+      "metric_type": "Revenue",
+      "source": "Palantir IR新闻稿",
+      "confidence": "high",
+      "caveat": "U.S.区域收入增速"
+    },
+    {
+      "fact": "Rule of 40分数达到145%",
+      "metric_type": "Other",
+      "source": "Q1 2026财报电话会",
+      "confidence": "high",
+      "caveat": "Rule of 40 = 收入增长率 + 利润率"
+    },
+    {
+      "fact": "Q1 2026新签至少100万美元合约206笔，至少500万美元合约72笔",
       "metric_type": "Bookings",
-      "source": "Motley Fool article (Q1 2026 earnings analysis)",
+      "source": "The Motley Fool（Q1 2026财报）",
       "confidence": "medium",
-      "caveat": "These are deal counts with minimum values, not total contract value"
+      "caveat": "合约数量，未披露总合约价值"
     }
   ],
   "analyst_thesis": {
-    "bull_case": "Palantir is becoming a mission-critical AI operating system with 85% revenue growth, Rule of 40 at 145%, and booming U.S. commercial demand (+120% growth). It is compared to AI infrastructure giants like NVIDIA.",
-    "bear_case": "High valuation (market cap $328B) raises concerns about sustainability; business model fragility due to reliance on government contracts and potential slowdown in AI adoption growth.",
+    "bull_case": "Palantir是关键的AI基础设施提供商，政府和企业需求强劲，U.S.商业收入增长超120%，Rule of 40达145%，显示高效增长与盈利能力。",
+    "bear_case": "高估值（市值3281亿美元）使股价难以支撑增长放缓，且对政府合同依赖较高，若AI热潮降温，收入增速可能回落。",
     "key_institutions": [
       {
         "firm": "MarketBeat",
-        "rating": "No explicit rating; mentions media sentiment score of 0.91 for PLTR vs 1.85 for META",
-        "target": null,
-        "thesis": "PLTR has strong media sentiment but lower than Meta."
+        "rating": "未提及具体评级",
+        "target": "未提及具体目标价",
+        "thesis": "媒体对PLTR与META对比，PLTR关注度较低但情绪偏正面"
       },
       {
-        "firm": "Benzinga",
-        "rating": "Not provided",
-        "target": null,
-        "thesis": "Industry comparison notes PLTR's high valuation vs peers."
+        "firm": "Simply Wall St",
+        "rating": "未来增长标准检查6/6",
+        "target": "未提及",
+        "thesis": "预测Palantir未来三年年化收益和收入增速分别为31.8%和30.2%"
       }
     ]
   },
   "data_quality": {
     "segment_data_available": true,
     "guidance_found": true,
-    "sources_count": 12,
+    "sources_count": 5,
     "confidence": "high",
-    "notes": "Revenue segment data available from StockAnalysis LTM table; EDGAR XBRL provides total revenue only. Guidance and key facts sourced from multiple earnings transcripts and press releases."
+    "notes": "产品线拆分来自2025年年报，指引来自Q1 2026财报，关键事实有多个高置信度来源。缺少部分机构评级和具体市场份额数据。"
   },
   "_edgar_quarterly_revenue": [
     {
