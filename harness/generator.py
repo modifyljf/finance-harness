@@ -11,8 +11,8 @@ from pathlib import Path
 from openai import OpenAI
 
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
-MODEL_REASONER = "deepseek-reasoner"   # DeepSeek-R1: deep reasoning for analysis
-MODEL_CHAT = "deepseek-chat"           # DeepSeek-V3: fast, for JSON + synthesis
+MODEL_REASONER = "deepseek-v4-pro"     # deep reasoning for analysis
+MODEL_CHAT = "deepseek-v4-flash"       # non-thinking mode: fast, for JSON + synthesis
 
 PROMPTS_DIR = Path(__file__).parent.parent / "prompts"
 

@@ -1,194 +1,169 @@
 {
-  "title": "你信利润，还是信情绪？",
+  "title": "一百美元的CRM被当成垃圾？",
   "ticker": "CRM",
   "slides": [
     {
       "type": "cover",
-      "headline": "你信利润，还是信情绪？",
+      "headline": "一百美元的CRM被当成垃圾？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "CRM股价跌了百分之三十，华尔街却说这是十年一遇的低估。",
-      "autoslide_ms": 24552
+      "hook": "微软砸百亿级订单给它，华尔街却在赌它崩盘",
+      "autoslide_ms": 30530
     },
     {
       "type": "market_overview",
       "headline": "$191.1  +8.47%  ·  Forward PE 12.35x  ·  目标价空间 +33.7%",
-      "callout": "远期市盈率12.35倍，PEG比率0.93，市场情绪过度悲观",
-      "autoslide_ms": 69204
+      "callout": "估值增速剪刀差创五年最大，成交额放大41%",
+      "autoslide_ms": 71733
     },
     {
       "type": "price_action",
-      "headline": "短期偏多，但需回踩确认",
+      "headline": "价格突破关键均线粘合区，RSI中性，技术形态偏多",
       "signal": "bullish",
       "bullets": [
-        "支撑位：179-181美元（来自口播：MA20和MA50交叉的区域，一百七十九到一百八十一美元）",
-        "阻力位：191.34美元（来自口播：布林带上轨一百九十一点三四）",
-        "价格从165底部反转，放量突破MA20和MA50，但需回踩确认",
-        "RSI 60.5，属于中性区间，既没有极度超买也没有极度超卖"
+        "支撑位：一百七十九到一百八十的均线区",
+        "阻力位：两百美元整数关口",
+        "连续上涨，成交量也在扩大，这是资金进场的信号。价格已经顶到了布林带上轨一百九十一点三四附近，突破一触即发。",
+        "RSI六十点五，还在中性区间，说明行情没到顶，还有空间。"
       ],
-      "autoslide_ms": 95936
+      "autoslide_ms": 75552
     },
     {
       "type": "key_points",
-      "headline": "多空极致拉扯",
+      "headline": "多空博弈拆解",
       "points": [
         {
-          "title": "看多：价值与价格错配",
-          "body": "营收增长13.3%，盈利暴涨52.2%，远期市盈率12.35倍，PEG 0.93，分析师目标价255.55美元，隐含33%上行空间，突破MA20/MA50阻力带。",
+          "title": "戴维斯双击",
+          "body": "CRM远期市盈率12.35倍，盈利增速52.2%，市盈增长比0.93。5月29日收盘价191.1突破20日均线179和50日均线180，RSI 60.5。认知差被增量资金捕捉。",
           "tag": "bull"
         },
         {
-          "title": "看多：叙事情绪转折",
-          "body": "股价年内跌超30%，空头占比8.9%，Q1财报超预期，机构评级强力买入，认知落差巨大。",
-          "tag": "bull"
-        },
-        {
-          "title": "看空：AI战略兑现风险",
-          "body": "若Agentforce无法转化为实质收入或出产品缺陷，低估逻辑将被摧毁；RSI 60.5，布林带上轨191.34，短期回调需求。",
+          "title": "空头底牌",
+          "body": "最大风险是AI变现叙事再次证伪；Agentforce如无落地营收数据，质疑将变抛售。宏观风险：高贝塔成长股，企业削减IT预算；价格从165.84反弹，距276.8高点仅24.3%，空头视为技术性回抽。",
           "tag": "bear"
         }
       ],
-      "autoslide_ms": 146023
+      "autoslide_ms": 128356
     },
     {
       "type": "news",
-      "headline": "本周新闻信号偏多",
+      "headline": "这周围绕它最关键的几条新闻和评级变化",
       "news_items": [
         {
-          "title": "Salesforce发布Agentforce 2.0并扩大合作",
-          "category": "product",
-          "impact": "positive",
-          "note": "商业化加速，有望在下半年贡献千万级收入"
+          "title": "财报后AI叙事继续撕裂",
+          "category": "earnings",
+          "impact": "neutral",
+          "note": "做空比例飙到48%，EPS同比增长52.2%，多空拉锯。"
         },
         {
-          "title": "摩根士丹利上调CRM至买入，目标价260美元",
-          "category": "analyst",
-          "impact": "positive",
-          "note": "一线投行认为当前估值严重错配"
-        },
-        {
-          "title": "高盛维持中性评级，目标价210美元",
+          "title": "银湖资本下调评级至中性，摩根大通坚持超配",
           "category": "analyst",
           "impact": "neutral",
-          "note": "AI收入转化仍需观察"
+          "note": "银湖资本下调至中性，目标价190；摩根大通超配，目标价245。完全对立。"
         },
         {
-          "title": "十年期美债收益率突破4.5%压制成长股",
-          "category": "macro",
-          "impact": "negative",
-          "note": "但CRM年内下跌超三成，利空已充分定价"
+          "title": "信用违约互换显示违约概率下降",
+          "category": "other",
+          "impact": "positive",
+          "note": "CRM五年期违约概率从3%降至1.8%，机构资金增加风险敞口。"
         }
       ],
-      "analyst_summary": "摩根士丹利上调至买入目标260美元，高盛维持中性目标210美元",
-      "autoslide_ms": 80537
+      "analyst_summary": "银湖资本下调至中性，摩根大通坚持超配，完全对立。",
+      "autoslide_ms": 74827
     },
     {
       "type": "financials",
-      "headline": "基本面稳固，上涨空间充足",
+      "headline": "估值合理，有30-50%修复空间",
       "metrics": [
         {
           "label": "营收增速",
-          "value": "+13%",
+          "value": "口播未提及",
           "trend": "flat"
         },
         {
-          "label": "自由现金流",
-          "value": "利润率32%",
+          "label": "毛利率",
+          "value": "维持高水平",
+          "trend": "flat"
+        },
+        {
+          "label": "净利率",
+          "value": "15%（从10.1%升至15%）",
           "trend": "up"
         },
         {
           "label": "Forward PE",
-          "value": "12x",
+          "value": "12.35x",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "106亿（比净利润高37.7%）",
+          "trend": "up"
+        },
+        {
+          "label": "ROE",
+          "value": "口播未提及",
           "trend": "flat"
         }
       ],
-      "callout": "盈利增长52%是行业平均三倍半，自由现金流利润率32%领先行业",
-      "autoslide_ms": 100371
+      "callout": "盈利增速52.2%，PEG仅0.93，便宜得发指。",
+      "autoslide_ms": 107443
     },
     {
       "type": "risk",
-      "headline": "三把剑",
-      "risks": [
-        {
-          "title": "AI战略画饼",
-          "body": "Agentforce如果未来几个季度不能转化成营收或爆出产品事故，市场会翻脸，坐实AI雾件骂名，这是唯一能击碎低估逻辑的风险。",
-          "severity": "high"
-        },
-        {
-          "title": "系统性踩踏",
-          "body": "宏观数据出幺蛾子引发SaaS末日叙事，CRM作为龙头也扛不住，属于躲不掉的系统性风险，只能靠仓位管理。",
-          "severity": "high"
-        },
-        {
-          "title": "高利率环境",
-          "body": "利率高位压低成长股估值，但CRM已跌超三成，预期消化差不多，未来降息会变燃料。",
-          "severity": "medium"
-        }
-      ],
-      "autoslide_ms": 83523
+      "headline": "",
+      "autoslide_ms": 30000
     },
     {
       "type": "catalyst",
-      "headline": "未来三十天催化剂概览",
+      "headline": "下周进入关键催化周",
       "catalysts": [
         {
-          "event": "AI开发者大会",
+          "event": "财报季盈利预期上调及大摩上调评级",
           "direction": "positive",
-          "timing": "下月初",
+          "timing": "七月第二周",
           "impact": "large"
         },
         {
-          "event": "机构评级窗口",
-          "direction": "positive",
-          "timing": "六月中旬",
-          "impact": "medium"
-        },
-        {
-          "event": "指数再平衡",
-          "direction": "positive",
-          "timing": "季度末",
-          "impact": "medium"
-        },
-        {
-          "event": "竞争对手财报",
+          "event": "七月中旬企业软件峰会AI质疑",
           "direction": "negative",
-          "timing": "七月初",
+          "timing": "七月中旬",
           "impact": "medium"
         },
         {
-          "event": "美联储意外转鹰",
+          "event": "八月底财报节点AI营收占比预期",
           "direction": "negative",
-          "timing": "短期内",
-          "impact": "small"
+          "timing": "八月底",
+          "impact": "medium"
         }
       ],
-      "autoslide_ms": 83965
+      "autoslide_ms": 72102
     },
     {
       "type": "outlook",
-      "headline": "中期看多，短期等回调再上车",
-      "subtitle": "看多",
+      "headline": "短期中性偏多，中期看业绩验证",
+      "subtitle": "中性偏多",
       "base_range": {
-        "low": "$179",
+        "low": "$185",
         "high": "$200",
         "timeframe": "1-4周"
       },
       "scenario_bull": {
-        "condition": "Agentforce等AI产品连续两季财报证明收入转化",
-        "target": "$220-255"
+        "condition": "放量突破190站稳，趋势确认，可入场",
+        "target": "$200"
       },
       "scenario_bear": {
-        "condition": "收盘价跌破一百七十五，趋势破坏",
-        "target": "$165"
+        "condition": "反弹至200附近，成交量萎缩无法突破，可试空",
+        "target": "$182"
       },
-      "autoslide_ms": 64863
+      "autoslide_ms": 95660
     },
     {
       "type": "summary",
-      "headline": "CRM，人工智能时代的价值发动机，现在打折出售。",
+      "headline": "12倍PE+52%盈利增速，戴维斯双击起点",
       "verdict": "bullish",
-      "action": "回调至179-184分批建仓，仓位一成，止损175下方。",
+      "action": "建议三成仓分批建仓，止损设在177.5美元",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 34776
+      "autoslide_ms": 27711
     }
   ]
 }
