@@ -133,6 +133,37 @@ def _format_news(news_items: list[dict]) -> str:
 
 class GeneratorAgent(BaseAgent):
 
+    @staticmethod
+    def _format_research_pack(rp: dict) -> str:
+        if not rp:
+            return "（本次运行未执行深度研究）"
+        lines = []
+        segments = rp.get("product_segments", [])
+        if segments:
+            lines.append("【产品/业务线收入拆分】")
+            for s in segments:
+                lines.append(f"  {s.get('name','')}: {s.get('revenue','')}  增速={s.get('growth_pct','')}%  ({s.get('period','')})")
+        guidance = rp.get("management_guidance", [])
+        if guidance:
+            lines.append("【管理层前瞻指引】")
+            for g in guidance:
+                lines.append(f"  {g.get('metric','')}: {g.get('value','')} [{g.get('direction','')}] — {g.get('context','')}")
+        cp = rp.get("competitive_position", {})
+        if cp:
+            lines.append("【竞争格局】")
+            lines.append(f"  市场份额: {cp.get('market_share','N/A')}")
+            lines.append(f"  核心壁垒: {cp.get('moat','N/A')}")
+            lines.append(f"  主要威胁: {cp.get('threats','N/A')}")
+        thesis = rp.get("analyst_thesis", {})
+        if thesis:
+            lines.append("【分析师核心论点】")
+            lines.append(f"  看多: {thesis.get('bull_case','')}")
+            lines.append(f"  看空: {thesis.get('bear_case','')}")
+        dq = rp.get("data_quality", {})
+        if dq:
+            lines.append(f"【数据质量】置信度={dq.get('confidence','N/A')} | {dq.get('notes','')}")
+        return "\n".join(lines) if lines else "（深度研究未返回有效数据）"
+
     def _fundamental(self, plan: dict) -> str:
         print("[Agent:Fundamental] Analyzing...")
         md = plan["market_snapshot"]
@@ -141,6 +172,7 @@ class GeneratorAgent(BaseAgent):
         analyst = plan["analyst_snapshot"]
         inp = plan["input"]
         current_date = plan["current_date"]
+        research_summary = self._format_research_pack(plan.get("research_pack", {}))
 
         prompt = self._load_prompt("fundamental").format(
             current_date=current_date,
@@ -173,6 +205,7 @@ class GeneratorAgent(BaseAgent):
             target_high=analyst.get("target_high", "N/A"),
             analyst_count=analyst.get("analyst_count", "N/A"),
             upside_pct=analyst.get("upside_pct", "N/A"),
+            research_summary=research_summary,
         )
         system = f"你是专业的基本面分析师。今天是{current_date}，分析必须基于提供的实时数据，禁止引用训练数据中的具体历史日期。"
         result = self._stream(system, prompt)

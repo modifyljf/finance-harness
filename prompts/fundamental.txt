@@ -35,6 +35,9 @@
 - 分析师平均目标价：${target_mean}（当前上行空间：{upside_pct}%）
 - 目标价区间：${target_low} ~ ${target_high}（共{analyst_count}位分析师）
 
+## 深度研究情报（Tavily + SEC EDGAR）
+{research_summary}
+
 ---
 
 ## 请输出以下内容（约600-800字，{language}）

@@ -10,6 +10,7 @@ from messaging.agents.evaluator import EvaluatorAgent
 from messaging.agents.generator import GeneratorAgent
 from messaging.agents.planner import PlannerAgent
 from messaging.agents.renderer import RendererAgent
+from messaging.agents.research import ResearchAgent
 from messaging.agents.valuation import ValuationAgent
 from messaging.dto.candidate import Candidate
 from messaging.dto.context import RunContext
@@ -23,6 +24,7 @@ class MessagingHarnessService:
 
     def __init__(self):
         self._planner = PlannerAgent()
+        self._research = ResearchAgent()
         self._valuation = ValuationAgent()
         self._generator = GeneratorAgent()
         self._evaluator = EvaluatorAgent()
@@ -39,7 +41,12 @@ class MessagingHarnessService:
         plan = self._planner.run(ctx)
         self._save_json(plan, "plan.json")
 
-        # Stage 1.5: Internal Valuation Model
+        # Stage 1.5: Deep Research (Tavily + SEC EDGAR)
+        research_pack = self._research.run(plan)
+        plan["research_pack"] = research_pack
+        self._save_json(research_pack, "research_pack.json")
+
+        # Stage 1.6: Internal Valuation Model
         internal_valuation = self._valuation.run(plan)
         plan["internal_valuation"] = internal_valuation
         self._save_json(internal_valuation, "internal_valuation.json")
