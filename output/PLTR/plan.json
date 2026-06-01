@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T23:34:55.751283+00:00",
+  "generated_at": "2026-06-01T00:04:55.206387+00:00",
   "current_date": "2026-05-31",
   "input": {
     "ticker": "PLTR",
@@ -457,6 +457,19 @@
         "expert_quotes": []
       },
       {
+        "title": "Palantir's Selloff Changed Everything",
+        "publisher": "Seeking Alpha",
+        "published_at": "2026-05-31 07:11",
+        "url": "https://seekingalpha.com/article/4910399-palantirs-selloff-changed-everything",
+        "category": "analyst",
+        "why_relevant": "May shift analyst consensus, price targets, or investor sentiment.",
+        "matched_keywords": [
+          "palantir"
+        ],
+        "relevance_score": 0.67,
+        "expert_quotes": []
+      },
+      {
         "title": "Palantir challenges core enterprise software rule with 3 harsh words",
         "publisher": "TheStreet",
         "published_at": "2026-05-26 17:07",
@@ -545,19 +558,6 @@
           "palantir"
         ],
         "relevance_score": 0.67,
-        "expert_quotes": []
-      },
-      {
-        "title": "Billionaire Peter Thiel moves out of U.S. citing harsh concerns",
-        "publisher": "TheStreet",
-        "published_at": "2026-05-30 14:30",
-        "url": "",
-        "category": "macro",
-        "why_relevant": "May affect sector risk appetite, valuation multiples, or macro conditions.",
-        "matched_keywords": [
-          "PLTR"
-        ],
-        "relevance_score": 0.33,
         "expert_quotes": []
       }
     ],

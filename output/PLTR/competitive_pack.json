@@ -7,25 +7,7 @@
       "revenue_growth_yoy": 33.5,
       "gross_margin": 67.1,
       "ytd_performance_pct": 24.3,
-      "vs_target_note": "营收增速与毛利率均远低于PLTR，但前向PE更高"
-    },
-    {
-      "ticker": "DDOG",
-      "company_name": "Datadog, Inc.",
-      "pe_forward": 86.9,
-      "revenue_growth_yoy": 32.2,
-      "gross_margin": 79.9,
-      "ytd_performance_pct": 109.8,
-      "vs_target_note": "增速及毛利率略低于PLTR，但PE略高，毛利率接近"
-    },
-    {
-      "ticker": "NOW",
-      "company_name": "ServiceNow, Inc.",
-      "pe_forward": 24.7,
-      "revenue_growth_yoy": 22.1,
-      "gross_margin": 76.6,
-      "ytd_performance_pct": -38.5,
-      "vs_target_note": "估值最低，增速最慢，但毛利率较高且已盈利"
+      "vs_target_note": "估值更高（PE 97.9 vs 75.47）但增速仅为PLTR的40%"
     },
     {
       "ticker": "AI",
@@ -34,17 +16,26 @@
       "revenue_growth_yoy": -46.1,
       "gross_margin": 43.5,
       "ytd_performance_pct": -59.5,
-      "vs_target_note": "亏损且负增长，毛利率最低，与PLTR差距极大"
+      "vs_target_note": "亏损且负增长，与PLTR差距极大"
+    },
+    {
+      "ticker": "DDOG",
+      "company_name": "Datadog, Inc.",
+      "pe_forward": 86.9,
+      "revenue_growth_yoy": 32.2,
+      "gross_margin": 79.9,
+      "ytd_performance_pct": 109.8,
+      "vs_target_note": "毛利率接近但估值略高，增速约为PLTR的38%"
     }
   ],
-  "valuation_position": "偏高",
-  "moat_rating": "medium",
-  "moat_description": "Palantir凭借其专有的Gotham和Foundry平台，在政府和大型企业情报分析领域建立了深厚的客户关系与数据集成壁垒。然而，其市场份额极小（约0.54%），面临科技巨头（如微软、亚马逊）的强力竞争，护城河尚不稳固。",
+  "valuation_position": "偏低",
+  "moat_rating": "strong",
+  "moat_description": "Palantir拥有深厚的政府客户关系和复杂的数据集成平台，形成高转换成本。其AI平台持续扩展至商业领域，但面临大型科技公司的竞争。",
   "key_threats": [
-    "科技巨头（微软、亚马逊、谷歌）在云计算和AI领域持续投入，可能侵蚀Palantir的垂直市场；",
-    "高估值依赖高增长预期，若政府合同增速放缓或客户流失，估值面临大幅回调风险。"
+    "Alphabet、Amazon等巨头凭借云计算和AI能力逐步侵蚀市场份额",
+    "政府合同依赖度高，预算波动和政策变化可能影响收入"
   ],
-  "relative_valuation_summary": "基于同行估值，PLTR的75.47倍前向PE低于SNOW（97.9倍）和DDOG（86.9倍），但远高于NOW（24.7倍）。考虑到其84.7%的营收增速和84.1%的毛利率均为同行最高，当前估值相对增长而言尚可接受，但若增速回落至30%左右，合理PE区间应下移至50-60倍。",
-  "competitive_advantage": "Palantir最强的差异化优势在于其AI驱动的决策平台在国防和情报领域的先发优势及高客户粘性；同时，其营收增速（84.7%）和毛利率（84.1%）远超所有可比公司，体现了产品定价能力和规模化潜力。",
-  "market_share_note": "据2026 Q1数据，Palantir市场份额约0.54%，远低于Alphabet（43.47%）和微软等巨头，属于小众但高增长细分领域。"
+  "relative_valuation_summary": "基于同行平均PE 92.4（SNOW/DDOG），PLTR的75.47倍PE相对折价约18%，但其84.7%的营收增速远超同行（平均32.9%），若以PEG衡量（约0.89），显著低于DDOG的1.54和SNOW的6.85，表明市场可能低估了其增长潜力或对可持续性存疑。",
+  "competitive_advantage": "Palantir最大的优势在于其深入嵌入政府与大型机构的定制化软件服务，形成极高的客户黏性。其AI平台Gotham和Foundry具备独特的数据融合与决策支持能力，竞争对手难以复制。",
+  "market_share_note": "2026年Q1数据显示，Palantir在目标市场中份额约为0.54%，远低于Alphabet（43.47%）和Microsoft，但处于增长中。"
 }

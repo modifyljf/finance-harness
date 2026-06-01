@@ -1,125 +1,105 @@
 {
   "product_segments": [
     {
-      "name": "Government (Gotham)",
-      "revenue": "$858.4M",
-      "growth_pct": null,
+      "name": "Government",
+      "revenue": "$858.4 million (Q1 2026)",
+      "growth_pct": 76.3,
       "period": "Q1 FY2026",
       "source": "Palantir Q1 2026 10-Q"
     },
     {
-      "name": "Commercial (Foundry/AIP)",
-      "revenue": "$774.2M",
-      "growth_pct": null,
+      "name": "Commercial",
+      "revenue": "$774.2 million (Q1 2026)",
+      "growth_pct": 93.8,
       "period": "Q1 FY2026",
-      "source": "Calculated from total revenue minus government segment; also U.S. Commercial $595M per investor presentation"
+      "source": "Calculated from total revenue ($1,632.6M) minus Government revenue ($858.4M)"
     }
   ],
   "management_guidance": [
     {
-      "metric": "Full-year 2026 revenue",
-      "value": "$7.650 - $7.662 billion",
+      "metric": "FY2026 Total Revenue",
+      "value": "$7.650B - $7.662B",
       "direction": "上调",
-      "context": "Raised from prior guidance, representing 71% YoY growth"
+      "context": "Raised from prior guidance; implies ~71% YoY growth."
     },
     {
-      "metric": "U.S. Commercial revenue",
-      "value": "at least $3.224 billion",
+      "metric": "FY2026 U.S. Commercial Revenue",
+      "value": "≥$3.224B",
       "direction": "上调",
-      "context": "Growth of at least 120% YoY"
+      "context": "Implies at least 120% YoY growth."
     },
     {
-      "metric": "Adjusted income from operations",
-      "value": "$4.440 - $4.452 billion",
+      "metric": "FY2026 Adjusted Income from Operations",
+      "value": "$4.440B - $4.452B",
       "direction": "上调",
-      "context": "Part of raised guidance"
+      "context": "Part of raised full-year guidance."
     },
     {
-      "metric": "GAAP profitability",
+      "metric": "GAAP Profitability",
       "value": "Every quarter",
-      "direction": "维持",
-      "context": "Confirmed expectation of GAAP profitability in every quarter"
+      "direction": "确认",
+      "context": "Expects GAAP net income in each quarter."
     }
   ],
   "competitive_position": {
-    "market_share": null,
+    "market_share": "No specific market share data provided.",
     "key_competitors": [
       "Microsoft",
-      "Google",
-      "Other software and cloud giants"
+      "Alphabet (Google)",
+      "NVIDIA",
+      "Meta Platforms"
     ],
-    "moat": "Strong government contracts, 'land and expand' model with AIP platform, high switching costs from deep integration",
-    "threats": "Intense competition from large tech firms with comparable AI capabilities and higher operating margins"
+    "moat": "Strong customer stickiness due to deep integration of AI platforms (Gotham, Foundry, AIP) in government and commercial sectors.",
+    "threats": "Stiff competition from large cloud and AI companies with broader platforms and resources."
   },
   "key_facts": [
     {
-      "fact": "Palantir raised its 2026 revenue guidance to $7.656 billion, up 71% YoY",
+      "fact": "Q1 2026 revenue was $1.63 billion, up 85% YoY.",
       "metric_type": "Revenue",
-      "source": "Q1 2026 earnings transcript",
+      "source": "Palantir Q1 2026 earnings release",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "U.S. commercial revenue guidance raised to over $3.224 billion, growth at least 120%",
+      "fact": "Q1 2026 U.S. Commercial revenue grew 133% YoY to $595M.",
       "metric_type": "Revenue",
-      "source": "Q1 2026 earnings transcript",
+      "source": "Palantir Q1 2026 Business Update",
       "confidence": "high",
-      "caveat": null
+      "caveat": "U.S. Commercial only, not global."
     },
     {
-      "fact": "Q1 2026 revenue was $1.6326 billion, up 85% YoY",
-      "metric_type": "Revenue",
-      "source": "SEC 10-Q",
-      "confidence": "high",
-      "caveat": null
-    },
-    {
-      "fact": "U.S. commercial revenue in Q1 2026 was $595 million, up 133% YoY",
-      "metric_type": "Revenue",
-      "source": "Q1 2026 Business Update PDF",
-      "confidence": "high",
-      "caveat": "U.S. only; total commercial $774M"
-    },
-    {
-      "fact": "U.S. government revenue in Q1 2026 was $687 million, up 84% YoY",
-      "metric_type": "Revenue",
-      "source": "Q1 2026 Business Update PDF",
-      "confidence": "high",
-      "caveat": "U.S. only; total government $858M"
-    },
-    {
-      "fact": "Rule of 40 score soared to 145%",
+      "fact": "Rule of 40 score reached 145% in Q1 2026.",
       "metric_type": "Other",
-      "source": "Q1 2026 earnings press release",
-      "confidence": "high",
-      "caveat": "Calculated as revenue growth + operating margin; not a standard accounting metric"
+      "source": "Palantir Q1 2026 earnings release",
+      "confidence": "medium",
+      "caveat": "Rule of 40 is a metric combining revenue growth and profit margin."
     },
     {
-      "fact": "Eleven consecutive quarters of accelerating revenue growth",
+      "fact": "Eleven consecutive quarters of accelerating revenue growth.",
       "metric_type": "Other",
       "source": "Q1 2026 earnings transcript",
       "confidence": "high",
-      "caveat": "Company statement"
+      "caveat": null
     }
   ],
   "analyst_thesis": {
-    "bull_case": "Palantir is delivering ~70% revenue growth, ~80% EPS growth, 41% operating margin, and ~$760M in quarterly free cash flow, driven by triple-digit commercial revenue growth from AIP platform and land-and-expand model.",
-    "bear_case": "High valuation compared to peers, lower operating margins than Microsoft/Google, and intense competition in the AI data analytics space pose risks.",
+    "bull_case": "Palantir is delivering ~70% revenue growth, ~80% EPS growth, 41% operating margin, and ~$760 million quarterly free cash flow. Commercial revenue is compounding triple-digits on the back of AIP, with large accounts scaling from single-digit to $20–$30 million.",
+    "bear_case": "Valuation is high; consensus rating is Hold with average price target of $192.88 implying only 12.82% upside from $156.54. Bears highlight risk of competition and premium valuation.",
     "key_institutions": [
       {
-        "firm": "Consensus (TipRanks)",
+        "firm": "TipRanks",
         "rating": "Hold",
         "target": "$192.88",
-        "thesis": "Average target implies 12.82% upside from current price; mix of 5 Buys, 10 Holds, 2 Sells"
+        "thesis": "Consensus implies limited upside; mix of 5 Buys, 10 Holds, 2 Sells."
       }
     ]
   },
   "data_quality": {
     "segment_data_available": true,
     "guidance_found": true,
-    "sources_count": 8,
+    "sources_count": 6,
     "confidence": "high",
-    "notes": "Segment data from 10-Q and investor presentation; guidance from earnings transcript and press release; EDGAR XBRL provided revenue history; no ARR or bookings data found."
+    "notes": "Revenue segment data from SEC 10-Q and Stock Analysis; guidance from earnings releases and transcripts; competitive position qualitative; analyst thesis based on TipRanks and investing.com."
   },
   "_edgar_quarterly_revenue": [
     {

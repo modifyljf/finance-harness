@@ -1,24 +1,24 @@
 {
   "events": [
     {
-      "event": "Q2 2026财报",
-      "date": "2026-08-03",
-      "date_confidence": "high",
-      "date_source": "公司历史公布或分析师预测",
-      "impact": "high",
-      "direction": "neutral",
-      "bull_case": "业绩超预期，EPS高于0.33美元，股价可能上涨5-10%",
-      "bear_case": "业绩不及预期，EPS低于0.33美元，股价可能下跌5-10%"
-    },
-    {
       "event": "年度股东大会",
       "date": "2026-06-02",
       "date_confidence": "high",
-      "date_source": "公司官方日历公布",
+      "date_source": "官方公告（MarketScreener）",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "管理层释放积极展望，股价可能小幅上涨2-3%",
-      "bear_case": "股东提案或管理层变动引发担忧，股价可能下跌2-3%"
+      "bull_case": "管理层发布乐观展望或大额合同，股价可能上涨3-5%",
+      "bear_case": "无实质性利好，股价维持平稳或小幅下跌1-2%"
+    },
+    {
+      "event": "第二季度财报",
+      "date": "2026-08-03",
+      "date_confidence": "high",
+      "date_source": "已知财报日期",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "业绩超预期且上调指引，股价可能跳涨10-15%",
+      "bear_case": "业绩不及预期或下调指引，股价可能下跌8-12%"
     }
   ]
 }

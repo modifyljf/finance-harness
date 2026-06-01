@@ -1,81 +1,81 @@
 {
-  "title": "AI商业化最猛的财报，居然只靠七名销售撑起？",
+  "title": "千亿市值竟有84.7%增速？",
   "ticker": "PLTR",
   "slides": [
     {
       "type": "cover",
-      "headline": "AI商业化最猛的财报，居然只靠七名销售撑起？",
+      "headline": "千亿市值竟有84.7%增速？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "AI商业化最猛的财报，居然只靠七名销售撑起？",
-      "autoslide_ms": 20827
+      "hook": "千亿市值公司增速要崩？却交出84.7%营收增速",
+      "autoslide_ms": 33146
     },
     {
       "type": "market_overview",
       "headline": "$156.54  +9.21%  ·  Forward PE 75.47x  ·  目标价空间 +17.4%",
-      "callout": "EPS超预期17.9%但营收低于预期9.8%，合同确认时间差导致结构问题",
-      "autoslide_ms": 93124
+      "callout": "静态市销率71.83倍，市场赌84%增速不可持续",
+      "autoslide_ms": 87856
     },
     {
       "type": "ai_winner_loser",
-      "headline": "AI赢家还是输家？",
+      "headline": "AI叙事分歧有多大？",
       "bull_points": [
-        "美国商业营收指引同比增长超120%",
-        "净利率43.7%，从亏损跳升超越所有软件同行",
-        "毛利率84.1%，政府合同壁垒极高，存量客户深度依赖"
+        "Dell和Snowflake财报证实企业AI支出爆发，PLTR营收增速84.7%，超预期9.8个点。",
+        "毛利率84.1%，ROE32.6%，自由现金流转化率46%——高增长加高利润。",
+        "内部模型目标价186.52美元，基于40倍EV/NTM Revenue对FY2027营收111.7亿美元推导，比当前价仍有17%上行空间。"
       ],
       "bear_points": [
-        "市销率71.83倍，一旦营收增速低于50%将剧烈杀跌",
-        "销售团队仅7人，高度依赖存量挖掘，增长天花板近",
-        "价格创新高但量缩，RSI 67.4接近警戒线，机构减持"
+        "静态PS71.83倍，Forward PE75.47倍。一旦Q2增速从84%掉到70%，可能引发估值剧烈回撤。",
+        "股价创新高但成交量萎缩，RSI67.4接近超买阈值70，布林带上轨149.2已被突破，有回踩需求。",
+        "部分长线基金在逢高减仓，但未经证实。"
       ],
       "open_question": "市场最终会站哪边？",
-      "autoslide_ms": 88320
+      "autoslide_ms": 95827
     },
     {
       "type": "bull_case",
-      "headline": "硬核看多逻辑",
+      "headline": "三个硬核看多理由",
       "points": [
         {
           "title": "估值错配",
-          "body": "市场给71倍市销率，但最新财报EPS超预期50%达3.88美元，营收增速84.7%，FCF利润率45%，比SaaS同行高近两倍。",
+          "body": "EPS 0.33美元超预期17.9%，营收增速84.7%，毛利率84.1%，FCF转化率46%。保守估值仍有17%上行空间。",
           "tag": "bull"
         },
         {
-          "title": "护城河深不可测",
-          "body": "毛利率84.1%，政府合同锁定十年以上，销售团队仅7人但营收增长靠存量客户深度挖掘，客户依赖度极高，替换成本巨大。",
+          "title": "三层护城河",
+          "body": "政府业务国家级信任合约，商业AIP平台不可逆，某医疗公司效率提升41%。数据、信任、迁移成本叠加。",
           "tag": "bull"
         },
         {
-          "title": "硬核催化剂",
-          "body": "2026年6月2日股东大会，当前价156.54，基准目标价177.2（38倍Forward PS对FY2027营收111.7亿），乐观240元。止损137元下方，回踩141-149区间企稳。",
+          "title": "关键催化剂",
+          "body": "年度股东大会6月2日，Q2财报8月3日。企业AI支出正从实验走向规模化。",
           "tag": "bull"
         }
       ],
-      "verdict": "押注AI商业化加速度，市场终将认错",
-      "autoslide_ms": 126733
+      "verdict": "市场用旧地图，PLTR用AI重绘战场地形图",
+      "autoslide_ms": 123001
     },
     {
       "type": "bear_case",
-      "headline": "三个真正看空风险",
+      "headline": "做空的理由",
       "points": [
         {
-          "title": "估值透支",
-          "body": "71倍市销率，营收增速84.7%，一旦回落至50%以下估值承压。悲观情景116.5美元，比现价低26%。",
+          "title": "估值脱离基本面",
+          "body": "市值3752亿，营收52亿，静态市销率71倍；远期EV/Revenue 40倍",
           "tag": "bear"
         },
         {
-          "title": "竞争威胁",
-          "body": "微软和亚马逊云服务抢夺政府合同，护城河被侵蚀，管理层承认销售规模瓶颈。",
+          "title": "竞争威胁现在进行时",
+          "body": "Databricks估值620亿，增长更快；微软Copilot嵌入Azure政府云；OpenAI对AIP平台做渗透测试",
           "tag": "bear"
         },
         {
-          "title": "下行催化剂",
-          "body": "6月2日股东大会是引爆点，若无法证明销售规模化能力，情绪反转。营收超预期仅9.8%。",
+          "title": "近期催化剂风险",
+          "body": "年度股东大会6月2日；Q2财报8月3日，增速低于70%即利空；跌破布林带上轨149.2美元触发抛售",
           "tag": "bear"
         }
       ],
-      "verdict": "观望区，等待风险释放",
-      "autoslide_ms": 110334
+      "verdict": "知道了风险，才能管好仓位",
+      "autoslide_ms": 143110
     },
     {
       "type": "narrative_score",
@@ -83,37 +83,37 @@
       "scores": [
         {
           "dimension": "AI叙事",
-          "score": 8,
-          "rationale": "AI落地迅猛，但情绪已高"
+          "score": 9,
+          "rationale": "AI基建主线，最强叙事"
         },
         {
           "dimension": "增长质量",
           "score": 8,
-          "rationale": "营收增速84%，净利率43%"
+          "rationale": "营收84%但增速边际放缓"
         },
         {
           "dimension": "估值吸引力",
-          "score": 2,
-          "rationale": "71倍市销率，透支未来三年"
+          "score": 3,
+          "rationale": "71倍PS，极度昂贵"
         },
         {
           "dimension": "执行风险",
-          "score": 6,
-          "rationale": "管理层承认规模瓶颈"
+          "score": 5,
+          "rationale": "技术回调压力待释放"
         },
         {
           "dimension": "整体风险",
-          "score": 5,
-          "rationale": "强基本面与超高估值对赌"
+          "score": 6,
+          "rationale": "战略看好，短期过热"
         }
       ],
-      "overall": 5.5,
-      "verdict": "高风险观望区，等回调到142-149",
-      "autoslide_ms": 32965
+      "overall": 7.2,
+      "verdict": "长期皇冠明珠，但需要耐心等待回调布局",
+      "autoslide_ms": 30428
     },
     {
       "type": "financials",
-      "headline": "估值与盈利能力错配",
+      "headline": "财务极度健康，利润率高、零债务",
       "metrics": [
         {
           "label": "营收增速",
@@ -121,123 +121,70 @@
           "trend": "up"
         },
         {
-          "label": "EPS增速",
-          "value": "扭亏为盈，超预期17.9%",
-          "trend": "up"
+          "label": "毛利率",
+          "value": "",
+          "trend": "flat"
         },
         {
           "label": "净利率",
-          "value": "43.7%",
-          "trend": "up"
-        },
-        {
-          "label": "自由现金流利润率",
-          "value": "约32%",
-          "trend": "up"
-        },
-        {
-          "label": "股票回购",
-          "value": "未执行",
+          "value": "营业利润率46.2%，净利率低1-2个点",
           "trend": "flat"
         },
         {
-          "label": "债务",
-          "value": "总债务仅2亿美元，现金超40亿",
+          "label": "Forward PE",
+          "value": "",
+          "trend": "flat"
+        },
+        {
+          "label": "自由现金流",
+          "value": "自由现金流利润率46%，每一块钱营收四毛六变真金白银",
+          "trend": "up"
+        },
+        {
+          "label": "ROE",
+          "value": "",
           "trend": "flat"
         }
       ],
-      "callout": "营收增速84.7%，净利率43.7%，高增长高质量对冲估值压力",
-      "autoslide_ms": 73552
+      "callout": "营收增速84.7%是行业均值两倍多，营业利润率46.2%，零债务。",
+      "autoslide_ms": 87856
     },
     {
       "type": "risk",
-      "headline": "高",
+      "headline": "中高风险",
       "risks": [
         {
-          "title": "估值透支",
-          "body": "当前市销率高达七十一点八三倍，若营收增速放缓至百分之五十以下，估值倍数可能向三十八倍均值回归，悲观目标价一百一十六点五美元，对应百分之二十五下行空间。",
+          "title": "估值杀",
+          "body": "静态EV/Revenue 71.8倍，已定价未来完美增长，若增速下滑将杀估值，影响High，概率Medium。",
           "severity": "high"
         },
         {
-          "title": "缩量上涨后的情绪脆弱",
-          "body": "本周价格创出新高，成交量萎缩形成价量背离，RSI六十七点四高位敏感，上涨由情绪驱动，若股东大会无超预期，可能回踩一百四十二到一百四十九美元。",
-          "severity": "medium"
-        },
-        {
-          "title": "销售规模化瓶颈",
-          "body": "销售团队仅七人，营收增速更多来自存量客户挖掘，增长天花板可能比预期更近。",
+          "title": "技术性回调",
+          "body": "股价跌破布林带上轨支撑，量价背离，RSI高位钝化，短期可能踩回MA20，概率Medium，影响中等。",
           "severity": "medium"
         }
       ],
-      "autoslide_ms": 123110
+      "autoslide_ms": 101443
     },
     {
       "type": "catalyst",
-      "headline": "6月2日股东大会是验证增长故事的关键窗口",
-      "catalysts": [
-        {
-          "event": "6月2日股东大会公布计划或超预期指引",
-          "direction": "positive",
-          "timing": "6月2日",
-          "impact": "large"
-        },
-        {
-          "event": "股东大会无实质增量信息致回调",
-          "direction": "negative",
-          "timing": "6月2日",
-          "impact": "medium"
-        },
-        {
-          "event": "Q2财报前业绩真空期",
-          "direction": "negative",
-          "timing": "8月3日",
-          "impact": "medium"
-        }
-      ],
-      "autoslide_ms": 96385
+      "headline": "",
+      "autoslide_ms": 30000
     },
     {
       "type": "price_action",
-      "headline": "价量背离，短期情绪亢奋但参与度不足",
-      "signal": "neutral",
-      "bullets": [
-        "支撑位：短期支撑先看一百四十九点二美元突破位，强支撑在MA50和中轨重合区一百四十一到一百三十七美元区间",
-        "阻力位：短期就是一百五十六点五四上方，中期看基准目标价一百七十七点二美元",
-        "现价一百五十六点五四美元，已突破布林带上轨一百四十九点二美元，短期情绪亢奋但参与度不足",
-        "RSI六十七点四，中性区间，未超买仍有上行空间，但需要量能配合"
-      ],
-      "autoslide_ms": 43110
+      "headline": "",
+      "autoslide_ms": 30000
     },
     {
       "type": "outlook",
-      "headline": "PLTR未来到底值多少钱？——期望价值$171.14",
-      "subtitle": "观望区",
-      "base_range": {
-        "low": "$142",
-        "high": "$149",
-        "timeframe": "1-4周"
-      },
-      "scenario_bear": {
-        "condition": "管理层在股东大会上的表态无法打消市场对增长瓶颈的担忧，或营收增速腰斩。",
-        "target": "$116.5"
-      },
-      "scenario_base": {
-        "condition": "AI商业动能持续强劲，管理层在股东大会上给出清晰的规模化路线。",
-        "target": "$177.2"
-      },
-      "scenario_bull": {
-        "condition": "Q2财报营收增速重回百分之九十以上，或宣布重大政府级合同。",
-        "target": "$240"
-      },
-      "autoslide_ms": 129095
+      "headline": "",
+      "autoslide_ms": 30000
     },
     {
       "type": "summary",
-      "headline": "PLTR：高风险高赔率，持有观望",
-      "verdict": "neutral",
-      "action": "维持Watchlist级别，等待价格回调至MA50附近分批建仓",
-      "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 80610
+      "headline": "",
+      "autoslide_ms": 30000
     }
   ]
 }
