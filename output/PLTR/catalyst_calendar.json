@@ -1,24 +1,24 @@
 {
   "events": [
     {
-      "event": "年度股东大会及投资者日",
-      "date": "2026-06-03",
-      "date_confidence": "high",
-      "date_source": "SEC官方文件及市场日历",
-      "impact": "medium",
-      "direction": "neutral",
-      "bull_case": "管理层释放积极增长信号，可能推动股价上涨5-8%",
-      "bear_case": "若业务指引不及预期，股价可能下跌3-5%"
-    },
-    {
-      "event": "第二季度财报发布",
+      "event": "Q2 2026财报",
       "date": "2026-08-03",
       "date_confidence": "high",
-      "date_source": "公司信息提供的下次财报日期",
+      "date_source": "公司历史公布或分析师预测",
+      "impact": "high",
+      "direction": "neutral",
+      "bull_case": "业绩超预期，EPS高于0.33美元，股价可能上涨5-10%",
+      "bear_case": "业绩不及预期，EPS低于0.33美元，股价可能下跌5-10%"
+    },
+    {
+      "event": "年度股东大会",
+      "date": "2026-06-02",
+      "date_confidence": "high",
+      "date_source": "公司官方日历公布",
       "impact": "medium",
       "direction": "neutral",
-      "bull_case": "超预期盈利和营收增长，股价可能上涨8-12%",
-      "bear_case": "业绩低于预期，股价可能下跌6-10%"
+      "bull_case": "管理层释放积极展望，股价可能小幅上涨2-3%",
+      "bear_case": "股东提案或管理层变动引发担忧，股价可能下跌2-3%"
     }
   ]
 }

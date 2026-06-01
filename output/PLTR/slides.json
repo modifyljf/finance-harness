@@ -1,101 +1,128 @@
 {
-  "title": "PLTR新高，聪明钱撤离？",
+  "title": "AI商业化最猛的财报，居然只靠七名销售撑起？",
   "ticker": "PLTR",
   "slides": [
     {
       "type": "cover",
-      "headline": "PLTR新高，聪明钱撤离？",
+      "headline": "AI商业化最猛的财报，居然只靠七名销售撑起？",
       "subtitle": "本周深度分析·2026-05-31",
-      "hook": "PLTR创历史新高，聪明钱却在撤离？",
-      "autoslide_ms": 42124
+      "hook": "AI商业化最猛的财报，居然只靠七名销售撑起？",
+      "autoslide_ms": 20827
     },
     {
       "type": "market_overview",
       "headline": "$156.54  +9.21%  ·  Forward PE 75.47x  ·  目标价空间 +17.4%",
-      "callout": "上行空间仅剩约13%，风险回报比不诱人",
-      "autoslide_ms": 82059
+      "callout": "EPS超预期17.9%但营收低于预期9.8%，合同确认时间差导致结构问题",
+      "autoslide_ms": 93124
     },
     {
-      "type": "why_now",
-      "headline": "6月3日投资者日",
-      "old_thesis": "高增长不可持续，84.7%增速是疫情红利",
-      "new_reality": "EPS 0.33美元超预期17.9%，营收指引76.6亿美元，增速71%",
-      "what_changed": "最新财报EPS超预期，营收指引上调",
-      "why_now_statement": "市场看旧增长下滑，现实已进入AI变现时代",
-      "autoslide_ms": 81798
-    },
-    {
-      "type": "price_action",
-      "headline": "短期偏多，但内部存在严重分歧",
-      "signal": "bullish",
-      "bullets": [
-        "支撑位：$149.2（第一道防线）",
-        "阻力位：$160.0（心理关口）",
-        "价升量缩，是典型的多头动能衰竭信号",
-        "RSI 67.4，中性区间，还没到超买"
+      "type": "ai_winner_loser",
+      "headline": "AI赢家还是输家？",
+      "bull_points": [
+        "美国商业营收指引同比增长超120%",
+        "净利率43.7%，从亏损跳升超越所有软件同行",
+        "毛利率84.1%，政府合同壁垒极高，存量客户深度依赖"
       ],
-      "autoslide_ms": 112784
+      "bear_points": [
+        "市销率71.83倍，一旦营收增速低于50%将剧烈杀跌",
+        "销售团队仅7人，高度依赖存量挖掘，增长天花板近",
+        "价格创新高但量缩，RSI 67.4接近警戒线，机构减持"
+      ],
+      "open_question": "市场最终会站哪边？",
+      "autoslide_ms": 88320
     },
     {
-      "type": "key_points",
-      "headline": "多空亮底牌",
+      "type": "bull_case",
+      "headline": "硬核看多逻辑",
       "points": [
         {
-          "title": "AI订单与业绩超预期",
-          "body": "AI基建订单叙事溢出，叠加EPS超预期17.9%，营收指引上调至$76.6亿，净利率43.7%，Rule of 40达145。",
+          "title": "估值错配",
+          "body": "市场给71倍市销率，但最新财报EPS超预期50%达3.88美元，营收增速84.7%，FCF利润率45%，比SaaS同行高近两倍。",
           "tag": "bull"
         },
         {
-          "title": "量价背离与机构派发",
-          "body": "缩量上涨刺穿布林上轨$149.2，RSI中性但能量跟不上；文艺复兴等机构悄然减持；价格逼近内部估值$177.12，安全边际稀薄。",
+          "title": "护城河深不可测",
+          "body": "毛利率84.1%，政府合同锁定十年以上，销售团队仅7人但营收增长靠存量客户深度挖掘，客户依赖度极高，替换成本巨大。",
+          "tag": "bull"
+        },
+        {
+          "title": "硬核催化剂",
+          "body": "2026年6月2日股东大会，当前价156.54，基准目标价177.2（38倍Forward PS对FY2027营收111.7亿），乐观240元。止损137元下方，回踩141-149区间企稳。",
+          "tag": "bull"
+        }
+      ],
+      "verdict": "押注AI商业化加速度，市场终将认错",
+      "autoslide_ms": 126733
+    },
+    {
+      "type": "bear_case",
+      "headline": "三个真正看空风险",
+      "points": [
+        {
+          "title": "估值透支",
+          "body": "71倍市销率，营收增速84.7%，一旦回落至50%以下估值承压。悲观情景116.5美元，比现价低26%。",
+          "tag": "bear"
+        },
+        {
+          "title": "竞争威胁",
+          "body": "微软和亚马逊云服务抢夺政府合同，护城河被侵蚀，管理层承认销售规模瓶颈。",
+          "tag": "bear"
+        },
+        {
+          "title": "下行催化剂",
+          "body": "6月2日股东大会是引爆点，若无法证明销售规模化能力，情绪反转。营收超预期仅9.8%。",
           "tag": "bear"
         }
       ],
-      "autoslide_ms": 150907
+      "verdict": "观望区，等待风险释放",
+      "autoslide_ms": 110334
     },
     {
-      "type": "narrative_gap",
-      "headline": "市场低估业绩持续性",
-      "market_consensus": "年增长84%可持续，71倍市销率定价",
-      "reality": "EPS0.33美元超预期17.9%，营收指引76.6亿增速71%",
-      "gap": "市场假设增速线性放缓，实际连续超预期",
-      "gap_direction": "undervalued",
-      "implication": "股价156.54低于共识，上行空间17.4%",
-      "autoslide_ms": 87428
-    },
-    {
-      "type": "news",
-      "headline": "收缩量上涨情绪驱动，机构严重分歧",
-      "news_items": [
+      "type": "narrative_score",
+      "headline": "投资评分概览",
+      "scores": [
         {
-          "title": "政府国防合同再下一城，拿下美国陆军4.5亿美元",
-          "category": "other",
-          "impact": "positive",
-          "note": "政府收入的粘性极高，这份合同将为FY26全年营收指引提供额外支撑。"
+          "dimension": "AI叙事",
+          "score": 8,
+          "rationale": "AI落地迅猛，但情绪已高"
         },
         {
-          "title": "与AMD合作，优化大模型推理效率",
-          "category": "product",
-          "impact": "positive",
-          "note": "成本降低，意味着客户规模可以再上一个台阶。"
+          "dimension": "增长质量",
+          "score": 8,
+          "rationale": "营收增速84%，净利率43%"
         },
         {
-          "title": "分析师评级罕见分歧：Wedbush上调，DA下调",
-          "category": "analyst",
-          "impact": "neutral",
-          "note": "内部估值一百七十七点一二，Wedbush看多二百一十，DA看空九十五，分歧大，方向看投资者日。"
+          "dimension": "估值吸引力",
+          "score": 2,
+          "rationale": "71倍市销率，透支未来三年"
+        },
+        {
+          "dimension": "执行风险",
+          "score": 6,
+          "rationale": "管理层承认规模瓶颈"
+        },
+        {
+          "dimension": "整体风险",
+          "score": 5,
+          "rationale": "强基本面与超高估值对赌"
         }
       ],
-      "analyst_summary": "Wedbush目标价从一百八十上调至二百一十，DA Davidson评级从中性下调至卖出，目标价九十五。",
-      "autoslide_ms": 103182
+      "overall": 5.5,
+      "verdict": "高风险观望区，等回调到142-149",
+      "autoslide_ms": 32965
     },
     {
       "type": "financials",
-      "headline": "增长强劲盈利扎实但估值过高",
+      "headline": "估值与盈利能力错配",
       "metrics": [
         {
           "label": "营收增速",
-          "value": "+84.7%",
+          "value": "84.7%",
+          "trend": "up"
+        },
+        {
+          "label": "EPS增速",
+          "value": "扭亏为盈，超预期17.9%",
           "trend": "up"
         },
         {
@@ -104,85 +131,113 @@
           "trend": "up"
         },
         {
-          "label": "Forward PE",
-          "value": "75x",
+          "label": "自由现金流利润率",
+          "value": "约32%",
+          "trend": "up"
+        },
+        {
+          "label": "股票回购",
+          "value": "未执行",
           "trend": "flat"
         },
         {
-          "label": "自由现金流",
-          "value": "Rule of 145分（增速+自由现金流利润率）",
-          "trend": "up"
+          "label": "债务",
+          "value": "总债务仅2亿美元，现金超40亿",
+          "trend": "flat"
         }
       ],
-      "callout": "当前价格离基准只差百分之十三的空间，安全边际极低。",
-      "autoslide_ms": 111784
+      "callout": "营收增速84.7%，净利率43.7%，高增长高质量对冲估值压力",
+      "autoslide_ms": 73552
     },
     {
       "type": "risk",
       "headline": "高",
       "risks": [
         {
-          "title": "估值极度前置",
-          "body": "现在股价已经定价了一切完美。一旦下季度指引稍微软一点，带来的不是温和回调，是剧烈的估值压缩。",
+          "title": "估值透支",
+          "body": "当前市销率高达七十一点八三倍，若营收增速放缓至百分之五十以下，估值倍数可能向三十八倍均值回归，悲观目标价一百一十六点五美元，对应百分之二十五下行空间。",
           "severity": "high"
         },
         {
-          "title": "聪明钱的背离",
-          "body": "股价创新高但成交量在萎缩，这不是资金驱动的趋势而是情绪驱动的空头回补。散户在冲机构在撤。",
-          "severity": "high"
+          "title": "缩量上涨后的情绪脆弱",
+          "body": "本周价格创出新高，成交量萎缩形成价量背离，RSI六十七点四高位敏感，上涨由情绪驱动，若股东大会无超预期，可能回踩一百四十二到一百四十九美元。",
+          "severity": "medium"
+        },
+        {
+          "title": "销售规模化瓶颈",
+          "body": "销售团队仅七人，营收增速更多来自存量客户挖掘，增长天花板可能比预期更近。",
+          "severity": "medium"
         }
       ],
-      "autoslide_ms": 102030
+      "autoslide_ms": 123110
     },
     {
       "type": "catalyst",
-      "headline": "六月三日股东大会+投资者日",
+      "headline": "6月2日股东大会是验证增长故事的关键窗口",
       "catalysts": [
         {
-          "event": "年度股东大会加投资者日",
+          "event": "6月2日股东大会公布计划或超预期指引",
           "direction": "positive",
-          "timing": "六月三日",
+          "timing": "6月2日",
           "impact": "large"
         },
         {
-          "event": "年度股东大会加投资者日",
+          "event": "股东大会无实质增量信息致回调",
           "direction": "negative",
-          "timing": "六月三日",
-          "impact": "large"
+          "timing": "6月2日",
+          "impact": "medium"
+        },
+        {
+          "event": "Q2财报前业绩真空期",
+          "direction": "negative",
+          "timing": "8月3日",
+          "impact": "medium"
         }
       ],
-      "autoslide_ms": 88400
+      "autoslide_ms": 96385
+    },
+    {
+      "type": "price_action",
+      "headline": "价量背离，短期情绪亢奋但参与度不足",
+      "signal": "neutral",
+      "bullets": [
+        "支撑位：短期支撑先看一百四十九点二美元突破位，强支撑在MA50和中轨重合区一百四十一到一百三十七美元区间",
+        "阻力位：短期就是一百五十六点五四上方，中期看基准目标价一百七十七点二美元",
+        "现价一百五十六点五四美元，已突破布林带上轨一百四十九点二美元，短期情绪亢奋但参与度不足",
+        "RSI六十七点四，中性区间，未超买仍有上行空间，但需要量能配合"
+      ],
+      "autoslide_ms": 43110
     },
     {
       "type": "outlook",
-      "headline": "谨慎观望，等催化剂落地",
-      "subtitle": "中性",
+      "headline": "PLTR未来到底值多少钱？——期望价值$171.14",
+      "subtitle": "观望区",
       "base_range": {
-        "low": "$149.2",
-        "high": "$160",
+        "low": "$142",
+        "high": "$149",
         "timeframe": "1-4周"
       },
       "scenario_bear": {
-        "condition": "放量跌破一百四十一点七九（五十日均线），多头趋势终结",
-        "target": "$86.92"
+        "condition": "管理层在股东大会上的表态无法打消市场对增长瓶颈的担忧，或营收增速腰斩。",
+        "target": "$116.5"
       },
       "scenario_base": {
-        "condition": "2026年6月3日投资者日释放超预期利好，营收指引上调到80亿美元以上",
-        "target": "$177.12"
+        "condition": "AI商业动能持续强劲，管理层在股东大会上给出清晰的规模化路线。",
+        "target": "$177.2"
       },
       "scenario_bull": {
-        "condition": "回踩一百四十九点二不破，成交量萎缩后再次放量，或直接放量突破一百六十",
-        "target": "$177.12"
+        "condition": "Q2财报营收增速重回百分之九十以上，或宣布重大政府级合同。",
+        "target": "$240"
       },
-      "autoslide_ms": 95298
+      "autoslide_ms": 129095
     },
     {
       "type": "summary",
-      "headline": "这是情绪推动的反弹，不是资金推动的趋势。",
-      "verdict": "bearish",
-      "action": "减仓至5%以下，等回踩149.2美元放量企稳。",
+      "headline": "PLTR：高风险高赔率，持有观望",
+      "verdict": "neutral",
+      "action": "维持Watchlist级别，等待价格回调至MA50附近分批建仓",
       "subtitle": "投资有风险，以上内容仅供参考，不构成任何投资建议。",
-      "autoslide_ms": 42385
+      "autoslide_ms": 80610
     }
   ]
 }

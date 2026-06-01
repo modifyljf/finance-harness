@@ -1,136 +1,125 @@
 {
   "product_segments": [
     {
-      "name": "Government",
-      "revenue": "$2.40B",
+      "name": "Government (Gotham)",
+      "revenue": "$858.4M",
       "growth_pct": null,
-      "period": "FY2025",
-      "source": "2025 FY PLTR 10-K via stockanalysis.com"
+      "period": "Q1 FY2026",
+      "source": "Palantir Q1 2026 10-Q"
     },
     {
-      "name": "Commercial",
-      "revenue": "$2.07B",
+      "name": "Commercial (Foundry/AIP)",
+      "revenue": "$774.2M",
       "growth_pct": null,
-      "period": "FY2025",
-      "source": "2025 FY PLTR 10-K via stockanalysis.com"
+      "period": "Q1 FY2026",
+      "source": "Calculated from total revenue minus government segment; also U.S. Commercial $595M per investor presentation"
     }
   ],
   "management_guidance": [
     {
-      "metric": "FY2026 total revenue",
-      "value": "$7.65B - $7.66B",
+      "metric": "Full-year 2026 revenue",
+      "value": "$7.650 - $7.662 billion",
       "direction": "上调",
-      "context": "从之前$7.18B上调，年增长约71%"
+      "context": "Raised from prior guidance, representing 71% YoY growth"
     },
     {
-      "metric": "FY2026 U.S. commercial revenue",
-      "value": "至少 $3.224B",
+      "metric": "U.S. Commercial revenue",
+      "value": "at least $3.224 billion",
       "direction": "上调",
-      "context": "年增长至少120%"
+      "context": "Growth of at least 120% YoY"
+    },
+    {
+      "metric": "Adjusted income from operations",
+      "value": "$4.440 - $4.452 billion",
+      "direction": "上调",
+      "context": "Part of raised guidance"
     },
     {
       "metric": "GAAP profitability",
-      "value": "每季度盈利",
-      "direction": "确认",
-      "context": "公司重申每季度GAAP盈利"
-    },
-    {
-      "metric": "Rule of 40 分数",
-      "value": "145%",
+      "value": "Every quarter",
       "direction": "维持",
-      "context": "Q1 2026 Rule of 40达到145%"
+      "context": "Confirmed expectation of GAAP profitability in every quarter"
     }
   ],
   "competitive_position": {
-    "market_share": "未在材料中明确给出市场份额数据",
+    "market_share": null,
     "key_competitors": [
-      "其他软件/AI基础设施公司（如NVIDIA、Microsoft等，但未在材料中明确列出）"
+      "Microsoft",
+      "Google",
+      "Other software and cloud giants"
     ],
-    "moat": "强大的人工智能平台（AIP）和关键任务操作系统，深度嵌入政府和企业工作流",
-    "threats": "高估值使股价对增长放缓敏感，且对政府合同存在一定依赖"
+    "moat": "Strong government contracts, 'land and expand' model with AIP platform, high switching costs from deep integration",
+    "threats": "Intense competition from large tech firms with comparable AI capabilities and higher operating margins"
   },
   "key_facts": [
     {
-      "fact": "Q1 2026收入16.33亿美元，同比增长85%",
+      "fact": "Palantir raised its 2026 revenue guidance to $7.656 billion, up 71% YoY",
       "metric_type": "Revenue",
-      "source": "Q1 2026财报电话会（The Motley Fool）",
+      "source": "Q1 2026 earnings transcript",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "Q1 2026净利润8.7053亿美元",
+      "fact": "U.S. commercial revenue guidance raised to over $3.224 billion, growth at least 120%",
       "metric_type": "Revenue",
-      "source": "Yahoo Finance文章",
-      "confidence": "high",
-      "caveat": "净利润数字，非收入指标"
-    },
-    {
-      "fact": "截至2026年3月31日，剩余履约义务（RPO）为45亿美元",
-      "metric_type": "Commitments",
-      "source": "2026 Q1 10-Q",
-      "confidence": "high",
-      "caveat": "RPO为尚未确认的收入合同，不等于bookings或ARR"
-    },
-    {
-      "fact": "FY2026收入指引上调至76.5-76.6亿美元，年增长约71%",
-      "metric_type": "Revenue",
-      "source": "Q1 2026财报电话会",
-      "confidence": "high",
-      "caveat": "指引，非实际业绩"
-    },
-    {
-      "fact": "2025年全年收入44.8亿美元，政府占比53.68%，商业占比46.32%",
-      "metric_type": "Revenue",
-      "source": "2025 FY 10-K",
+      "source": "Q1 2026 earnings transcript",
       "confidence": "high",
       "caveat": null
     },
     {
-      "fact": "Q1 2026 U.S.收入同比增长104%",
+      "fact": "Q1 2026 revenue was $1.6326 billion, up 85% YoY",
       "metric_type": "Revenue",
-      "source": "Palantir IR新闻稿",
+      "source": "SEC 10-Q",
       "confidence": "high",
-      "caveat": "U.S.区域收入增速"
+      "caveat": null
     },
     {
-      "fact": "Rule of 40分数达到145%",
+      "fact": "U.S. commercial revenue in Q1 2026 was $595 million, up 133% YoY",
+      "metric_type": "Revenue",
+      "source": "Q1 2026 Business Update PDF",
+      "confidence": "high",
+      "caveat": "U.S. only; total commercial $774M"
+    },
+    {
+      "fact": "U.S. government revenue in Q1 2026 was $687 million, up 84% YoY",
+      "metric_type": "Revenue",
+      "source": "Q1 2026 Business Update PDF",
+      "confidence": "high",
+      "caveat": "U.S. only; total government $858M"
+    },
+    {
+      "fact": "Rule of 40 score soared to 145%",
       "metric_type": "Other",
-      "source": "Q1 2026财报电话会",
+      "source": "Q1 2026 earnings press release",
       "confidence": "high",
-      "caveat": "Rule of 40 = 收入增长率 + 利润率"
+      "caveat": "Calculated as revenue growth + operating margin; not a standard accounting metric"
     },
     {
-      "fact": "Q1 2026新签至少100万美元合约206笔，至少500万美元合约72笔",
-      "metric_type": "Bookings",
-      "source": "The Motley Fool（Q1 2026财报）",
-      "confidence": "medium",
-      "caveat": "合约数量，未披露总合约价值"
+      "fact": "Eleven consecutive quarters of accelerating revenue growth",
+      "metric_type": "Other",
+      "source": "Q1 2026 earnings transcript",
+      "confidence": "high",
+      "caveat": "Company statement"
     }
   ],
   "analyst_thesis": {
-    "bull_case": "Palantir是关键的AI基础设施提供商，政府和企业需求强劲，U.S.商业收入增长超120%，Rule of 40达145%，显示高效增长与盈利能力。",
-    "bear_case": "高估值（市值3281亿美元）使股价难以支撑增长放缓，且对政府合同依赖较高，若AI热潮降温，收入增速可能回落。",
+    "bull_case": "Palantir is delivering ~70% revenue growth, ~80% EPS growth, 41% operating margin, and ~$760M in quarterly free cash flow, driven by triple-digit commercial revenue growth from AIP platform and land-and-expand model.",
+    "bear_case": "High valuation compared to peers, lower operating margins than Microsoft/Google, and intense competition in the AI data analytics space pose risks.",
     "key_institutions": [
       {
-        "firm": "MarketBeat",
-        "rating": "未提及具体评级",
-        "target": "未提及具体目标价",
-        "thesis": "媒体对PLTR与META对比，PLTR关注度较低但情绪偏正面"
-      },
-      {
-        "firm": "Simply Wall St",
-        "rating": "未来增长标准检查6/6",
-        "target": "未提及",
-        "thesis": "预测Palantir未来三年年化收益和收入增速分别为31.8%和30.2%"
+        "firm": "Consensus (TipRanks)",
+        "rating": "Hold",
+        "target": "$192.88",
+        "thesis": "Average target implies 12.82% upside from current price; mix of 5 Buys, 10 Holds, 2 Sells"
       }
     ]
   },
   "data_quality": {
     "segment_data_available": true,
     "guidance_found": true,
-    "sources_count": 5,
+    "sources_count": 8,
     "confidence": "high",
-    "notes": "产品线拆分来自2025年年报，指引来自Q1 2026财报，关键事实有多个高置信度来源。缺少部分机构评级和具体市场份额数据。"
+    "notes": "Segment data from 10-Q and investor presentation; guidance from earnings transcript and press release; EDGAR XBRL provided revenue history; no ARR or bookings data found."
   },
   "_edgar_quarterly_revenue": [
     {
